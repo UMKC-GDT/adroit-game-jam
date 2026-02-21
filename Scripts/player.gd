@@ -18,6 +18,8 @@ extends CharacterBody2D
 @export var wallJumpVelocity := 400.0
 @export var wallJumpPushOff := 200.0
 @export var wallFallingGravity := 50.0
+@export var footStepTimerReset = 0.3
+@export var footStepTimer = 0
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -46,7 +48,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	getInputDir()
+	getInputDir(delta)
 	
 	if(Input.is_action_pressed("jump")):
 		if(canJump):
@@ -107,6 +109,7 @@ func doAirMovement(delta: float):
 	# Friction based on direction
 	if(isMovingRight()):
 		self.velocity.x -= airFriction * delta
+		
 	elif(isMovingLeft()):
 		self.velocity.x += airFriction * delta
 		
@@ -119,6 +122,7 @@ func doAirMovement(delta: float):
 func doJump():
 	if(self.is_on_floor()):
 		groundJump()
+		$PlayerSoundManager/EmmiterGroundJump.play()
 	elif(getDirectionForWallJump() != 0 and canWallJump): # Prioritize wall jump over double jump
 		doWallJump()
 	else:
@@ -175,11 +179,21 @@ func limitSpeed(currentSpeed: float, maxSpeed: float):
 		return maxSpeed * inputDir
 	return currentSpeed
 
-func getInputDir():
+func getInputDir(delta:float):
 	if(Input.is_action_pressed("right")):
 		inputDir = 1.0
+		if footStepTimer <= 0:
+			if self.is_on_floor():
+				$PlayerSoundManager/EmmiterFootsteps.play()
+				footStepTimer = footStepTimerReset
+		footStepTimer -= delta
 	elif(Input.is_action_pressed("left")):
 		inputDir = -1.0
+		if footStepTimer <= 0:
+			if self.is_on_floor():
+				$PlayerSoundManager/EmmiterFootsteps.play()
+				footStepTimer = footStepTimerReset
+		footStepTimer -= delta
 	else:
 		inputDir = 0
 

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c657mqe000d4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="1_pcaqv"]
-[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="2_p04xc"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_p0l5r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q12u6"]
@@ -88,7 +87,7 @@ position = Vector2(207, -50)
 airSpeed = 300.0
 jumpVelocity = 250.0
 
-[node name="Ground" parent="." unique_id=1605235542 instance=ExtResource("2_p04xc")]
+[node name="Ground" parent="." unique_id=1605235542]
 position = Vector2(729, -512)
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("3_p0l5r")]
