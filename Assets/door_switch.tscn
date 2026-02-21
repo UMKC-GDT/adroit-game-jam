@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://boyxghoqy3b5j"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_ck766"]
+[ext_resource type="Script" uid="uid://c8l7iylj3nwpl" path="res://Scripts/door_switch.gd" id="2_h5f3n"]
+[ext_resource type="Texture2D" uid="uid://brsejbgli7628" path="res://Resources/istockphoto-530380881-612x612.jpg" id="3_dc32l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5drf"]
+
+[node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
+script = ExtResource("2_h5f3n")
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+texture = ExtResource("3_dc32l")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+shape = SubResource("RectangleShape2D_c5drf")
