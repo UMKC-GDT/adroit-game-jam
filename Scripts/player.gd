@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var rightWallCast: RayCast2D = $RightWallCast
 @onready var leftWallCast: RayCast2D = $LeftWallCast
 
+var spawnPosition: Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var maxFallSpeed := 1200.0
@@ -23,6 +24,8 @@ var canDoubleJump := true
 var canWallJump := true
 
 
+func _ready() -> void:
+	spawnPosition = self.position
 
 func _process(delta: float) -> void:
 	getInputDir()
