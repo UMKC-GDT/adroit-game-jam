@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://clsgally8hnsn"]
+
+[ext_resource type="Script" uid="uid://fgggsu0t573j" path="res://Scripts/end_level_door.gd" id="1_6xm7h"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="2_7ohtc"]
+
+[node name="EndLevelDoor" type="Node2D" unique_id=758515234]
+script = ExtResource("1_6xm7h")
+
+[node name="InteractableComponent" parent="." unique_id=642375165 instance=ExtResource("2_7ohtc")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1225613613]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1622879436]
