@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ov3ivfsit5ce"]
+[gd_scene format=4 uid="uid://bcm4c8lv6y3rt"]
 
 [ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="1_ntlny"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="2_ygjgw"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d2rupj0poryrf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/wall and office stuff.png" id="4_in78p"]
 [ext_resource type="Texture2D" uid="uid://lgsb7efggws5" path="res://Scenes/Tileset Testing/Character Sprites/Standing.png" id="5_tk2m3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02qno"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ane6l"]
 texture = ExtResource("1_ntlny")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -19,7 +19,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32ktm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qkur"]
 texture = ExtResource("2_ygjgw")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -32,7 +32,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bncql"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akw03"]
 texture = ExtResource("3_m8bpd")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -44,7 +44,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1w2n"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hs27p"]
 texture = ExtResource("4_in78p")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -58,12 +58,12 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_ygjgw"]
 tile_size = Vector2i(32, 32)
-sources/2 = SubResource("TileSetAtlasSource_02qno")
-sources/3 = SubResource("TileSetAtlasSource_32ktm")
-sources/4 = SubResource("TileSetAtlasSource_bncql")
-sources/5 = SubResource("TileSetAtlasSource_o1w2n")
+sources/2 = SubResource("TileSetAtlasSource_ane6l")
+sources/3 = SubResource("TileSetAtlasSource_3qkur")
+sources/4 = SubResource("TileSetAtlasSource_akw03")
+sources/5 = SubResource("TileSetAtlasSource_hs27p")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obae1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tiu3v"]
 texture = ExtResource("1_ntlny")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -76,7 +76,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkdu1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8g3lu"]
 texture = ExtResource("2_ygjgw")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -89,7 +89,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfw6v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxk3b"]
 texture = ExtResource("3_m8bpd")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -101,7 +101,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qrhun"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t68kk"]
 texture = ExtResource("4_in78p")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -115,67 +115,10 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_tk2m3"]
 tile_size = Vector2i(32, 32)
-sources/2 = SubResource("TileSetAtlasSource_obae1")
-sources/3 = SubResource("TileSetAtlasSource_pkdu1")
-sources/4 = SubResource("TileSetAtlasSource_qfw6v")
-sources/5 = SubResource("TileSetAtlasSource_qrhun")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iko63"]
-texture = ExtResource("1_ntlny")
-texture_region_size = Vector2i(32, 32)
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6lw4"]
-texture = ExtResource("2_ygjgw")
-texture_region_size = Vector2i(32, 32)
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l40cv"]
-texture = ExtResource("3_m8bpd")
-texture_region_size = Vector2i(32, 32)
-3:0/0 = 0
-4:0/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bgvao"]
-texture = ExtResource("4_in78p")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_f5hje"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_iko63")
-sources/1 = SubResource("TileSetAtlasSource_y6lw4")
-sources/2 = SubResource("TileSetAtlasSource_l40cv")
-sources/3 = SubResource("TileSetAtlasSource_bgvao")
+sources/2 = SubResource("TileSetAtlasSource_tiu3v")
+sources/3 = SubResource("TileSetAtlasSource_8g3lu")
+sources/4 = SubResource("TileSetAtlasSource_kxk3b")
+sources/5 = SubResource("TileSetAtlasSource_t68kk")
 
 [node name="TileSetTesting" type="Node2D" unique_id=911594195]
 
@@ -192,15 +135,8 @@ tile_set = SubResource("TileSet_tk2m3")
 [node name="Objects" type="TileMapLayer" parent="." unique_id=901362702]
 texture_filter = 1
 position = Vector2(0, 2)
-tile_map_data = PackedByteArray("AAAAAAEABQABAAEAAAD//wEABQACAAEAAAD9/wAAAgAFAAAAAAD9/wEAAgAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEABQABAAEAAAD//wEABQACAAEAAAD8/wEAAgAFAAEAAAD8/wAAAgAFAAAAAAA=")
 tile_set = SubResource("TileSet_tk2m3")
-
-[node name="Foreground" type="TileMapLayer" parent="." unique_id=3076528]
-tile_set = SubResource("TileSet_f5hje")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=870664974]
-position = Vector2(0, 22)
-zoom = Vector2(4.5, 4.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=142930422]
 texture_filter = 1
