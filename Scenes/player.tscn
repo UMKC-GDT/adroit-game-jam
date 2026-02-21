@@ -11,6 +11,8 @@ height = 40.0
 [node name="Player" type="CharacterBody2D" unique_id=1958493430]
 script = ExtResource("1_v0iea")
 speed = 250.0
+airSpeed = 500.0
+jumpVelocity = 500.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=43446781]
 
@@ -32,4 +34,5 @@ target_position = Vector2(11, 0)
 collision_mask = 2048
 
 [node name="PlayerInteractionSystem" parent="." unique_id=1699919203 instance=ExtResource("2_cvnsp")]
+
 [node name="PlayerSoundManager" type="Node2D" parent="." unique_id=229532532]
