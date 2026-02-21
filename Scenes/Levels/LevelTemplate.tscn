@@ -64,4 +64,4 @@ native_timeline = 1
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_m4q6y")]
 
 [node name="SimpleFlashlight" parent="Player" unique_id=949392061 instance=ExtResource("6_pj3xo")]
-flashlight_radius = 25
+flashlight_radius = 35
