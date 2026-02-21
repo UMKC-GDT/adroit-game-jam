@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://311ne2wbx3ur"]
+
+[ext_resource type="PackedScene" uid="uid://bpwcrsa8fxsrg" path="res://Assets/present_box.tscn" id="1_dtjkg"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_eglq2"]
+[ext_resource type="Script" uid="uid://dhjb6djj68dci" path="res://Scenes/quick_rotate.gd" id="2_rsyfn"]
+
+[node name="Node2D" type="Node2D" unique_id=1184033980]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2140980843]
+position = Vector2(538, 330)
+script = ExtResource("2_rsyfn")
+
+[node name="Flashlight" parent="Marker2D" unique_id=371804446 instance=ExtResource("2_eglq2")]
+rotation = -1.5707964
+timeline_type = 1
+
+[node name="PresentLight" parent="." unique_id=1064881206 instance=ExtResource("2_eglq2")]
+position = Vector2(803, 54)
+
+[node name="PresentBox" parent="." unique_id=1605235542 instance=ExtResource("1_dtjkg")]
+position = Vector2(802, 323)
+gravity_scale = 0.0
+
+[node name="FutureBox" parent="." unique_id=427577726 instance=ExtResource("1_dtjkg")]
+position = Vector2(265, 327)
+native_timeline = 1
