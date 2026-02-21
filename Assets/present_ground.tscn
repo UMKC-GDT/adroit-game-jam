@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_ayl4n"]
 [ext_resource type="Script" uid="uid://dky8kg4fivwdk" path="res://Scripts/ground.gd" id="2_ayl4n"]
-[ext_resource type="Texture2D" uid="uid://cyvg4tkosel2s" path="res://Resources/Benefits-of-Stainless-Steel-scaled.jpeg" id="3_lcepu"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="3_ayl4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcepu"]
+atlas = ExtResource("3_ayl4n")
+region = Rect2(123.078964, 63.93721, 32.031357, 32.099327)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3bxd"]
 size = Vector2(32, 32)
@@ -14,9 +18,10 @@ script = ExtResource("2_ayl4n")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
+texture_filter = 1
 position = Vector2(0, 16.000004)
-scale = Vector2(0.0125, 0.018746335)
-texture = ExtResource("3_lcepu")
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_lcepu")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
 position = Vector2(0, 16)

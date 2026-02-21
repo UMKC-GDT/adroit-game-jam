@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_d0coj"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_n4ce2"]
-[ext_resource type="PackedScene" path="res://Assets/ground.tscn" id="3_asxnk"]
-[ext_resource type="PackedScene" path="res://Assets/wall.tscn" id="4_mm6ix"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="3_asxnk"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="5_m4q6y"]
-[ext_resource type="PackedScene" path="res://Assets/environment_wall.tscn" id="5_n4ce2"]
-[ext_resource type="PackedScene" path="res://Assets/simple_flashlight.tscn" id="6_pj3xo"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="6_mm6ix"]
+[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="6_pj3xo"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_d0coj")
@@ -26,56 +25,32 @@ position = Vector2(-960, 0)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="Ground" parent="Present" unique_id=1592338874 instance=ExtResource("3_asxnk")]
-position = Vector2(-128, 64)
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("3_asxnk")]
 
-[node name="Ground3" parent="Present" unique_id=1926846426 instance=ExtResource("3_asxnk")]
-position = Vector2(128, 64)
+[node name="LargeGround2" parent="Present" unique_id=973500253 instance=ExtResource("3_asxnk")]
+position = Vector2(127, 0)
 
-[node name="Ground2" parent="Present" unique_id=1605235542 instance=ExtResource("3_asxnk")]
-position = Vector2(0, 64)
-
-[node name="Basic Wall" parent="Present" unique_id=1118751725 instance=ExtResource("4_mm6ix")]
-position = Vector2(-128, 48)
-
-[node name="Superwall" parent="Present" unique_id=1222364383 instance=ExtResource("5_n4ce2")]
-position = Vector2(192, -32)
-collision_layer = 2051
+[node name="LargeGround3" parent="Present" unique_id=315877888 instance=ExtResource("3_asxnk")]
+position = Vector2(-127, 0)
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
+
+[node name="LargeGround" parent="Future" unique_id=513526619 instance=ExtResource("6_mm6ix")]
+
+[node name="LargeGround2" parent="Future" unique_id=346786191 instance=ExtResource("6_mm6ix")]
+position = Vector2(128, 0)
+
+[node name="LargeGround3" parent="Future" unique_id=411616709 instance=ExtResource("6_mm6ix")]
+position = Vector2(-124, 0)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="Ground" parent="Future" unique_id=868509044 instance=ExtResource("3_asxnk")]
-position = Vector2(0, 64)
-native_timeline = 1
-
-[node name="Wall" parent="Future" unique_id=2145832113 instance=ExtResource("4_mm6ix")]
-position = Vector2(128, 48)
-native_timeline = 1
-
-[node name="Wall2" parent="Future" unique_id=615500463 instance=ExtResource("4_mm6ix")]
-position = Vector2(0, 48)
-native_timeline = 1
-
-[node name="Ground3" parent="Future" unique_id=1190873347 instance=ExtResource("3_asxnk")]
-position = Vector2(-128, 64)
-native_timeline = 1
-
-[node name="Ground2" parent="Future" unique_id=481962173 instance=ExtResource("3_asxnk")]
-position = Vector2(128, 64)
-native_timeline = 1
-
-[node name="Superwall2" parent="Future" unique_id=1032632865 instance=ExtResource("5_n4ce2")]
-position = Vector2(64, -40)
-collision_layer = 2051
-native_timeline = 1
-
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_m4q6y")]
+position = Vector2(0, -68)
 airSpeed = 200.0
 air_accel = 1000.0
 jumpVelocity = 400.0

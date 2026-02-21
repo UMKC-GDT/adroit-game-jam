@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c6nsrlfh6ap5e"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_xakmj"]
+[ext_resource type="Script" uid="uid://dky8kg4fivwdk" path="res://Scripts/ground.gd" id="2_b5h3l"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="3_7h8r5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcepu"]
+atlas = ExtResource("3_7h8r5")
+region = Rect2(123.078964, 63.93721, 32.031357, 32.099327)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3bxd"]
+size = Vector2(32, 32)
+
+[node name="Ground" unique_id=1605235542 instance=ExtResource("1_xakmj")]
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("2_b5h3l")
+native_timeline = 1
+movable = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+texture_filter = 1
+position = Vector2(0, 16.000004)
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_lcepu")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_g3bxd")
