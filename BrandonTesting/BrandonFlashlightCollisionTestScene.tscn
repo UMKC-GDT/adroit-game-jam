@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://blml3dmw6gkrv" path="res://BrandonTesting/GroundTest.png" id="1_cwpv4"]
 [ext_resource type="Script" uid="uid://cjfpt4n44br3j" path="res://BrandonTesting/BasicMovement.gd" id="2_csr1f"]
 [ext_resource type="Texture2D" uid="uid://ji8tdspwhj62" path="res://BrandonTesting/CrapPlayer.png" id="3_qiaj8"]
+[ext_resource type="Script" uid="uid://dh510mgbp8xs4" path="res://BrandonTesting/StaticPlatform.gd" id="4_qiaj8"]
 [ext_resource type="Texture2D" uid="uid://brfw1o1nje22e" path="res://BrandonTesting/CameraTarget.png" id="4_wdxcq"]
 [ext_resource type="Texture2D" uid="uid://blrfybefh013p" path="res://BrandonTesting/CameraTargetPos.png" id="5_aitpi"]
 [ext_resource type="Texture2D" uid="uid://jjxs8hcawg85" path="res://BrandonTesting/CameraTargetNeg.png" id="6_ccx3f"]
 [ext_resource type="Texture2D" uid="uid://pdjyxfsqqq0h" path="res://BrandonTesting/IntersectionPoint.png" id="7_4bnb4"]
+[ext_resource type="Texture2D" uid="uid://daa5d8irsb2dq" path="res://BrandonTesting/CornerPoints.png" id="7_wdxcq"]
 [ext_resource type="Texture2D" uid="uid://ddgvw745twicv" path="res://BrandonTesting/redand-blue-checkerboard-pattern-udlz4yv6fsolhbf6.jpg" id="8_48iqr"]
 [ext_resource type="Texture2D" uid="uid://3jan2sly6brj" path="res://BrandonTesting/IntersectionPoint2.png" id="9_csr1f"]
 
@@ -27,7 +29,7 @@ shape = SubResource("RectangleShape2D_hv006")
 [node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=437733606]
 texture = ExtResource("1_cwpv4")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1539760315 node_paths=PackedStringArray("middlePoint", "positivePoint", "negativePoint", "platformTest", "botIntPoint", "leftIntPoint", "rightIntPoint", "topIntPoint", "botIntPoint2", "leftIntPoint2", "rightIntPoint2", "topIntPoint2")]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1539760315 node_paths=PackedStringArray("middlePoint", "positivePoint", "negativePoint", "platforms")]
 script = ExtResource("2_csr1f")
 sensitivity = 1.0
 middlePoint = NodePath("../Middle")
@@ -35,15 +37,7 @@ positivePoint = NodePath("../Pos")
 negativePoint = NodePath("../Neg")
 lightFieldOfView = 30.0
 lightDistance = 500.0
-platformTest = NodePath("../Platform/PlatSprite")
-botIntPoint = NodePath("../leftIntercepts/botInt")
-leftIntPoint = NodePath("../leftIntercepts/leftInt")
-rightIntPoint = NodePath("../leftIntercepts/rightInt")
-topIntPoint = NodePath("../leftIntercepts/topInt")
-botIntPoint2 = NodePath("../rightIntercepts/botInt")
-leftIntPoint2 = NodePath("../rightIntercepts/leftInt")
-rightIntPoint2 = NodePath("../rightIntercepts/rightInt")
-topIntPoint2 = NodePath("../rightIntercepts/topInt")
+platforms = [NodePath("../Platform/PlatSprite")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=390841653]
 shape = SubResource("RectangleShape2D_ru7et")
@@ -56,10 +50,24 @@ texture = ExtResource("3_qiaj8")
 
 [node name="Platform" type="Node2D" parent="." unique_id=1180813408]
 
-[node name="PlatSprite" type="Sprite2D" parent="Platform" unique_id=1177528414]
+[node name="PlatSprite" type="Sprite2D" parent="Platform" unique_id=1177528414 node_paths=PackedStringArray("botIntPointLeftVis", "leftIntPointLeftVis", "rightIntPointLeftVis", "topIntPointLeftVis", "botIntPointRightVis", "leftIntPointRightVis", "rightIntPointRightVis", "topIntPointRightVis", "topLeftPointVis", "topRightPointVis", "botRightPointVis", "botLeftPointVis")]
 position = Vector2(-172, -89.5)
 scale = Vector2(2.7, 1.41)
 texture = ExtResource("3_qiaj8")
+script = ExtResource("4_qiaj8")
+platformSize = 50.0
+botIntPointLeftVis = NodePath("../../leftIntercepts/botInt")
+leftIntPointLeftVis = NodePath("../../leftIntercepts/leftInt")
+rightIntPointLeftVis = NodePath("../../leftIntercepts/rightInt")
+topIntPointLeftVis = NodePath("../../leftIntercepts/topInt")
+botIntPointRightVis = NodePath("../../rightIntercepts/botInt")
+leftIntPointRightVis = NodePath("../../rightIntercepts/leftInt")
+rightIntPointRightVis = NodePath("../../rightIntercepts/rightInt")
+topIntPointRightVis = NodePath("../../rightIntercepts/topInt")
+topLeftPointVis = NodePath("../../CornerInts/TL")
+topRightPointVis = NodePath("../../CornerInts/TR")
+botRightPointVis = NodePath("../../CornerInts/BR")
+botLeftPointVis = NodePath("../../CornerInts/BL")
 
 [node name="leftIntercepts" type="Node" parent="." unique_id=2081096913]
 
@@ -104,6 +112,28 @@ texture = ExtResource("9_csr1f")
 z_index = 1000
 position = Vector2(-172, -88)
 texture = ExtResource("9_csr1f")
+
+[node name="CornerInts" type="Node" parent="." unique_id=2138319246]
+
+[node name="TR" type="Sprite2D" parent="CornerInts" unique_id=1134477330]
+z_index = 1000
+position = Vector2(-172, -88)
+texture = ExtResource("7_wdxcq")
+
+[node name="TL" type="Sprite2D" parent="CornerInts" unique_id=819619763]
+z_index = 1000
+position = Vector2(-172, -88)
+texture = ExtResource("7_wdxcq")
+
+[node name="BR" type="Sprite2D" parent="CornerInts" unique_id=534962467]
+z_index = 1000
+position = Vector2(-172, -88)
+texture = ExtResource("7_wdxcq")
+
+[node name="BL" type="Sprite2D" parent="CornerInts" unique_id=1217293883]
+z_index = 1000
+position = Vector2(-172, -88)
+texture = ExtResource("7_wdxcq")
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=302372085]
 z_index = -10
