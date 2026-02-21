@@ -7,7 +7,7 @@ signal Interacted()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if get_child(0) != CollisionObject2D:
+	if !(get_child(0)):
 		push_error("InteractableComponent of " + get_parent().name + " has no CollisionShape child!")
 
 

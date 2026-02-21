@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c11ixmfk04ij0"]
+
+[ext_resource type="Script" uid="uid://cs7kruomn4moc" path="res://player_interaction_system.gd" id="1_g8h8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8h8e"]
+size = Vector2(30, 15)
+
+[node name="PlayerInteractionSystem" type="Area2D" unique_id=1699919203]
+collision_layer = 0
+collision_mask = 512
+script = ExtResource("1_g8h8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689562743]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_g8h8e")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

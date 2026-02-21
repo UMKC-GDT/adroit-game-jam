@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 
 
 func _on_interactable_component_interacted() -> void:
-	pass # Replace with function body.
+	$AnimationPlayer.play("open")
+	

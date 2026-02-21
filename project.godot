@@ -58,6 +58,7 @@ interact={
 2d_physics/layer_2="QuantumObjects"
 2d_physics/layer_3="PresentSolid"
 2d_physics/layer_4="FutureSolid"
+2d_physics/layer_10="Interaction Layer"
 
 [physics]
 
