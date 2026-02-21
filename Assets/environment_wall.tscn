@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2woo7qenofmx"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_4y7j2"]
+[ext_resource type="Script" uid="uid://bfaug20ao3n1q" path="res://Scripts/superwall.gd" id="2_4y7j2"]
+[ext_resource type="Texture2D" uid="uid://cyvg4tkosel2s" path="res://Resources/Benefits-of-Stainless-Steel-scaled.jpeg" id="3_o2210"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y7j2"]
+size = Vector2(128, 256)
+
+[node name="Superwall" unique_id=1605235542 instance=ExtResource("1_4y7j2")]
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("2_4y7j2")
+movable = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.05, 0.14997071)
+texture = ExtResource("3_o2210")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_4y7j2")

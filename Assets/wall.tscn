@@ -5,17 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://dsejco3y7lxi2" path="res://Resources/Stone_wall.jpg" id="3_m5syp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ei0nf"]
-size = Vector2(20, 60)
+size = Vector2(32, 64)
 
-[node name="Basic Wall" unique_id=1605235542 instance=ExtResource("1_hpd3s")]
+[node name="Wall" unique_id=1605235542 instance=ExtResource("1_hpd3s")]
 gravity_scale = 0.0
 freeze = true
 script = ExtResource("2_hpd3s")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-position = Vector2(9.536743e-07, -4.7683716e-07)
-scale = Vector2(0.08, 0.24000001)
+position = Vector2(-4.7683716e-07, 1.1920929e-06)
+scale = Vector2(0.12799999, 0.25599998)
 texture = ExtResource("3_m5syp")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
