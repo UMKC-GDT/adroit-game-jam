@@ -8,6 +8,7 @@ class_name LightObject
 enum Timeline { PRESENT, FUTURE }
 @export var native_timeline: Timeline = Timeline.PRESENT
 @export var movable: bool = true
+@export var is_tangible: bool = true
 
 #This array stores the lights currently observing this object, to allow us to check who has the most priority and who's say goes.
 var overlapping_lights: Array[QuantumLight] = []
@@ -71,16 +72,17 @@ func update_state():
 		if is_active:
 			set_deferred("sleeping", false)
 
-	# Here, we specify physics to be on two different layers so that a Present object and a Future object can exist in the same coordinates without seeing each other. 
-	var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4
-	
-	#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
-	call_deferred("set_collision_layer_value", 1, is_active) # World Layer
-	call_deferred("set_collision_mask_value", 1, is_active)  # World Mask
-	
-	#Set that specified physics layer to be active or not if we're meant to exist.
-	call_deferred("set_collision_layer_value", physics_layer, is_active)
-	call_deferred("set_collision_mask_value", physics_layer, is_active)
+	if is_tangible:
+		# Here, we specify physics to be on two different layers so that a Present object and a Future object can exist in the same coordinates without seeing each other. 
+		var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4
+		
+		#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
+		call_deferred("set_collision_layer_value", 1, is_active) # World Layer
+		call_deferred("set_collision_mask_value", 1, is_active)  # World Mask
+		
+		#Set that specified physics layer to be active or not if we're meant to exist.
+		call_deferred("set_collision_layer_value", physics_layer, is_active)
+		call_deferred("set_collision_mask_value", physics_layer, is_active)
 
 	#Waking us back up? Restore our physics. 
 	if not was_active and is_active:

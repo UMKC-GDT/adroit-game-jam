@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b8bp1j3tn8qlf" path="res://Assets/basic_platform.tscn" id="2_l6gqm"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_8jemr"]
 [ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/wall.tscn" id="5_sdwps"]
+[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/switch_door.tscn" id="6_5xlm7"]
+[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/door_switch.tscn" id="7_0hrnv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q12u6"]
 
@@ -58,6 +60,9 @@ position = Vector2(-0.00072336197, 0.00016003847)
 scale = Vector2(0.9284992, 1.2479337)
 shape = SubResource("RectangleShape2D_joc8x")
 
+[node name="QuantumLight" parent="." unique_id=1102303240 instance=ExtResource("3_8jemr")]
+position = Vector2(-253, -279)
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("1_x4ty1")]
 position = Vector2(83, -122)
 
@@ -65,19 +70,24 @@ position = Vector2(83, -122)
 flashlight_radius = 30
 
 [node name="Basic Platform" parent="." unique_id=1605235542 instance=ExtResource("2_l6gqm")]
-position = Vector2(-14, -71)
+position = Vector2(-11, -270)
 native_timeline = 1
 
 [node name="Basic Platform2" parent="." unique_id=2115145931 instance=ExtResource("2_l6gqm")]
-position = Vector2(-134, -70)
+position = Vector2(-131, -273)
 
 [node name="Basic Platform3" parent="." unique_id=1136384677 instance=ExtResource("2_l6gqm")]
-position = Vector2(-247, -73)
+position = Vector2(-423, -261)
 gravity_scale = 1.0
 movable = true
 
-[node name="QuantumLight" parent="." unique_id=1102303240 instance=ExtResource("3_8jemr")]
-position = Vector2(-252, -231)
-
 [node name="Basic Wall" parent="." unique_id=565521649 instance=ExtResource("5_sdwps")]
-position = Vector2(163, -58)
+position = Vector2(188, -59)
+native_timeline = 1
+
+[node name="SwitchDoor" parent="." unique_id=1922759333 instance=ExtResource("6_5xlm7")]
+position = Vector2(188, -59)
+
+[node name="Door Switch" parent="." unique_id=579569878 node_paths=PackedStringArray("target_door") instance=ExtResource("7_0hrnv")]
+position = Vector2(-251, -80)
+target_door = NodePath("../SwitchDoor")
