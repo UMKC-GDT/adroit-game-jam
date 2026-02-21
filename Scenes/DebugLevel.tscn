@@ -10,20 +10,48 @@ size = Vector2(1.0752493, 0.78746146)
 [node name="Level1" type="Node2D" unique_id=623034409]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1526170064]
-position = Vector2(0, -48)
+position = Vector2(282, -230)
 zoom = Vector2(1.09, 1.09)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=242611130]
+[node name="Floor" type="StaticBody2D" parent="." unique_id=242611130]
 scale = Vector2(1032.7, 55.310192)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=654659871]
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=654659871]
 scale = Vector2(0.99999994, 0.9999999)
 texture = SubResource("PlaceholderTexture2D_q12u6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=266080070]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=266080070]
+position = Vector2(-0.00072314707, 2.928673e-08)
+scale = Vector2(0.9284992, 1.2479337)
+shape = SubResource("RectangleShape2D_joc8x")
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1322159536]
+position = Vector2(499.00003, -259)
+scale = Vector2(33.713074, 475.92892)
+collision_layer = 2049
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1215914626]
+scale = Vector2(0.99999994, 0.9999999)
+texture = SubResource("PlaceholderTexture2D_q12u6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=1670815736]
+position = Vector2(-0.00072314707, 2.928673e-08)
+scale = Vector2(0.9284992, 1.2479337)
+shape = SubResource("RectangleShape2D_joc8x")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1278319467]
+position = Vector2(363.00003, -375)
+scale = Vector2(33.713074, 475.92892)
+collision_layer = 2049
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=1941904087]
+scale = Vector2(0.99999994, 0.9999999)
+texture = SubResource("PlaceholderTexture2D_q12u6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=2083538386]
 position = Vector2(-0.00072314707, 2.928673e-08)
 scale = Vector2(0.9284992, 1.2479337)
 shape = SubResource("RectangleShape2D_joc8x")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("1_pcaqv")]
-position = Vector2(-493, -50)
+position = Vector2(207, -50)
