@@ -7,6 +7,7 @@ class_name LightObject
 
 enum Timeline { PRESENT, FUTURE }
 @export var native_timeline: Timeline = Timeline.PRESENT
+@export var movable: bool = true
 
 #This array stores the lights currently observing this object, to allow us to check who has the most priority and who's say goes.
 var overlapping_lights: Array[QuantumLight] = []
@@ -23,6 +24,8 @@ var stored_angular_vel: float = 0.0
 
 # Called when the node enters the scene tree for the first time, and immediately tells it to check if it's being observed at all. If it's not being observed, calling update_state() here should make it immediately just disappear. After all -- if it's not being observed, it doesn't exist!
 func _ready() -> void:
+	freeze = !movable
+	
 	update_state()
 
 ##Called when this object enters a quantum light so it can update its observation state. 
@@ -63,9 +66,10 @@ func update_state():
 	#Some of the more fancy physics and layers stuff happens below. For a note, we call "deferred" to add it to Godot's execution queue so it finishes whatever current physics calculations its doing BEFORE it starts handling our BS. 
 	
 	#Turn off gravity and any physics. We force sleeping to be false when we're active so we give this object's physics a kick in the pants to work.
-	set_deferred("freeze", !is_active)
-	if is_active:
-		set_deferred("sleeping", false)
+	if movable:
+		set_deferred("freeze", !is_active)
+		if is_active:
+			set_deferred("sleeping", false)
 
 	# Here, we specify physics to be on two different layers so that a Present object and a Future object can exist in the same coordinates without seeing each other. 
 	var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4

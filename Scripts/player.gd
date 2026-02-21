@@ -73,7 +73,7 @@ func doGroundMovement(delta: float):
 			self.velocity.x = 0
 	else:
 		# add to speed
-		self.velocity.x += speed * inputDir
+		self.velocity.x = speed * inputDir
 		# limit speed
 		self.velocity.x = limitSpeed(self.velocity.x, maxSpeed)
 
