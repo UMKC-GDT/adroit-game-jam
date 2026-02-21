@@ -23,6 +23,10 @@ var inputDir := 0.0
 var canDoubleJump := true
 var canWallJump := true
 
+var jumpHeldLength := 0.0
+var maxJumpHold := 0.5
+var minJumpStrength := 0.5
+
 
 func _ready() -> void:
 	spawnPosition = self.position
@@ -30,8 +34,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	getInputDir()
 	
-	if(Input.is_action_just_pressed("jump")):
-		doJump()
+	if(Input.is_action_pressed("jump")):
+		jumpHeldLength += delta
+		
+		# Limit length it can be held
+		if(jumpHeldLength > maxJumpHold):
+			jumpHeldLength = maxJumpHold
+	
+	elif(Input.is_action_just_released("jump")):
+		# Get percent of max time space was held for
+		var percentOfTimeHeld = jumpHeldLength / maxJumpHold
+		if(percentOfTimeHeld < minJumpStrength):
+			doJump(minJumpStrength)
+		else:
+			doJump(percentOfTimeHeld)
+		jumpHeldLength = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -80,9 +97,9 @@ func doAirMovement(delta: float):
 		self.velocity.x -= airSpeed * delta
 
 
-func doJump():
+func doJump(powerMult: float):
 	if(is_on_floor()):
-		self.velocity.y = -jumpVelocity
+		self.velocity.y = -jumpVelocity * powerMult
 	elif(getDirectionForWallJump() != 0 and canWallJump): #If we have a wall we can jump to
 			doWallJump()
 			return
@@ -96,7 +113,7 @@ func doJump():
 			self.velocity.x = self.velocity.x * -0.8
 		elif(isMovingLeft() and wantsToGoRight()):
 			self.velocity.x = self.velocity.x * -0.8
-
+			
 
 func getDirectionForWallJump(): # 1 = right, -1 = left, 0 is none
 	if(rightWallCast.is_colliding() and leftWallCast.is_colliding()):
