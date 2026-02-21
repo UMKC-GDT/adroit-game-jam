@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Adroit Game Jam"
-run/main_scene="uid://vax2icyvycyc"
+run/main_scene="uid://cb44e2qqw8ksw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -51,6 +51,7 @@ jump={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=1200.0
 
 [rendering]
 
