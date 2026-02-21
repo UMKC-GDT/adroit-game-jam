@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bonminnmle3gg"]
+
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="1_iv4ae"]
+[ext_resource type="Script" uid="uid://bo6uxh0furtv5" path="res://Scripts/simple_flashlight.gd" id="2_bkrqq"]
+
+[node name="SimpleFlashlight" unique_id=371804446 instance=ExtResource("1_iv4ae")]
+script = ExtResource("2_bkrqq")
+light_priority = 1
+
+[node name="LightBeam" parent="." index="0" unique_id=984337879]
+rotation = -1.5707964
