@@ -36,6 +36,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	pass
+
+
+func _physics_process(delta: float) -> void:
 	getInputDir()
 	
 	if(Input.is_action_pressed("jump")):
@@ -50,9 +54,7 @@ func _process(delta: float) -> void:
 	elif(Input.is_action_just_released("jump")):
 		canJump = false
 		jumpHeldLength = 0
-
-
-func _physics_process(delta: float) -> void:
+	
 	if(self.is_on_floor()):
 		canJump = true
 		doGroundMovement(delta)
@@ -121,7 +123,7 @@ func groundJump():
 func airJump():
 	# Apply upward force if player is still holding jump
 	if(jumpHeldLength > 0 and jumpHeldLength < maxJumpHold):
-		self.velocity.y -= jumpConstantForce
+		self.velocity.y -= jumpConstantForce 
 	elif(canDoubleJump):
 		self.velocity.y = -doubleJumpVelocity
 		
