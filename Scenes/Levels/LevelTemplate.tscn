@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://6accenrnyrq6"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_d0coj"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_d0coj"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_n4ce2"]
-[ext_resource type="PackedScene" path="res://Assets/ground.tscn" id="3_asxnk"]
-[ext_resource type="PackedScene" path="res://Assets/wall.tscn" id="4_mm6ix"]
+[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/ground.tscn" id="3_asxnk"]
+[ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/wall.tscn" id="4_mm6ix"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="5_m4q6y"]
-[ext_resource type="PackedScene" path="res://Assets/simple_flashlight.tscn" id="6_pj3xo"]
+[ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="5_n4ce2"]
+[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="6_pj3xo"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_d0coj")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_n4ce2")]
-position = Vector2(-464, -472.00006)
+position = Vector2(-535.99994, -568.00006)
 rotation = -0.76982385
 scale = Vector2(7.94227, 2.311422)
 
@@ -33,7 +34,11 @@ position = Vector2(256, 192)
 position = Vector2(0, 192)
 
 [node name="Basic Wall" parent="Present" unique_id=1118751725 instance=ExtResource("4_mm6ix")]
-position = Vector2(0, 160)
+position = Vector2(-128, 160)
+
+[node name="Superwall" parent="Present" unique_id=1222364383 instance=ExtResource("5_n4ce2")]
+position = Vector2(192, 0)
+collision_layer = 2051
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -61,7 +66,18 @@ native_timeline = 1
 position = Vector2(256, 192)
 native_timeline = 1
 
+[node name="Superwall2" parent="Future" unique_id=1032632865 instance=ExtResource("5_n4ce2")]
+position = Vector2(-64, 0)
+collision_layer = 2051
+native_timeline = 1
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_m4q6y")]
+speed = 200.0
+airSpeed = 200.0
+air_accel = 1000.0
+turnaround_multiplier = 1.5
+jumpVelocity = 400.0
+wallJumpPushOff = 450.0
 
 [node name="SimpleFlashlight" parent="Player" unique_id=949392061 instance=ExtResource("6_pj3xo")]
 flashlight_radius = 35

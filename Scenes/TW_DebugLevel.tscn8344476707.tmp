@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/door_switch.tscn" id="7_0hrnv"]
 [ext_resource type="PackedScene" uid="uid://jq4ty4n82o56" path="res://Assets/big_platform.tscn" id="8_0hrnv"]
 [ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="9_cpuyv"]
-[ext_resource type="PackedScene" uid="uid://cmfnb1uor7u0c" path="res://Scenes/end_level_door.tscn" id="10_cpuyv"]
 [ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/ground.tscn" id="10_wmenr"]
 
 [node name="Level1" type="Node2D" unique_id=623034409]
@@ -73,6 +72,3 @@ position = Vector2(128, 0)
 
 [node name="SwitchDoor" parent="." unique_id=1841938187 instance=ExtResource("6_5xlm7")]
 position = Vector2(80, -32)
-
-[node name="EndLevelDoor" parent="." unique_id=758515234 instance=ExtResource("10_cpuyv")]
-position = Vector2(-155, -24)

@@ -83,6 +83,10 @@ func update_state():
 		#Set that specified physics layer to be active or not if we're meant to exist.
 		call_deferred("set_collision_layer_value", physics_layer, is_active)
 		call_deferred("set_collision_mask_value", physics_layer, is_active)
+		
+		#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
+		call_deferred("set_collision_layer_value", 12, is_active) # World Layer
+		call_deferred("set_collision_mask_value", 12, is_active)  # World Mask
 
 	#Waking us back up? Restore our physics. 
 	if not was_active and is_active:

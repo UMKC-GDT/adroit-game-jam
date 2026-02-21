@@ -2,7 +2,13 @@ extends CharacterBody2D
 
 @export var speed := 40.0
 @export var maxSpeed := 250.0
+
 @export var airSpeed := 300.0
+@export var max_air_speed: float = 300.0
+@export var air_accel: float = 800.0
+@export var air_drag: float = 400.0
+@export var turnaround_multiplier: float = 2.5
+
 @export var groundFriction := 1300.0
 @export var airFriction := 50.0
 @export var jumpVelocity := 250.0
@@ -82,6 +88,10 @@ func doGroundMovement(delta: float):
 
 
 func doAirMovement(delta: float):
+	
+	var current_accel = air_accel if inputDir != 0 else air_drag
+	var target_speed = inputDir * max_air_speed
+	
 	# Apply Gravity
 	self.velocity.y += gravity * delta
 	if(self.velocity.y > maxFallSpeed):
@@ -99,12 +109,11 @@ func doAirMovement(delta: float):
 		self.velocity.x -= airFriction * delta
 	elif(isMovingLeft()):
 		self.velocity.x += airFriction * delta
+		
+	if inputDir != 0 and sign(inputDir) != sign(self.velocity.x):
+		current_accel *= turnaround_multiplier
 	
-	# Add a little speed in air if player is trying to move
-	if(wantsToGoRight()):
-		self.velocity.x += airSpeed * delta
-	elif(wantsToGoLeft()):
-		self.velocity.x -= airSpeed * delta
+	self.velocity.x = move_toward(self.velocity.x, target_speed, current_accel * delta)
 
 
 func doJump():
