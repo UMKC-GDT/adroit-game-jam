@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhutbgdbmmpm5"]
 
-[ext_resource type="Script" uid="uid://krdeol7c1ccx" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://d15or1jgujwnr" path="res://Scripts/player.gd" id="1_v0iea"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f60y1"]
 
@@ -18,3 +18,13 @@ texture = SubResource("CanvasTexture_f60y1")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
 shape = SubResource("CapsuleShape2D_v0iea")
+
+[node name="LeftWallCast" type="RayCast2D" parent="." unique_id=1849282611]
+exclude_parent = false
+target_position = Vector2(-11, 0)
+collision_mask = 2048
+
+[node name="RightWallCast" type="RayCast2D" parent="." unique_id=977911928]
+exclude_parent = false
+target_position = Vector2(11, 0)
+collision_mask = 2048
