@@ -80,11 +80,13 @@ scale = Vector2(0.9284992, 1.2479337)
 shape = SubResource("RectangleShape2D_joc8x")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1526170064]
-position = Vector2(830, -368)
-zoom = Vector2(0.7, 0.7)
+position = Vector2(206, -82)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("1_pcaqv")]
 position = Vector2(207, -50)
+airSpeed = 300.0
+jumpVelocity = 250.0
 
 [node name="Ground" parent="." unique_id=1605235542 instance=ExtResource("2_p04xc")]
 position = Vector2(729, -512)

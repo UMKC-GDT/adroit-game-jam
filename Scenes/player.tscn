@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://dhutbgdbmmpm5"]
 
 [ext_resource type="Script" uid="uid://d15or1jgujwnr" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://dfo3mnbc4yun0" path="res://Resources/PlayerSprites/Standing.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://c11ixmfk04ij0" path="res://Scenes/player_interaction_system.tscn" id="2_cvnsp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6t5aa")
+}],
+"loop": true,
+"name": &"defaultLight",
+"speed": 5.0
+}]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f60y1"]
 
@@ -15,8 +27,14 @@ airSpeed = 500.0
 jumpVelocity = 500.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=43446781]
+texture_filter = 1
+position = Vector2(0, -1.0000001)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_vgqql")
+animation = &"defaultLight"
 
 [node name="TempSprite" type="Sprite2D" parent="." unique_id=2136944729]
+visible = false
 scale = Vector2(17.80562, 37.760002)
 texture = SubResource("CanvasTexture_f60y1")
 
