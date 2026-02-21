@@ -1,7 +1,8 @@
-extends Sprite2D
+extends StaticBody2D
 class_name StaticPlatform
 
 @export var wasVisible: bool = false
+@export var sprite: Sprite2D
 
 var topLeftPoint: Vector2
 var topRightPoint: Vector2
@@ -25,13 +26,14 @@ var botRightPoint: Vector2
 @export var botRightPointVis: Node2D
 @export var botLeftPointVis: Node2D
 
+var collider: CollisionPolygon2D
 
 # sets the corner vectors of each point
 func _ready() -> void:
-	var scaleX = self.scale.x * platformSize
-	var scaleY = self.scale.y * platformSize
+	var scaleX = sprite.scale.x * platformSize
+	var scaleY = sprite.scale.y * platformSize
 	
-	var center = self.position
+	var center = sprite.global_position
 	
 	botLeftPoint = center + Vector2(-scaleX, scaleY)
 	botRightPoint = center + Vector2(scaleX, scaleY)
@@ -43,11 +45,30 @@ func _ready() -> void:
 func CheckToCreateCollisionBox(playerPosition: Vector2, positiveLineEndPoint: Vector2, negativeLineEndPoint: Vector2):
 	var collisionVertexes = GetCollisionPoints(playerPosition, positiveLineEndPoint, negativeLineEndPoint)
 	
-	if (collisionVertexes != null && collisionVertexes.size() > 0):
-		print("Got it")
-		#TODO make the light collision box based off the vertexes that we have
+	if (collider != null):
+		remove_child(collider)
+		collider = null
 		
+	if (collisionVertexes != null && collisionVertexes.size() > 0):
+		collisionVertexes = SortPoints(collisionVertexes)
+		collider = CollisionPolygon2D.new()
+		
+		collider.polygon = PackedVector2Array(collisionVertexes)
+		add_child(collider)
 	pass
+
+func SortPoints(points: Array[Vector2]) -> Array[Vector2]:
+	if (points.size() < 3):
+		return points
+	var c = Vector2.ZERO
+	for p in points: 
+		c += p
+	c /= points.size()
+	
+	points.sort_custom(func(a,b):
+		return(a-c).angle() < (b-c).angle()
+		)
+	return points
 	
 # So this will check if the light intercets this box
 func GetCollisionPoints(playerPosition: Vector2, positiveLineEndPoint: Vector2, negativeLineEndPoint: Vector2):
@@ -162,7 +183,7 @@ func GetCollisionPoints(playerPosition: Vector2, positiveLineEndPoint: Vector2, 
 	else:
 		botIntPointLeftVis.visible = false
 	
-	pass
+	return collisionVertexs
 	
 # Gets the point one line intersects witha another point
 func GetWhereLightIntersectsPlatform(point1: Vector2, point2: Vector2, point3: Vector2, point4: Vector2):

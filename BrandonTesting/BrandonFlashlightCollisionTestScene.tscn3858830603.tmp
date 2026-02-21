@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://daa5d8irsb2dq" path="res://BrandonTesting/CornerPoints.png" id="7_wdxcq"]
 [ext_resource type="Texture2D" uid="uid://ddgvw745twicv" path="res://BrandonTesting/redand-blue-checkerboard-pattern-udlz4yv6fsolhbf6.jpg" id="8_48iqr"]
 [ext_resource type="Texture2D" uid="uid://3jan2sly6brj" path="res://BrandonTesting/IntersectionPoint2.png" id="9_csr1f"]
+[ext_resource type="Script" uid="uid://do0lperatfhyb" path="res://BrandonTesting/testPlatform.gd" id="12_aitpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv006"]
 size = Vector2(100, 100)
@@ -37,7 +38,7 @@ positivePoint = NodePath("../Pos")
 negativePoint = NodePath("../Neg")
 lightFieldOfView = 30.0
 lightDistance = 500.0
-platforms = [NodePath("../Platform/StaticBody2D"), NodePath("../Platform2/StaticBody2D")]
+platforms = [NodePath("../Platform/StaticBody2D/PlatSprite")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=390841653]
 shape = SubResource("RectangleShape2D_ru7et")
@@ -50,27 +51,16 @@ texture = ExtResource("3_qiaj8")
 
 [node name="Platform" type="Node2D" parent="." unique_id=1180813408]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1995279920 node_paths=PackedStringArray("sprite", "botIntPointLeftVis", "leftIntPointLeftVis", "rightIntPointLeftVis", "topIntPointLeftVis", "botIntPointRightVis", "leftIntPointRightVis", "rightIntPointRightVis", "topIntPointRightVis", "topLeftPointVis", "topRightPointVis", "botRightPointVis", "botLeftPointVis")]
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1995279920]
 script = ExtResource("4_qiaj8")
-sprite = NodePath("PlatSprite")
-platformSize = 50.0
-botIntPointLeftVis = NodePath("../rightIntercepts/botInt")
-leftIntPointLeftVis = NodePath("../rightIntercepts/leftInt")
-rightIntPointLeftVis = NodePath("../rightIntercepts/rightInt")
-topIntPointLeftVis = NodePath("../rightIntercepts/topInt")
-botIntPointRightVis = NodePath("../leftIntercepts/botInt")
-leftIntPointRightVis = NodePath("../leftIntercepts/leftInt")
-rightIntPointRightVis = NodePath("../leftIntercepts/rightInt")
-topIntPointRightVis = NodePath("../leftIntercepts/topInt")
-topLeftPointVis = NodePath("../CornerInts/TL")
-topRightPointVis = NodePath("../CornerInts/TR")
-botRightPointVis = NodePath("../CornerInts/BR")
-botLeftPointVis = NodePath("../CornerInts/BL")
 
 [node name="PlatSprite" type="Sprite2D" parent="Platform/StaticBody2D" unique_id=1177528414]
 position = Vector2(-228.5, -65)
 scale = Vector2(1.5699999, 1.9000001)
 texture = ExtResource("3_qiaj8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform/StaticBody2D" unique_id=250148735]
+polygon = PackedVector2Array(0, 0, 5, 5, 5, 0, 0, 5)
 
 [node name="CornerInts" type="Node" parent="Platform" unique_id=2138319246]
 
@@ -138,96 +128,6 @@ z_index = 1000
 position = Vector2(-172, -88)
 texture = ExtResource("7_4bnb4")
 
-[node name="Platform2" type="Node2D" parent="." unique_id=701757732]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Platform2" unique_id=283496751 node_paths=PackedStringArray("sprite", "botIntPointLeftVis", "leftIntPointLeftVis", "rightIntPointLeftVis", "topIntPointLeftVis", "botIntPointRightVis", "leftIntPointRightVis", "rightIntPointRightVis", "topIntPointRightVis", "topLeftPointVis", "topRightPointVis", "botRightPointVis", "botLeftPointVis")]
-script = ExtResource("4_qiaj8")
-sprite = NodePath("PlatSprite")
-platformSize = 50.0
-botIntPointLeftVis = NodePath("../rightIntercepts/botInt")
-leftIntPointLeftVis = NodePath("../rightIntercepts/leftInt")
-rightIntPointLeftVis = NodePath("../rightIntercepts/rightInt")
-topIntPointLeftVis = NodePath("../rightIntercepts/topInt")
-botIntPointRightVis = NodePath("../leftIntercepts/botInt")
-leftIntPointRightVis = NodePath("../leftIntercepts/leftInt")
-rightIntPointRightVis = NodePath("../leftIntercepts/rightInt")
-topIntPointRightVis = NodePath("../leftIntercepts/topInt")
-topLeftPointVis = NodePath("../CornerInts/TL")
-topRightPointVis = NodePath("../CornerInts/TR")
-botRightPointVis = NodePath("../CornerInts/BR")
-botLeftPointVis = NodePath("../CornerInts/BL")
-
-[node name="PlatSprite" type="Sprite2D" parent="Platform2/StaticBody2D" unique_id=1878444857]
-position = Vector2(288.49997, -28.999998)
-scale = Vector2(1.0699992, 0.25999993)
-texture = ExtResource("3_qiaj8")
-
-[node name="CornerInts" type="Node" parent="Platform2" unique_id=1902014506]
-
-[node name="TR" type="Sprite2D" parent="Platform2/CornerInts" unique_id=498075571]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_wdxcq")
-
-[node name="TL" type="Sprite2D" parent="Platform2/CornerInts" unique_id=1737769825]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_wdxcq")
-
-[node name="BR" type="Sprite2D" parent="Platform2/CornerInts" unique_id=1192607461]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_wdxcq")
-
-[node name="BL" type="Sprite2D" parent="Platform2/CornerInts" unique_id=1234006270]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_wdxcq")
-
-[node name="rightIntercepts" type="Node" parent="Platform2" unique_id=1187325190]
-
-[node name="botInt" type="Sprite2D" parent="Platform2/rightIntercepts" unique_id=484411072]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("9_csr1f")
-
-[node name="leftInt" type="Sprite2D" parent="Platform2/rightIntercepts" unique_id=370988660]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("9_csr1f")
-
-[node name="rightInt" type="Sprite2D" parent="Platform2/rightIntercepts" unique_id=770577856]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("9_csr1f")
-
-[node name="topInt" type="Sprite2D" parent="Platform2/rightIntercepts" unique_id=125825085]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("9_csr1f")
-
-[node name="leftIntercepts" type="Node" parent="Platform2" unique_id=2107044812]
-
-[node name="botInt" type="Sprite2D" parent="Platform2/leftIntercepts" unique_id=1406449868]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_4bnb4")
-
-[node name="leftInt" type="Sprite2D" parent="Platform2/leftIntercepts" unique_id=1682476172]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_4bnb4")
-
-[node name="rightInt" type="Sprite2D" parent="Platform2/leftIntercepts" unique_id=584911678]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_4bnb4")
-
-[node name="topInt" type="Sprite2D" parent="Platform2/leftIntercepts" unique_id=1144220769]
-z_index = 1000
-position = Vector2(-172, -88)
-texture = ExtResource("7_4bnb4")
-
 [node name="Backgound" type="Sprite2D" parent="." unique_id=302372085]
 z_index = -10
 position = Vector2(2.500061, -226.99995)
@@ -244,3 +144,12 @@ texture = ExtResource("5_aitpi")
 [node name="Neg" type="Sprite2D" parent="." unique_id=2108455160]
 position = Vector2(-171, -155)
 texture = ExtResource("6_ccx3f")
+
+[node name="Platform2" type="Node2D" parent="." unique_id=1590020769]
+
+[node name="PlatSprite" type="Sprite2D" parent="Platform2" unique_id=1171566874]
+position = Vector2(141, -78)
+scale = Vector2(1.5699999, 1.9000001)
+texture = ExtResource("3_qiaj8")
+script = ExtResource("12_aitpi")
+platformSize = 50.0
