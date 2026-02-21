@@ -49,7 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _process(delta: float) -> void:
 	SetAnglePointLocation()
-	CheckCollisions()
+	FindLineIntersectionsWithBox(platformTest)
 	
 var angleForLookPosition
 func SetAnglePointLocation():
@@ -58,13 +58,19 @@ func SetAnglePointLocation():
 	positivePoint.position = self.position + aimOffset.normalized().rotated(deg_to_rad(lightFieldOfView)) * lightDistance
 	negativePoint.position = self.position +  aimOffset.normalized().rotated(deg_to_rad(-lightFieldOfView)) * lightDistance
 
-@export var platform: Sprite2D
+@export var platformTest: Sprite2D
 @export var botIntPoint: Node2D
 @export var leftIntPoint: Node2D
 @export var rightIntPoint: Node2D
 @export var topIntPoint: Node2D
 
-func CheckCollisions():
+@export var botIntPoint2: Node2D
+@export var leftIntPoint2: Node2D
+@export var rightIntPoint2: Node2D
+@export var topIntPoint2: Node2D
+
+
+func FindLineIntersectionsWithBox(platform: Sprite2D):
 	var scaleX = (platform.scale.x * 100) / 2
 	var scaleY = (platform.scale.y * 100 )/ 2
 
@@ -79,19 +85,62 @@ func CheckCollisions():
 	
 	var intersection = Geometry2D.segment_intersects_segment(topLeft, topRight, self.position, negativePoint.position)
 	if (intersection != null):
+		botIntPoint.visible = true
 		botIntPoint.position = intersection
-	
+	else:
+		botIntPoint.visible = false
+		
 	intersection = Geometry2D.segment_intersects_segment(topRight, botRight, self.position, negativePoint.position)
 	if (intersection != null):
+		leftIntPoint.visible = true
 		leftIntPoint.position = intersection
-	
+	else:
+		leftIntPoint.visible = false
+		
 	intersection = Geometry2D.segment_intersects_segment(botRight, botLeft, self.position, negativePoint.position)
 	if (intersection != null):
+		rightIntPoint.visible = true
 		rightIntPoint.position = intersection
-	
+	else:
+		rightIntPoint.visible = false
+		
 	intersection = Geometry2D.segment_intersects_segment(botLeft, topLeft, self.position, negativePoint.position)
 	if (intersection != null):
+		topIntPoint.visible = true
 		topIntPoint.position = intersection	
+	else:
+		topIntPoint.visible = false
+	
+	
+	
+	
+	intersection = Geometry2D.segment_intersects_segment(topLeft, topRight, self.position, positivePoint.position)
+	if (intersection != null):
+		botIntPoint2.visible = true
+		botIntPoint2.position = intersection
+	else:
+		botIntPoint2.visible = false
+		
+	intersection = Geometry2D.segment_intersects_segment(topRight, botRight, self.position, positivePoint.position)
+	if (intersection != null):
+		leftIntPoint2.visible = true
+		leftIntPoint2.position = intersection
+	else:
+		leftIntPoint2.visible = false
+		
+	intersection = Geometry2D.segment_intersects_segment(botRight, botLeft, self.position, positivePoint.position)
+	if (intersection != null):
+		rightIntPoint2.visible = true
+		rightIntPoint2.position = intersection
+	else:
+		rightIntPoint2.visible = false
+		
+	intersection = Geometry2D.segment_intersects_segment(botLeft, topLeft, self.position, positivePoint.position)
+	if (intersection != null):
+		topIntPoint2.visible = true
+		topIntPoint2.position = intersection
+	else:
+		topIntPoint2.visible = false
 	#CheckIfPointIsInLight(topLeft, "tl")
 	#CheckIfPointIsInLight(topRight, "tr")
 	#CheckIfPointIsInLight(botLeft, "bl")
