@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://be1fpp324uejk" path="res://Resources/country-house-door-pine-wood.jpg" id="3_kgsnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfrh3"]
-size = Vector2(16, 64)
+size = Vector2(16, 32)
 
 [node name="SwitchDoor" unique_id=1605235542 instance=ExtResource("1_4x4rb")]
 script = ExtResource("2_de8x3")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-position = Vector2(-1.1920929e-07, -1.2516975e-06)
-scale = Vector2(0.026666665, 0.10666667)
+position = Vector2(-1.1920929e-07, 9.536743e-07)
+scale = Vector2(0.026666665, 0.053333335)
 texture = ExtResource("3_kgsnd")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]

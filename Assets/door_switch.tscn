@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="4_h5f3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5drf"]
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ck766"]
-radius = 50.0
+radius = 24.0
 
 [node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
 collision_layer = 2
@@ -17,10 +18,12 @@ movable = false
 is_tangible = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-scale = Vector2(0.09150327, 0.13300493)
+position = Vector2(-1.4305115e-06, 4.7683716e-07)
+scale = Vector2(0.052287582, 0.07881774)
 texture = ExtResource("3_dc32l")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_c5drf")
 
 [node name="InteractableComponent" parent="." index="2" unique_id=642375165 instance=ExtResource("4_h5f3n")]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cyvg4tkosel2s" path="res://Resources/Benefits-of-Stainless-Steel-scaled.jpeg" id="3_lcepu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3bxd"]
-size = Vector2(256, 128)
+size = Vector2(32, 32)
 
 [node name="Ground" unique_id=1605235542 instance=ExtResource("1_ayl4n")]
 gravity_scale = 0.0
@@ -14,10 +14,10 @@ script = ExtResource("2_ayl4n")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-position = Vector2(1.9073486e-06, 64.00001)
-scale = Vector2(0.1, 0.074985355)
+position = Vector2(0, 16.000004)
+scale = Vector2(0.0125, 0.018746335)
 texture = ExtResource("3_lcepu")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
-position = Vector2(0, 64)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_g3bxd")

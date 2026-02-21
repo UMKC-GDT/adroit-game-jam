@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://be5v4jeyf6ac" path="res://Resources/Brick.jpg" id="3_denq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt8cm"]
-size = Vector2(128, 32)
+size = Vector2(64, 16)
 
 [node name="Basic Platform" unique_id=1605235542 instance=ExtResource("1_qt8cm")]
 gravity_scale = 0.0
@@ -14,7 +14,8 @@ script = ExtResource("2_fxxcv")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-scale = Vector2(0.51199996, 0.19161674)
+position = Vector2(1.9073486e-06, 2.3841858e-07)
+scale = Vector2(0.256, 0.09580838)
 texture = ExtResource("3_denq1")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]

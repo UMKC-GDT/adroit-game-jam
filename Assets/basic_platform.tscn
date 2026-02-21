@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://be5v4jeyf6ac" path="res://Resources/Brick.jpg" id="2_gl6ma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfhtt"]
-size = Vector2(64, 16)
+size = Vector2(32, 8)
 
 [node name="Basic Platform" unique_id=1605235542 instance=ExtResource("1_afjsi")]
 gravity_scale = 0.0
@@ -14,10 +14,10 @@ script = ExtResource("2_gfhtt")
 movable = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=357974407]
-position = Vector2(7.1525574e-07, -2.9802322e-07)
-scale = Vector2(0.256, 0.09580839)
+position = Vector2(0, 4)
+scale = Vector2(0.12799999, 0.047904193)
 texture = ExtResource("2_gl6ma")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
-position = Vector2(0, 0)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_gfhtt")
