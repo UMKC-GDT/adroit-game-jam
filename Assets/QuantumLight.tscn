@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dxooy8hk1hneb"]
+
+[ext_resource type="Script" uid="uid://cy4nhurccb7yq" path="res://Scripts/quantum_light.gd" id="1_2av21"]
+
+[node name="QuantumLight" type="Area2D" unique_id=371804446]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2av21")
+
+[node name="LightBeam" type="CollisionPolygon2D" parent="." unique_id=984337879]
+polygon = PackedVector2Array(0, 0, -200, 400, 200, 400)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

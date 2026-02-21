@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpwcrsa8fxsrg"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_buqxk"]
+[ext_resource type="Script" uid="uid://bxkanwhucglt2" path="res://present_box.gd" id="2_x2irm"]
+[ext_resource type="Texture2D" uid="uid://oux6vxqcgkb" path="res://Resources/images.jpg" id="3_x2irm"]
+
+[node name="PresentBox" unique_id=1605235542 instance=ExtResource("1_buqxk")]
+script = ExtResource("2_x2irm")
+
+[node name="Sprite2D" parent="." index="1" unique_id=357974407]
+texture = ExtResource("3_x2irm")
