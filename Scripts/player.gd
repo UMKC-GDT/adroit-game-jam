@@ -5,12 +5,14 @@ extends CharacterBody2D
 @export var airSpeed := 300.0
 @export var groundFriction := 1300.0
 @export var airFriction := 50.0
-@export var jumpVelocity := 430.0
+@export var jumpVelocity := 250.0
+@export var jumpConstantForce := 10.0
+@export var maxJumpHold := 0.35
 @export var doubleJumpVelocity := 400.0
 @export var wallJumpVelocity := 400.0
 @export var wallJumpPushOff := 200.0
 
-@onready var rightWallCast: RayCast2D = $RightWallCast
+@onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
 
 var spawnPosition: Vector2
@@ -20,40 +22,37 @@ var maxFallSpeed := 1200.0
 
 var inputDir := 0.0
 
-var canDoubleJump := true
+var canDoubleJump := false
 var canWallJump := true
 
 var jumpHeldLength := 0.0
-var maxJumpHold := 0.5
-var minJumpStrength := 0.5
+var canJump := false
+
 
 
 func _ready() -> void:
 	spawnPosition = self.position
 
+
 func _process(delta: float) -> void:
 	getInputDir()
 	
 	if(Input.is_action_pressed("jump")):
-		jumpHeldLength += delta
+		if(canJump):
+			jumpHeldLength += delta
 		
 		# Limit length it can be held
-		if(jumpHeldLength > maxJumpHold):
+		if(jumpHeldLength >= maxJumpHold):
 			jumpHeldLength = maxJumpHold
-	
+		doJump()
 	elif(Input.is_action_just_released("jump")):
-		# Get percent of max time space was held for
-		var percentOfTimeHeld = jumpHeldLength / maxJumpHold
-		if(percentOfTimeHeld < minJumpStrength):
-			doJump(minJumpStrength)
-		else:
-			doJump(percentOfTimeHeld)
+		canJump = false
 		jumpHeldLength = 0
 
 
 func _physics_process(delta: float) -> void:
 	if(self.is_on_floor()):
-		canDoubleJump = true
+		canJump = true
 		doGroundMovement(delta)
 	else:
 		doAirMovement(delta)
@@ -79,12 +78,12 @@ func doGroundMovement(delta: float):
 
 
 func doAirMovement(delta: float):
-	# Gravity first
+	# Apply Gravity
 	self.velocity.y += gravity * delta
 	if(self.velocity.y > maxFallSpeed):
 		self.velocity.y = maxFallSpeed
 	
-	#friction based on direction
+	# Friction based on direction
 	if(isMovingRight()):
 		self.velocity.x -= airFriction * delta
 	elif(isMovingLeft()):
@@ -97,16 +96,25 @@ func doAirMovement(delta: float):
 		self.velocity.x -= airSpeed * delta
 
 
-func doJump(powerMult: float):
-	if(is_on_floor()):
-		self.velocity.y = -jumpVelocity * powerMult
-	elif(getDirectionForWallJump() != 0 and canWallJump): #If we have a wall we can jump to
-			doWallJump()
-			return
+func doJump():
+	if(self.is_on_floor()):
+		groundJump()
+	elif(getDirectionForWallJump() != 0 and canWallJump): # Prioritize wall jump over double jump
+		doWallJump()
+	else:
+		airJump()
+
+
+func groundJump():
+	self.velocity.y -= jumpVelocity
+
+
+func airJump():
+	# Apply upward force if player is still holding jump
+	if(jumpHeldLength > 0 and jumpHeldLength < maxJumpHold):
+		self.velocity.y -= jumpConstantForce
 	elif(canDoubleJump):
-		
 		self.velocity.y = -doubleJumpVelocity
-		canDoubleJump = false
 		
 		# Reverse direction if player wants to jump other direction
 		if(isMovingRight() and wantsToGoLeft()):
@@ -114,6 +122,8 @@ func doJump(powerMult: float):
 		elif(isMovingLeft() and wantsToGoRight()):
 			self.velocity.x = self.velocity.x * -0.8
 			
+		canDoubleJump = false
+
 
 func getDirectionForWallJump(): # 1 = right, -1 = left, 0 is none
 	if(rightWallCast.is_colliding() and leftWallCast.is_colliding()):
