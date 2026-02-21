@@ -1,5 +1,5 @@
 extends LightObject
-class_name Ground
+class_name levelGround
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
