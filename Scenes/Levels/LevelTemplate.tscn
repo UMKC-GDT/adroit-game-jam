@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://6accenrnyrq6"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_d0coj"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_n4ce2"]
+[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/ground.tscn" id="3_asxnk"]
+[ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/wall.tscn" id="4_mm6ix"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="5_m4q6y"]
+[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="6_pj3xo"]
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_d0coj")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_n4ce2")]
+position = Vector2(-464, -472.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+
+[node name="Ground" parent="Present" unique_id=1592338874 instance=ExtResource("3_asxnk")]
+position = Vector2(-256, 192)
+
+[node name="Ground3" parent="Present" unique_id=1926846426 instance=ExtResource("3_asxnk")]
+position = Vector2(256, 192)
+
+[node name="Ground2" parent="Present" unique_id=1605235542 instance=ExtResource("3_asxnk")]
+position = Vector2(0, 192)
+
+[node name="Basic Wall" parent="Present" unique_id=1118751725 instance=ExtResource("4_mm6ix")]
+position = Vector2(0, 160)
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+enabled = false
+
+[node name="Ground" parent="Future" unique_id=868509044 instance=ExtResource("3_asxnk")]
+position = Vector2(0, 192)
+native_timeline = 1
+
+[node name="Wall" parent="Future" unique_id=2145832113 instance=ExtResource("4_mm6ix")]
+position = Vector2(256, 160)
+native_timeline = 1
+
+[node name="Wall2" parent="Future" unique_id=615500463 instance=ExtResource("4_mm6ix")]
+position = Vector2(-256, 160)
+native_timeline = 1
+
+[node name="Ground3" parent="Future" unique_id=1190873347 instance=ExtResource("3_asxnk")]
+position = Vector2(-256, 192)
+native_timeline = 1
+
+[node name="Ground2" parent="Future" unique_id=481962173 instance=ExtResource("3_asxnk")]
+position = Vector2(256, 192)
+native_timeline = 1
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_m4q6y")]
+
+[node name="SimpleFlashlight" parent="Player" unique_id=949392061 instance=ExtResource("6_pj3xo")]
+flashlight_radius = 25
