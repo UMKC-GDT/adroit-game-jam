@@ -3,7 +3,7 @@ extends Area2D
 #If this isn't attached to an object that is meant to be interacted with by the player
 #Something went wrong!
 
-signal Interacted()
+signal interacted()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

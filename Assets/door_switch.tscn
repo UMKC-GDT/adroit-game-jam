@@ -30,4 +30,4 @@ position = Vector2(-16, 0)
 position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_ck766")
 
-[connection signal="Interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

@@ -13,9 +13,11 @@ func _ready() -> void:
 
 # Called when the Interacted() signal fires off from the interactable component.
 func _on_interactable_component_interacted() -> void:
+	
 	# You can only flip the switch if it actually exists in reality right now
 	if is_active:
 		is_switch_on = !is_switch_on
+		print("I worked!")
 		update_door()
 
 # 3. THE QUANTUM LOGIC

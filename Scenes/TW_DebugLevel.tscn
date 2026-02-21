@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="2_8jemr"]
 [ext_resource type="PackedScene" uid="uid://b8bp1j3tn8qlf" path="res://Assets/basic_platform.tscn" id="2_l6gqm"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_8jemr"]
-[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/switch_door.tscn" id="6_5xlm7"]
+[ext_resource type="PackedScene" path="res://Assets/switch_door.tscn" id="6_5xlm7"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/door_switch.tscn" id="7_0hrnv"]
-[ext_resource type="PackedScene" uid="uid://jq4ty4n82o56" path="res://Assets/big_platform.tscn" id="8_0hrnv"]
-[ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="9_cpuyv"]
-[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/ground.tscn" id="10_wmenr"]
+[ext_resource type="PackedScene" path="res://Assets/big_platform.tscn" id="8_0hrnv"]
+[ext_resource type="PackedScene" path="res://Assets/environment_wall.tscn" id="9_cpuyv"]
+[ext_resource type="PackedScene" path="res://Assets/ground.tscn" id="10_wmenr"]
 
 [node name="Level1" type="Node2D" unique_id=623034409]
 
