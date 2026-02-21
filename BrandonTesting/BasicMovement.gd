@@ -12,19 +12,19 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
 	
-	
+var floating: bool = false
 func _physics_process(delta: float) -> void:
 	# Apply gravity if the character is not on the floor
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	
 	# Handle jump action
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 
 	# Get input direction and handle movement/deceleration
 	# "ui_left" and "ui_right" are default input actions
-	var direction: float = Input.get_axis("ui_left", "ui_right")
+	var direction: float = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
 	else:
@@ -51,7 +51,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _process(delta: float) -> void:
 	SetAnglePointLocation()
-	print(self.position)
 	for platform in platforms:
 		FindLineIntersectionsWithBox(platform)
 

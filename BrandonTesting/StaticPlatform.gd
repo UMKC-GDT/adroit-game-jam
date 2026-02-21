@@ -1,15 +1,17 @@
 extends StaticBody2D
 class_name StaticPlatform
 
-@export var wasVisible: bool = false
 @export var sprite: Sprite2D
+var polySprite: Polygon2D
+var collider: CollisionPolygon2D
 
 var topLeftPoint: Vector2
 var topRightPoint: Vector2
 var botLeftPoint: Vector2
 var botRightPoint: Vector2
 
-@export var platformSize: float
+@export var platformSizeX: float
+@export var platformSizeY: float
 
 @export var botIntPointLeftVis: Node2D
 @export var leftIntPointLeftVis: Node2D
@@ -26,12 +28,11 @@ var botRightPoint: Vector2
 @export var botRightPointVis: Node2D
 @export var botLeftPointVis: Node2D
 
-var collider: CollisionPolygon2D
 
 # sets the corner vectors of each point
 func _ready() -> void:
-	var scaleX = sprite.scale.x * platformSize
-	var scaleY = sprite.scale.y * platformSize
+	var scaleX = sprite.scale.x * platformSizeX
+	var scaleY = sprite.scale.y * platformSizeY
 	
 	var center = sprite.global_position
 	
@@ -40,6 +41,7 @@ func _ready() -> void:
 	topRightPoint = center + Vector2(scaleX, -scaleY)
 	topLeftPoint = center + Vector2(-scaleX, -scaleY)
 	
+	sprite.hide()
 	pass
 
 func CheckToCreateCollisionBox(playerPosition: Vector2, positiveLineEndPoint: Vector2, negativeLineEndPoint: Vector2):
@@ -48,14 +50,20 @@ func CheckToCreateCollisionBox(playerPosition: Vector2, positiveLineEndPoint: Ve
 	if (collider != null):
 		remove_child(collider)
 		collider = null
+		remove_child(polySprite)
 		
 	if (collisionVertexes != null && collisionVertexes.size() > 0):
-		collisionVertexes = SortPoints(collisionVertexes)
+		collisionVertexes = PackedVector2Array(SortPoints(collisionVertexes))
 		collider = CollisionPolygon2D.new()
+		polySprite = Polygon2D.new()
+		collider.polygon = collisionVertexes
+		polySprite.polygon = collisionVertexes
+		polySprite.texture = sprite.texture
 		
-		collider.polygon = PackedVector2Array(collisionVertexes)
 		add_child(collider)
+		add_child(polySprite)
 	pass
+
 
 func SortPoints(points: Array[Vector2]) -> Array[Vector2]:
 	if (points.size() < 3):
@@ -212,3 +220,4 @@ func IsAngleBetween(a: float, left: float, right: float) -> bool:
 		return a >= left and a <= right
 	else:
 		return a >= left or a <= right
+		

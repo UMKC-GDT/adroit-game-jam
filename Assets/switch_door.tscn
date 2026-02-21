@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6ur13x23xxo8"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_4x4rb"]
+[ext_resource type="Script" uid="uid://bswfu6wxsniyk" path="res://switch_door.gd" id="2_de8x3"]
+[ext_resource type="Texture2D" uid="uid://be1fpp324uejk" path="res://Resources/country-house-door-pine-wood.jpg" id="3_kgsnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfrh3"]
+size = Vector2(20, 60)
+
+[node name="SwitchDoor" unique_id=1605235542 instance=ExtResource("1_4x4rb")]
+script = ExtResource("2_de8x3")
+movable = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+position = Vector2(2.9802322e-07, -0.5)
+scale = Vector2(0.033333335, 0.1)
+texture = ExtResource("3_kgsnd")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+shape = SubResource("RectangleShape2D_tfrh3")
