@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var doubleJumpVelocity := 400.0
 @export var wallJumpVelocity := 400.0
 @export var wallJumpPushOff := 200.0
+@export var wallFallingGravity := 50.0
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -44,6 +45,7 @@ func _process(delta: float) -> void:
 		# Limit length it can be held
 		if(jumpHeldLength >= maxJumpHold):
 			jumpHeldLength = maxJumpHold
+			canJump = false
 		doJump()
 	elif(Input.is_action_just_released("jump")):
 		canJump = false
@@ -82,6 +84,13 @@ func doAirMovement(delta: float):
 	self.velocity.y += gravity * delta
 	if(self.velocity.y > maxFallSpeed):
 		self.velocity.y = maxFallSpeed
+	# If player is against a wall slow their fall
+	if(rightWallCast.is_colliding() or leftWallCast.is_colliding()):
+		if(self.velocity.y < 0): # If player still has vertical momentum we dont want to cancel it
+			pass
+		else:
+			self.velocity.y = wallFallingGravity
+
 	
 	# Friction based on direction
 	if(isMovingRight()):
