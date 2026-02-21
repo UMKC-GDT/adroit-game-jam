@@ -6,6 +6,9 @@ extends Node2D
 func _ready() -> void:
 	if nextScene == null:
 		push_error("EndLevelDoor has no nextScene!")
+		$AnimatedSprite2D.play("Closed")
+		
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,5 +17,8 @@ func _process(delta: float) -> void:
 
 
 func _on_interactable_component_interacted() -> void:
-	$AnimationPlayer.play("open")
+	print("Test animation")
+	$AnimatedSprite2D.play("OpenDoor")
+	await get_tree().create_timer(.3).timeout
+	$AnimatedSprite2D.play("Opened")
 	
