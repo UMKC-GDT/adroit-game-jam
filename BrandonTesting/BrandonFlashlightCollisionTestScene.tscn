@@ -31,6 +31,7 @@ texture = ExtResource("1_cwpv4")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1539760315 node_paths=PackedStringArray("middlePoint", "positivePoint", "negativePoint", "platforms")]
 script = ExtResource("2_csr1f")
+jump_velocity = -200.0
 sensitivity = 1.0
 middlePoint = NodePath("../Middle")
 positivePoint = NodePath("../Pos")
@@ -52,8 +53,9 @@ texture = ExtResource("3_qiaj8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1995279920 node_paths=PackedStringArray("sprite", "botIntPointLeftVis", "leftIntPointLeftVis", "rightIntPointLeftVis", "topIntPointLeftVis", "botIntPointRightVis", "leftIntPointRightVis", "rightIntPointRightVis", "topIntPointRightVis", "topLeftPointVis", "topRightPointVis", "botRightPointVis", "botLeftPointVis")]
 script = ExtResource("4_qiaj8")
-sprite = NodePath("PlatSprite")
-platformSize = 50.0
+sprite = NodePath("PlatSpriteFull")
+platformSizeX = 50.0
+platformSizeY = 50.0
 botIntPointLeftVis = NodePath("../rightIntercepts/botInt")
 leftIntPointLeftVis = NodePath("../rightIntercepts/leftInt")
 rightIntPointLeftVis = NodePath("../rightIntercepts/rightInt")
@@ -67,9 +69,9 @@ topRightPointVis = NodePath("../CornerInts/TR")
 botRightPointVis = NodePath("../CornerInts/BR")
 botLeftPointVis = NodePath("../CornerInts/BL")
 
-[node name="PlatSprite" type="Sprite2D" parent="Platform/StaticBody2D" unique_id=1177528414]
-position = Vector2(-228.5, -65)
-scale = Vector2(1.5699999, 1.9000001)
+[node name="PlatSpriteFull" type="Sprite2D" parent="Platform/StaticBody2D" unique_id=1177528414]
+position = Vector2(-193.25, -37)
+scale = Vector2(1.705, 0.44)
 texture = ExtResource("3_qiaj8")
 
 [node name="CornerInts" type="Node" parent="Platform" unique_id=2138319246]
@@ -143,7 +145,8 @@ texture = ExtResource("7_4bnb4")
 [node name="StaticBody2D" type="StaticBody2D" parent="Platform2" unique_id=283496751 node_paths=PackedStringArray("sprite", "botIntPointLeftVis", "leftIntPointLeftVis", "rightIntPointLeftVis", "topIntPointLeftVis", "botIntPointRightVis", "leftIntPointRightVis", "rightIntPointRightVis", "topIntPointRightVis", "topLeftPointVis", "topRightPointVis", "botRightPointVis", "botLeftPointVis")]
 script = ExtResource("4_qiaj8")
 sprite = NodePath("PlatSprite")
-platformSize = 50.0
+platformSizeX = 50.0
+platformSizeY = 50.0
 botIntPointLeftVis = NodePath("../rightIntercepts/botInt")
 leftIntPointLeftVis = NodePath("../rightIntercepts/leftInt")
 rightIntPointLeftVis = NodePath("../rightIntercepts/rightInt")
