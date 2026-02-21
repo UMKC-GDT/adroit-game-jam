@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="2_8jemr"]
 [ext_resource type="PackedScene" uid="uid://b8bp1j3tn8qlf" path="res://Assets/basic_platform.tscn" id="2_l6gqm"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_8jemr"]
+[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/switch_door.tscn" id="6_5xlm7"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/door_switch.tscn" id="7_0hrnv"]
 [ext_resource type="PackedScene" uid="uid://jq4ty4n82o56" path="res://Assets/big_platform.tscn" id="8_0hrnv"]
 [ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="9_cpuyv"]
@@ -34,8 +35,9 @@ position = Vector2(-423, -261)
 gravity_scale = 1.0
 movable = true
 
-[node name="Door Switch" parent="." unique_id=579569878 instance=ExtResource("7_0hrnv")]
-position = Vector2(-251, -80)
+[node name="Door Switch" parent="." unique_id=579569878 node_paths=PackedStringArray("target_door") instance=ExtResource("7_0hrnv")]
+position = Vector2(-256, -40)
+target_door = NodePath("../SwitchDoor")
 
 [node name="Basic Platform4" parent="." unique_id=231074576 instance=ExtResource("2_l6gqm")]
 position = Vector2(-328, -40)
@@ -65,3 +67,6 @@ position = Vector2(384, 0)
 
 [node name="Ground" parent="." unique_id=489679713 instance=ExtResource("10_wmenr")]
 position = Vector2(128, 0)
+
+[node name="SwitchDoor" parent="." unique_id=1841938187 instance=ExtResource("6_5xlm7")]
+position = Vector2(80, -32)
