@@ -12,6 +12,9 @@ var maxFallSpeed := 1200.0
 
 var inputDir := 0.0
 
+var canDoubleJump := true
+
+
 func _process(delta: float) -> void:
 	# check left right input
 	if(Input.is_action_pressed("right")):
@@ -22,18 +25,19 @@ func _process(delta: float) -> void:
 		inputDir = 0
 		
 	# check all other inputs
+	if(Input.is_action_just_pressed("jump")):
+		doJump()
 
 
 func _physics_process(delta: float) -> void:
 	if(self.is_on_floor()):
+		canDoubleJump = true
 		doGroundMovement(delta)
-		if(Input.is_action_just_pressed("jump")):
-			self.velocity.y -= jumpVelocity
 	else:
 		doAirMovement(delta)
 	
 	move_and_slide()
-	
+
 
 func doGroundMovement(delta: float):
 	if(inputDir == 0):
@@ -51,6 +55,7 @@ func doGroundMovement(delta: float):
 		# limit speed
 		self.velocity.x = limitSpeed(self.velocity.x, maxSpeed)
 
+
 func doAirMovement(delta: float):
 	self.velocity.y -= gravity * delta
 	if(self.velocity.y > maxFallSpeed):
@@ -66,8 +71,39 @@ func doAirMovement(delta: float):
 	elif(inputDir == -1):
 		self.velocity.x -= airSpeed * delta
 
+
+func doJump():
+	if(is_on_floor()):
+		self.velocity.y = -jumpVelocity # Negative is up for some reason
+	elif(canDoubleJump):
+		self.velocity.y = -jumpVelocity
+		canDoubleJump = false
+		
+		if(isMovingRight() and wantsToGoLeft()):
+			self.velocity.x = self.velocity.x * -1
+		elif(isMovingLeft() and wantsToGoRight()):
+			self.velocity.x = self.velocity.x * -1
+
 func limitSpeed(currentSpeed: float, max: float):
 	if(abs(currentSpeed) > max):
 		return maxSpeed * inputDir
 	return currentSpeed
-	
+
+func isMovingRight():
+	return self.velocity.x > 0
+
+func isMovingLeft():
+	return self.velocity.x < 0
+
+func isMoving():
+	return self.velocity.x != 0
+
+
+func wantsToGoRight():
+	return inputDir == 1
+
+func wantsToGoLeft():
+	return inputDir == -1
+
+func wantsToGo():
+	return inputDir != 0
