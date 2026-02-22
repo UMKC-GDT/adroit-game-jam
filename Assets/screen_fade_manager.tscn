@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cv288wh81sn21"]
+
+[ext_resource type="Script" uid="uid://uvcjglygrw8w" path="res://Scripts/screen_fade_manager.gd" id="1_2mbc0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_b2r0f"]
+
+[sub_resource type="Animation" id="Animation_da0b8"]
+resource_name = "FadeIn"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2mbc0"]
+resource_name = "FadeOut"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"moveToNextScene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b2r0f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywmjc"]
+_data = {
+&"FadeIn": SubResource("Animation_da0b8"),
+&"FadeOut": SubResource("Animation_2mbc0"),
+&"RESET": SubResource("Animation_b2r0f")
+}
+
+[node name="ScreenFadeManager" type="Node2D" unique_id=268998262]
+script = ExtResource("1_2mbc0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=724658572]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(566.125, 543.125)
+scale = Vector2(1753.75, 1087.75)
+texture = SubResource("CanvasTexture_b2r0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1924491494]
+libraries/ = SubResource("AnimationLibrary_ywmjc")
