@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://biswj4oejwtvf"]
+
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_ejprb"]
+[ext_resource type="PackedScene" uid="uid://mdlmpeg2ahjl" path="res://Assets/present_wall.tscn" id="3_au75x"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_62f1r"]
+[ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/wall.tscn" id="5_1je60"]
+[ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="6_ycmr1"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2jwna"]
+[ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="8_sgc6j"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_xx40l"]
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_70df5")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_ejprb")]
+position = Vector2(-616.0001, 392.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present Wall" parent="Present" unique_id=1605235542 instance=ExtResource("3_au75x")]
+position = Vector2(144, -32)
+
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_62f1r")]
+position = Vector2(0, 64)
+
+[node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("4_62f1r")]
+position = Vector2(128, 64)
+
+[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_62f1r")]
+position = Vector2(-128, 64)
+
+[node name="PresentBarrier" parent="Present" unique_id=1319523828 instance=ExtResource("5_1je60")]
+position = Vector2(56, 48)
+
+[node name="PresentBarrier2" parent="Present" unique_id=578243162 instance=ExtResource("5_1je60")]
+position = Vector2(-72, 48)
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="Superwall2" parent="Future" unique_id=1032632865 instance=ExtResource("6_ycmr1")]
+position = Vector2(64, -40)
+collision_layer = 2051
+native_timeline = 1
+
+[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_2jwna")]
+position = Vector2(0, 64)
+
+[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_2jwna")]
+position = Vector2(-128, 64)
+
+[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_2jwna")]
+position = Vector2(128, 64)
+
+[node name="FutureBarrier" parent="Future" unique_id=987896157 instance=ExtResource("8_sgc6j")]
+position = Vector2(0, 48)
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_xx40l")]
+jumpVelocity = 400.0
+wallJumpVelocity = 200.0

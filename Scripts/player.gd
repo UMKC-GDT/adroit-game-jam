@@ -38,7 +38,7 @@ var canWallJump := true
 var jumpHeldLength := 0.0
 var canJump := true
 
-var hasLight = true
+@export var hasLight = true
 
 var sprite: AnimatedSprite2D
 var armSprite: Sprite2D
