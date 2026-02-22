@@ -5,9 +5,7 @@ class_name QuantumLight
 
 enum Timeline { PRESENT, FUTURE }
 
-@export var timeline_type: Timeline = Timeline.PRESENT:
-	set(value):
-		_set_timeline_type(value)
+@export var timeline_type: Timeline = Timeline.PRESENT
 
 @onready var light_sprite: Sprite2D = $LightBeam/LightSprite
 
@@ -24,20 +22,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _set_timeline_type(value):
-	timeline_type = value
 	
 	if timeline_type == Timeline.FUTURE:
 		#Future: 217,255,255
-		print("Setting color to blue!")
 		light_sprite.modulate = future_color
 		
 	else:
 		#Present: 
-		print("Setting color to orange!")
 		light_sprite.modulate = present_color
+	
+	pass
+
+func update_light():
 	
 	# Just poke the objects and tell them to look at your new color
 	for body in get_overlapping_bodies():

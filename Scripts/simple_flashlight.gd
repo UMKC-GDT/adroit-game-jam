@@ -53,18 +53,7 @@ func swap_timeline() -> void:
 	timeline_type = Timeline.FUTURE if timeline_type == Timeline.PRESENT else Timeline.PRESENT
 	print(name + " swapping! Current: " + Timeline.keys()[timeline_type])
 	
-	if timeline_type == Timeline.FUTURE:
-		print("Setting color to blue!")
-		light_sprite.modulate = future_color
-		
-	else:
-		print("Setting color to orange!")
-		light_sprite.modulate = present_color
-	
-	# Just poke the objects and tell them to look at your new color
-	for body in get_overlapping_bodies():
-		if body is LightObject:
-			body.update_state()
+	update_light()
 
 func getRotation():
 	return abs(fmod(self.rotation_degrees, 360))/2

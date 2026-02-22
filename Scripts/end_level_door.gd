@@ -13,8 +13,6 @@ func _ready() -> void:
 	
 	print("Checking for which is which!")
 	
-	set_beam_color()
-	
 	if native_timeline == Timeline.FUTURE:
 		future_sprite.show()
 		active_sprite = future_sprite
