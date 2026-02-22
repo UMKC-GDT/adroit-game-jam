@@ -73,6 +73,10 @@ rotation = -1.5707964
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
+[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("3_uui2j")]
+position = Vector2(144, -64)
+light_priority = 100
+
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
@@ -114,7 +118,7 @@ native_timeline = 1
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_lv5b5")]
 position = Vector2(144, -40)
-nextScene = "Level1"
+nextScene = "Level16"
 native_timeline = 1
 
 [node name="LargeGround4" parent="Future" unique_id=278530767 instance=ExtResource("6_1c0jw")]
@@ -124,10 +128,6 @@ rotation = -1.5707964
 [node name="LargeGround5" parent="Future" unique_id=2034888758 instance=ExtResource("6_1c0jw")]
 position = Vector2(-8, -256)
 rotation = -1.5707964
-
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("3_uui2j")]
-position = Vector2(144, -64)
-light_priority = 100
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_esd0r")]
 position = Vector2(-128, -40)

@@ -80,6 +80,7 @@ position = Vector2(72, 120)
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("8_wvbab")]
 position = Vector2(144, 120)
+nextScene = "Level17"
 
 [node name="Platform2" parent="Present" unique_id=2044219894 instance=ExtResource("9_yyawk")]
 position = Vector2(16, 8)
