@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_0tbq4"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="7_p2sm2"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_uuvfb"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="8_7al5c"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_oublu"]
+[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="10_66tb3"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_q7e3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tbq4"]
@@ -38,7 +40,7 @@ enabled = false
 zoom = Vector2(2.5, 2.5)
 
 [node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_324df")]
-position = Vector2(128, 0)
+position = Vector2(-448, 8)
 
 [node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("4_324df")]
 position = Vector2(-448, -168)
@@ -80,7 +82,8 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(128, 0)
 
 [node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_uuvfb")]
-position = Vector2(520, -56)
+position = Vector2(96, -112)
+rotation = -1.5707964
 
 [node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_uuvfb")]
 position = Vector2(96, 96)
@@ -105,6 +108,19 @@ gizmo_extents = 53.9
 position = Vector2(144, -24)
 native_timeline = 1
 
+[node name="FlickeringLamp" parent="Future" unique_id=1698270285 instance=ExtResource("8_7al5c")]
+position = Vector2(80, 136)
+light_priority = 100
+
+[node name="Door Switch" parent="Future" unique_id=1852039823 node_paths=PackedStringArray("target_door") instance=ExtResource("7_p2sm2")]
+position = Vector2(80, 80)
+target_door = NodePath("../SwitchDoor")
+native_timeline = 1
+
+[node name="SwitchDoor" parent="Future" unique_id=1605235542 instance=ExtResource("10_66tb3")]
+position = Vector2(112, -24)
+native_timeline = 1
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_oublu")]
 position = Vector2(104, 72)
 jumpVelocity = 400.0
@@ -124,9 +140,6 @@ gizmo_extents = 53.9
 [node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
 position = Vector2(0, -160)
 gizmo_extents = 53.9
-
-[node name="Door Switch" parent="." unique_id=1852039823 instance=ExtResource("7_p2sm2")]
-position = Vector2(1040, 80)
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("6_q7e3a")]
 position = Vector2(0, 248)

@@ -3,14 +3,12 @@
 [ext_resource type="Script" uid="uid://v5w5k2ror06v" path="res://Scenes/Levels/level_1.gd" id="1_nytic"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="2_e57xo"]
 [ext_resource type="PackedScene" uid="uid://b6f8kwyv5yr3r" path="res://Scenes/Tileset Testing/Level1Future.tscn" id="3_d80xo"]
-[ext_resource type="PackedScene" uid="uid://cevxnyowyeled" path="res://Scenes/Tileset Testing/Level1Present.tscn" id="4_gk1sg"]
+[ext_resource type="PackedScene" uid="uid://bcm4c8lv6y3rt" path="res://Scenes/Tileset Testing/Level1Present.tscn" id="4_gk1sg"]
 [ext_resource type="PackedScene" uid="uid://bssmop4uxylom" path="res://Assets/light_switch.tscn" id="5_st7rb"]
-
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_e57xo"]
+[ext_resource type="PackedScene" path="res://Assets/Level Elements/end_level_door.tscn" id="6_e57xo"]
 [ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="7_3ipdw"]
 [ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="8_8h4de"]
 [ext_resource type="Texture2D" uid="uid://ctlwx6fmffdwx" path="res://Resources/DoorMsg.png" id="9_jcebb"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nytic"]
 size = Vector2(400, 20)
@@ -22,7 +20,7 @@ size = Vector2(20, 200)
 size = Vector2(20, 200)
 
 [node name="Level1" type="Node2D" unique_id=942461784]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 script = ExtResource("1_nytic")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1806424157]
@@ -70,11 +68,15 @@ position = Vector2(202, 2)
 shape = SubResource("RectangleShape2D_d80xo")
 
 [node name="UI Message" parent="." unique_id=1302920499 instance=ExtResource("7_3ipdw")]
-position = Vector2(50, 34)
+position = Vector2(50, 35)
+image = ExtResource("8_8h4de")
+
+[node name="UI Message3" parent="." unique_id=256990297 instance=ExtResource("7_3ipdw")]
+position = Vector2(113.75, 35.75)
 image = ExtResource("8_8h4de")
 
 [node name="UI Message2" parent="." unique_id=1205838418 instance=ExtResource("7_3ipdw")]
-position = Vector2(-102.5, 34)
+position = Vector2(-102.5, 35)
 image = ExtResource("9_jcebb")
 
 [connection signal="turnedOff" from="LightSwitch" to="." method="_on_light_switch_turned_off"]
