@@ -26,7 +26,18 @@ z_as_relative = false
 position = Vector2(40, 40)
 texture = ExtResource("3_mmuqr")
 
-[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
+[node name="FmodListener2D" type="FmodListener2D" parent="Sprite2D" unique_id=1584031778]
+
+[node name="titleEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=1237939638]
+event_name = "event:/Music/Title Music"
+event_guid = "{40012e37-e8ac-4a83-8bfa-d124a9365b3b}"
+volume = 3.9
+fmod_parameters/CutMost/id = -8747828631922096692
+fmod_parameters/CutMost = 0.0
+fmod_parameters/CutMost/variant_type = 3
+fmod_parameters/TitleOutie/id = 1202469491667461110
+fmod_parameters/TitleOutie = 0.0
+fmod_parameters/TitleOutie/variant_type = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0
@@ -77,4 +88,8 @@ one_shot = true
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank"]
 
 [connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
+[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
+position = Vector2(702, 139.00002)
+scale = Vector2(0.45601746, 0.73540765)
+
 [connection signal="timeout" from="Fade Wait" to="." method="_on_fade_wait_timeout"]

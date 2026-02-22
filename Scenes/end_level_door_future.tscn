@@ -127,10 +127,12 @@ shape = SubResource("RectangleShape2D_7ohtc")
 libraries/ = SubResource("AnimationLibrary_eb5rj")
 
 [node name="FutureSprite" type="AnimatedSprite2D" parent="." unique_id=1118524585]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_j6rgc")
 animation = &"Closed"
 
 [node name="PresentSprite" type="AnimatedSprite2D" parent="." unique_id=1622879436]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u5ka7")
 animation = &"OpenDoor"
 

@@ -199,15 +199,18 @@ texture = ExtResource("8_rxtma")
 position = Vector2(128, 159)
 
 [node name="Ground6" parent="Future/LargeGround11" index="0" unique_id=1605235542]
-position = Vector2(-48, -0.065)
+position = Vector2(-48, -30.999998)
 
 [node name="Ground7" parent="Future/LargeGround11" index="1" unique_id=881032686]
-position = Vector2(-16, -0.065)
+position = Vector2(-16, -30.999998)
 
 [node name="Ground8" parent="Future/LargeGround11" index="2" unique_id=1365851496]
-position = Vector2(16, -0.065)
+position = Vector2(16, -30.999998)
 
-[node name="Sprite2D" parent="Future/LargeGround11/Ground9" parent_id_path=PackedInt32Array(303822697, 1089114079) index="0" unique_id=357974407]
+[node name="Ground9" parent="Future/LargeGround11" index="3" unique_id=1089114079]
+position = Vector2(48, -30.934998)
+
+[node name="Sprite2D" parent="Future/LargeGround11/Ground9" index="0" unique_id=357974407]
 rotation = -1.5707964
 texture = ExtResource("8_rxtma")
 
@@ -216,6 +219,9 @@ position = Vector2(160, 96)
 rotation = -1.5707964
 
 [node name="Ground6" parent="Future/LargeGround9" index="0" unique_id=1605235542]
+visible = false
+light_mask = 0
+visibility_layer = 0
 position = Vector2(-48, -0.06)
 
 [node name="Ground7" parent="Future/LargeGround9" index="1" unique_id=881032686]
@@ -285,12 +291,24 @@ visibility_layer = 0
 position = Vector2(0, 158.94)
 rotation = -6.2831855
 
-[node name="Sprite2D" parent="Future/LargeGround7/Ground6" parent_id_path=PackedInt32Array(1868814649, 1605235542) index="0" unique_id=357974407]
+[node name="Ground6" parent="Future/LargeGround7" index="0" unique_id=1605235542]
+position = Vector2(-47.999996, -30.934998)
+
+[node name="Sprite2D" parent="Future/LargeGround7/Ground6" index="0" unique_id=357974407]
 position = Vector2(0, 16.06)
 texture = ExtResource("8_rxtma")
 
+[node name="Ground7" parent="Future/LargeGround7" index="1" unique_id=881032686]
+position = Vector2(-15.999994, -30.934998)
+
+[node name="Ground8" parent="Future/LargeGround7" index="2" unique_id=1365851496]
+position = Vector2(16.000006, -30.934998)
+
+[node name="Ground9" parent="Future/LargeGround7" index="3" unique_id=1089114079]
+position = Vector2(48.000004, -30.934998)
+
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("7_6lk1x")]
-position = Vector2(112, 128)
+position = Vector2(112, 104)
 nextScene = "Level8"
 native_timeline = 1
 

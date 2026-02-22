@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_fkr78"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_s7g4t"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_5yvxo"]
-[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="5_bks1i"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_bks1i"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="5_s7g4t"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_8nne8"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="7_71jdt"]
@@ -241,6 +241,7 @@ position = Vector2(20, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1284876465]
+texture_filter = 1
 position = Vector2(68, -87)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0ovs7")
