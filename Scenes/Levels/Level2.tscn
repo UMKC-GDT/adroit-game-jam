@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="9_ipaot"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_xx40l"]
 [ext_resource type="Material" uid="uid://dqix3xef24exf" path="res://new_new_particle_process_material.tres" id="10_ao4h1"]
+[ext_resource type="Texture2D" uid="uid://diwdmvds8ui4r" path="res://Assets/Cats/catMeow.png" id="12_ngp1c"]
+[ext_resource type="Texture2D" uid="uid://bpmvc4g1fgyjf" path="res://Assets/Cats/catRun.png" id="13_tbiw2"]
+[ext_resource type="Script" uid="uid://b64tpqlcxvhft" path="res://Scenes/Levels/animated_sprite_2d3.gd" id="13_u5eb6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngp1c"]
 atlas = ExtResource("3_ao4h1")
@@ -18,6 +21,98 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1swa"]
 size = Vector2(352, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5eb6"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbiw2"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab8bd"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ayf"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya3ly"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_458el"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1eh"]
+atlas = ExtResource("12_ngp1c")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2o4"]
+atlas = ExtResource("13_tbiw2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsd5h"]
+atlas = ExtResource("13_tbiw2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbesk"]
+atlas = ExtResource("13_tbiw2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyiht"]
+atlas = ExtResource("13_tbiw2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl2o4"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_u5eb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbiw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab8bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ayf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya3ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_458el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1eh")
+}],
+"loop": false,
+"name": &"catMeow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsd5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbesk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyiht")
+}],
+"loop": true,
+"name": &"catRun",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbiw2"]
 
 [node name="LevelTemplate2" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_70df5")
@@ -111,5 +206,21 @@ position = Vector2(-1, 0)
 position = Vector2(0, 143)
 amount_ratio = 0.25
 process_material = ExtResource("10_ao4h1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=912955478]
+texture_filter = 1
+position = Vector2(0, 49)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_rl2o4")
+animation = &"catRun"
+script = ExtResource("13_u5eb6")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=433241241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=2096085320]
+position = Vector2(-28, -1.5)
+shape = SubResource("RectangleShape2D_tbiw2")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
 
 [editable path="HazeGenerator"]
