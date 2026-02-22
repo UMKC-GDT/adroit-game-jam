@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://cy4nhurccb7yq" path="res://Scripts/quantum_light.gd" id="1_2av21"]
 [ext_resource type="Texture2D" uid="uid://cuwcpedccsys5" path="res://Resources/WhiteLight.png" id="2_7obu0"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7obu0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0qcbl"]
+noise = SubResource("FastNoiseLite_7obu0")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_symsn"]
+polygon = PackedVector2Array(-0.9999916, -67, 198.99994, 530, -200.00006, 529)
+
 [node name="QuantumLight" type="Area2D" unique_id=371804446]
 collision_layer = 0
 collision_mask = 2
@@ -16,6 +24,14 @@ polygon = PackedVector2Array(0, 0, -200, 600, 200, 600)
 position = Vector2(36, 217.99998)
 scale = Vector2(1.5093751, 1.429514)
 texture = ExtResource("2_7obu0")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=193099976]
+editor_only = true
+texture = SubResource("NoiseTexture2D_0qcbl")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PointLight2D" unique_id=597497695]
+position = Vector2(0, 68)
+occluder = SubResource("OccluderPolygon2D_symsn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
