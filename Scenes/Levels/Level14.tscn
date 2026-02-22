@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bc5j3bro0gy4l"]
+[gd_scene format=3 uid="uid://dhwqko6sp8yc1"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_dseu3"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_dmmwf"]
@@ -70,6 +70,7 @@ target_door = NodePath("../SwitchDoor")
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_52mrl")]
 position = Vector2(144, 112)
+nextScene = "Level15"
 
 [node name="SwitchDoor" parent="Present" unique_id=1274118035 instance=ExtResource("7_loigx")]
 position = Vector2(64, 112)
