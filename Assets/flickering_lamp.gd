@@ -7,7 +7,7 @@ class_name FlickeringLight
 var lightOnPresent  = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$LampEmitter.play()
 	beam.light_priority = light_priority
 	beam.update_light()
 	

@@ -13,6 +13,8 @@ ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
 
 [node name="EscapeToMainMenu" parent="." unique_id=1224230210 instance=ExtResource("2_xqbpr")]
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
+bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank", "res://FmodBank/Desktop/AmbienceBank.bank", "res://FmodBank/Desktop/SFXBank.bank"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104013960]
 z_index = -1
