@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_u4lgp"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_oioc0"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_lbk1i"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_uwutr"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_bwo3a"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="6_aibtj"]
@@ -29,6 +30,11 @@ scale = Vector2(7.94227, 2.311422)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=1672672982]
+position = Vector2(-3, -3)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("3_lbk1i")
 
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)
@@ -97,6 +103,7 @@ position = Vector2(-88, -40)
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("13_aibtj")]
 position = Vector2(-128, -40)
+nextScene = "Level19"
 
 [node name="LargeGround4" parent="Present" unique_id=1496653337 instance=ExtResource("3_uwutr")]
 position = Vector2(-144, -48)

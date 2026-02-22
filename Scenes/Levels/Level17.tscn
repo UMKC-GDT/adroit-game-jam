@@ -127,6 +127,7 @@ exist_chance = 0.1
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
 position = Vector2(144, -88)
+nextScene = "Level18"
 native_timeline = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_myr8f")]

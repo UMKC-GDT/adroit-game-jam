@@ -15,7 +15,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uclgm"]
 size = Vector2(1144, 34)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="LevelTemplate3" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_wy7ie")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_nkypv")]
@@ -150,6 +150,7 @@ rotation = 3.1415927
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_2vii5")]
 position = Vector2(112, -119)
 nextScene = "Level11"
+native_timeline = 1
 movable = true
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_k47cb")]

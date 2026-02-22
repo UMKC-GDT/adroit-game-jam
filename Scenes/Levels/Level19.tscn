@@ -119,6 +119,7 @@ walljump = true
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_bymwt")]
 position = Vector2(160, -88)
+nextScene = "Level21"
 native_timeline = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_hni7l")]
