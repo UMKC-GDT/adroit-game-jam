@@ -1,10 +1,35 @@
 [gd_scene format=3 uid="uid://dgox0p43wenhf"]
 
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
+[ext_resource type="Texture2D" uid="uid://cchpjfjkpewqa" path="res://ToBeReplacedButThatsOkIAmFineWithIt.jpg" id="2_7cxpe"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
+[ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
+[ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
 
-[node name="GameManager" type="Node2D" unique_id=618373773]
+[node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("ScreenFadeManager")]
 script = ExtResource("1_m2tc1")
+ScreenFadeManager = NodePath("ScreenFadeManager")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104013960]
+position = Vector2(960, 540)
+texture = ExtResource("2_7cxpe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=946260940]
+position = Vector2(60, 60)
+texture = ExtResource("3_mmuqr")
+
+[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
+offset_left = 560.0
+offset_top = 140.0
+offset_right = 1360.0
+offset_bottom = 940.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1403170885]
+handle_input_locally = false
+size = Vector2i(800, 800)
+render_target_update_mode = 4
 
 [node name="SoundManager" type="Node2D" parent="." unique_id=993398646 node_paths=PackedStringArray("fmodEmitter")]
 script = ExtResource("2_bwyv8")

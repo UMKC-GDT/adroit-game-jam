@@ -2,15 +2,23 @@ extends Node2D
 class_name  game_manager
 
 var currentScene
-var myScene = preload("res://Scenes/MainMenu.tscn")
+var mainMenuScene = preload("res://Scenes/MainMenu.tscn")
+@export var ScreenFadeManager: Node
+var isMainMenu: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	currentScene = myScene.instantiate()
-	add_child(currentScene)
-	pass # Replace with function body.
+	currentScene = mainMenuScene.instantiate()
+	$SubViewportContainer.visible = false
+	LoadNewScene("res://Scenes/Levels/Level2.tscn")
 
 func LoadNewScene(name:String):
-	remove_child(currentScene)
+	
+	if name == "res://Scenes/MainMenu.tscn":
+		$SubViewportContainer.visible = false
+	else:
+		$SubViewportContainer.visible = true
+	$SubViewportContainer/SubViewport.remove_child(currentScene)
 	var newScene:PackedScene = load(name)
 	currentScene = newScene.instantiate()
-	add_child(currentScene)
+	$SubViewportContainer/SubViewport.add_child(currentScene)
+	#ScreenFadeManager.fadeOut()
