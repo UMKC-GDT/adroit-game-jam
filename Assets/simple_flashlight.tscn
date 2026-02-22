@@ -17,6 +17,9 @@ rotation = -1.5707964
 [node name="Circle" type="CollisionShape2D" parent="." index="1" unique_id=1709966422]
 shape = SubResource("CircleShape2D_iv4ae")
 
-[node name="LightOccluder2D" parent="PointLight2D" parent_id_path=PackedInt32Array(193099976) index="0" unique_id=597497695]
+[node name="PointLight2D" parent="." index="2" unique_id=193099976]
+editor_only = true
+
+[node name="LightOccluder2D" parent="PointLight2D" index="0" unique_id=597497695]
 position = Vector2(70, 3)
 rotation = -1.5737504

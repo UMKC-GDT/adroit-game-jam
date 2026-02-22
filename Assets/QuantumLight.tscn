@@ -25,6 +25,7 @@ scale = Vector2(1.5093751, 1.429514)
 texture = ExtResource("2_7obu0")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=193099976]
+editor_only = true
 texture = SubResource("NoiseTexture2D_0qcbl")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PointLight2D" unique_id=597497695]
