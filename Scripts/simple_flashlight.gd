@@ -11,6 +11,9 @@ class_name SimpleFlashlight
 var stickDirection
 var lastMousePosition
 
+
+var lastUsedLight: Timeline = Timeline.OFF
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	circle.shape.radius = flashlight_radius
@@ -20,7 +23,7 @@ func _ready() -> void:
 	if timeline_type == Timeline.FUTURE:
 		light_sprite.modulate = future_color
 	
-	else:
+	elif timeline_type == Timeline.PRESENT:
 		light_sprite.modulate = present_color
 	lastMousePosition = get_global_mouse_position()
 
@@ -37,8 +40,7 @@ func set_starting_light(present_light):
 	
 	if timeline_type == Timeline.FUTURE:
 		light_sprite.modulate = future_color
-		
-	else:
+	elif timeline_type == Timeline.PRESENT:
 		light_sprite.modulate = present_color
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,6 +57,8 @@ func _unhandled_input(event): # Listen for a standard Left Mouse Click
 		swap_timeline()
 
 func swap_timeline() -> void:
+	if timeline_type == Timeline.OFF: # do nothin of its off
+		return
 	# Flip the timeline
 	timeline_type = Timeline.FUTURE if timeline_type == Timeline.PRESENT else Timeline.PRESENT
 	print(name + " swapping! Current: " + Timeline.keys()[timeline_type])
@@ -64,3 +68,12 @@ func swap_timeline() -> void:
 
 func getRotation():
 	return abs(fmod(self.rotation_degrees, 360))/2
+
+func toggleLight(state: bool):
+	$LightBeam.visible = state
+	$PointLight2D/LightOccluder2D.visible = state
+	var tempState := timeline_type
+	timeline_type = lastUsedLight
+	lastUsedLight = tempState
+	
+	update_light()

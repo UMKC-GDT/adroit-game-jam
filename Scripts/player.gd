@@ -21,6 +21,7 @@ extends CharacterBody2D
 @export var footStepTimerReset = 0.428
 @export var footStepTimer = 0
 @export var animationHandler: Node2D
+@export var interactionHandler: Node2D
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -43,6 +44,7 @@ var jumpHeldLength := 0.0
 var canJump := true
 
 @export var hasLight = true
+var lightOn = true
 
 var sprite: AnimatedSprite2D
 var armSprite: Sprite2D
@@ -94,6 +96,12 @@ func _physics_process(delta: float) -> void:
 	elif(Input.is_action_just_released("jump")):
 		canJump = false
 		jumpHeldLength = 0
+	
+	if(Input.is_action_just_pressed("interact")):
+		if(interactionHandler.getInteractable()):
+			interactionHandler.handleInteraction()
+	elif(Input.is_action_just_pressed("lightPower")):
+		toggleFlashlight()
 	
 	if(self.is_on_floor()):
 		canJump = true
@@ -259,6 +267,11 @@ func takeFlashlight():
 	animationHandler.takeFlashlight()
 	flashlight.process_mode = Node.PROCESS_MODE_DISABLED
 	
+
+func toggleFlashlight():
+	lightOn = !lightOn
+	flashlight.toggleLight(lightOn)
+
 func playFootStepSound(delta: float):
 	if footStepTimer <= 0:
 		if self.is_on_floor():

@@ -5,7 +5,7 @@ class_name LightObject
 
 #P.S. if you are touching this, something must be dearly wrong. Boohoo.
 
-enum Timeline { PRESENT, FUTURE }
+enum Timeline { PRESENT, FUTURE, OFF }
 @export var native_timeline: Timeline = Timeline.PRESENT
 @export var movable: bool = true
 @export var is_tangible: bool = true
@@ -52,10 +52,9 @@ func update_state():
 		var dominant_light = overlapping_lights[0]
 		for light in overlapping_lights:
 			
-			if light.light_priority > dominant_light.light_priority:
+			if (not light.timeline_type == Timeline.OFF) and light.light_priority > dominant_light.light_priority:
 				dominant_light = light
 		
-		# We exist ONLY if the dominant light matches our timeline
 		is_active = (dominant_light.timeline_type == native_timeline)
 	
 	# In case we WERE active and now we're not, save our momentum for when we can exist again.
