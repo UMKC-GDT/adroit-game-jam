@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dgox0p43wenhf"]
+
+[ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
+[ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
+
+[node name="GameManager" type="Node2D" unique_id=618373773]
+script = ExtResource("1_m2tc1")
+
+[node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
+script = ExtResource("2_bwyv8")

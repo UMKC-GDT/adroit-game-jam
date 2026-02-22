@@ -144,6 +144,9 @@ func doAirMovement(delta: float):
 func doJump():
 	if(self.is_on_floor()):
 		groundJump()
+		var soundManager:sound_manager = get_tree().root.get_node("GameManager").get_node("SoundManager")
+		if (soundManager != null):
+			$PlayerSoundManager/EmmiterGroundJump.volume = soundManager.soundEffectsScale
 		$PlayerSoundManager/EmmiterGroundJump.play()
 	elif(getDirectionForWallJump() != 0 and canWallJump): # Prioritize wall jump over double jump
 		doWallJump()
@@ -206,6 +209,9 @@ func getInputDir(delta:float):
 		inputDir = 1.0
 		if footStepTimer <= 0:
 			if self.is_on_floor():
+				var soundManager:sound_manager = get_tree().root.get_node("GameManager").get_node("SoundManager")
+				if (soundManager != null):
+					$PlayerSoundManager/EmmiterFootsteps.volume *= soundManager.soundEffectsScale
 				$PlayerSoundManager/EmmiterFootsteps.play()
 				footStepTimer = footStepTimerReset
 		footStepTimer -= delta
@@ -213,6 +219,9 @@ func getInputDir(delta:float):
 		inputDir = -1.0
 		if footStepTimer <= 0:
 			if self.is_on_floor():
+				var soundManager:sound_manager = get_tree().root.get_node("GameManager").get_node("SoundManager")
+				if (soundManager != null):
+					$PlayerSoundManager/EmmiterFootsteps.volume = soundManager.soundEffectsScale
 				$PlayerSoundManager/EmmiterFootsteps.play()
 				footStepTimer = footStepTimerReset
 		footStepTimer -= delta
