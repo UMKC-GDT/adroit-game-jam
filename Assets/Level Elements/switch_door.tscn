@@ -20,6 +20,8 @@ region = Rect2(120, 64, 48, 8)
 margin = Rect2(0, 0, 0, 10.05)
 
 [node name="SwitchDoor" unique_id=1605235542 instance=ExtResource("1_4x4rb")]
+gravity_scale = 0.0
+freeze = true
 script = ExtResource("2_de8x3")
 movable = false
 
