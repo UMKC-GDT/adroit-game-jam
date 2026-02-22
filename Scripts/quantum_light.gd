@@ -3,7 +3,7 @@ class_name QuantumLight
 
 ##Class for the concept of quantum light itself, the core mechanic of the game. This light has a specified timeline that it's active on, and a priority for objects to decide who to follow.
 
-enum Timeline { PRESENT, FUTURE }
+enum Timeline { PRESENT, FUTURE, OFF }
 
 @export var timeline_type: Timeline = Timeline.PRESENT
 
@@ -22,7 +22,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	if timeline_type == Timeline.OFF: # do nothin of its off
+		return
+		
 	if timeline_type == Timeline.FUTURE:
 		#Future: 217,255,255
 		light_sprite.modulate = future_color
@@ -34,12 +36,11 @@ func _process(delta: float) -> void:
 	pass
 
 func update_light():
-	
 	if timeline_type == Timeline.FUTURE:
 		#Future: 217,255,255
 		light_sprite.modulate = future_color
 		
-	else:
+	elif timeline_type == Timeline.PRESENT:
 		#Present: 
 		light_sprite.modulate = present_color
 	

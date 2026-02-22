@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgbu4ajf3tcin"]
+
+[ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="1_hgw21"]
+
+[node name="LargeGround" type="Node2D" unique_id=1914359350]
+
+[node name="Ground6" parent="." unique_id=1605235542 instance=ExtResource("1_hgw21")]
+position = Vector2(-48, 0)
+
+[node name="Ground7" parent="." unique_id=881032686 instance=ExtResource("1_hgw21")]
+position = Vector2(-16, 0)
+
+[node name="Ground8" parent="." unique_id=1365851496 instance=ExtResource("1_hgw21")]
+position = Vector2(16, 0)
+
+[node name="Ground9" parent="." unique_id=1089114079 instance=ExtResource("1_hgw21")]
+position = Vector2(48, 0)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bssmop4uxylom"]
 
 [ext_resource type="Script" uid="uid://vdm2lgdlo8ic" path="res://light_switch.gd" id="1_pfgtm"]
-[ext_resource type="Texture2D" uid="uid://b7jg3b24ohtlw" path="res://Resources/Onswitch.png" id="2_4hb2l"]
+[ext_resource type="Texture2D" uid="uid://byxlfyfhi703e" path="res://Resources/OrangeLeverUp.png" id="2_4hb2l"]
 [ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="2_q1sp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hb2l"]
@@ -11,7 +11,8 @@ script = ExtResource("1_pfgtm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2034619839]
 texture_filter = 1
-scale = Vector2(2, 2)
+position = Vector2(0, 6)
+scale = Vector2(0.375, 0.375)
 texture = ExtResource("2_4hb2l")
 
 [node name="InteractableComponent" parent="." unique_id=642375165 instance=ExtResource("2_q1sp2")]

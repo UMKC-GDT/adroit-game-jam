@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cnr2kv6lno8h3"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_lkbto"]
+[ext_resource type="Script" uid="uid://slxvacuwn32l" path="res://Scripts/basic_platform.gd" id="2_7ahui"]
+[ext_resource type="Texture2D" uid="uid://be5v4jeyf6ac" path="res://Resources/Brick.jpg" id="3_xr8ba"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="4_ayw81"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_lkbto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfhtt"]
+size = Vector2(32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yri2l"]
+atlas = ExtResource("4_lkbto")
+region = Rect2(128, 64, 32, 8)
+margin = Rect2(0, 0, 0, 10.235)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ahui"]
+atlas = ExtResource("4_ayw81")
+region = Rect2(128, 64, 32, 8)
+margin = Rect2(0, 0, 0, 10.05)
+
+[node name="Platform" unique_id=1605235542 instance=ExtResource("1_lkbto")]
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("2_7ahui")
+native_timeline = 1
+movable = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+visible = false
+position = Vector2(0, 4)
+scale = Vector2(0.12799999, 0.047904193)
+texture = ExtResource("3_xr8ba")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_gfhtt")
+
+[node name="FutureSprite" type="Sprite2D" parent="." index="2" unique_id=259150222]
+texture_filter = 1
+position = Vector2(0, 8)
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_yri2l")
+
+[node name="PresentSprite" type="Sprite2D" parent="." index="3" unique_id=2073509427]
+texture_filter = 1
+position = Vector2(0, 8)
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_7ahui")

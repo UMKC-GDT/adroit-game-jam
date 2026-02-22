@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://boyxghoqy3b5j"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_ck766"]
+[ext_resource type="Script" uid="uid://c8l7iylj3nwpl" path="res://Scripts/door_switch.gd" id="2_h5f3n"]
+[ext_resource type="Texture2D" uid="uid://byxlfyfhi703e" path="res://Resources/OrangeLeverUp.png" id="3_quy8i"]
+[ext_resource type="Texture2D" uid="uid://8f3mt0k0oyjp" path="res://Resources/OrangeLeverDown.png" id="4_amdyw"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="4_h5f3n"]
+[ext_resource type="Texture2D" uid="uid://boh8i5ivqcjb5" path="res://Resources/BlueLeverDown.png" id="5_axp74"]
+[ext_resource type="Texture2D" uid="uid://bakpejtjjm0l7" path="res://Resources/BlueLeverUp.png" id="6_davmj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amdyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_quy8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_amdyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xyoa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_davmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axp74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5drf"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ck766"]
+radius = 24.0
+
+[node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
+collision_layer = 2
+script = ExtResource("2_h5f3n")
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+visible = false
+position = Vector2(0, 5)
+scale = Vector2(0.342, 0.342)
+texture = ExtResource("3_quy8i")
+
+[node name="PresentSprite" type="AnimatedSprite2D" parent="." index="1" unique_id=1092862995]
+position = Vector2(0, 5)
+scale = Vector2(0.342, 0.342)
+sprite_frames = SubResource("SpriteFrames_amdyw")
+
+[node name="FutureSprite" type="AnimatedSprite2D" parent="." index="2" unique_id=1418602378]
+position = Vector2(0, 5)
+scale = Vector2(0.342, 0.342)
+sprite_frames = SubResource("SpriteFrames_4xyoa")
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=1029249552]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_c5drf")
+
+[node name="InteractableComponent" parent="." index="4" unique_id=642375165 instance=ExtResource("4_h5f3n")]
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1870653077]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_ck766")
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

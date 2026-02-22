@@ -2,10 +2,15 @@ extends Node2D
 class_name FlickeringLight
 
 @onready var beam: QuantumLight = $QuantumLight
+@export var light_priority = 1
 
 var lightOnPresent  = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	beam.light_priority = light_priority
+	beam.update_light()
+	
 	pass 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
