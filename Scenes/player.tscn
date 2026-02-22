@@ -1,26 +1,142 @@
 [gd_scene format=3 uid="uid://dhutbgdbmmpm5"]
 
 [ext_resource type="Script" uid="uid://d15or1jgujwnr" path="res://Scripts/player.gd" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://dfo3mnbc4yun0" path="res://Resources/PlayerSprites/Standing.png" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://qcpdnebhau5y" path="res://Scripts/PlayerAnimationHandler.gd" id="1_vgqql"]
 [ext_resource type="PackedScene" uid="uid://c11ixmfk04ij0" path="res://Scenes/player_interaction_system.tscn" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dw5kdxu064cfr" path="res://Resources/PlayerSprites/ReviseWalkRightNoFlashLight.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dlfpevjrlvrky" path="res://Resources/PlayerSprites/StandingNoFlashlight.png" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://b6dka7tlbxr6v" path="res://Resources/PlayerSprites/ReviseWalkRight_NoArm.png" id="5_3smsa"]
+[ext_resource type="Texture2D" uid="uid://bsikculq4s2b4" path="res://Resources/PlayerSprites/Standing_NoArms.png" id="5_8erm5"]
+[ext_resource type="PackedScene" uid="uid://b0imij7ei5k1n" path="res://Assets/simple_flashlight.tscn" id="5_x3wgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(0, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(120, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(240, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(360, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(480, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(600, 0, 120, 126)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6t5aa")
+"texture": ExtResource("3_vgqql")
 }],
 "loop": true,
-"name": &"defaultLight",
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}],
+"loop": true,
+"name": &"move",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(0, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(120, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(240, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(360, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(480, 0, 120, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("5_3smsa")
+region = Rect2(600, 0, 120, 126)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igrcy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8erm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dp3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}],
+"loop": true,
+"name": &"move",
 "speed": 5.0
 }]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f60y1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
-height = 40.0
+radius = 8.0
+height = 32.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1958493430]
+[node name="Player" type="CharacterBody2D" unique_id=1958493430 node_paths=PackedStringArray("animationHandler")]
 script = ExtResource("1_v0iea")
 speed = 200.0
 airSpeed = 500.0
@@ -29,13 +145,30 @@ turnaround_multiplier = 1.5
 jumpVelocity = 300.0
 wallJumpVelocity = 300.0
 wallJumpPushOff = 300.0
+animationHandler = NodePath("AnimationHandler")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=43446781]
+[node name="AnimationHandler" type="Node2D" parent="." unique_id=2033617458 node_paths=PackedStringArray("player")]
+script = ExtResource("1_vgqql")
+player = NodePath("..")
+
+[node name="SpriteNolight" type="AnimatedSprite2D" parent="." unique_id=43446781]
+visible = false
 texture_filter = 1
 position = Vector2(0, -1.0000001)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &"defaultLight"
+animation = &"move"
+frame_progress = 0.3431828
+
+[node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
+visible = false
+texture_filter = 1
+position = Vector2(0, -1.0000001)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_igrcy")
+
+[node name="SimpleFlashlight" parent="SpriteLight" unique_id=371804446 instance=ExtResource("5_x3wgy")]
+position = Vector2(3.3333333, -6.666666)
 
 [node name="TempSprite" type="Sprite2D" parent="." unique_id=2136944729]
 visible = false
@@ -43,19 +176,23 @@ scale = Vector2(17.80562, 37.760002)
 texture = SubResource("CanvasTexture_f60y1")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
+visible = false
 shape = SubResource("CapsuleShape2D_v0iea")
 
 [node name="LeftWallCast" type="RayCast2D" parent="." unique_id=1849282611]
+visible = false
 exclude_parent = false
 target_position = Vector2(-11, 0)
 collision_mask = 2048
 
 [node name="RightWallCast" type="RayCast2D" parent="." unique_id=977911928]
+visible = false
 exclude_parent = false
 target_position = Vector2(11, 0)
 collision_mask = 2048
 
 [node name="PlayerInteractionSystem" parent="." unique_id=1699919203 instance=ExtResource("2_cvnsp")]
+visible = false
 
 [node name="PlayerSoundManager" type="Node2D" parent="." unique_id=229532532]
 

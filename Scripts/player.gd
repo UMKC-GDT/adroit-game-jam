@@ -20,6 +20,7 @@ extends CharacterBody2D
 @export var wallFallingGravity := 50.0
 @export var footStepTimerReset = 0.3
 @export var footStepTimer = 0
+@export var animationHandler: Node2D
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -35,12 +36,21 @@ var canDoubleJump := false
 var canWallJump := true
 
 var jumpHeldLength := 0.0
-var canJump := false
+var canJump := true
+
+var hasLight = true
+
+var sprite: AnimatedSprite2D
+var armSprite: Sprite2D
 
 
 
 func _ready() -> void:
 	spawnPosition = self.position
+	if(hasLight):
+		pass
+	else:
+		sprite = $SpriteNolight
 
 
 func _process(delta: float) -> void:
@@ -49,7 +59,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	getInputDir(delta)
-	
+	animationHandler.faceSprite()
+
+
 	if(Input.is_action_pressed("jump")):
 		if(canJump):
 			jumpHeldLength += delta
@@ -104,7 +116,6 @@ func doAirMovement(delta: float):
 			pass
 		else:
 			self.velocity.y = wallFallingGravity
-
 	
 	# Friction based on direction
 	if(isMovingRight()):
