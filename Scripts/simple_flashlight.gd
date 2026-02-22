@@ -72,6 +72,7 @@ func _input(event: InputEvent) -> void:
 
 func _unhandled_input(event): # Listen for a standard Left Mouse Click
 	if event.is_action_pressed("lightToggle"):
+		$EmitterFlashlight.play()
 		swap_timeline()
 
 func swap_timeline() -> void:

@@ -354,6 +354,16 @@ sprite_frames = SubResource("SpriteFrames_igrcy")
 position = Vector2(3.3333333, -6.666666)
 flashlight_radius = 75
 
+[node name="EmitterFlashlight" type="FmodEventEmitter2D" parent="SpriteLight/SimpleFlashlight" unique_id=1761323971]
+event_name = "event:/SFX/Flashlight1"
+event_guid = "{ccd810de-e42e-439c-9cc2-29e489e85663}"
+attached = false
+fmod_parameters/Blank/id = -7292059903593050108
+fmod_parameters/Blank = 0.0
+fmod_parameters/Blank/variant_type = 3
+position = Vector2(-3.3333333, 10)
+scale = Vector2(3.3333333, 3.3333333)
+
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
 shape = SubResource("CapsuleShape2D_v0iea")
 

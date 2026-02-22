@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_interactable_component_interacted() -> void:
+	$switchEmitter.play()
 	isOn = !isOn
 	if isOn: #Just turned on by the function
 		$Sprite2D.texture = onTexture
