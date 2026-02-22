@@ -32,3 +32,9 @@ func faceSprite():
 
 func setFlipH(flip: bool):
 	sprite.flip_h = flip
+
+
+func giveFlashlight():
+	sprite.visible = false
+	sprite = $"../SpriteLight"
+	sprite.visible = true

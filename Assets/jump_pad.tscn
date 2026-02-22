@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dolbxfxoh88vc"]
+
+[ext_resource type="Script" uid="uid://bjxmoeasprtao" path="res://Scripts/jump_pad.gd" id="1_g2lcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdw3"]
+
+[node name="Jump Pad" type="Area2D" unique_id=1382858666]
+script = ExtResource("1_g2lcu")
+characterX = 1.0
+characterY = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850536917]
+shape = SubResource("RectangleShape2D_4bdw3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=658633844]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
