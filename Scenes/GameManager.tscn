@@ -63,7 +63,6 @@ main = 1.0
 [node name="musicEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
 event_name = "event:/Ambience/LampandFlicker"
 event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
-autoplay = true
 fmod_parameters/LampFlicker/id = -6375880320482298193
 fmod_parameters/LampFlicker = 0.0
 fmod_parameters/LampFlicker/variant_type = 3
@@ -84,8 +83,8 @@ fmod_parameters/TitleOutie/variant_type = 3
 position = Vector2(960, 540)
 
 [node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
-position = Vector2(702, 139.00002)
+visible = false
+position = Vector2(743, 180.00002)
 scale = Vector2(0.45601746, 0.73540765)
 
 [connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
-[connection signal="timeout" from="Fade Wait" to="." method="_on_fade_wait_timeout"]

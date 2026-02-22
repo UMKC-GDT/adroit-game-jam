@@ -3,7 +3,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	pass
+	self.visible = true
 	
 func fadeIn():
 	animation_player.play("FadeIn")
