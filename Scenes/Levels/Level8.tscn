@@ -9,11 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_nwfju"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_ewa70"]
 [ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="7_nwfju"]
+[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="8_ewa70"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="8_nfqw5"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_fucmy"]
+[ext_resource type="Texture2D" uid="uid://yd71vxh0lah2" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/OutOfBoundsPres.png" id="9_nfqw5"]
 [ext_resource type="Texture2D" uid="uid://l3dv58qp3g2l" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile2.png" id="10_ewa70"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_gnwex"]
 [ext_resource type="Texture2D" uid="uid://oqqotu674evl" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile.png" id="11_nfqw5"]
+[ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="13_fucmy"]
+[ext_resource type="Texture2D" uid="uid://cufhqwl6jml0e" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/OutOfBoundsFuture.png" id="14_gnwex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
 size = Vector2(352, 42)
@@ -115,6 +119,306 @@ texture = ExtResource("7_nwfju")
 [node name="LargeGround12" parent="Present" unique_id=486633788 instance=ExtResource("3_s3opc")]
 position = Vector2(32, 128)
 
+[node name="Ground5" parent="Present/LargeGround12" unique_id=629363450 instance=ExtResource("8_ewa70")]
+position = Vector2(80, 0)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground5" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground6" parent="Present/LargeGround12" unique_id=1341481122 instance=ExtResource("8_ewa70")]
+position = Vector2(112, 0)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground6" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground7" parent="Present/LargeGround12" unique_id=1563119573 instance=ExtResource("8_ewa70")]
+position = Vector2(144, 0)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground7" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground8" parent="Present/LargeGround12" unique_id=1218494362 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -32)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground8" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground9" parent="Present/LargeGround12" unique_id=464586421 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -32)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground9" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground10" parent="Present/LargeGround12" unique_id=2090346364 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -32)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground10" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground11" parent="Present/LargeGround12" unique_id=710802623 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -64)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground11" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground12" parent="Present/LargeGround12" unique_id=632778067 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -64)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground12" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground13" parent="Present/LargeGround12" unique_id=1161109941 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -64)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground13" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground14" parent="Present/LargeGround12" unique_id=1797433791 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -96)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground14" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground15" parent="Present/LargeGround12" unique_id=214562222 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -96)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground15" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground16" parent="Present/LargeGround12" unique_id=1002532269 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -96)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground16" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground17" parent="Present/LargeGround12" unique_id=2112480175 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground17" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground18" parent="Present/LargeGround12" unique_id=1602546602 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground18" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground19" parent="Present/LargeGround12" unique_id=1964359260 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground19" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground20" parent="Present/LargeGround12" unique_id=207401881 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground20" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground21" parent="Present/LargeGround12" unique_id=1683220155 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground21" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground22" parent="Present/LargeGround12" unique_id=1056369234 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground22" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground23" parent="Present/LargeGround12" unique_id=1255196562 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground23" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground26" parent="Present/LargeGround12" unique_id=599003480 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground26" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground24" parent="Present/LargeGround12" unique_id=577966119 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground24" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground25" parent="Present/LargeGround12" unique_id=756340836 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground25" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground27" parent="Present/LargeGround12" unique_id=1607148408 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground27" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground28" parent="Present/LargeGround12" unique_id=1121403621 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground28" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground29" parent="Present/LargeGround12" unique_id=1041188564 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground29" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground30" parent="Present/LargeGround12" unique_id=791451543 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -160)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground30" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground31" parent="Present/LargeGround12" unique_id=553688601 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -192)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground31" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground32" parent="Present/LargeGround12" unique_id=228492786 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -192)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground32" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground33" parent="Present/LargeGround12" unique_id=755776671 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -192)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground33" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground34" parent="Present/LargeGround12" unique_id=1997923361 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -192)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground34" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground35" parent="Present/LargeGround12" unique_id=966436429 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -224)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground35" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground36" parent="Present/LargeGround12" unique_id=653051703 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -224)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground36" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground37" parent="Present/LargeGround12" unique_id=1463771519 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -224)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground37" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground38" parent="Present/LargeGround12" unique_id=485810638 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -224)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground38" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground39" parent="Present/LargeGround12" unique_id=1456998523 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -256)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground39" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground40" parent="Present/LargeGround12" unique_id=69306137 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -256)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground40" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground41" parent="Present/LargeGround12" unique_id=122881346 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -256)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground41" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground42" parent="Present/LargeGround12" unique_id=1892426718 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -256)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground42" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground43" parent="Present/LargeGround12" unique_id=745210334 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -288)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground43" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground44" parent="Present/LargeGround12" unique_id=1034967000 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -288)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground44" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground45" parent="Present/LargeGround12" unique_id=905031860 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -288)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground45" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground46" parent="Present/LargeGround12" unique_id=91579732 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -288)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground46" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground47" parent="Present/LargeGround12" unique_id=1780135732 instance=ExtResource("8_ewa70")]
+position = Vector2(-176, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground47" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground48" parent="Present/LargeGround12" unique_id=1213230097 instance=ExtResource("8_ewa70")]
+position = Vector2(-208, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground48" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground49" parent="Present/LargeGround12" unique_id=1060009968 instance=ExtResource("8_ewa70")]
+position = Vector2(-144, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground49" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground50" parent="Present/LargeGround12" unique_id=759144838 instance=ExtResource("8_ewa70")]
+position = Vector2(-112, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground50" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground51" parent="Present/LargeGround12" unique_id=1879874919 instance=ExtResource("8_ewa70")]
+position = Vector2(80, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground51" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground52" parent="Present/LargeGround12" unique_id=852944102 instance=ExtResource("8_ewa70")]
+position = Vector2(48, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground52" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground53" parent="Present/LargeGround12" unique_id=1739616179 instance=ExtResource("8_ewa70")]
+position = Vector2(112, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground53" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
+[node name="Ground54" parent="Present/LargeGround12" unique_id=2035830890 instance=ExtResource("8_ewa70")]
+position = Vector2(144, -320)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground54" index="0" unique_id=357974407]
+texture = ExtResource("9_nfqw5")
+
 [node name="Sprite2D" parent="Present/LargeGround12/Ground4" parent_id_path=PackedInt32Array(486633788, 1915624487) index="0" unique_id=357974407]
 rotation = -1.5707964
 texture = ExtResource("7_nwfju")
@@ -136,19 +440,19 @@ position = Vector2(64, 32)
 rotation = -1.5707964
 
 [node name="LargeGround5" parent="Future" unique_id=2105335763 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, 24)
+position = Vector2(-32, 32)
 rotation = -4.712389
 
 [node name="LargeGround6" parent="Future" unique_id=2136161704 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, 152)
+position = Vector2(-32, 160)
 rotation = -4.712389
 
 [node name="LargeGround7" parent="Future" unique_id=1868814649 instance=ExtResource("6_nwfju")]
-position = Vector2(64, 152)
+position = Vector2(64, 160)
 rotation = -7.853982
 
 [node name="LargeGround10" parent="Future" unique_id=1758629109 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, -104)
+position = Vector2(-32, -96)
 rotation = -4.712389
 
 [node name="LargeGround8" parent="Future" unique_id=1139759100 instance=ExtResource("6_nwfju")]
@@ -162,6 +466,582 @@ rotation = 6.2831855
 [node name="Sprite2D" parent="Future/LargeGround9/Ground6" parent_id_path=PackedInt32Array(1873990821, 1605235542) index="0" unique_id=357974407]
 rotation = -1.570684
 texture = ExtResource("10_ewa70")
+
+[node name="Ground10" parent="Future/LargeGround9" unique_id=311391439 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999994, 32.000004)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground10" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground11" parent="Future/LargeGround9" unique_id=1784827082 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000006, 31.999998)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground11" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground12" parent="Future/LargeGround9" unique_id=222200575 instance=ExtResource("13_fucmy")]
+position = Vector2(48.000008, 31.999992)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground12" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground13" parent="Future/LargeGround9" unique_id=1904639624 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999989, 64)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground13" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground14" parent="Future/LargeGround9" unique_id=921981139 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000011, 64)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground14" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground15" parent="Future/LargeGround9" unique_id=272836254 instance=ExtResource("13_fucmy")]
+position = Vector2(48.00001, 63.999992)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground15" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground16" parent="Future/LargeGround9" unique_id=672021706 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999983, 96)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground16" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground17" parent="Future/LargeGround9" unique_id=1757155883 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000017, 96)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground17" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground18" parent="Future/LargeGround9" unique_id=470626926 instance=ExtResource("13_fucmy")]
+position = Vector2(48.000015, 96)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground18" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground19" parent="Future/LargeGround9" unique_id=546385759 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999977, 128)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground19" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground20" parent="Future/LargeGround9" unique_id=695791870 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000023, 128)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground20" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground21" parent="Future/LargeGround9" unique_id=1298012054 instance=ExtResource("13_fucmy")]
+position = Vector2(48.00002, 128)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground21" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground22" parent="Future/LargeGround9" unique_id=529646389 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999971, 160)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground22" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground23" parent="Future/LargeGround9" unique_id=1537413350 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000029, 160)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground23" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground24" parent="Future/LargeGround9" unique_id=1132810674 instance=ExtResource("13_fucmy")]
+position = Vector2(48.000023, 160)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground24" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground25" parent="Future/LargeGround9" unique_id=1974247819 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999966, 192)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground25" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground26" parent="Future/LargeGround9" unique_id=147988085 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000034, 192)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground26" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground27" parent="Future/LargeGround9" unique_id=1417288454 instance=ExtResource("13_fucmy")]
+position = Vector2(48.000027, 192)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground27" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground28" parent="Future/LargeGround9" unique_id=1741406924 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.99996, 224)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground28" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground29" parent="Future/LargeGround9" unique_id=1029369165 instance=ExtResource("13_fucmy")]
+position = Vector2(16.00004, 224)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground29" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground30" parent="Future/LargeGround9" unique_id=27150910 instance=ExtResource("13_fucmy")]
+position = Vector2(48.00003, 224)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground30" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground31" parent="Future/LargeGround9" unique_id=1656059162 instance=ExtResource("13_fucmy")]
+position = Vector2(-15.999954, 256)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground31" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground32" parent="Future/LargeGround9" unique_id=223931080 instance=ExtResource("13_fucmy")]
+position = Vector2(16.000046, 256)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground32" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground33" parent="Future/LargeGround9" unique_id=1880008163 instance=ExtResource("13_fucmy")]
+position = Vector2(48.000034, 256)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground33" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground34" parent="Future/LargeGround9" unique_id=1762993463 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 256.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground34" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground35" parent="Future/LargeGround9" unique_id=2018772063 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99995, 256.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground35" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground36" parent="Future/LargeGround9" unique_id=1256909438 instance=ExtResource("13_fucmy")]
+position = Vector2(-207.99997, 256.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground36" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground37" parent="Future/LargeGround9" unique_id=404850527 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 256.0001)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground37" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground38" parent="Future/LargeGround9" unique_id=1442989183 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 256.0001)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground38" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground39" parent="Future/LargeGround9" unique_id=1175054502 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 256.0001)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground39" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground40" parent="Future/LargeGround9" unique_id=30244437 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 224.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground40" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground41" parent="Future/LargeGround9" unique_id=1735052597 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99994, 224.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground41" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground42" parent="Future/LargeGround9" unique_id=561607596 instance=ExtResource("13_fucmy")]
+position = Vector2(-207.99997, 224.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground42" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground43" parent="Future/LargeGround9" unique_id=588129492 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 224.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground43" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground44" parent="Future/LargeGround9" unique_id=1161914505 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 224.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground44" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground45" parent="Future/LargeGround9" unique_id=1950614000 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 224.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground45" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground46" parent="Future/LargeGround9" unique_id=473539004 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 192.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground46" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground47" parent="Future/LargeGround9" unique_id=433700422 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99997, 192.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground47" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground48" parent="Future/LargeGround9" unique_id=1383450872 instance=ExtResource("13_fucmy")]
+position = Vector2(-207.99998, 192.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground48" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground49" parent="Future/LargeGround9" unique_id=709654141 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 192.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground49" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground50" parent="Future/LargeGround9" unique_id=1093781553 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 192.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground50" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground51" parent="Future/LargeGround9" unique_id=1353287753 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 192.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground51" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground52" parent="Future/LargeGround9" unique_id=549317728 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 160.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground52" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground53" parent="Future/LargeGround9" unique_id=2019646434 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99995, 160.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground53" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground54" parent="Future/LargeGround9" unique_id=1383699181 instance=ExtResource("13_fucmy")]
+position = Vector2(-207.99998, 160.00005)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground54" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground55" parent="Future/LargeGround9" unique_id=753608696 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 160.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground55" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground56" parent="Future/LargeGround9" unique_id=1608819650 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 160.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground56" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground57" parent="Future/LargeGround9" unique_id=722157569 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 160.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground57" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground58" parent="Future/LargeGround9" unique_id=208472753 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 128.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground58" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground59" parent="Future/LargeGround9" unique_id=1597681247 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99998, 128.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground59" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground60" parent="Future/LargeGround9" unique_id=1149130634 instance=ExtResource("13_fucmy")]
+position = Vector2(-208, 128.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground60" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground61" parent="Future/LargeGround9" unique_id=1061662534 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 128.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground61" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground62" parent="Future/LargeGround9" unique_id=1887011040 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 128.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground62" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground63" parent="Future/LargeGround9" unique_id=74994522 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 128.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground63" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground64" parent="Future/LargeGround9" unique_id=1704348201 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 96.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground64" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground65" parent="Future/LargeGround9" unique_id=932880410 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99997, 96.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground65" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground66" parent="Future/LargeGround9" unique_id=661856961 instance=ExtResource("13_fucmy")]
+position = Vector2(-208, 96.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground66" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground67" parent="Future/LargeGround9" unique_id=455496330 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 96.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground67" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground68" parent="Future/LargeGround9" unique_id=916648458 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 96.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground68" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground69" parent="Future/LargeGround9" unique_id=85956624 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 96.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground69" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground70" parent="Future/LargeGround9" unique_id=652013368 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 64.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground70" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground71" parent="Future/LargeGround9" unique_id=1792500444 instance=ExtResource("13_fucmy")]
+position = Vector2(-240, 64.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground71" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground72" parent="Future/LargeGround9" unique_id=1435874357 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.00002, 64.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground72" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground73" parent="Future/LargeGround9" unique_id=940756813 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 64.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground73" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground74" parent="Future/LargeGround9" unique_id=1947939921 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 64.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground74" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground75" parent="Future/LargeGround9" unique_id=1856429136 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 64.00009)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground75" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground76" parent="Future/LargeGround9" unique_id=1634986936 instance=ExtResource("13_fucmy")]
+position = Vector2(-271.99994, 32.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground76" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground77" parent="Future/LargeGround9" unique_id=620359710 instance=ExtResource("13_fucmy")]
+position = Vector2(-239.99998, 32.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground77" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground78" parent="Future/LargeGround9" unique_id=709317470 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.00002, 32.000046)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground78" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground79" parent="Future/LargeGround9" unique_id=1963396317 instance=ExtResource("13_fucmy")]
+position = Vector2(-367.99994, 32.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground79" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground80" parent="Future/LargeGround9" unique_id=714092559 instance=ExtResource("13_fucmy")]
+position = Vector2(-335.99994, 32.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground80" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground81" parent="Future/LargeGround9" unique_id=1321996832 instance=ExtResource("13_fucmy")]
+position = Vector2(-303.99997, 32.00006)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground81" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground82" parent="Future/LargeGround9" unique_id=68766597 instance=ExtResource("13_fucmy")]
+position = Vector2(-272, 6.484985e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground82" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground83" parent="Future/LargeGround9" unique_id=462082590 instance=ExtResource("13_fucmy")]
+position = Vector2(-240.00008, 6.484985e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground83" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground84" parent="Future/LargeGround9" unique_id=771688648 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.00009, 6.484985e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground84" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground85" parent="Future/LargeGround9" unique_id=2049431856 instance=ExtResource("13_fucmy")]
+position = Vector2(-368, 9.536743e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground85" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground86" parent="Future/LargeGround9" unique_id=46542933 instance=ExtResource("13_fucmy")]
+position = Vector2(-336, 9.536743e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground86" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground87" parent="Future/LargeGround9" unique_id=789856695 instance=ExtResource("13_fucmy")]
+position = Vector2(-304.00003, 9.536743e-05)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground87" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground88" parent="Future/LargeGround9" unique_id=2145100266 instance=ExtResource("13_fucmy")]
+position = Vector2(-272, -31.99995)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground88" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground89" parent="Future/LargeGround9" unique_id=330579417 instance=ExtResource("13_fucmy")]
+position = Vector2(-240.00006, -31.99995)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground89" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground90" parent="Future/LargeGround9" unique_id=1196286746 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.00009, -31.99995)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground90" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground91" parent="Future/LargeGround9" unique_id=732495479 instance=ExtResource("13_fucmy")]
+position = Vector2(-368, -31.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground91" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground92" parent="Future/LargeGround9" unique_id=834690294 instance=ExtResource("13_fucmy")]
+position = Vector2(-336, -31.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground92" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground93" parent="Future/LargeGround9" unique_id=22397269 instance=ExtResource("13_fucmy")]
+position = Vector2(-304.00003, -31.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground93" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground94" parent="Future/LargeGround9" unique_id=1610665385 instance=ExtResource("13_fucmy")]
+position = Vector2(-272, -63.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground94" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground95" parent="Future/LargeGround9" unique_id=1702255490 instance=ExtResource("13_fucmy")]
+position = Vector2(-240.00009, -63.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground95" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground96" parent="Future/LargeGround9" unique_id=14419724 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.0001, -63.999935)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground96" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground97" parent="Future/LargeGround9" unique_id=1690477830 instance=ExtResource("13_fucmy")]
+position = Vector2(-368, -63.999905)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground97" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground98" parent="Future/LargeGround9" unique_id=460001852 instance=ExtResource("13_fucmy")]
+position = Vector2(-336, -63.999905)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground98" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground99" parent="Future/LargeGround9" unique_id=1490043518 instance=ExtResource("13_fucmy")]
+position = Vector2(-304.00003, -63.999905)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground99" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground100" parent="Future/LargeGround9" unique_id=335338813 instance=ExtResource("13_fucmy")]
+position = Vector2(-272, -95.999954)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground100" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground101" parent="Future/LargeGround9" unique_id=1164518499 instance=ExtResource("13_fucmy")]
+position = Vector2(-240.00008, -95.999954)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground101" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground102" parent="Future/LargeGround9" unique_id=397018167 instance=ExtResource("13_fucmy")]
+position = Vector2(-208.0001, -95.999954)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground102" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground103" parent="Future/LargeGround9" unique_id=71512861 instance=ExtResource("13_fucmy")]
+position = Vector2(-368, -95.99994)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground103" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground104" parent="Future/LargeGround9" unique_id=2138770596 instance=ExtResource("13_fucmy")]
+position = Vector2(-336, -95.99994)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground104" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
+
+[node name="Ground105" parent="Future/LargeGround9" unique_id=2128806440 instance=ExtResource("13_fucmy")]
+position = Vector2(-304.00003, -95.99994)
+
+[node name="Sprite2D" parent="Future/LargeGround9/Ground105" index="0" unique_id=357974407]
+texture = ExtResource("14_gnwex")
 
 [node name="LargeGround11" parent="Future" unique_id=2137760440 instance=ExtResource("6_nwfju")]
 position = Vector2(160, -96)
@@ -202,9 +1082,155 @@ shape = SubResource("RectangleShape2D_bgnfb")
 [editable path="Present/LargeGround11/Ground3"]
 [editable path="Present/LargeGround11/Ground4"]
 [editable path="Present/LargeGround12"]
+[editable path="Present/LargeGround12/Ground5"]
+[editable path="Present/LargeGround12/Ground6"]
+[editable path="Present/LargeGround12/Ground7"]
+[editable path="Present/LargeGround12/Ground8"]
+[editable path="Present/LargeGround12/Ground9"]
+[editable path="Present/LargeGround12/Ground10"]
+[editable path="Present/LargeGround12/Ground11"]
+[editable path="Present/LargeGround12/Ground12"]
+[editable path="Present/LargeGround12/Ground13"]
+[editable path="Present/LargeGround12/Ground14"]
+[editable path="Present/LargeGround12/Ground15"]
+[editable path="Present/LargeGround12/Ground16"]
+[editable path="Present/LargeGround12/Ground17"]
+[editable path="Present/LargeGround12/Ground18"]
+[editable path="Present/LargeGround12/Ground19"]
+[editable path="Present/LargeGround12/Ground20"]
+[editable path="Present/LargeGround12/Ground21"]
+[editable path="Present/LargeGround12/Ground22"]
+[editable path="Present/LargeGround12/Ground23"]
+[editable path="Present/LargeGround12/Ground26"]
+[editable path="Present/LargeGround12/Ground24"]
+[editable path="Present/LargeGround12/Ground25"]
+[editable path="Present/LargeGround12/Ground27"]
+[editable path="Present/LargeGround12/Ground28"]
+[editable path="Present/LargeGround12/Ground29"]
+[editable path="Present/LargeGround12/Ground30"]
+[editable path="Present/LargeGround12/Ground31"]
+[editable path="Present/LargeGround12/Ground32"]
+[editable path="Present/LargeGround12/Ground33"]
+[editable path="Present/LargeGround12/Ground34"]
+[editable path="Present/LargeGround12/Ground35"]
+[editable path="Present/LargeGround12/Ground36"]
+[editable path="Present/LargeGround12/Ground37"]
+[editable path="Present/LargeGround12/Ground38"]
+[editable path="Present/LargeGround12/Ground39"]
+[editable path="Present/LargeGround12/Ground40"]
+[editable path="Present/LargeGround12/Ground41"]
+[editable path="Present/LargeGround12/Ground42"]
+[editable path="Present/LargeGround12/Ground43"]
+[editable path="Present/LargeGround12/Ground44"]
+[editable path="Present/LargeGround12/Ground45"]
+[editable path="Present/LargeGround12/Ground46"]
+[editable path="Present/LargeGround12/Ground47"]
+[editable path="Present/LargeGround12/Ground48"]
+[editable path="Present/LargeGround12/Ground49"]
+[editable path="Present/LargeGround12/Ground50"]
+[editable path="Present/LargeGround12/Ground51"]
+[editable path="Present/LargeGround12/Ground52"]
+[editable path="Present/LargeGround12/Ground53"]
+[editable path="Present/LargeGround12/Ground54"]
 [editable path="Present/LargeGround12/Ground4"]
 [editable path="Future/LargeGround9"]
 [editable path="Future/LargeGround9/Ground6"]
+[editable path="Future/LargeGround9/Ground10"]
+[editable path="Future/LargeGround9/Ground11"]
+[editable path="Future/LargeGround9/Ground12"]
+[editable path="Future/LargeGround9/Ground13"]
+[editable path="Future/LargeGround9/Ground14"]
+[editable path="Future/LargeGround9/Ground15"]
+[editable path="Future/LargeGround9/Ground16"]
+[editable path="Future/LargeGround9/Ground17"]
+[editable path="Future/LargeGround9/Ground18"]
+[editable path="Future/LargeGround9/Ground19"]
+[editable path="Future/LargeGround9/Ground20"]
+[editable path="Future/LargeGround9/Ground21"]
+[editable path="Future/LargeGround9/Ground22"]
+[editable path="Future/LargeGround9/Ground23"]
+[editable path="Future/LargeGround9/Ground24"]
+[editable path="Future/LargeGround9/Ground25"]
+[editable path="Future/LargeGround9/Ground26"]
+[editable path="Future/LargeGround9/Ground27"]
+[editable path="Future/LargeGround9/Ground28"]
+[editable path="Future/LargeGround9/Ground29"]
+[editable path="Future/LargeGround9/Ground30"]
+[editable path="Future/LargeGround9/Ground31"]
+[editable path="Future/LargeGround9/Ground32"]
+[editable path="Future/LargeGround9/Ground33"]
+[editable path="Future/LargeGround9/Ground34"]
+[editable path="Future/LargeGround9/Ground35"]
+[editable path="Future/LargeGround9/Ground36"]
+[editable path="Future/LargeGround9/Ground37"]
+[editable path="Future/LargeGround9/Ground38"]
+[editable path="Future/LargeGround9/Ground39"]
+[editable path="Future/LargeGround9/Ground40"]
+[editable path="Future/LargeGround9/Ground41"]
+[editable path="Future/LargeGround9/Ground42"]
+[editable path="Future/LargeGround9/Ground43"]
+[editable path="Future/LargeGround9/Ground44"]
+[editable path="Future/LargeGround9/Ground45"]
+[editable path="Future/LargeGround9/Ground46"]
+[editable path="Future/LargeGround9/Ground47"]
+[editable path="Future/LargeGround9/Ground48"]
+[editable path="Future/LargeGround9/Ground49"]
+[editable path="Future/LargeGround9/Ground50"]
+[editable path="Future/LargeGround9/Ground51"]
+[editable path="Future/LargeGround9/Ground52"]
+[editable path="Future/LargeGround9/Ground53"]
+[editable path="Future/LargeGround9/Ground54"]
+[editable path="Future/LargeGround9/Ground55"]
+[editable path="Future/LargeGround9/Ground56"]
+[editable path="Future/LargeGround9/Ground57"]
+[editable path="Future/LargeGround9/Ground58"]
+[editable path="Future/LargeGround9/Ground59"]
+[editable path="Future/LargeGround9/Ground60"]
+[editable path="Future/LargeGround9/Ground61"]
+[editable path="Future/LargeGround9/Ground62"]
+[editable path="Future/LargeGround9/Ground63"]
+[editable path="Future/LargeGround9/Ground64"]
+[editable path="Future/LargeGround9/Ground65"]
+[editable path="Future/LargeGround9/Ground66"]
+[editable path="Future/LargeGround9/Ground67"]
+[editable path="Future/LargeGround9/Ground68"]
+[editable path="Future/LargeGround9/Ground69"]
+[editable path="Future/LargeGround9/Ground70"]
+[editable path="Future/LargeGround9/Ground71"]
+[editable path="Future/LargeGround9/Ground72"]
+[editable path="Future/LargeGround9/Ground73"]
+[editable path="Future/LargeGround9/Ground74"]
+[editable path="Future/LargeGround9/Ground75"]
+[editable path="Future/LargeGround9/Ground76"]
+[editable path="Future/LargeGround9/Ground77"]
+[editable path="Future/LargeGround9/Ground78"]
+[editable path="Future/LargeGround9/Ground79"]
+[editable path="Future/LargeGround9/Ground80"]
+[editable path="Future/LargeGround9/Ground81"]
+[editable path="Future/LargeGround9/Ground82"]
+[editable path="Future/LargeGround9/Ground83"]
+[editable path="Future/LargeGround9/Ground84"]
+[editable path="Future/LargeGround9/Ground85"]
+[editable path="Future/LargeGround9/Ground86"]
+[editable path="Future/LargeGround9/Ground87"]
+[editable path="Future/LargeGround9/Ground88"]
+[editable path="Future/LargeGround9/Ground89"]
+[editable path="Future/LargeGround9/Ground90"]
+[editable path="Future/LargeGround9/Ground91"]
+[editable path="Future/LargeGround9/Ground92"]
+[editable path="Future/LargeGround9/Ground93"]
+[editable path="Future/LargeGround9/Ground94"]
+[editable path="Future/LargeGround9/Ground95"]
+[editable path="Future/LargeGround9/Ground96"]
+[editable path="Future/LargeGround9/Ground97"]
+[editable path="Future/LargeGround9/Ground98"]
+[editable path="Future/LargeGround9/Ground99"]
+[editable path="Future/LargeGround9/Ground100"]
+[editable path="Future/LargeGround9/Ground101"]
+[editable path="Future/LargeGround9/Ground102"]
+[editable path="Future/LargeGround9/Ground103"]
+[editable path="Future/LargeGround9/Ground104"]
+[editable path="Future/LargeGround9/Ground105"]
 [editable path="Future/LargeGround11"]
 [editable path="Future/LargeGround11/Ground6"]
 [editable path="Future/LargeGround11/Ground9"]
