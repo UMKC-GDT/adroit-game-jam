@@ -18,7 +18,7 @@ size = Vector2(800, 32)
 script = ExtResource("1_vjm1k")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_54gf8")]
-position = Vector2(-616.0001, 392.00006)
+position = Vector2(-608, 584)
 rotation = -0.76982385
 scale = Vector2(7.94227, 2.311422)
 
