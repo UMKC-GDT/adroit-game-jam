@@ -12,8 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	var sceneManager:game_manager = get_tree().root.get_node("GameManager")
-	if (sceneManager != null):
-		sceneManager.LoadNewScene("res://Scenes/Levels/"+currentScene+".tscn")
-	else:
-			get_tree().change_scene_to_file("res://Scenes/Levels/"+currentScene+".tscn")
+	if get_tree():
+		var sceneManager:game_manager = get_tree().root.get_node("GameManager")
+		if (sceneManager != null):
+			sceneManager.LoadNewScene("res://Scenes/Levels/"+currentScene+".tscn")
+		else:
+				get_tree().change_scene_to_file("res://Scenes/Levels/"+currentScene+".tscn")
