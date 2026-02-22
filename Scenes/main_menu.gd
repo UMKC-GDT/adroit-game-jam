@@ -17,7 +17,11 @@ func _on_start_pressed() -> void:
 	else:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+=======
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level11.tscn")
+>>>>>>> Stashed changes
 =======
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level11.tscn")
 >>>>>>> Stashed changes
