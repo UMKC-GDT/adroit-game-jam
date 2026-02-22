@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="6_bkrib"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2fq2u"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_fdpi5"]
-[ext_resource type="PackedScene" path="res://Assets/HazeGenerator.tscn" id="10_dn4hu"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="10_dn4hu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvllu"]
-size = Vector2(352, 24)
+size = Vector2(552, 24)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_egu6v")
@@ -51,10 +51,7 @@ position = Vector2(112, 0)
 native_timeline = 0
 
 [node name="FlickeringLamp" parent="Present" unique_id=177997193 instance=ExtResource("5_iqc0i")]
-position = Vector2(0, -56)
-
-[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_bkrib")]
-position = Vector2(-136, -120)
+position = Vector2(0, 40)
 
 [node name="LargeGround3" parent="Present" unique_id=601670600 instance=ExtResource("4_sxy6w")]
 position = Vector2(-152, -160)
@@ -81,7 +78,7 @@ enabled = false
 zoom = Vector2(2.5, 2.5)
 
 [node name="Platform" parent="Future" unique_id=985560200 instance=ExtResource("4_lvllu")]
-position = Vector2(0, -64)
+position = Vector2(0, -72)
 
 [node name="LargeGround" parent="Future" unique_id=699518766 instance=ExtResource("7_2fq2u")]
 position = Vector2(-144, 64)
@@ -95,6 +92,22 @@ position = Vector2(112, 0)
 [node name="LargeGround2" parent="Future" unique_id=1354843563 instance=ExtResource("7_2fq2u")]
 position = Vector2(-144, -96)
 
+[node name="LargeGround2" parent="Future/LargeGround2" unique_id=688255945 instance=ExtResource("7_2fq2u")]
+position = Vector2(40, -96)
+rotation = -3.1415927
+
+[node name="LargeGround3" parent="Future" unique_id=1200556817 instance=ExtResource("7_2fq2u")]
+position = Vector2(-152, 0)
+rotation = 1.5707964
+
+[node name="LargeGround4" parent="Future" unique_id=1871250598 instance=ExtResource("7_2fq2u")]
+position = Vector2(-152, -160)
+rotation = 1.5707964
+
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_bkrib")]
+position = Vector2(-136, -120)
+native_timeline = 1
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_fdpi5")]
 position = Vector2(-112, 24)
 jumpVelocity = 400.0
@@ -104,7 +117,7 @@ wallJumpVelocity = 200.0
 position = Vector2(0, 184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1247056598]
-position = Vector2(0, 56)
+position = Vector2(4, 56)
 shape = SubResource("RectangleShape2D_lvllu")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_dn4hu")]
