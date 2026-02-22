@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_7whch"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_pw32c"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_1aop2"]
 [ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/flickering_lamp.tscn" id="3_eqo3r"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_324df"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_i4itb"]
@@ -27,6 +28,11 @@ scale = Vector2(7.94227, 2.311422)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=131411613]
+position = Vector2(5.999996, -1)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("3_1aop2")
 
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)

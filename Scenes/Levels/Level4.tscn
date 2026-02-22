@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c1wv3821tlxfh"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_xgp81"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_xgp81"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_nv5kp"]
-[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="4_inj8u"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_bose6"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_inj8u"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_iv3jq"]
 [ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="4_l5kak"]
 [ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="5_pk3hp"]
@@ -275,6 +276,11 @@ scale = Vector2(7.94227, 2.311422)
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
 
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=635763081]
+position = Vector2(-27, 86)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("3_bose6")
+
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)
 
@@ -296,6 +302,9 @@ position = Vector2(16, -0.06)
 
 [node name="Sprite2D" parent="Present/LargeGround2/Ground3" parent_id_path=PackedInt32Array(758586213, 1652540597) index="0" unique_id=357974407]
 texture = ExtResource("4_l5kak")
+
+[node name="Ground4" parent="Present/LargeGround2" index="3" unique_id=1915624487]
+position = Vector2(48, -0.06)
 
 [node name="Ground5" parent="Present/LargeGround2" unique_id=211643635 instance=ExtResource("5_pk3hp")]
 position = Vector2(-48, 32)
@@ -729,9 +738,6 @@ position = Vector2(-16, -254)
 [node name="Sprite2D" parent="Present/LargeGround2/Ground76" index="0" unique_id=357974407]
 texture = ExtResource("6_bose6")
 
-[node name="Ground4" parent="Present/LargeGround2" index="75" unique_id=1915624487]
-position = Vector2(48, -0.06)
-
 [node name="LargeGround3" parent="Present" unique_id=1063802145 instance=ExtResource("4_iv3jq")]
 position = Vector2(128, 63.94)
 
@@ -827,6 +833,15 @@ position = Vector2(-128, 64)
 
 [node name="Sprite2D" parent="Future/LargeGround2/Ground6" parent_id_path=PackedInt32Array(356223475, 1605235542) index="0" unique_id=357974407]
 texture = ExtResource("9_1u1uf")
+
+[node name="Ground7" parent="Future/LargeGround2" index="1" unique_id=881032686]
+position = Vector2(-16, -0.06)
+
+[node name="Ground8" parent="Future/LargeGround2" index="2" unique_id=1365851496]
+position = Vector2(16, -0.06)
+
+[node name="Ground9" parent="Future/LargeGround2" index="3" unique_id=1089114079]
+position = Vector2(48, -0.06)
 
 [node name="Ground10" parent="Future/LargeGround2" unique_id=616279557 instance=ExtResource("12_53tmp")]
 position = Vector2(-48, 32)
@@ -1259,15 +1274,6 @@ position = Vector2(-16, -254)
 
 [node name="Sprite2D" parent="Future/LargeGround2/Ground81" index="0" unique_id=357974407]
 texture = ExtResource("13_n2eit")
-
-[node name="Ground7" parent="Future/LargeGround2" index="73" unique_id=881032686]
-position = Vector2(-16, -0.06)
-
-[node name="Ground8" parent="Future/LargeGround2" index="74" unique_id=1365851496]
-position = Vector2(16, -0.06)
-
-[node name="Ground9" parent="Future/LargeGround2" index="75" unique_id=1089114079]
-position = Vector2(48, -0.06)
 
 [node name="LargeGround3" parent="Future" unique_id=2042408951 instance=ExtResource("7_2brj3")]
 position = Vector2(128, 63.94)

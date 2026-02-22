@@ -7,6 +7,9 @@ class_name SimpleFlashlight
 @export var starting_light: Timeline = Timeline.PRESENT
 @onready var circle: CollisionShape2D = $Circle
 
+# NEW: Track the active aiming device
+var is_using_mouse: bool = true
+
 # Variables for Controller Support (Done By Trevor N)
 var stickDirection
 var lastMousePosition
@@ -45,12 +48,27 @@ func set_starting_light(present_light):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	stickDirection = Input.get_vector("rightStickLeft", "rightStickRight", "rightStickUp", "rightStickDown")
-	if (get_global_mouse_position() != lastMousePosition):
+	var stickDirection = Input.get_vector("rightStickLeft", "rightStickRight", "rightStickUp", "rightStickDown")
+	
+	# If the stick is tilted past a tiny deadzone, lock into controller mode
+	if stickDirection.length() > 0.1:
+		is_using_mouse = false
+		
+	# Execute the aiming logic based on whatever mode we are currently locked into
+	if is_using_mouse:
+		# Always look at the mouse, even if it's sitting perfectly still. 
+		# If the player walks forward, the flashlight will dynamically track that global coordinate.
 		look_at(get_global_mouse_position())
-		lastMousePosition = get_global_mouse_position()
 	else:
-		look_at($".".global_position + stickDirection)
+		# Only update the rotation if they are actively pushing the stick.
+		# If they let go (stick length is 0), it just stays pointing exactly where they left it.
+		if stickDirection.length() > 0.1:
+			look_at(global_position + stickDirection)
+
+func _input(event: InputEvent) -> void:
+	# If they bump the mouse or click, instantly lock into mouse mode
+	if event is InputEventMouseMotion or event is InputEventMouseButton:
+		is_using_mouse = true
 
 func _unhandled_input(event): # Listen for a standard Left Mouse Click
 	if event.is_action_pressed("lightToggle"):
