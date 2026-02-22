@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cbqqqpp0j6qn0"]
+
+[ext_resource type="Texture2D" uid="uid://brfw1o1nje22e" path="res://BrandonTesting/CameraTarget.png" id="1_b2ndh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4cnu"]
+radius = 15.297058
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1433041887]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1243842510]
+shape = SubResource("CircleShape2D_e4cnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178532224]
+texture = ExtResource("1_b2ndh")

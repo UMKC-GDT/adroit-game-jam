@@ -1,6 +1,7 @@
 extends StaticBody2D
 class_name StaticPlatform
 
+@export var reversed: bool = false
 @export var sprite: Sprite2D
 var polySprite: Polygon2D
 var collider: CollisionPolygon2D
@@ -191,16 +192,46 @@ func GetCollisionPoints(playerPosition: Vector2, positiveLineEndPoint: Vector2, 
 	else:
 		botIntPointLeftVis.visible = false
 	
+	# checks if the play is in the box and will add a vertex at the player position is in the box
+	var boxPoints = PackedVector2Array([topLeftPoint, topRightPoint, botRightPoint, botLeftPoint])
+	if Geometry2D.is_point_in_polygon(playerPosition, boxPoints):
+		collisionVertexs.append(playerPosition)
+		
+	if Geometry2D.is_point_in_polygon(positiveLineEndPoint, boxPoints):
+		collisionVertexs.append(positiveLineEndPoint)
+	if Geometry2D.is_point_in_polygon(negativeLineEndPoint, boxPoints):
+		collisionVertexs.append(negativeLineEndPoint)
+	
+	vertexPoint = GetWhereLightIntersectsPlatform(positiveLineEndPoint, negativeLineEndPoint, topLeftPoint, topRightPoint)
+	if (vertexPoint != null):
+		collisionVertexs.append(vertexPoint)
+
+	vertexPoint = GetWhereLightIntersectsPlatform(positiveLineEndPoint, negativeLineEndPoint, topRightPoint, botRightPoint)
+	if (vertexPoint != null):
+		collisionVertexs.append(vertexPoint)
+
+	vertexPoint = GetWhereLightIntersectsPlatform(positiveLineEndPoint, negativeLineEndPoint, botRightPoint, botLeftPoint)
+	if (vertexPoint != null):
+		collisionVertexs.append(vertexPoint)
+
+	vertexPoint = GetWhereLightIntersectsPlatform(positiveLineEndPoint, negativeLineEndPoint, botLeftPoint, topLeftPoint)
+	if (vertexPoint != null):
+		collisionVertexs.append(vertexPoint)
 	return collisionVertexs
 	
 # Gets the point one line intersects witha another point
 func GetWhereLightIntersectsPlatform(point1: Vector2, point2: Vector2, point3: Vector2, point4: Vector2):
 	return Geometry2D.segment_intersects_segment(point1, point2, point3, point4)
+
+func GetWhereLightIntersectsCircle(point1: Vector2, point2: Vector2, circleCenter: Vector2, radius: float):
+	return Geometry2D.segment_intersects_circle(point1, point2, circleCenter, radius)
 	
 #given a upper position and a lower position checks if the point is in between the two points
 func CheckIfPointIsInLight(point: Vector2, playerPosition: Vector2, positivePosition:Vector2, negativePosition:Vector2):
-	if (playerPosition.distance_to(point) > playerPosition.distance_to(positivePosition)):
+	var closestPoint = Geometry2D.get_closest_point_to_segment(point, positivePosition, negativePosition)
+	if (playerPosition.distance_to(point) > playerPosition.distance_to(closestPoint)):
 		return null
+		
 	
 	var positiveAngle = (positivePosition-playerPosition).angle()
 	var negativeAngle = (negativePosition-playerPosition).angle()
