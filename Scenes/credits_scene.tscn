@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://vukh0xc3u6js"]
+
+[ext_resource type="Script" uid="uid://dl2rnevi75rf" path="res://Scripts/credits_scene.gd" id="1_c8n8s"]
+[ext_resource type="Texture2D" uid="uid://dnrhfkmb6v10v" path="res://Resources/MainMenu_Background.png" id="2_5a4fm"]
+
+[node name="CreditsScene" type="Node2D" unique_id=378000155]
+script = ExtResource("1_c8n8s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=669233467]
+position = Vector2(960.051, 540.14075)
+scale = Vector2(4.270884, 4.5488276)
+texture = ExtResource("2_5a4fm")
+
+[node name="Label" type="Label" parent="." unique_id=1121219130]
+offset_left = 546.0
+offset_top = 750.0
+offset_right = 1797.0
+offset_bottom = 3022.0
+scale = Vector2(1.269736, 1.7982317)
+theme_override_font_sizes/font_size = 64
+text = "
+
+Cameron Cianciolo
+
+Tomie Williams
+
+Berenice Moreno-Perez
+
+Eric Schmidt
+
+Brandon Laing
+
+Sam Souder
+
+Blaine Lockard
+
+Trevor Norton
+
+Rosie Yancey
+
+Special Thanks to: 
+Sarah Beth Schulz 
+and
+The UMKC School of Science 
+and Engineering"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

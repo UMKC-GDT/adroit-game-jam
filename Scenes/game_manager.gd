@@ -54,7 +54,11 @@ func LoadNewScene(name:String):
 			ScreenFadeManager.visible = false
 			background.hide()
 			self.add_child(currentScene)
-			
+		elif name == "res://Scenes/credits_scene.tscn":
+			$SubViewportContainer.visible = false
+			ScreenFadeManager.visible = false
+			background.hide()
+			self.add_child(currentScene)
 		else:
 			$SubViewportContainer.visible = true
 			ScreenFadeManager.visible = true

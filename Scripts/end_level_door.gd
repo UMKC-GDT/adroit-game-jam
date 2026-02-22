@@ -50,9 +50,10 @@ func _on_interactable_component_interacted() -> void:
 	active_sprite.play("OpenDoor")
 	await get_tree().create_timer(.3).timeout
 	active_sprite.play("Opened")
-	if get_tree():
-		await get_tree().create_timer(.2).timeout
-		var sceneManager:game_manager = get_tree().root.get_node("GameManager")
+	var tree = get_tree()
+	if tree != null:
+		await tree.create_timer(.2).timeout
+		var sceneManager:game_manager = tree.root.get_node("GameManager")
 		if (sceneManager != null):
 			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:

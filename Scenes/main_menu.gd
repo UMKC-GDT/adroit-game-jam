@@ -21,7 +21,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	gm.LoadNewScene("res://Scenes/credits_scene.tscn")
 
 
 func _on_quit_pressed() -> void:
