@@ -328,9 +328,15 @@ rotation = -1.5707964
 position = Vector2(-128, 40)
 isPresent = true
 
+[node name="QuantumLight" parent="Present/StaticLamp" index="0" unique_id=371804446]
+scale = Vector2(0.085, -0.098)
+
 [node name="StaticLamp2" parent="Present" unique_id=615094775 instance=ExtResource("6_ca5bt")]
 position = Vector2(128, 40)
 isPresent = true
+
+[node name="QuantumLight" parent="Present/StaticLamp2" index="0" unique_id=371804446]
+scale = Vector2(0.085, -0.099)
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -424,3 +430,6 @@ shape = SubResource("RectangleShape2D_fsn6e")
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
+
+[editable path="Present/StaticLamp"]
+[editable path="Present/StaticLamp2"]
