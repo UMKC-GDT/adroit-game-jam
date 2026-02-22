@@ -74,6 +74,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	getInputDir(delta)
 	animationHandler.faceSprite()
+	animationHandler.animateSprite()
 
 
 	if(Input.is_action_pressed("jump")):
@@ -158,6 +159,7 @@ func doJump():
 
 
 func groundJump():
+	animationHandler.playJump()
 	self.velocity.y -= jumpVelocity
 
 
@@ -197,6 +199,7 @@ func getDirectionForWallJump(): # 1 = right, -1 = left, 0 is none
 		return 0
 
 func doWallJump():
+	animationHandler.playWallJump()
 	var direction = getDirectionForWallJump()
 	self.velocity.y = -wallJumpVelocity
 	self.velocity.x = -wallJumpPushOff * direction
@@ -259,3 +262,7 @@ func kill():
 func giveFlashlight():
 	hasLight = true
 	animationHandler.giveFlashlight()
+
+func takeFlashlight():
+	hasLight = false
+	animationHandler.takeFlashlight()

@@ -84,6 +84,7 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("1_pcaqv")]
 position = Vector2(430, -49)
+hasLight = false
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("3_p0l5r")]
 position = Vector2(721, -736)
