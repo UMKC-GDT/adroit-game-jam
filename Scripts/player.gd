@@ -61,13 +61,9 @@ func _ready() -> void:
 	if(hasLight):
 		pass
 	else:
-		sprite = $SpriteNolight
 		flashlight.process_mode = Node.PROCESS_MODE_DISABLED
 		
-	var soundManager:sound_manager = get_tree().root.get_node("GameManager").get_node("SoundManager")
-	if (soundManager != null):
-		soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump)
-
+		
 
 func _process(delta: float) -> void:
 	if dead:
@@ -250,11 +246,13 @@ func kill():
 func giveFlashlight():
 	hasLight = true
 	animationHandler.giveFlashlight()
+	flashlight.process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func takeFlashlight():
 	hasLight = false
 	animationHandler.takeFlashlight()
+	flashlight.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func playFootStepSound(delta: float):
 	if footStepTimer <= 0:
