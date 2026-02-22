@@ -1,20 +1,24 @@
-[gd_scene format=3 uid="uid://bkuw3kbsdtots"]
+[gd_scene format=3 uid="uid://b2x0gxm0yky8i"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_ie467"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_hrrbo"]
-[ext_resource type="PackedScene" uid="uid://mdlmpeg2ahjl" path="res://Assets/present_wall.tscn" id="3_tmtfn"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_k843i"]
-[ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/present_barrier.tscn" id="5_qpcyb"]
-[ext_resource type="PackedScene" uid="uid://d2woo7qenofmx" path="res://Assets/environment_wall.tscn" id="6_5545o"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="7_6lk1x"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_rkodj"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="8_udhth"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_1a1an"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="9_rxtma"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/static_lamp.tscn" id="9_tcs12"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="11_rxtma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
+size = Vector2(352, 42)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_ie467")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_hrrbo")]
-position = Vector2(-616.0001, 392.00006)
+position = Vector2(-536, 407.99997)
 rotation = -0.76982385
 scale = Vector2(7.94227, 2.311422)
 
@@ -28,49 +32,113 @@ position = Vector2(-960, 0)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="Present Wall" parent="Present" unique_id=1605235542 instance=ExtResource("3_tmtfn")]
-position = Vector2(144, -32)
-
 [node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_k843i")]
-position = Vector2(0, 64)
+position = Vector2(-96, -64)
 
-[node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("4_k843i")]
-position = Vector2(128, 64)
+[node name="LargeGround2" parent="Present" unique_id=138285898 instance=ExtResource("4_k843i")]
+position = Vector2(-96, -128)
+rotation = -3.1415927
 
-[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_k843i")]
-position = Vector2(-128, 64)
+[node name="LargeGround3" parent="Present" unique_id=1395284164 instance=ExtResource("4_k843i")]
+position = Vector2(-32, 8)
+rotation = 1.5707964
 
-[node name="PresentBarrier" parent="Present" unique_id=1319523828 instance=ExtResource("5_qpcyb")]
-position = Vector2(56, 48)
+[node name="LargeGround4" parent="Present" unique_id=964959585 instance=ExtResource("4_k843i")]
+position = Vector2(32, -120)
+rotation = -1.5707964
 
-[node name="PresentBarrier2" parent="Present" unique_id=578243162 instance=ExtResource("5_qpcyb")]
-position = Vector2(-72, 48)
+[node name="LargeGround9" parent="Present" unique_id=1287767540 instance=ExtResource("4_k843i")]
+position = Vector2(32, 136)
+rotation = -1.5707964
+
+[node name="LargeGround5" parent="Present" unique_id=2058555365 instance=ExtResource("4_k843i")]
+position = Vector2(32, 8)
+rotation = -1.5707964
+
+[node name="LargeGround6" parent="Present" unique_id=226171451 instance=ExtResource("4_k843i")]
+position = Vector2(-32, 136)
+rotation = 1.5707964
+
+[node name="Barrier" parent="Present" unique_id=1605235542 instance=ExtResource("8_udhth")]
+position = Vector2(-40, -80)
+native_timeline = 0
+
+[node name="Barrier2" parent="Present" unique_id=1332005405 instance=ExtResource("8_udhth")]
+position = Vector2(-40, -112)
+native_timeline = 0
+
+[node name="LargeGround7" parent="Present" unique_id=1471351308 instance=ExtResource("4_k843i")]
+position = Vector2(-160, -96)
+rotation = 1.5707964
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
+
+[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("9_tcs12")]
+position = Vector2(176, -152)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="Superwall2" parent="Future" unique_id=1032632865 instance=ExtResource("6_5545o")]
-position = Vector2(64, -40)
-collision_layer = 2051
+[node name="LargeGround" parent="Future" unique_id=2008879578 instance=ExtResource("7_rkodj")]
+position = Vector2(-96, -64)
+
+[node name="LargeGround2" parent="Future" unique_id=362251521 instance=ExtResource("7_rkodj")]
+position = Vector2(-96, -128)
+rotation = 3.1415927
+
+[node name="LargeGround3" parent="Future" unique_id=1993078011 instance=ExtResource("7_rkodj")]
+position = Vector2(32, -96)
+rotation = -1.5707964
+
+[node name="LargeGround11" parent="Future" unique_id=303822697 instance=ExtResource("7_rkodj")]
+position = Vector2(160, 152)
+
+[node name="LargeGround9" parent="Future" unique_id=1908283208 instance=ExtResource("7_rkodj")]
+position = Vector2(144, 112)
+rotation = -1.5707964
+
+[node name="LargeGround8" parent="Future" unique_id=1406894110 instance=ExtResource("7_rkodj")]
+position = Vector2(96, 72)
+rotation = 3.1415927
+
+[node name="LargeGround4" parent="Future" unique_id=2040434927 instance=ExtResource("7_rkodj")]
+position = Vector2(32, 0)
+rotation = -1.5707964
+
+[node name="LargeGround5" parent="Future" unique_id=2105335763 instance=ExtResource("7_rkodj")]
+position = Vector2(-32, 8)
+rotation = -4.712389
+
+[node name="LargeGround6" parent="Future" unique_id=2136161704 instance=ExtResource("7_rkodj")]
+position = Vector2(-32, 136)
+rotation = -4.712389
+
+[node name="LargeGround7" parent="Future" unique_id=1868814649 instance=ExtResource("7_rkodj")]
+position = Vector2(32, 152)
+rotation = -6.2831855
+
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("7_6lk1x")]
+position = Vector2(112, 128)
 native_timeline = 1
 
-[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_rkodj")]
-position = Vector2(0, 64)
-
-[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_rkodj")]
-position = Vector2(-128, 64)
-
-[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_rkodj")]
-position = Vector2(128, 64)
-
-[node name="FutureBarrier" parent="Future" unique_id=987896157 instance=ExtResource("8_udhth")]
-position = Vector2(0, 48)
+[node name="LargeGround10" parent="Future" unique_id=1758629109 instance=ExtResource("7_rkodj")]
+position = Vector2(-160, -96)
+rotation = -4.712389
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_1a1an")]
+position = Vector2(-112, -104)
 jumpVelocity = 400.0
 wallJumpVelocity = 200.0
+starting_present = true
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_rxtma")]
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("11_rxtma")]
+position = Vector2(0, 184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=147583224]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_bgnfb")

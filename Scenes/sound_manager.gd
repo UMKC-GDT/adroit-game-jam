@@ -1,7 +1,12 @@
 extends Node2D
 class_name sound_manager
 
-
+enum SoundType
+{
+	MUSIC,
+	SFX,
+	AMB
+}
 @export var musicScale: float= 0
 @export var soundEffectsScale: float = 0
 @export var ambience: float = 0
@@ -13,8 +18,8 @@ func _ready() -> void:
 	pass
 
 
-func UpdateSettings(emitter: FmodEventEmitter2D):
-	
+func UpdateSettings(emitter: FmodEventEmitter2D, soundType: SoundType):
+	emitter.volume += main
 	emitter.set_parameter("Sfx Volume",soundEffectsScale)
 	emitter.set_parameter("Music Volume",musicScale)
 	emitter.set_parameter("Ambience Volume",ambience)
