@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="7_t4oj1"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="8_t4oj1"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_gtbat"]
+[ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="12_uwca6"]
+[ext_resource type="Texture2D" uid="uid://by1qkg1r00woh" path="res://Resources/PressQ.png" id="13_1m3b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnu1o"]
 size = Vector2(800, 32)
@@ -243,3 +245,7 @@ position = Vector2(0, 232)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1238806544]
 position = Vector2(0, 48)
 shape = SubResource("RectangleShape2D_xnu1o")
+
+[node name="UI Message" parent="." unique_id=1302920499 instance=ExtResource("12_uwca6")]
+position = Vector2(4, -99)
+image = ExtResource("13_1m3b5")
