@@ -130,8 +130,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_f60y1"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 8.0
 height = 32.0
@@ -147,9 +145,10 @@ wallJumpVelocity = 300.0
 wallJumpPushOff = 300.0
 animationHandler = NodePath("AnimationHandler")
 
-[node name="AnimationHandler" type="Node2D" parent="." unique_id=2033617458 node_paths=PackedStringArray("player")]
+[node name="AnimationHandler" type="Node2D" parent="." unique_id=2033617458 node_paths=PackedStringArray("player", "flashlight")]
 script = ExtResource("1_vgqql")
 player = NodePath("..")
+flashlight = NodePath("../SpriteLight/SimpleFlashlight")
 
 [node name="SpriteNolight" type="AnimatedSprite2D" parent="." unique_id=43446781]
 visible = false
@@ -170,29 +169,20 @@ sprite_frames = SubResource("SpriteFrames_igrcy")
 [node name="SimpleFlashlight" parent="SpriteLight" unique_id=371804446 instance=ExtResource("5_x3wgy")]
 position = Vector2(3.3333333, -6.666666)
 
-[node name="TempSprite" type="Sprite2D" parent="." unique_id=2136944729]
-visible = false
-scale = Vector2(17.80562, 37.760002)
-texture = SubResource("CanvasTexture_f60y1")
-
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
-visible = false
 shape = SubResource("CapsuleShape2D_v0iea")
 
 [node name="LeftWallCast" type="RayCast2D" parent="." unique_id=1849282611]
-visible = false
 exclude_parent = false
 target_position = Vector2(-11, 0)
 collision_mask = 2048
 
 [node name="RightWallCast" type="RayCast2D" parent="." unique_id=977911928]
-visible = false
 exclude_parent = false
 target_position = Vector2(11, 0)
 collision_mask = 2048
 
 [node name="PlayerInteractionSystem" parent="." unique_id=1699919203 instance=ExtResource("2_cvnsp")]
-visible = false
 
 [node name="PlayerSoundManager" type="Node2D" parent="." unique_id=229532532]
 

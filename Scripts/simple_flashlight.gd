@@ -29,3 +29,6 @@ func swap_timeline() -> void:
 	for body in get_overlapping_bodies():
 		if body is LightObject:
 			body.update_state()
+
+func getRotation():
+	return abs(fmod(self.rotation_degrees, 360))/2
