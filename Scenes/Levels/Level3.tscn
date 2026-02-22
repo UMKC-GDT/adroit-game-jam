@@ -90,6 +90,7 @@ nextScene = "Level4"
 
 [node name="Kill Zone" parent="Present" unique_id=872460906 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
+currentScene = "Level3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/Kill Zone" unique_id=562938181]
 position = Vector2(0, 64)
@@ -137,6 +138,15 @@ texture = ExtResource("8_1h71y")
 
 [node name="Ground7" parent="Future/LargeGround2" index="1" unique_id=881032686]
 position = Vector2(-16, -0.06)
+
+[node name="Ground8" parent="Future/LargeGround2" index="2" unique_id=1365851496]
+position = Vector2(16, -0.06)
+
+[node name="Ground9" parent="Future/LargeGround2" index="3" unique_id=1089114079]
+visible = false
+light_mask = 0
+visibility_layer = 0
+position = Vector2(48, -0.06)
 
 [node name="Ground10" parent="Future/LargeGround2" unique_id=372989557 instance=ExtResource("11_7ithr")]
 position = Vector2(-16, -63.94)
@@ -214,17 +224,9 @@ rotation = 3.1415927
 position = Vector2(0, 16.06)
 texture = ExtResource("8_1h71y")
 
-[node name="Ground8" parent="Future/LargeGround2" index="20" unique_id=1365851496]
-position = Vector2(16, -0.06)
-
-[node name="Ground9" parent="Future/LargeGround2" index="21" unique_id=1089114079]
-visible = false
-light_mask = 0
-visibility_layer = 0
-position = Vector2(48, -0.06)
-
 [node name="Kill Zone" parent="Future" unique_id=1623014707 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
+currentScene = "Level3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Future/Kill Zone" unique_id=1996928107]
 position = Vector2(0, 64)

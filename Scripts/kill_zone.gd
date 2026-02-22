@@ -12,9 +12,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.is_in_group("Player")):
-		body.kill()
-		#SHOULD WAIT BRIEFLY AND DISPLAY A MESSAGE
 	var sceneManager:game_manager = get_tree().root.get_node("GameManager")
 	if (sceneManager != null):
 		sceneManager.LoadNewScene("res://Scenes/Levels/"+currentScene+".tscn")
