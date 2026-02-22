@@ -67,7 +67,7 @@ func _ready() -> void:
 	if gameMan:
 		var soundManager:sound_manager = gameMan.get_node("SoundManager")
 		if (soundManager != null):
-			soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump)
+			soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump, soundManager.SoundType.MUSIC)
 
 
 func _process(delta: float) -> void:

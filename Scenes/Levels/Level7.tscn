@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_ie467"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_hrrbo"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_k843i"]
-[ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/platform.tscn" id="6_3be8h"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="7_6lk1x"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_rkodj"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="8_udhth"]
@@ -94,6 +93,9 @@ rotation = 3.1415927
 position = Vector2(32, -96)
 rotation = -1.5707964
 
+[node name="LargeGround11" parent="Future" unique_id=303822697 instance=ExtResource("7_rkodj")]
+position = Vector2(160, 152)
+
 [node name="LargeGround9" parent="Future" unique_id=1908283208 instance=ExtResource("7_rkodj")]
 position = Vector2(144, 112)
 rotation = -1.5707964
@@ -115,14 +117,8 @@ position = Vector2(-32, 136)
 rotation = -4.712389
 
 [node name="LargeGround7" parent="Future" unique_id=1868814649 instance=ExtResource("7_rkodj")]
-position = Vector2(96, 152)
+position = Vector2(32, 152)
 rotation = -6.2831855
-
-[node name="Platform" parent="Future" unique_id=82507228 instance=ExtResource("6_3be8h")]
-position = Vector2(16, 144)
-
-[node name="Platform2" parent="Future" unique_id=1189364351 instance=ExtResource("6_3be8h")]
-position = Vector2(-16, 144)
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("7_6lk1x")]
 position = Vector2(112, 128)
