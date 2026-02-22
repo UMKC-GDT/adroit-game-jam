@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m7vvj"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_ncjpd"]
 [ext_resource type="PackedScene" uid="uid://ba528j756ffkf" path="res://Scenes/end_level_door.tscn" id="4_ve7n4"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="5_d4xud"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/wall.tscn" id="7_d4xud"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_t5kwq"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ktnig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5el5"]
+size = Vector2(352, 32)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_p6pjf")
@@ -54,6 +58,13 @@ rotation = 1.5707964
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("4_ve7n4")]
 position = Vector2(128, 40)
 
+[node name="Kill Zone" parent="Present" unique_id=872460906 instance=ExtResource("5_d4xud")]
+position = Vector2(0, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/Kill Zone" unique_id=562938181]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_q5el5")
+
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
@@ -69,6 +80,13 @@ position = Vector2(-128, 64)
 position = Vector2(-80, 160)
 rotation = -3.1415927
 walljump = true
+
+[node name="Kill Zone" parent="Future" unique_id=1623014707 instance=ExtResource("5_d4xud")]
+position = Vector2(0, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Future/Kill Zone" unique_id=1996928107]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_q5el5")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_ktnig")]
 position = Vector2(-128, 48)
