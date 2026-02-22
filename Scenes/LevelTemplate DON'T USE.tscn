@@ -54,6 +54,14 @@ gizmo_extents = 53.9
 position = Vector2(160, 0)
 gizmo_extents = 53.9
 
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=231010411]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=696573508]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
@@ -87,9 +95,16 @@ gizmo_extents = 53.9
 position = Vector2(160, 0)
 gizmo_extents = 53.9
 
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=392682067]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=1637643970]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_hew6x")]
 jumpVelocity = 400.0
-wallJumpVelocity = 200.0
 
 [node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
 position = Vector2(-160, 0)
@@ -97,4 +112,12 @@ gizmo_extents = 53.9
 
 [node name="RightBorder" type="Marker2D" parent="." unique_id=192288777]
 position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="." unique_id=1331686996]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
+position = Vector2(0, -160)
 gizmo_extents = 53.9

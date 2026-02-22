@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://covor6b28wrt6"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_egu6v"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_egu6v"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_ds0xo"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/platform.tscn" id="4_lvllu"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_sxy6w"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_fdpi5"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="10_dn4hu"]
 [ext_resource type="Texture2D" uid="uid://cen65wv6ira1q" path="res://Assets/Cats/catVent.png" id="11_vxd2s"]
-[ext_resource type="Script" uid="uid://trgt1mlouu2e" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
+[ext_resource type="Script" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvllu"]
 size = Vector2(552, 24)
@@ -204,11 +204,11 @@ position = Vector2(-152, -160)
 rotation = 1.5707964
 
 [node name="LargeGround4" parent="Present" unique_id=979668120 instance=ExtResource("4_sxy6w")]
-position = Vector2(-88, -160)
+position = Vector2(-88, -192)
 rotation = 3.1415927
 
 [node name="LargeGround5" parent="Present" unique_id=1961179131 instance=ExtResource("4_sxy6w")]
-position = Vector2(40, -160)
+position = Vector2(40, -192)
 rotation = 3.1415927
 
 [node name="LargeGround6" parent="Present" unique_id=160690724 instance=ExtResource("4_sxy6w")]
@@ -224,7 +224,7 @@ enabled = false
 zoom = Vector2(2.5, 2.5)
 
 [node name="Platform" parent="Future" unique_id=985560200 instance=ExtResource("4_lvllu")]
-position = Vector2(0, -72)
+position = Vector2(-16, -72)
 
 [node name="LargeGround" parent="Future" unique_id=699518766 instance=ExtResource("7_2fq2u")]
 position = Vector2(-144, 64)
@@ -253,6 +253,9 @@ rotation = 1.5707964
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_bkrib")]
 position = Vector2(-136, -120)
 native_timeline = 1
+
+[node name="Platform4" parent="Future" unique_id=2026505029 instance=ExtResource("4_lvllu")]
+position = Vector2(16, -72)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_fdpi5")]
 position = Vector2(-112, 24)
