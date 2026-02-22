@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m7vvj"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_ncjpd"]
-[ext_resource type="PackedScene" uid="uid://ba528j756ffkf" path="res://Scenes/end_level_door.tscn" id="4_ve7n4"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="4_ve7n4"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="5_d4xud"]
-[ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/wall.tscn" id="7_d4xud"]
+[ext_resource type="PackedScene" uid="uid://c5tusnjwjyyi5" path="res://Assets/wall.tscn" id="7_d4xud"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_t5kwq"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ktnig"]
 
