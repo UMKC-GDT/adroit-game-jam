@@ -22,8 +22,6 @@ z_index = -1
 z_as_relative = false
 texture = ExtResource("3_mmuqr")
 
-[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0
 offset_top = 140.0
@@ -47,18 +45,16 @@ fmodEmitter = NodePath("musicEmitter")
 event_name = "event:/Ambience/LampandFlicker"
 event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
 autoplay = true
-"fmod_parameters/Main Volume/id" = -7299101120154163149
-"fmod_parameters/Main Volume" = 0.0
-"fmod_parameters/Main Volume/variant_type" = 3
-"fmod_parameters/SFX Volume/id" = 8528522156426082525
-"fmod_parameters/SFX Volume" = 0.0
-"fmod_parameters/SFX Volume/variant_type" = 3
-"fmod_parameters/Ambience Volume/id" = -6527218130153094337
-"fmod_parameters/Ambience Volume" = 0.0
-"fmod_parameters/Ambience Volume/variant_type" = 3
 fmod_parameters/LampFlicker/id = -6375880320482298193
 fmod_parameters/LampFlicker = 0.0
 fmod_parameters/LampFlicker/variant_type = 3
-"fmod_parameters/Music Volume/id" = -5078636143659238729
-"fmod_parameters/Music Volume" = 0.0
-"fmod_parameters/Music Volume/variant_type" = 3
+
+[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
+position = Vector2(701.00006, 139.00002)
+scale = Vector2(0.45770139, 0.74068046)
+
+[node name="Fade Wait" type="Timer" parent="." unique_id=986035313]
+wait_time = 1.2
+one_shot = true
+
+[connection signal="timeout" from="Fade Wait" to="." method="_on_fade_wait_timeout"]
