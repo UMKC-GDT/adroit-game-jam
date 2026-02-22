@@ -171,7 +171,7 @@ size = Vector2(82, 64)
 script = ExtResource("1_egu6v")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_ds0xo")]
-position = Vector2(-176, 144.00002)
+position = Vector2(-280.00003, -263)
 rotation = -2.4747372
 scale = Vector2(7.94227, 2.311422)
 
@@ -408,7 +408,6 @@ position = Vector2(4, 56)
 shape = SubResource("RectangleShape2D_lvllu")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_dn4hu")]
-position = Vector2(0, 32)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1383751435]
 texture_filter = 1
