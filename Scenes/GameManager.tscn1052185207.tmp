@@ -12,19 +12,20 @@ ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104013960]
-z_as_relative = false
+position = Vector2(960, 540)
 texture = ExtResource("2_7cxpe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=946260940]
+position = Vector2(60, 60)
 texture = ExtResource("3_mmuqr")
 
 [node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
-offset_left = -400.0
-offset_top = -400.0
-offset_right = 400.0
-offset_bottom = 400.0
+offset_left = 560.0
+offset_top = 140.0
+offset_right = 1360.0
+offset_bottom = 940.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1403170885]
 handle_input_locally = false

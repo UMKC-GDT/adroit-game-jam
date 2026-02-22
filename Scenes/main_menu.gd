@@ -11,11 +11,15 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	var sceneManager:game_manager = get_tree().root.get_node("GameManager")
+	var sceneManager:game_manager = find_parent("GameManager")
 	if (sceneManager != null):
 		sceneManager.LoadNewScene("res://Scenes/Levels/Level1.tscn")
 	else:
+<<<<<<< Updated upstream
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+=======
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level11.tscn")
+>>>>>>> Stashed changes
 
 
 func _on_options_pressed() -> void:

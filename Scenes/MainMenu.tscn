@@ -21,7 +21,6 @@ script = ExtResource("1_tt5f1")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1214627852]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333432968]
-position = Vector2(-30, 6)
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("2_853f1")
 
