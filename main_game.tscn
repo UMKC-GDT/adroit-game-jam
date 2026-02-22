@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ce6adyn1udrs2"]
+
+[ext_resource type="Script" uid="uid://btej54id1hh67" path="res://main_game_logic.gd" id="1_ykeeq"]
+[ext_resource type="Texture2D" uid="uid://bvprlppopg1ac" path="res://IAmReadyToBeReplacedWhenTheTimeComes.jpg" id="2_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://biswj4oejwtvf" path="res://Scenes/Levels/Level2.tscn" id="3_ykeeq"]
+
+[node name="MainGame" type="Node2D" unique_id=1534085485]
+script = ExtResource("1_ykeeq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=797736365]
+position = Vector2(960, 540)
+texture = ExtResource("2_6bm6p")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1283584756]
+custom_minimum_size = Vector2(800, 800)
+offset_left = 560.0
+offset_top = 140.0
+offset_right = 1360.0
+offset_bottom = 940.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1724290876]
+handle_input_locally = false
+size = Vector2i(800, 800)
+render_target_update_mode = 4
+
+[node name="LevelTemplate2" parent="SubViewportContainer/SubViewport" unique_id=1908434782 instance=ExtResource("3_ykeeq")]
+position = Vector2(560, 140)
