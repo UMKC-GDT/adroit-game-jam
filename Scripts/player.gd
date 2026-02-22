@@ -37,14 +37,16 @@ var canWallJump := true
 var jumpHeldLength := 0.0
 var canJump := false
 
-
+var dead: bool = false
 
 func _ready() -> void:
 	spawnPosition = self.position
 
 
 func _process(delta: float) -> void:
-	pass
+	if dead:
+		self.velocity.x = 0
+		self.velocity.y = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -216,3 +218,7 @@ func wantsToGoLeft():
 
 func wantsToGo():
 	return inputDir != 0
+	
+func kill():
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
