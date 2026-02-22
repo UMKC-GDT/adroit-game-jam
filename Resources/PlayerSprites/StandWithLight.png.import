@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr42bwnhqv4pq"
-path="res://.godot/imported/ReviseWalkRight.png-ba07d221ec89c98563048c80160a8aeb.ctex"
+uid="uid://bsikculq4s2b4"
+path="res://.godot/imported/StandWithLight.png-6e3dac46cd21b5548d7ab53973d35cc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/ReviseWalkRight.png"
-dest_files=["res://.godot/imported/ReviseWalkRight.png-ba07d221ec89c98563048c80160a8aeb.ctex"]
+source_file="res://Resources/PlayerSprites/StandWithLight.png"
+dest_files=["res://.godot/imported/StandWithLight.png-6e3dac46cd21b5548d7ab53973d35cc3.ctex"]
 
 [params]
 

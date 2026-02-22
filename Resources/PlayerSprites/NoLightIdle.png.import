@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnqdwk63xihkv"
-path="res://.godot/imported/JumpRight.png-b70cab507666b38b29ac8f54351437ec.ctex"
+uid="uid://cr47am488w5jn"
+path="res://.godot/imported/NoLightIdle.png-777cb8c6c0a94255cfeb020a4726d148.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/JumpRight.png"
-dest_files=["res://.godot/imported/JumpRight.png-b70cab507666b38b29ac8f54351437ec.ctex"]
+source_file="res://Resources/PlayerSprites/NoLightIdle.png"
+dest_files=["res://.godot/imported/NoLightIdle.png-777cb8c6c0a94255cfeb020a4726d148.ctex"]
 
 [params]
 

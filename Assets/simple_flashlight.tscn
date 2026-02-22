@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="1_iv4ae"]
 [ext_resource type="Script" uid="uid://bo6uxh0furtv5" path="res://Scripts/simple_flashlight.gd" id="2_bkrqq"]
-[ext_resource type="Texture2D" uid="uid://dfvpgrf2xe64x" path="res://Resources/PlayerSprites/JustArm.png" id="3_bkrqq"]
+[ext_resource type="Texture2D" uid="uid://dfvpgrf2xe64x" path="res://Resources/PlayerSprites/FlashlightArm.png" id="3_bkrqq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iv4ae"]
 radius = 75.0

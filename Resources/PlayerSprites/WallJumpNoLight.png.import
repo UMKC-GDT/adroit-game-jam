@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccufb28k08sr7"
-path="res://.godot/imported/Jump_NoFlashLight.png-bdac45612e5e97c777384e872c432d36.ctex"
+uid="uid://c5ipxlslcipfh"
+path="res://.godot/imported/WallJumpNoLight.png-439ef7de94cf67de0084fa0e02dc580a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/Jump_NoFlashLight.png"
-dest_files=["res://.godot/imported/Jump_NoFlashLight.png-bdac45612e5e97c777384e872c432d36.ctex"]
+source_file="res://Resources/PlayerSprites/WallJumpNoLight.png"
+dest_files=["res://.godot/imported/WallJumpNoLight.png-439ef7de94cf67de0084fa0e02dc580a.ctex"]
 
 [params]
 

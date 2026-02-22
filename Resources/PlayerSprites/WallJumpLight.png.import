@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfvpgrf2xe64x"
-path="res://.godot/imported/JustArm.png-d1b27c2d6f39eb7ad22460ff28c4132f.ctex"
+uid="uid://cld3errrsxe8k"
+path="res://.godot/imported/WallJumpLight.png-26098cb8f8a095989eb70e2cd6f3012d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/JustArm.png"
-dest_files=["res://.godot/imported/JustArm.png-d1b27c2d6f39eb7ad22460ff28c4132f.ctex"]
+source_file="res://Resources/PlayerSprites/WallJumpLight.png"
+dest_files=["res://.godot/imported/WallJumpLight.png-26098cb8f8a095989eb70e2cd6f3012d.ctex"]
 
 [params]
 

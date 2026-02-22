@@ -3,16 +3,19 @@
 [ext_resource type="Script" uid="uid://d15or1jgujwnr" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://qcpdnebhau5y" path="res://Scripts/PlayerAnimationHandler.gd" id="1_vgqql"]
 [ext_resource type="PackedScene" uid="uid://c11ixmfk04ij0" path="res://Scenes/player_interaction_system.tscn" id="2_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dw5kdxu064cfr" path="res://Resources/PlayerSprites/ReviseWalkRightNoFlashLight.png" id="3_fkybt"]
-[ext_resource type="Texture2D" uid="uid://dlfpevjrlvrky" path="res://Resources/PlayerSprites/StandingNoFlashlight.png" id="3_vgqql"]
-[ext_resource type="Texture2D" uid="uid://ccufb28k08sr7" path="res://Resources/PlayerSprites/Jump_NoFlashLight.png" id="4_gymyn"]
-[ext_resource type="Texture2D" uid="uid://b6dka7tlbxr6v" path="res://Resources/PlayerSprites/ReviseWalkRight_NoArm.png" id="5_3smsa"]
-[ext_resource type="Texture2D" uid="uid://bsikculq4s2b4" path="res://Resources/PlayerSprites/Standing_NoArms.png" id="5_8erm5"]
+[ext_resource type="Texture2D" uid="uid://dw5kdxu064cfr" path="res://Resources/PlayerSprites/WalkNoLight.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://ccufb28k08sr7" path="res://Resources/PlayerSprites/JumpWithNoLight.png" id="4_gymyn"]
+[ext_resource type="Texture2D" uid="uid://b6dka7tlbxr6v" path="res://Resources/PlayerSprites/WalkWithLight.png" id="5_3smsa"]
 [ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="5_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://dshjt27lj1txn" path="res://Resources/PlayerSprites/JumpRight_NoArms.png" id="6_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://c5ipxlslcipfh" path="res://Resources/PlayerSprites/WallJumpRight_NoFlashLightV2.png" id="6_ukyrk"]
-[ext_resource type="Texture2D" uid="uid://dcblsqhhoo226" path="res://Resources/PlayerSprites/Jump_NoArm_V2.png" id="7_tx1dd"]
-[ext_resource type="Texture2D" uid="uid://cld3errrsxe8k" path="res://Resources/PlayerSprites/WallJump_NoArm_V2.png" id="10_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://c5ipxlslcipfh" path="res://Resources/PlayerSprites/WallJumpNoLight.png" id="6_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://bsikculq4s2b4" path="res://Resources/PlayerSprites/StandWithLight.png" id="7_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://dcblsqhhoo226" path="res://Resources/PlayerSprites/JumpWithLight.png" id="7_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cr47am488w5jn" path="res://Resources/PlayerSprites/NoLightIdle.png" id="7_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://cld3errrsxe8k" path="res://Resources/PlayerSprites/WallJumpLight.png" id="10_pu2lt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpa8y"]
+atlas = ExtResource("7_ukyrk")
+region = Rect2(0, 0, 120, 126)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36dho"]
 atlas = ExtResource("4_gymyn")
@@ -82,7 +85,7 @@ region = Rect2(480, 0, 120, 146)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_vgqql")
+"texture": SubResource("AtlasTexture_qpa8y")
 }],
 "loop": true,
 "name": &"default",
@@ -163,8 +166,8 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
-atlas = ExtResource("6_f1ek2")
-region = Rect2(360, 0, 120, 146)
+atlas = ExtResource("7_tx1dd")
+region = Rect2(240, 0, 120, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
 atlas = ExtResource("7_tx1dd")
@@ -230,7 +233,7 @@ region = Rect2(480, 0, 120, 146)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8erm5")
+"texture": ExtResource("7_pu2lt")
 }],
 "loop": true,
 "name": &"default",
@@ -336,7 +339,6 @@ texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &"wallSlide"
 
 [node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
 visible = false
@@ -344,7 +346,6 @@ texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_igrcy")
-animation = &"jump"
 
 [node name="SimpleFlashlight" parent="SpriteLight" unique_id=371804446 instance=ExtResource("5_x3wgy")]
 position = Vector2(3.3333333, -6.666666)

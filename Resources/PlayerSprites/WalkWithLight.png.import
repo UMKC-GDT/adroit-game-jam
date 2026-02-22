@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsikculq4s2b4"
-path="res://.godot/imported/Standing_NoArms.png-7d4e62daae13cd5dc09b468e205b93f8.ctex"
+uid="uid://b6dka7tlbxr6v"
+path="res://.godot/imported/WalkWithLight.png-3b1529835562e8c4fe90ded5ee326c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/Standing_NoArms.png"
-dest_files=["res://.godot/imported/Standing_NoArms.png-7d4e62daae13cd5dc09b468e205b93f8.ctex"]
+source_file="res://Resources/PlayerSprites/WalkWithLight.png"
+dest_files=["res://.godot/imported/WalkWithLight.png-3b1529835562e8c4fe90ded5ee326c93.ctex"]
 
 [params]
 
