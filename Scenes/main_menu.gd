@@ -21,7 +21,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	gm.LoadNewScene("res://Scenes/credits_scene.tscn")
+	gm.LoadNewScene("res://Scenes/Levels/credits_scene.tscn")
 
 
 func _on_quit_pressed() -> void:
