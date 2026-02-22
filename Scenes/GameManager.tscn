@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
-[ext_resource type="PackedScene" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
+[ext_resource type="PackedScene" uid="uid://dsmvw3il1585e" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
@@ -22,16 +22,8 @@ bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desk
 z_index = -1
 z_as_relative = false
 position = Vector2(960, 540)
-scale = Vector2(1.3, 1.3)
+scale = Vector2(1.28, 1.28)
 texture = ExtResource("3_je8vj")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=946260940]
-visible = false
-z_index = -1
-z_as_relative = false
-position = Vector2(48.076946, 53.461548)
-scale = Vector2(0.8240385, 0.8336539)
-texture = ExtResource("3_mmuqr")
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Sprite2D" unique_id=1584031778]
 
@@ -83,6 +75,11 @@ volume = 0.21
 fmod_parameters/Blank/id = -7292059903593050108
 fmod_parameters/Blank = 0.0
 fmod_parameters/Blank/variant_type = 3
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=946260940]
+z_index = -1
+z_as_relative = false
+position = Vector2(1010, 590)
+texture = ExtResource("3_mmuqr")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0
