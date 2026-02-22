@@ -251,6 +251,7 @@ func giveFlashlight():
 	hasLight = true
 	animationHandler.giveFlashlight()
 
+
 func takeFlashlight():
 	hasLight = false
 	animationHandler.takeFlashlight()

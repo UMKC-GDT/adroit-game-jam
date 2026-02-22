@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ktnig"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="9_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/static_lamp.tscn" id="9_t0ble"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="11_3i7ro"]
+[ext_resource type="Script" uid="uid://bpuaymu4wlkvr" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
+[ext_resource type="Texture2D" uid="uid://cgujm83hvvr8j" path="res://Resources/flashlightimage.png" id="11_nvbyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5el5"]
 size = Vector2(352, 32)
@@ -18,11 +21,18 @@ size = Vector2(352, 32)
 atlas = ExtResource("9_nvbyj")
 region = Rect2(160, 13, 26, 51)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ggnd"]
+atlas = ExtResource("11_nvbyj")
+region = Rect2(0, 164, 173, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i7ro"]
+size = Vector2(84.9085, 456.42136)
+
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_p6pjf")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_m7vvj")]
-position = Vector2(-616.0001, 392.00006)
+position = Vector2(-616, 389)
 rotation = -0.76982385
 scale = Vector2(7.94227, 2.311422)
 timeline_type = 1
@@ -114,5 +124,25 @@ rotation = 1.5707964
 position = Vector2(-128, 48)
 jumpVelocity = 400.0
 wallJumpVelocity = 200.0
+hasLight = false
+
+[node name="Flashlight on ground" type="Sprite2D" parent="." unique_id=1463460001]
+modulate = Color(0.8617492, 0.5427706, 0.16321516, 1)
+position = Vector2(-75.96164, 61.693707)
+rotation = -0.22340216
+scale = Vector2(0.08065981, 0.065453164)
+texture = SubResource("AtlasTexture_6ggnd")
+script = ExtResource("11_6ggnd")
+
+[node name="InteractableComponent" parent="Flashlight on ground" unique_id=642375165 instance=ExtResource("11_3i7ro")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flashlight on ground/InteractableComponent" unique_id=1661496035]
+position = Vector2(10.222792, -196.01576)
+shape = SubResource("RectangleShape2D_3i7ro")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("6_t0ble")]
+visible = false
+
+[connection signal="interacted" from="Flashlight on ground/InteractableComponent" to="Flashlight on ground" method="_on_interactable_component_interacted"]
+
+[editable path="Flashlight on ground/InteractableComponent"]
