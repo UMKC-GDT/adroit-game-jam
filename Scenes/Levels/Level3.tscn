@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ddnynyhvrarci"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m7vvj"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_ncjpd"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="4_ve7n4"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="5_d4xud"]
-[ext_resource type="PackedScene" path="res://Assets/HazeGenerator.tscn" id="6_t0ble"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="6_t0ble"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_t5kwq"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ktnig"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="9_nvbyj"]
@@ -63,6 +63,7 @@ rotation = 1.5707964
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("4_ve7n4")]
 position = Vector2(128, 40)
+nextScene = "Level4"
 
 [node name="Kill Zone" parent="Present" unique_id=872460906 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
@@ -78,7 +79,7 @@ rotation = 4.712389
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("9_t0ble")]
+[node name="StaticLamp" parent="Future" unique_id=177997193 instance=ExtResource("9_t0ble")]
 position = Vector2(-120, -24)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
@@ -96,7 +97,7 @@ position = Vector2(0, 136)
 position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_q5el5")
 
-[node name="Door&floor" type="Sprite2D" parent="Future" unique_id=1021812408]
+[node name="EnterDoor" type="Sprite2D" parent="Future" unique_id=1021812408]
 texture_filter = 1
 position = Vector2(-120, 39.5)
 texture = SubResource("AtlasTexture_3i7ro")

@@ -1,18 +1,27 @@
-[gd_scene format=3 uid="uid://cugv24trcw3kd"]
+[gd_scene format=3 uid="uid://biswj4oejwtvf"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_4rk67"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_62f1r"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_f8qf7"]
 [ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/flickering_lamp.tscn" id="5_5iseo"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="5_f8qf7"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="6_lmdar"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2jwna"]
-[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="9_ipaot"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_xx40l"]
-[ext_resource type="Material" uid="uid://dqix3xef24exf" path="res://new_new_particle_process_material.tres" id="10_ao4h1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1swa"]
 size = Vector2(352, 32)
+=======
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="5_lmdar"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2jwna"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_xx40l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1swa"]
+atlas = ExtResource("4_f8qf7")
+region = Rect2(160, 13, 26, 51)
+>>>>>>> Stashed changes
 
 [node name="LevelTemplate2" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_70df5")
@@ -56,10 +65,9 @@ position = Vector2(-128, 64)
 [node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_2jwna")]
 position = Vector2(128, 64)
 
+<<<<<<< Updated upstream
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("5_f8qf7")]
 position = Vector2(128, 40)
-canOpen = true
-nextScene = "Level3"
 native_timeline = 1
 
 [node name="LargeGround4" parent="Future" unique_id=850617314 instance=ExtResource("7_2jwna")]
@@ -79,11 +87,21 @@ position = Vector2(-152, -128)
 rotation = 1.5707964
 
 [node name="Kill Zone" parent="Future" unique_id=872460906 instance=ExtResource("6_lmdar")]
-position = Vector2(-8, 176)
+position = Vector2(-8, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Future/Kill Zone" unique_id=752407594]
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_d1swa")
+=======
+[node name="Door&floor" type="Sprite2D" parent="Future" unique_id=636548740]
+texture_filter = 1
+position = Vector2(-138, 40)
+texture = SubResource("AtlasTexture_d1swa")
+
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("5_lmdar")]
+position = Vector2(136, 41)
+canOpen = true
+>>>>>>> Stashed changes
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_xx40l")]
 position = Vector2(-114, 0)
@@ -92,14 +110,4 @@ wallJumpVelocity = 200.0
 hasLight = false
 
 [node name="FlickeringLamp" parent="." unique_id=177997193 instance=ExtResource("5_5iseo")]
-position = Vector2(-1, 60)
-
-[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_ipaot")]
-position = Vector2(-1, 0)
-
-[node name="GPUParticles2D" parent="HazeGenerator" index="0" unique_id=1223870206]
-position = Vector2(0, 143)
-amount_ratio = 0.25
-process_material = ExtResource("10_ao4h1")
-
-[editable path="HazeGenerator"]
+position = Vector2(-2, 9)
