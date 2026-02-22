@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Texture2D" uid="uid://cchpjfjkpewqa" path="res://ToBeReplacedButThatsOkIAmFineWithIt.jpg" id="2_7cxpe"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
-[ext_resource type="PackedScene" uid="uid://dsmvw3il1585e" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
+[ext_resource type="PackedScene" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
 
@@ -13,6 +13,7 @@ ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
 
 [node name="EscapeToMainMenu" parent="." unique_id=1224230210 instance=ExtResource("2_xqbpr")]
+
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank", "res://FmodBank/Desktop/AmbienceBank.bank", "res://FmodBank/Desktop/SFXBank.bank"]
 
@@ -67,10 +68,10 @@ fmod_parameters/LampFlicker/id = -6375880320482298193
 fmod_parameters/LampFlicker = 0.0
 fmod_parameters/LampFlicker/variant_type = 3
 
-[node name="FmodListener2D" type="FmodListener2D" parent="SoundManager" unique_id=1584031778]
+[node name="FmodListener2D" type="FmodListener2D" parent="SoundManager" unique_id=826166070]
 position = Vector2(960, 540)
 
-[node name="titleEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1237939638]
+[node name="titleEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1524261521]
 event_name = "event:/Music/Title Music"
 event_guid = "{40012e37-e8ac-4a83-8bfa-d124a9365b3b}"
 volume = 3.9
@@ -82,16 +83,8 @@ fmod_parameters/TitleOutie = 0.0
 fmod_parameters/TitleOutie/variant_type = 3
 position = Vector2(960, 540)
 
-[node name="Fade Wait" type="Timer" parent="." unique_id=986035313]
-wait_time = 1.2
-one_shot = true
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
-bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank"]
-
-[connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
 [node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
 position = Vector2(702, 139.00002)
 scale = Vector2(0.45601746, 0.73540765)
 
-[connection signal="timeout" from="Fade Wait" to="." method="_on_fade_wait_timeout"]
+[connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
