@@ -139,6 +139,7 @@ tile_map_data = PackedByteArray("AAAAAAEABQABAAEAAAD//wEABQACAAEAAAD8/wEAAgAFAAE
 tile_set = SubResource("TileSet_tk2m3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=142930422]
+visible = false
 texture_filter = 1
 position = Vector2(-53, 42.750008)
 scale = Vector2(0.38333336, 0.38333327)
