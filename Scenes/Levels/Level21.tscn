@@ -210,6 +210,7 @@ rotation = -1.5707964
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("7_nvt2r")]
 position = Vector2(144, 120)
+nextScene = "Credits"
 native_timeline = 1
 
 [node name="Ground" parent="Future" unique_id=1605235542 instance=ExtResource("8_r6g6w")]
