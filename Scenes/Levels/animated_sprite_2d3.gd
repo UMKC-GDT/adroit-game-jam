@@ -18,7 +18,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		self.play("catRun")
 		catBeMeowin = false
 		self.scale.x = -2.0
-		while self.position.x <= 300:
+		while self.position.x <= 500:
 			self.position.x = self.position.x + 1
 			await get_tree().create_timer(0.01).timeout
 	pass # Replace with function body.

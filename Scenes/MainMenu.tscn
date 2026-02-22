@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c7b8kyri2oft6" path="res://Scenes/main_menu.gd" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://dnrhfkmb6v10v" path="res://Resources/MainMenu_Background.png" id="2_853f1"]
 [ext_resource type="Texture2D" uid="uid://bra1u42y2nc11" path="res://Resources/Buttons/NormalStartButton.png" id="3_8e205"]
+[ext_resource type="Texture2D" uid="uid://ctt356qpwe838" path="res://Resources/MainMenu_Title.png" id="3_7467j"]
 [ext_resource type="Texture2D" uid="uid://n46ekwtmxaer" path="res://Resources/Buttons/PressedStartButton.png" id="4_7467j"]
 [ext_resource type="Texture2D" uid="uid://b3ga0mcb2a1er" path="res://Resources/Buttons/HoveredStartButton.png" id="5_2x1g0"]
 [ext_resource type="Texture2D" uid="uid://be8gg5d1jcl8k" path="res://Resources/Buttons/NormalOptionsButton.png" id="6_riqfo"]
@@ -20,9 +21,13 @@ script = ExtResource("1_tt5f1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1214627852]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333432968]
+[node name="Title" type="Sprite2D" parent="." unique_id=1333432968]
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("2_853f1")
+
+[node name="BackgroundArt" type="Sprite2D" parent="." unique_id=1129180228]
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("3_7467j")
 
 [node name="Button Manager" type="Control" parent="." unique_id=641941652]
 layout_mode = 3
@@ -32,10 +37,10 @@ offset_bottom = 40.0
 
 [node name="Start" type="TextureButton" parent="Button Manager" unique_id=1922518639]
 layout_mode = 0
-offset_left = 339.0
-offset_top = 1.0000019
-offset_right = 457.0
-offset_bottom = 32.000004
+offset_left = 300.00003
+offset_top = 1.0
+offset_right = 418.00003
+offset_bottom = 32.0
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("3_8e205")
 texture_pressed = ExtResource("4_7467j")
@@ -43,9 +48,9 @@ texture_hover = ExtResource("5_2x1g0")
 
 [node name="Options" type="TextureButton" parent="Button Manager" unique_id=2127205150]
 layout_mode = 0
-offset_left = 336.0
+offset_left = 300.0
 offset_top = 96.0
-offset_right = 454.0
+offset_right = 418.0
 offset_bottom = 127.99999
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("6_riqfo")
@@ -54,9 +59,9 @@ texture_hover = ExtResource("8_7v4os")
 
 [node name="Credits" type="TextureButton" parent="Button Manager" unique_id=992833330]
 layout_mode = 0
-offset_left = 336.0
+offset_left = 300.0
 offset_top = 193.00002
-offset_right = 454.0
+offset_right = 418.0
 offset_bottom = 229.00002
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("9_pjscj")
@@ -65,9 +70,9 @@ texture_hover = ExtResource("11_65hh5")
 
 [node name="Quit" type="TextureButton" parent="Button Manager" unique_id=1262931245]
 layout_mode = 0
-offset_left = 336.0
+offset_left = 300.0
 offset_top = 293.0
-offset_right = 454.0
+offset_right = 418.0
 offset_bottom = 326.0
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("12_6byu3")
