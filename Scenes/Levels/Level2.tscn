@@ -246,6 +246,15 @@ position = Vector2(0, 143)
 amount_ratio = 0.25
 process_material = ExtResource("10_ao4h1")
 
+[node name="HazeGenerator2" parent="." unique_id=1134073305 instance=ExtResource("9_ipaot")]
+position = Vector2(-1, -319)
+scale = Vector2(1, 1.5)
+
+[node name="GPUParticles2D" parent="HazeGenerator2" index="0" unique_id=1223870206]
+position = Vector2(0, 143)
+amount_ratio = 0.4701
+process_material = ExtResource("10_ao4h1")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=912955478]
 texture_filter = 1
 position = Vector2(0, 49)
@@ -268,3 +277,4 @@ shape = SubResource("RectangleShape2D_tbiw2")
 [editable path="Future/LargeGround4/Ground6"]
 [editable path="Future/LargeGround4/Ground7"]
 [editable path="HazeGenerator"]
+[editable path="HazeGenerator2"]
