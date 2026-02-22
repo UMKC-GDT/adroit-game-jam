@@ -6,6 +6,7 @@ var currentSceneName
 var mainMenuScene = preload("res://Scenes/MainMenu.tscn")
 @export var ScreenFadeManager: Node
 var isMainMenu: bool = true
+var switching := false
 
 @export var background: Sprite2D
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +21,10 @@ func TitleMusicOutie(outieparam: int = 1):
 
 var thing:bool = true
 func LoadNewScene(name:String):
+	if(switching):
+		return
+		
+	switching = true
 	var newScene:PackedScene = load(name)
 	if (newScene):
 		if (currentScene):
@@ -47,6 +52,7 @@ func LoadNewScene(name:String):
 	#$SubViewportContainer/SubViewport.remove_child(currentScene)
 
 	#$SubViewportContainer/SubViewport.add_child(currentScene)
+	switching = false
 	ScreenFadeManager.fadeIn()
 
 func _on_escape_to_main_menu() -> void:

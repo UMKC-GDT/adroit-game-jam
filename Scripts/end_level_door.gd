@@ -50,12 +50,11 @@ func _on_interactable_component_interacted() -> void:
 	active_sprite.play("Opened")
 	if get_tree():
 		await get_tree().create_timer(.2).timeout
-		if (get_tree()):
-			var sceneManager:game_manager = get_tree().root.get_node("GameManager")
-			if (sceneManager != null):
-				sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
-			else:
-					get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
+		var sceneManager:game_manager = get_tree().root.get_node("GameManager")
+		if (sceneManager != null):
+			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
+		else:
+				get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
 		
 	#next scene is the string name of  the scene
 	#get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
