@@ -7,6 +7,10 @@ class_name SimpleFlashlight
 @export var starting_light: Timeline = Timeline.PRESENT
 @onready var circle: CollisionShape2D = $Circle
 
+# Variables for Controller Support (Done By Trevor N)
+var stickDirection
+var lastMousePosition
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	circle.shape.radius = flashlight_radius
@@ -18,8 +22,7 @@ func _ready() -> void:
 		
 	else:
 		light_sprite.modulate = present_color
-	
-	pass # Replace with function body.
+	lastMousePosition = get_global_mouse_position()
 
 func set_starting_light(present_light):
 	
@@ -41,11 +44,15 @@ func set_starting_light(present_light):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
+	stickDirection = Input.get_vector("rightStickLeft", "rightStickRight", "rightStickUp", "rightStickDown")
+	if (get_global_mouse_position() != lastMousePosition):
+		look_at(get_global_mouse_position())
+		lastMousePosition = get_global_mouse_position()
+	else:
+		look_at($".".global_position + stickDirection)
 
-func _input(event: InputEvent) -> void:
-	# Listen for a standard Left Mouse Click
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+func _unhandled_input(event): # Listen for a standard Left Mouse Click
+	if event.is_action_pressed("lightToggle"):
 		swap_timeline()
 
 func swap_timeline() -> void:
