@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://boyxghoqy3b5j"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_ck766"]
+[ext_resource type="Script" uid="uid://c8l7iylj3nwpl" path="res://Scripts/door_switch.gd" id="2_h5f3n"]
+[ext_resource type="Texture2D" uid="uid://brsejbgli7628" path="res://Resources/istockphoto-530380881-612x612.jpg" id="3_dc32l"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="4_h5f3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5drf"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ck766"]
+radius = 24.0
+
+[node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
+collision_layer = 2
+script = ExtResource("2_h5f3n")
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+position = Vector2(-1.4305115e-06, 4.7683716e-07)
+scale = Vector2(0.052287582, 0.07881774)
+texture = ExtResource("3_dc32l")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_c5drf")
+
+[node name="InteractableComponent" parent="." index="2" unique_id=642375165 instance=ExtResource("4_h5f3n")]
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1870653077]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_ck766")
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]

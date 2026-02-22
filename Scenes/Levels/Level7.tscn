@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_ie467"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_hrrbo"]
-[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_k843i"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_k843i"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="7_6lk1x"]
-[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_rkodj"]
-[ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="8_udhth"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_rkodj"]
+[ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_udhth"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_1a1an"]
-[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="9_rxtma"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/static_lamp.tscn" id="9_tcs12"]
-[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="11_rxtma"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_rxtma"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="9_tcs12"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="11_rxtma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
 size = Vector2(352, 42)
