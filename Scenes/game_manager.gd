@@ -13,10 +13,10 @@ func _ready() -> void:
 	#currentScene = mainMenuScene.instantiate()
 	#$SubViewportContainer.visible = false
 	LoadNewScene("res://Scenes/MainMenu.tscn")
-	$SoundManager/titleEmitter	.play()
+	$Sprite2D/titleEmitter.play()
 
 func TitleMusicOutie(outieparam: int = 1):
-	$SoundManager/titleEmitter.set_parameter("TitleOutie", outieparam)
+	$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
 
 var thing:bool = true
 func LoadNewScene(name:String):
