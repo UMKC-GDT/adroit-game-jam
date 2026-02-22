@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_7u65d"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="8_bymwt"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_hni7l"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_oh2n1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bymwt"]
 size = Vector2(1056, 42)
@@ -110,6 +111,10 @@ position = Vector2(-64, 0)
 rotation = -3.1415927
 walljump = true
 
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_bymwt")]
+position = Vector2(160, -88)
+native_timeline = 1
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_hni7l")]
 position = Vector2(0, 96)
 jumpVelocity = 400.0
@@ -138,6 +143,4 @@ position = Vector2(0, 280)
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_bymwt")
 
-[node name="EndLevelDoor" parent="." unique_id=1870179415 instance=ExtResource("8_bymwt")]
-position = Vector2(1120, -88)
-native_timeline = 1
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_oh2n1")]
