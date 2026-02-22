@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 [global_group]
 
 Player="The Player"
+audio="all audio"
 
 [input]
 

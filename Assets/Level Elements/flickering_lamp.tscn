@@ -22,3 +22,13 @@ texture_filter = 1
 position = Vector2(0, -96.00001)
 scale = Vector2(1.8500001, 1.75)
 texture = SubResource("AtlasTexture_mm6ix")
+
+[node name="LampEmitter" type="FmodEventEmitter2D" parent="." unique_id=719766397]
+event_name = "event:/Ambience/LampandFlicker"
+event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
+attached = false
+autoplay = true
+volume = 0.4
+fmod_parameters/LampFlicker/id = -6375880320482298193
+fmod_parameters/LampFlicker = 0.0
+fmod_parameters/LampFlicker/variant_type = 3
