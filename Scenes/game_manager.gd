@@ -20,7 +20,7 @@ func LoadNewScene(name:String):
 	if (newScene):
 		if (currentScene):
 			if thing:
-				thing= false
+				thing = false
 				self.remove_child(currentScene)
 			else:
 				$SubViewportContainer/SubViewport.remove_child(currentScene)
@@ -30,16 +30,18 @@ func LoadNewScene(name:String):
 
 		if name == "res://Scenes/MainMenu.tscn":
 			$SubViewportContainer.visible = false
+			ScreenFadeManager.visible = false
 			background.hide()
 			self.add_child(currentScene)
 			
 		else:
 			$SubViewportContainer.visible = true
+			ScreenFadeManager.visible = true
 			background.show()
 			$SubViewportContainer/SubViewport.add_child(currentScene)
 		
 	#$SubViewportContainer/SubViewport.remove_child(currentScene)
 
 	#$SubViewportContainer/SubViewport.add_child(currentScene)
-	#ScreenFadeManager.fadeOut()
+	ScreenFadeManager.fadeIn()
 	
