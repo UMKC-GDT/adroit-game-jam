@@ -15,7 +15,6 @@ func _on_start_pressed() -> void:
 	var sceneManager:game_manager = get_tree().root.get_node("GameManager")
 	if (sceneManager != null):
 		sceneManager.LoadNewScene("res://Scenes/Levels/Level 1.tscn")
-		print("did the right thing")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level 1.tscn")
 

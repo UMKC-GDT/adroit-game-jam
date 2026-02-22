@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dgox0p43wenhf"]
+
+[ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
+[ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
+
+[node name="GameManager" type="Node2D" unique_id=618373773]
+script = ExtResource("1_m2tc1")
+
+[node name="SoundManager" type="Node2D" parent="." unique_id=993398646 node_paths=PackedStringArray("fmodEmitter")]
+script = ExtResource("2_bwyv8")
+fmodEmitter = NodePath("FmodEventEmitter2D")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
+event_name = "event:/Music/Level Music"
+event_guid = "{4157dcec-534d-4c5e-a51d-c0cb7599903c}"
+"fmod_parameters/Ambience Volume/id" = -6527218130153094337
+"fmod_parameters/Ambience Volume" = 0.0
+"fmod_parameters/Ambience Volume/variant_type" = 3
+fmod_parameters/OneorTwo/id = -3824386992338320501
+fmod_parameters/OneorTwo = 0.0
+fmod_parameters/OneorTwo/variant_type = 3
+fmod_parameters/Verse2/id = 6207816462586778099
+fmod_parameters/Verse2 = 0.0
+fmod_parameters/Verse2/variant_type = 3
+fmod_parameters/Intro/id = 242119683927815474
+fmod_parameters/Intro = 0.0
+fmod_parameters/Intro/variant_type = 3
+"fmod_parameters/Main Volume/id" = -7299101120154163149
+"fmod_parameters/Main Volume" = 0.0
+"fmod_parameters/Main Volume/variant_type" = 3
+"fmod_parameters/SFX Volume/id" = 8528522156426082525
+"fmod_parameters/SFX Volume" = 0.0
+"fmod_parameters/SFX Volume/variant_type" = 3
+fmod_parameters/78Section/id = 5809940432362576416
+fmod_parameters/78Section = 0.0
+fmod_parameters/78Section/variant_type = 3
+fmod_parameters/Fin/id = -7163036070337130985
+fmod_parameters/Fin = 0.0
+fmod_parameters/Fin/variant_type = 3
+fmod_parameters/CutMost/id = -8747828631922096692
+fmod_parameters/CutMost = 0.0
+fmod_parameters/CutMost/variant_type = 3
+"fmod_parameters/Music Volume/id" = -5078636143659238729
+"fmod_parameters/Music Volume" = 0.0
+"fmod_parameters/Music Volume/variant_type" = 3
+fmod_parameters/Outro/id = -2623451756194045046
+fmod_parameters/Outro = 0.0
+fmod_parameters/Outro/variant_type = 3
+fmod_parameters/Verse1/id = 4851196200768270940
+fmod_parameters/Verse1 = 0.0
+fmod_parameters/Verse1/variant_type = 3
