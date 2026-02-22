@@ -18,6 +18,9 @@ extends CharacterBody2D
 @export var wallJumpVelocity := 400.0
 @export var wallJumpPushOff := 200.0
 @export var wallFallingGravity := 50.0
+@export var footStepTimerReset = 0.3
+@export var footStepTimer = 0
+@export var animationHandler: Node2D
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -33,21 +36,34 @@ var canDoubleJump := false
 var canWallJump := true
 
 var jumpHeldLength := 0.0
-var canJump := false
+var canJump := true
 
+var hasLight = true
 
+var sprite: AnimatedSprite2D
+var armSprite: Sprite2D
+
+var dead: bool = false
 
 func _ready() -> void:
 	spawnPosition = self.position
+	if(hasLight):
+		pass
+	else:
+		sprite = $SpriteNolight
 
 
 func _process(delta: float) -> void:
-	pass
+	if dead:
+		self.velocity.x = 0
+		self.velocity.y = 0
 
 
 func _physics_process(delta: float) -> void:
-	getInputDir()
-	
+	getInputDir(delta)
+	animationHandler.faceSprite()
+
+
 	if(Input.is_action_pressed("jump")):
 		if(canJump):
 			jumpHeldLength += delta
@@ -102,11 +118,11 @@ func doAirMovement(delta: float):
 			pass
 		else:
 			self.velocity.y = wallFallingGravity
-
 	
 	# Friction based on direction
 	if(isMovingRight()):
 		self.velocity.x -= airFriction * delta
+		
 	elif(isMovingLeft()):
 		self.velocity.x += airFriction * delta
 		
@@ -119,6 +135,7 @@ func doAirMovement(delta: float):
 func doJump():
 	if(self.is_on_floor()):
 		groundJump()
+		$PlayerSoundManager/EmmiterGroundJump.play()
 	elif(getDirectionForWallJump() != 0 and canWallJump): # Prioritize wall jump over double jump
 		doWallJump()
 	else:
@@ -175,11 +192,21 @@ func limitSpeed(currentSpeed: float, maxSpeed: float):
 		return maxSpeed * inputDir
 	return currentSpeed
 
-func getInputDir():
+func getInputDir(delta:float):
 	if(Input.is_action_pressed("right")):
 		inputDir = 1.0
+		if footStepTimer <= 0:
+			if self.is_on_floor():
+				$PlayerSoundManager/EmmiterFootsteps.play()
+				footStepTimer = footStepTimerReset
+		footStepTimer -= delta
 	elif(Input.is_action_pressed("left")):
 		inputDir = -1.0
+		if footStepTimer <= 0:
+			if self.is_on_floor():
+				$PlayerSoundManager/EmmiterFootsteps.play()
+				footStepTimer = footStepTimerReset
+		footStepTimer -= delta
 	else:
 		inputDir = 0
 
@@ -202,3 +229,7 @@ func wantsToGoLeft():
 
 func wantsToGo():
 	return inputDir != 0
+	
+func kill():
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://p14xptrsf2jc"]
 
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="1_x4ty1"]
-[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="2_8jemr"]
-[ext_resource type="PackedScene" uid="uid://b8bp1j3tn8qlf" path="res://Assets/basic_platform.tscn" id="2_l6gqm"]
+[ext_resource type="PackedScene" uid="uid://b8bp1j3tn8qlf" path="res://Assets/present_platform.tscn" id="2_l6gqm"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_8jemr"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/switch_door.tscn" id="6_5xlm7"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/door_switch.tscn" id="7_0hrnv"]
@@ -19,12 +18,9 @@
 position = Vector2(-253, -279)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("1_x4ty1")]
-position = Vector2(-184, -168)
+position = Vector2(240, -80)
 airSpeed = 300.0
 jumpVelocity = 250.0
-
-[node name="SimpleFlashlight" parent="Player" unique_id=371804446 instance=ExtResource("2_8jemr")]
-flashlight_radius = 30
 
 [node name="Basic Platform" parent="." unique_id=1605235542 instance=ExtResource("2_l6gqm")]
 position = Vector2(-72, -40)

@@ -6,6 +6,7 @@ class_name QuantumLight
 enum Timeline { PRESENT, FUTURE }
 
 @export var timeline_type: Timeline = Timeline.PRESENT
+@onready var light_sprite: Sprite2D = $LightBeam/LightSprite
 
 #Note: DO NOT confuse this with .priority. .priority is something with the Area2D, and as the one writing this comment, I don't know what that's for. But don't try to look for .priority when you mean to look for light_priority. Trust me.
 @export var light_priority: int = 0
@@ -17,6 +18,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+
+	
+	
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is LightObject:

@@ -2,10 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_4y7j2"]
 [ext_resource type="Script" uid="uid://bfaug20ao3n1q" path="res://Scripts/superwall.gd" id="2_4y7j2"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="3_jypfc"]
 [ext_resource type="Texture2D" uid="uid://cyvg4tkosel2s" path="res://Resources/Benefits-of-Stainless-Steel-scaled.jpeg" id="3_o2210"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2210"]
+atlas = ExtResource("3_jypfc")
+region = Rect2(123.078964, 63.93721, 32.031357, 32.099327)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y7j2"]
-size = Vector2(64, 128)
+size = Vector2(32, 128)
 
 [node name="Superwall" unique_id=1605235542 instance=ExtResource("1_4y7j2")]
 gravity_scale = 0.0
@@ -13,11 +18,40 @@ freeze = true
 script = ExtResource("2_4y7j2")
 movable = false
 
-[node name="Sprite2D" parent="." index="0" unique_id=357974407]
-position = Vector2(-32.000004, 0)
-scale = Vector2(0.025, 0.074985355)
+[node name="Sprite2D5" type="Sprite2D" parent="." index="0" unique_id=1384594312]
+texture_filter = 1
+position = Vector2(0, -48)
+rotation = -1.5707964
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_o2210")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="1" unique_id=1948702182]
+texture_filter = 1
+position = Vector2(0, -16)
+rotation = -1.5707964
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_o2210")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="2" unique_id=695008737]
+texture_filter = 1
+position = Vector2(0, 16)
+rotation = -1.5707964
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_o2210")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="3" unique_id=1128288330]
+texture_filter = 1
+position = Vector2(0, 48)
+rotation = -1.5707964
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_o2210")
+
+[node name="Sprite2D" parent="." index="4" unique_id=357974407]
+visible = false
+position = Vector2(-16.000002, 0)
+scale = Vector2(0.012499998, 0.074985355)
 texture = ExtResource("3_o2210")
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=1029249552]
-position = Vector2(-32, 0)
+[node name="CollisionShape2D" parent="." index="5" unique_id=1029249552]
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_4y7j2")
