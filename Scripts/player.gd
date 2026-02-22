@@ -54,8 +54,6 @@ var dead: bool = false
 func _ready() -> void:
 	spawnPosition = self.position
 	
-	print("PLAYER: " + str(starting_present))
-	
 	flashlight.set_starting_light(starting_present)
 	
 	#NOTE: Both SpriteLight and SpriteNolight NEED to start off as invisible. This code below will decide which to activate.

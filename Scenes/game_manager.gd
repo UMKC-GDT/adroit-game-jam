@@ -50,5 +50,4 @@ func LoadNewScene(name:String):
 	ScreenFadeManager.fadeIn()
 
 func _on_escape_to_main_menu() -> void:
-	print("Escaped")
 	LoadNewScene("res://Scenes/MainMenu.tscn")
