@@ -3,15 +3,98 @@
 [ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_fkr78"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_s7g4t"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_5yvxo"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_bks1i"]
+[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="5_bks1i"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="5_s7g4t"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_8nne8"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="7_71jdt"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="8_7qilm"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_83nd1"]
+[ext_resource type="Texture2D" uid="uid://m6j2oawajmog" path="res://Assets/Cats/catGlorpVanish.png" id="10_s7g4t"]
+[ext_resource type="Script" uid="uid://dflx4s38jypgh" path="res://Scenes/Levels/animated_sprite_2d222.gd" id="11_5yvxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us0t"]
 size = Vector2(808, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yvxo"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el1rd"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bks1i"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nne8"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71jdt"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qilm"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83nd1"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqhhx"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_000xt"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epk1w"]
+atlas = ExtResource("10_s7g4t")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ovs7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yvxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el1rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bks1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nne8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71jdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qilm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83nd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqhhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_000xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epk1w")
+}],
+"loop": false,
+"name": &"glorpVanish",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1l8p"]
+size = Vector2(20, 40.5)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_fkr78")
@@ -157,4 +240,19 @@ currentScene = "Level9"
 position = Vector2(20, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1284876465]
+position = Vector2(68, -87)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0ovs7")
+animation = &"glorpVanish"
+script = ExtResource("11_5yvxo")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1254170091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=233721563]
+position = Vector2(-34, 53.75)
+shape = SubResource("RectangleShape2D_q1l8p")
+
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_83nd1")]
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
