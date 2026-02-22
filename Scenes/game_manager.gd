@@ -25,11 +25,14 @@ func LevelMusicBegin(begin: int = .5):
 		await tree.create_timer(3.5).timeout
 		$Sprite2D/levelEmitter.play()
 		
-func LevelThreeSection(levelthree: int = 1):
-	$Sprite2d/levelEmitter.set_parameter("Verse1", levelthree)
+func LevelThreeSection(levelthree: int = 0):
+	$Sprite2D/levelEmitter.set_parameter("Verse1", levelthree)
 
 func LevelTwoOpen(twoopen: int = 0):
 	$Sprite2D/levelEmitter.set_parameter("CutMost", twoopen)
+	
+func DoorSound(dooropen: int = .2):
+	$Sprite2D/doorEmitter.play()
 
 var thing:bool = true
 func LoadNewScene(name:String):
