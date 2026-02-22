@@ -13,10 +13,10 @@ func _ready() -> void:
 	#currentScene = mainMenuScene.instantiate()
 	#$SubViewportContainer.visible = false
 	LoadNewScene("res://Scenes/MainMenu.tscn")
-	$Sprite2D/titleEmitter.play()
+	$SoundManager/titleEmitter	.play()
 
 func TitleMusicOutie(outieparam: int = 1):
-	$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
+	$SoundManager/titleEmitter.set_parameter("TitleOutie", outieparam)
 
 var thing:bool = true
 func LoadNewScene(name:String):
@@ -48,5 +48,7 @@ func LoadNewScene(name:String):
 
 	#$SubViewportContainer/SubViewport.add_child(currentScene)
 	ScreenFadeManager.fadeIn()
-	
-	
+
+func _on_escape_to_main_menu() -> void:
+	print("Escaped")
+	LoadNewScene("res://Scenes/MainMenu.tscn")
