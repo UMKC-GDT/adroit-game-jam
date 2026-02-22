@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bsngvm8824gt3"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_u4lgp"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_oioc0"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_uwutr"]
+[ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_bwo3a"]
+[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="6_aibtj"]
+[ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="7_bwo3a"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_lbk1i"]
+[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="8_cyd1v"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="8_x1o6s"]
+[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="9_b3h8f"]
+[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="9_bwo3a"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="10_oa7qn"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="13_aibtj"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="14_aibtj"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="15_lbk1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1o6s"]
+size = Vector2(872, 34)
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_u4lgp")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_oioc0")]
+position = Vector2(-616.0001, 392.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("3_uwutr")]
+position = Vector2(-64, -128)
+rotation = 1.5707964
+
+[node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("3_uwutr")]
+position = Vector2(-112, -16)
+
+[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("3_uwutr")]
+position = Vector2(-128, 144)
+
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1875645703]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=231010411]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=696573508]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Wall" parent="Present" unique_id=1605235542 instance=ExtResource("4_bwo3a")]
+position = Vector2(48, 32)
+rotation = 3.1415925
+native_timeline = 0
+walljump = true
+
+[node name="Wall2" parent="Present" unique_id=765483450 instance=ExtResource("4_bwo3a")]
+position = Vector2(160, 32)
+rotation = 6.2831855
+native_timeline = 0
+walljump = true
+
+[node name="Door Switch" parent="Present" unique_id=985601875 node_paths=PackedStringArray("target_door") instance=ExtResource("6_aibtj")]
+position = Vector2(48, -80)
+target_door = NodePath("../SwitchDoor2")
+
+[node name="Wall3" parent="Present" unique_id=389045415 instance=ExtResource("4_bwo3a")]
+position = Vector2(160, -96)
+rotation = 6.2831855
+native_timeline = 0
+walljump = true
+
+[node name="Platform" parent="Present" unique_id=1877439657 instance=ExtResource("7_bwo3a")]
+position = Vector2(-24, -40)
+native_timeline = 0
+
+[node name="SwitchDoor" parent="Present" unique_id=1511658468 instance=ExtResource("8_cyd1v")]
+position = Vector2(-72, -40)
+
+[node name="SwitchDoor2" parent="Present" unique_id=1198893299 instance=ExtResource("8_cyd1v")]
+position = Vector2(-88, -40)
+
+[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("13_aibtj")]
+position = Vector2(-128, -40)
+
+[node name="LargeGround4" parent="Present" unique_id=1496653337 instance=ExtResource("3_uwutr")]
+position = Vector2(-144, -48)
+rotation = 1.5707964
+
+[node name="LargeGround5" parent="Present" unique_id=374114639 instance=ExtResource("3_uwutr")]
+position = Vector2(-144, -176)
+rotation = 1.5707964
+
+[node name="Ground2" parent="Present" unique_id=694997635 instance=ExtResource("9_bwo3a")]
+position = Vector2(48, -64)
+
+[node name="LargeGround6" parent="Present" unique_id=1731650335 instance=ExtResource("3_uwutr")]
+position = Vector2(-208, -16)
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("8_x1o6s")]
+position = Vector2(96, 160)
+light_priority = 100
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_lbk1i")]
+position = Vector2(-256, -64)
+
+[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_lbk1i")]
+position = Vector2(-128, 144)
+
+[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_lbk1i")]
+position = Vector2(128, 144)
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=567642971]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=392682067]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=1637643970]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Door Switch" parent="Future" unique_id=1501715318 node_paths=PackedStringArray("target_door") instance=ExtResource("6_aibtj")]
+position = Vector2(96, 120)
+target_door = NodePath("../../Present/SwitchDoor")
+native_timeline = 1
+
+[node name="RandomPlatform" parent="Future" unique_id=1558261178 instance=ExtResource("9_b3h8f")]
+position = Vector2(0, 128)
+exist_chance = 0.1
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("10_oa7qn")]
+position = Vector2(-80, 104)
+jumpVelocity = 400.0
+starting_present = true
+
+[node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="." unique_id=192288777]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="." unique_id=1331686996]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("14_aibtj")]
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("15_lbk1i")]
+position = Vector2(0, 248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2117307424]
+position = Vector2(12, 7)
+shape = SubResource("RectangleShape2D_x1o6s")
