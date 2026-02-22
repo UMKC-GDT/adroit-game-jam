@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cy273kcrok0it"]
+[gd_scene format=3 uid="uid://c5osmywdnlcsn"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_1dupi"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_0fhnx"]
@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_fkyqn"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="5_8s7yx"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_wp3ty"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_nvt2r"]
+[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="7_nvt2r"]
 [ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="8_r6g6w"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_sdady"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_45niu"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="11_7pp8s"]
-[ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="12_hq5b7"]
+[ext_resource type="PackedScene" path="res://Scenes/ui_message.tscn" id="12_hq5b7"]
 [ext_resource type="Texture2D" uid="uid://by1qkg1r00woh" path="res://Resources/PressQ.png" id="13_v418s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnu1o"]
@@ -242,6 +242,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("11_7pp8s")]
 position = Vector2(0, 232)
+currentScene = "Level21"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1238806544]
 position = Vector2(0, 48)
