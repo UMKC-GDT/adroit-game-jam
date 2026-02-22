@@ -14,7 +14,7 @@ script = ExtResource("1_lir3p")
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("1_msbyr")]
 position = Vector2(3.8146973e-06, -100.99999)
 rotation = 3.1415925
-scale = Vector2(0.41988438, -0.6019832)
+scale = Vector2(0.4316818, -0.502226)
 light_priority = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=642856132]
