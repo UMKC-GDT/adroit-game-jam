@@ -3,9 +3,20 @@ class_name SwitchDoor
 
 ##This is a door that can only be triggered by a switch. Not to be confused with the spectatular DoorSwitch, the switch that triggers this door.
 
+@onready var future_sprite: Sprite2D = $FutureSprite
+@onready var present_sprite: Sprite2D = $PresentSprite
+
 var is_open: bool = false
 
 func _ready() -> void:
+	
+	if native_timeline == Timeline.FUTURE:
+		future_sprite.show()
+		present_sprite.hide()
+	else:
+		future_sprite.hide()
+		present_sprite.show()
+	
 	super()
 
 # DoorSwitch will call this function when triggered

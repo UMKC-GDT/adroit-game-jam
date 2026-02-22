@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dshjt27lj1txn"
-path="res://.godot/imported/JumpRight_NoArms.png-98e10814a98bc6eb88362778b21928ac.ctex"
+uid="uid://dfvpgrf2xe64x"
+path="res://.godot/imported/FlashlightArm.png-e8c54daf0856f27875179b32b86438cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/JumpRight_NoArms.png"
-dest_files=["res://.godot/imported/JumpRight_NoArms.png-98e10814a98bc6eb88362778b21928ac.ctex"]
+source_file="res://Resources/PlayerSprites/FlashlightArm.png"
+dest_files=["res://.godot/imported/FlashlightArm.png-e8c54daf0856f27875179b32b86438cf.ctex"]
 
 [params]
 

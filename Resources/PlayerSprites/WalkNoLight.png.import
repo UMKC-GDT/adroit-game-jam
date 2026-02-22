@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cld3errrsxe8k"
-path="res://.godot/imported/WallJump_NoArm_V2.png-b4fffa1fdb121fa85bafd0bcc89ee0e8.ctex"
+uid="uid://dw5kdxu064cfr"
+path="res://.godot/imported/WalkNoLight.png-1f6ed05b8c4e0f0997347d3a180f6a6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/PlayerSprites/WallJump_NoArm_V2.png"
-dest_files=["res://.godot/imported/WallJump_NoArm_V2.png-b4fffa1fdb121fa85bafd0bcc89ee0e8.ctex"]
+source_file="res://Resources/PlayerSprites/WalkNoLight.png"
+dest_files=["res://.godot/imported/WalkNoLight.png-1f6ed05b8c4e0f0997347d3a180f6a6d.ctex"]
 
 [params]
 
