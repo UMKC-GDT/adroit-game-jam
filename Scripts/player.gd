@@ -18,7 +18,7 @@ extends CharacterBody2D
 @export var wallJumpVelocity := 400.0
 @export var wallJumpPushOff := 200.0
 @export var wallFallingGravity := 50.0
-@export var footStepTimerReset = 0.3
+@export var footStepTimerReset = 0.428
 @export var footStepTimer = 0
 @export var animationHandler: Node2D
 
@@ -114,6 +114,7 @@ func doGroundMovement(delta: float):
 		if(self.velocity.x < 20 and self.velocity.x > -20):
 			self.velocity.x = 0
 	else:
+		playFootStepSound(delta)
 		# add to speed
 		self.velocity.x = speed * inputDir
 		# limit speed
@@ -214,18 +215,10 @@ func limitSpeed(currentSpeed: float, maxSpeed: float):
 func getInputDir(delta:float):
 	if(Input.is_action_pressed("right")):
 		inputDir = 1.0
-		if footStepTimer <= 0:
-			if self.is_on_floor():
-				$PlayerSoundManager/EmmiterFootsteps.play()
-				footStepTimer = footStepTimerReset
-		footStepTimer -= delta
+		
 	elif(Input.is_action_pressed("left")):
 		inputDir = -1.0
-		if footStepTimer <= 0:
-			if self.is_on_floor():
-				$PlayerSoundManager/EmmiterFootsteps.play()
-				footStepTimer = footStepTimerReset
-		footStepTimer -= delta
+		
 	else:
 		inputDir = 0
 
@@ -261,3 +254,10 @@ func giveFlashlight():
 func takeFlashlight():
 	hasLight = false
 	animationHandler.takeFlashlight()
+	
+func playFootStepSound(delta: float):
+	if footStepTimer <= 0:
+		if self.is_on_floor():
+			$PlayerSoundManager/EmmiterFootsteps.play()
+			footStepTimer = footStepTimerReset
+	footStepTimer -= delta
