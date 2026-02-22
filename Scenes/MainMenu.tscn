@@ -22,11 +22,11 @@ script = ExtResource("1_tt5f1")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1214627852]
 
 [node name="Title" type="Sprite2D" parent="." unique_id=1333432968]
-scale = Vector2(3.7, 3.7)
+scale = Vector2(4.312923, 4.5)
 texture = ExtResource("2_853f1")
 
 [node name="BackgroundArt" type="Sprite2D" parent="." unique_id=1129180228]
-scale = Vector2(3.7, 3.7)
+scale = Vector2(4.312923, 4.5)
 texture = ExtResource("3_7467j")
 
 [node name="Button Manager" type="Control" parent="." unique_id=641941652]
@@ -34,6 +34,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.1656549, 1.2162162)
 
 [node name="Start" type="TextureButton" parent="Button Manager" unique_id=1922518639]
 layout_mode = 0

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
 [ext_resource type="PackedScene" uid="uid://dsmvw3il1585e" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
-[ext_resource type="PackedScene" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
+[ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
@@ -26,6 +26,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_je8vj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=946260940]
+visible = false
 z_index = -1
 z_as_relative = false
 position = Vector2(48.076946, 53.461548)
@@ -45,11 +46,39 @@ fmod_parameters/TitleOutie/id = 1202469491667461110
 fmod_parameters/TitleOutie = 0.0
 fmod_parameters/TitleOutie/variant_type = 3
 
+[node name="levelEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=898177010]
+event_name = "event:/Music/Level Music"
+event_guid = "{4157dcec-534d-4c5e-a51d-c0cb7599903c}"
+fmod_parameters/OneorTwo/id = -3824386992338320501
+fmod_parameters/OneorTwo = 0.0
+fmod_parameters/OneorTwo/variant_type = 3
+fmod_parameters/Verse2/id = 6207816462586778099
+fmod_parameters/Verse2 = 0.0
+fmod_parameters/Verse2/variant_type = 3
+fmod_parameters/Intro/id = 242119683927815474
+fmod_parameters/Intro = 0.0
+fmod_parameters/Intro/variant_type = 3
+fmod_parameters/78Section/id = 5809940432362576416
+fmod_parameters/78Section = 0.0
+fmod_parameters/78Section/variant_type = 3
+fmod_parameters/Fin/id = -7163036070337130985
+fmod_parameters/Fin = 0.0
+fmod_parameters/Fin/variant_type = 3
+fmod_parameters/CutMost/id = -8747828631922096692
+fmod_parameters/CutMost = 1.0
+fmod_parameters/CutMost/variant_type = 3
+fmod_parameters/Outro/id = -2623451756194045046
+fmod_parameters/Outro = 0.0
+fmod_parameters/Outro/variant_type = 3
+fmod_parameters/Verse1/id = 4851196200768270940
+fmod_parameters/Verse1 = 0.0
+fmod_parameters/Verse1/variant_type = 3
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
-offset_left = 600.0
-offset_top = 180.0
-offset_right = 1400.0
-offset_bottom = 980.0
+offset_left = 560.0
+offset_top = 140.0
+offset_right = 1360.0
+offset_bottom = 940.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1403170885]
 handle_input_locally = false
@@ -57,8 +86,7 @@ size = Vector2i(800, 800)
 render_target_update_mode = 4
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=449512843]
-position = Vector2(1000.50006, 581.00006)
-scale = Vector2(1.0500001, 1.0512195)
+position = Vector2(960, 540.00006)
 texture = ExtResource("5_f5c43")
 
 [node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
@@ -91,8 +119,12 @@ fmod_parameters/TitleOutie/variant_type = 3
 position = Vector2(960, 540)
 
 [node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
-visible = false
 position = Vector2(743, 180.00002)
 scale = Vector2(0.45601746, 0.73540765)
 
+[node name="Sprite2D" parent="ScreenFadeManager" index="0" unique_id=724658572]
+position = Vector2(474.02295, 488.73346)
+
 [connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
+
+[editable path="ScreenFadeManager"]
