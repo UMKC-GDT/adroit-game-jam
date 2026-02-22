@@ -44,6 +44,9 @@ func _on_interactable_component_interacted() -> void:
 		pass
 	isSwitching = true
 	
+	if !is_active: return
+	
+	print("Test animation")
 	active_sprite.play("OpenDoor")
 	await get_tree().create_timer(.3).timeout
 	active_sprite.play("Opened")

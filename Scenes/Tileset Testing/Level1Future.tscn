@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3jv26sx2bxeh" path="res://Resources/props copy.png" id="6_gj4od"]
 [ext_resource type="Texture2D" uid="uid://ocjsx2qwdvh" path="res://Resources/props copy 3.png" id="7_fm7ne"]
 [ext_resource type="Texture2D" uid="uid://dowjwbqpcjdsf" path="res://Resources/rubble.png" id="8_fm7ne"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="9_qh5j3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syqtw"]
 texture = ExtResource("1_syqtw")
@@ -165,3 +166,10 @@ texture_filter = 1
 position = Vector2(-147, 28.5)
 scale = Vector2(2.6470587, 2.6071432)
 texture = ExtResource("8_fm7ne")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("9_qh5j3")]
+position = Vector2(108.00001, -74.399994)
+scale = Vector2(0.99999976, 1.6079999)
+collision_layer = 3
+timeline_type = 1
+light_priority = 10
