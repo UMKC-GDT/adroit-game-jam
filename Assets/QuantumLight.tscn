@@ -9,7 +9,7 @@
 noise = SubResource("FastNoiseLite_7obu0")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_symsn"]
-polygon = PackedVector2Array(-0.9999916, -67, 198.99994, 530, -200.00006, 529)
+polygon = PackedVector2Array(0, -68, 344, 892, -344, 892)
 
 [node name="QuantumLight" type="Area2D" unique_id=371804446]
 collision_layer = 0
@@ -21,7 +21,7 @@ scale = Vector2(1.728125, 1.6)
 polygon = PackedVector2Array(0, 0, -200, 600, 200, 600)
 
 [node name="LightSprite" type="Sprite2D" parent="LightBeam" unique_id=1819605339]
-position = Vector2(36, 217.99998)
+position = Vector2(37.03436, 210)
 scale = Vector2(1.5093751, 1.429514)
 texture = ExtResource("2_7obu0")
 

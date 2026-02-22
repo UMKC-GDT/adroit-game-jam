@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	if timeline_type == Timeline.FUTURE:
 		light_sprite.modulate = future_color
-		
+	
 	else:
 		light_sprite.modulate = present_color
 	
@@ -37,7 +37,6 @@ func set_starting_light(present_light):
 		
 	else:
 		light_sprite.modulate = present_color
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -11,7 +11,7 @@ radius = 75.0
 script = ExtResource("2_bkrqq")
 flashlight_radius = 50
 starting_light = 0
-light_priority = 1
+light_priority = 50
 
 [node name="CharacterArm" type="Sprite2D" parent="." index="0" unique_id=966148955]
 texture_filter = 1
@@ -29,3 +29,5 @@ shape = SubResource("CircleShape2D_iv4ae")
 [node name="LightOccluder2D" parent="PointLight2D" parent_id_path=PackedInt32Array(193099976) index="0" unique_id=597497695]
 position = Vector2(70, 3)
 rotation = -1.5737504
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/LightOccluder2D" index="0" unique_id=244537027]
