@@ -9,6 +9,7 @@ enum Timeline { PRESENT, FUTURE }
 @export var native_timeline: Timeline = Timeline.PRESENT
 @export var movable: bool = true
 @export var is_tangible: bool = true
+@export var walljump: bool = false
 
 #This array stores the lights currently observing this object, to allow us to check who has the most priority and who's say goes.
 var overlapping_lights: Array[QuantumLight] = []
@@ -85,8 +86,10 @@ func update_state():
 		call_deferred("set_collision_mask_value", physics_layer, is_active)
 		
 		#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
-		call_deferred("set_collision_layer_value", 12, is_active) # World Layer
-		call_deferred("set_collision_mask_value", 12, is_active)  # World Mask
+		if walljump:
+			print("We're walljumpable!")
+			call_deferred("set_collision_layer_value", 12, is_active) # World Layer
+			call_deferred("set_collision_mask_value", 12, is_active)  # World Mask
 
 	#Waking us back up? Restore our physics. 
 	if not was_active and is_active:

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c5tusnjwjyyi5"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_hpd3s"]
+[ext_resource type="Script" uid="uid://da7lodqh01p2q" path="res://Scripts/wall.gd" id="2_hpd3s"]
+[ext_resource type="Texture2D" uid="uid://dsejco3y7lxi2" path="res://Resources/Stone_wall.jpg" id="3_m5syp"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="3_quxf2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndwxf"]
+atlas = ExtResource("3_quxf2")
+region = Rect2(128, 80, 32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei0nf"]
+size = Vector2(16, 32)
+
+[node name="PresentBarrier" unique_id=1605235542 instance=ExtResource("1_hpd3s")]
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("2_hpd3s")
+movable = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0" unique_id=1006860303]
+texture_filter = 1
+rotation = 1.5707964
+scale = Vector2(0.99999994, 1)
+texture = SubResource("AtlasTexture_ndwxf")
+
+[node name="Sprite2D" parent="." index="1" unique_id=357974407]
+visible = false
+position = Vector2(4.7683716e-07, 0)
+scale = Vector2(0.064, 0.12799999)
+texture = ExtResource("3_m5syp")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1029249552]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_ei0nf")
