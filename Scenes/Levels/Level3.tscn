@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://ddnynyhvrarci"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m7vvj"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_ncjpd"]
+[ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="4_r3ubd"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_ve7n4"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="5_d4xud"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="6_t0ble"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_t5kwq"]
+[ext_resource type="Texture2D" uid="uid://oqqotu674evl" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile.png" id="8_1h71y"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ktnig"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="9_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="9_t0ble"]
+[ext_resource type="Texture2D" uid="uid://l3dv58qp3g2l" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile2.png" id="10_s3p7u"]
 [ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="11_3i7ro"]
-[ext_resource type="Script" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
+[ext_resource type="Script" uid="uid://bpuaymu4wlkvr" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
+[ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="11_7ithr"]
 [ext_resource type="Texture2D" uid="uid://cgujm83hvvr8j" path="res://Resources/flashlightimage.png" id="11_nvbyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5el5"]
@@ -47,29 +51,38 @@ position = Vector2(-960, 0)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_ncjpd")]
-position = Vector2(0, 64)
+[node name="LargeGround8" parent="Present" unique_id=1430202875 instance=ExtResource("4_ncjpd")]
+position = Vector2(-128, 63.94)
 
-[node name="LargeGround" parent="Present/LargeGround" unique_id=1430202875 instance=ExtResource("4_ncjpd")]
-position = Vector2(-128, 0)
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_ncjpd")]
+position = Vector2(0, 63.94)
 
 [node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("4_ncjpd")]
-position = Vector2(128, 64)
+position = Vector2(128, 63.94)
 
 [node name="LargeGround3" parent="Present" unique_id=545051052 instance=ExtResource("4_ncjpd")]
+position = Vector2(0, 0.06)
 rotation = 3.1415927
 
 [node name="LargeGround4" parent="Present" unique_id=1273013041 instance=ExtResource("4_ncjpd")]
-position = Vector2(128, 0)
+position = Vector2(128, 0.06)
 rotation = 3.1415927
 
 [node name="LargeGround5" parent="Present" unique_id=2110060965 instance=ExtResource("4_ncjpd")]
-position = Vector2(-128, 0)
+position = Vector2(-128, 0.06)
 rotation = 3.1415927
 
 [node name="LargeGround6" parent="Present" unique_id=2099948876 instance=ExtResource("4_ncjpd")]
-position = Vector2(-152, 32)
+position = Vector2(-160, 32)
 rotation = 1.5707964
+
+[node name="Sprite2D" parent="Present/LargeGround6/Ground3" parent_id_path=PackedInt32Array(2099948876, 1652540597) index="0" unique_id=357974407]
+position = Vector2(0, 16.06)
+texture = ExtResource("4_r3ubd")
+
+[node name="Sprite2D" parent="Present/LargeGround6/Ground4" parent_id_path=PackedInt32Array(2099948876, 1915624487) index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("4_r3ubd")
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("4_ve7n4")]
 position = Vector2(128, 40)
@@ -83,14 +96,33 @@ position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_q5el5")
 
 [node name="LargeGround7" parent="Present" unique_id=356826420 instance=ExtResource("4_ncjpd")]
-position = Vector2(152, 32)
+position = Vector2(160, 33)
 rotation = 4.712389
+
+[node name="Ground" parent="Present/LargeGround7" index="0" unique_id=1605235542]
+position = Vector2(-15, -0.06)
+
+[node name="Ground2" parent="Present/LargeGround7" index="1" unique_id=900026791]
+position = Vector2(17, -0.06)
+
+[node name="Ground3" parent="Present/LargeGround7" index="2" unique_id=1652540597]
+position = Vector2(-47, -1.1924881e-08)
+
+[node name="Sprite2D" parent="Present/LargeGround7/Ground3" index="0" unique_id=357974407]
+texture = ExtResource("4_r3ubd")
+
+[node name="Ground4" parent="Present/LargeGround7" index="3" unique_id=1915624487]
+position = Vector2(49, -1.1924881e-08)
+
+[node name="Sprite2D" parent="Present/LargeGround7/Ground4" index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("4_r3ubd")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
 [node name="StaticLamp" parent="Future" unique_id=177997193 instance=ExtResource("9_t0ble")]
-position = Vector2(-120, -24)
+position = Vector2(-123, -24)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)
@@ -99,6 +131,97 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_t5kwq")]
 position = Vector2(-128, 64)
+
+[node name="Sprite2D" parent="Future/LargeGround2/Ground6" parent_id_path=PackedInt32Array(743319825, 1605235542) index="0" unique_id=357974407]
+texture = ExtResource("8_1h71y")
+
+[node name="Ground7" parent="Future/LargeGround2" index="1" unique_id=881032686]
+position = Vector2(-16, -0.06)
+
+[node name="Ground10" parent="Future/LargeGround2" unique_id=372989557 instance=ExtResource("11_7ithr")]
+position = Vector2(-16, -63.94)
+rotation = 3.1415927
+
+[node name="Ground11" parent="Future/LargeGround2" unique_id=660759638 instance=ExtResource("11_7ithr")]
+position = Vector2(16, -63.94)
+rotation = 3.1415927
+
+[node name="Ground12" parent="Future/LargeGround2" unique_id=1411349637 instance=ExtResource("11_7ithr")]
+position = Vector2(48, -63.94)
+rotation = 3.1415927
+
+[node name="Ground13" parent="Future/LargeGround2" unique_id=306334589 instance=ExtResource("11_7ithr")]
+position = Vector2(80, -63.94)
+rotation = 3.1415927
+
+[node name="Ground14" parent="Future/LargeGround2" unique_id=1766560708 instance=ExtResource("11_7ithr")]
+position = Vector2(112, -63.94)
+rotation = 3.1415927
+
+[node name="Ground15" parent="Future/LargeGround2" unique_id=903054039 instance=ExtResource("11_7ithr")]
+position = Vector2(144, -63.94)
+rotation = 3.1415927
+
+[node name="Ground16" parent="Future/LargeGround2" unique_id=2136746040 instance=ExtResource("11_7ithr")]
+position = Vector2(176, -63.94)
+rotation = 3.1415927
+
+[node name="Ground17" parent="Future/LargeGround2" unique_id=1552497838 instance=ExtResource("11_7ithr")]
+position = Vector2(208, -63.94)
+rotation = 3.1415927
+
+[node name="Ground18" parent="Future/LargeGround2" unique_id=1129950209 instance=ExtResource("11_7ithr")]
+position = Vector2(240, -63.94)
+rotation = 3.1415927
+
+[node name="Ground19" parent="Future/LargeGround2" unique_id=870677030 instance=ExtResource("11_7ithr")]
+position = Vector2(272, -63.94)
+rotation = 3.1415927
+
+[node name="Ground21" parent="Future/LargeGround2" unique_id=524061686 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, -48)
+rotation = 4.712389
+
+[node name="Ground22" parent="Future/LargeGround2" unique_id=1634841186 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, -16)
+rotation = 4.712389
+
+[node name="Ground23" parent="Future/LargeGround2" unique_id=497651207 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, 16)
+rotation = 4.712389
+
+[node name="Ground24" parent="Future/LargeGround2" unique_id=1187970633 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, 48)
+rotation = 4.712389
+
+[node name="Ground25" parent="Future/LargeGround2" unique_id=305801513 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, 80)
+rotation = 4.712389
+
+[node name="Ground26" parent="Future/LargeGround2" unique_id=118653452 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, 112)
+rotation = 4.712389
+
+[node name="Ground27" parent="Future/LargeGround2" unique_id=105088197 instance=ExtResource("11_7ithr")]
+position = Vector2(287.94, 144)
+rotation = 4.712389
+
+[node name="Ground20" parent="Future/LargeGround2" unique_id=2138743808 instance=ExtResource("11_7ithr")]
+position = Vector2(304, -63.94)
+rotation = 3.1415927
+
+[node name="Sprite2D" parent="Future/LargeGround2/Ground20" index="0" unique_id=357974407]
+position = Vector2(0, 16.06)
+texture = ExtResource("8_1h71y")
+
+[node name="Ground8" parent="Future/LargeGround2" index="20" unique_id=1365851496]
+position = Vector2(16, -0.06)
+
+[node name="Ground9" parent="Future/LargeGround2" index="21" unique_id=1089114079]
+visible = false
+light_mask = 0
+visibility_layer = 0
+position = Vector2(48, -0.06)
 
 [node name="Kill Zone" parent="Future" unique_id=1623014707 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
@@ -113,12 +236,47 @@ position = Vector2(-120, 39.5)
 texture = SubResource("AtlasTexture_3i7ro")
 
 [node name="LargeGround3" parent="Future" unique_id=1994800348 instance=ExtResource("7_t5kwq")]
-position = Vector2(-152, 0)
+position = Vector2(-160, 0)
 rotation = 1.5707964
 
+[node name="Ground6" parent="Future/LargeGround3" index="0" unique_id=1605235542]
+visible = false
+light_mask = 0
+visibility_layer = 0
+
+[node name="Ground7" parent="Future/LargeGround3" index="1" unique_id=881032686]
+position = Vector2(-16, -0.06)
+
+[node name="Sprite2D" parent="Future/LargeGround3/Ground7" index="0" unique_id=357974407]
+position = Vector2(0, 16.06)
+texture = ExtResource("8_1h71y")
+
+[node name="Ground8" parent="Future/LargeGround3" index="2" unique_id=1365851496]
+position = Vector2(16, -0.06)
+
+[node name="Ground9" parent="Future/LargeGround3" index="3" unique_id=1089114079]
+position = Vector2(48, -0.06)
+
 [node name="LargeGround4" parent="Future" unique_id=1414471030 instance=ExtResource("7_t5kwq")]
-position = Vector2(-64, 136)
+position = Vector2(-64, 128)
 rotation = 1.5707964
+
+[node name="Sprite2D" parent="Future/LargeGround4/Ground6" parent_id_path=PackedInt32Array(1414471030, 1605235542) index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("10_s3p7u")
+
+[node name="Ground7" parent="Future/LargeGround4" index="1" unique_id=881032686]
+position = Vector2(-16, -0.06)
+rotation = -0.0004428788
+
+[node name="Ground8" parent="Future/LargeGround4" index="2" unique_id=1365851496]
+position = Vector2(16, -0.06)
+
+[node name="Ground9" parent="Future/LargeGround4" index="3" unique_id=1089114079]
+position = Vector2(48, -0.06)
+
+[node name="Ground10" parent="Future/LargeGround4" unique_id=1164826436 instance=ExtResource("11_7ithr")]
+position = Vector2(80, -0.06)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_ktnig")]
 position = Vector2(-128, 48)
@@ -141,8 +299,20 @@ position = Vector2(10.222792, -196.01576)
 shape = SubResource("RectangleShape2D_3i7ro")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("6_t0ble")]
-visible = false
 
 [connection signal="interacted" from="Flashlight on ground/InteractableComponent" to="Flashlight on ground" method="_on_interactable_component_interacted"]
 
+[editable path="Present/LargeGround6"]
+[editable path="Present/LargeGround6/Ground3"]
+[editable path="Present/LargeGround6/Ground4"]
+[editable path="Present/LargeGround7"]
+[editable path="Present/LargeGround7/Ground3"]
+[editable path="Present/LargeGround7/Ground4"]
+[editable path="Future/LargeGround2"]
+[editable path="Future/LargeGround2/Ground6"]
+[editable path="Future/LargeGround2/Ground20"]
+[editable path="Future/LargeGround3"]
+[editable path="Future/LargeGround3/Ground7"]
+[editable path="Future/LargeGround4"]
+[editable path="Future/LargeGround4/Ground6"]
 [editable path="Flashlight on ground/InteractableComponent"]
