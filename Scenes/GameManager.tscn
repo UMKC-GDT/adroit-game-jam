@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bx8ovwbsvxtik"]
+
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
+[ext_resource type="Script" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
+
+[node name="GameManager" type="Node2D" unique_id=618373773]
+script = ExtResource("1_m2tc1")
+
+[node name="SoundManager" type="Node2D" parent="." unique_id=993398646 node_paths=PackedStringArray("fmodEmitter")]
+script = ExtResource("2_bwyv8")
+musicScale = 1.0
+soundEffectsScale = 1.0
+ambience = 1.0
+main = 1.0
+fmodEmitter = NodePath("musicEmitter")
+
+[node name="musicEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
+event_name = "event:/Ambience/LampandFlicker"
+event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
+autoplay = true
+"fmod_parameters/Main Volume/id" = -7299101120154163149
+"fmod_parameters/Main Volume" = 0.0
+"fmod_parameters/Main Volume/variant_type" = 3
+"fmod_parameters/SFX Volume/id" = 8528522156426082525
+"fmod_parameters/SFX Volume" = 0.0
+"fmod_parameters/SFX Volume/variant_type" = 3
+"fmod_parameters/Ambience Volume/id" = -6527218130153094337
+"fmod_parameters/Ambience Volume" = 0.0
+"fmod_parameters/Ambience Volume/variant_type" = 3
+fmod_parameters/LampFlicker/id = -6375880320482298193
+fmod_parameters/LampFlicker = 0.0
+fmod_parameters/LampFlicker/variant_type = 3
+"fmod_parameters/Music Volume/id" = -5078636143659238729
+"fmod_parameters/Music Volume" = 0.0
+"fmod_parameters/Music Volume/variant_type" = 3

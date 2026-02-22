@@ -193,7 +193,7 @@ bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desk
 [node name="FmodListener2D" type="FmodListener2D" parent="PlayerSoundManager" unique_id=244553250]
 
 [node name="EmmiterFootsteps" type="FmodEventEmitter2D" parent="PlayerSoundManager" unique_id=1266947777]
-event_name = "event:/Footsteps"
+event_name = "event:/SFX/Footsteps"
 event_guid = "{606f58eb-848d-4e44-9632-92fbe5984961}"
 attached = false
 volume = 0.8
@@ -202,7 +202,7 @@ fmod_parameters/SurfaceType = 0.0
 fmod_parameters/SurfaceType/variant_type = 3
 
 [node name="EmmiterGroundJump" type="FmodEventEmitter2D" parent="PlayerSoundManager" unique_id=2065719122]
-event_name = "event:/Playerjump"
+event_name = "event:/SFX/Playerjump"
 event_guid = "{25a2e39b-5e1f-4eae-8159-14b01fff8433}"
 attached = false
 volume = 0.4
@@ -211,6 +211,5 @@ fmod_parameters/SurfaceType = 0.0
 fmod_parameters/SurfaceType/variant_type = 3
 
 [node name="EmmiterAirJump" type="FmodEventEmitter2D" parent="PlayerSoundManager" unique_id=558855079]
-event_name = "event:/Doublejump"
 event_guid = "{44a20eb8-a3e7-4b09-9ed7-e4c0fa362c17}"
 volume = 0.2
