@@ -49,6 +49,7 @@ fmod_parameters/TitleOutie/variant_type = 3
 [node name="levelEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=898177010]
 event_name = "event:/Music/Level Music"
 event_guid = "{4157dcec-534d-4c5e-a51d-c0cb7599903c}"
+volume = 0.14
 fmod_parameters/OneorTwo/id = -3824386992338320501
 fmod_parameters/OneorTwo = 0.0
 fmod_parameters/OneorTwo/variant_type = 3
@@ -73,6 +74,15 @@ fmod_parameters/Outro/variant_type = 3
 fmod_parameters/Verse1/id = 4851196200768270940
 fmod_parameters/Verse1 = 0.0
 fmod_parameters/Verse1/variant_type = 3
+
+[node name="doorEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=747560978]
+event_name = "event:/SFX/Door"
+event_guid = "{c0acfb68-cd34-4150-aafa-e1f765259c7a}"
+attached = false
+volume = 0.21
+fmod_parameters/Blank/id = -7292059903593050108
+fmod_parameters/Blank = 0.0
+fmod_parameters/Blank/variant_type = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0

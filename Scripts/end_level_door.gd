@@ -1,6 +1,8 @@
 extends LightObject
 class_name EndLevelDoor
 
+var gm: game_manager
+
 @export var canOpen: bool
 #next scene is the string name of  the scene
 @export var nextScene: String
@@ -55,6 +57,9 @@ func _on_interactable_component_interacted() -> void:
 		await tree.create_timer(.2).timeout
 		var sceneManager:game_manager = tree.root.get_node("GameManager")
 		if (sceneManager != null):
+			gm = get_tree().root.get_node("GameManager")
+			gm.LevelThreeSection(1)
+			gm.DoorSound(1)
 			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:
 				get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")

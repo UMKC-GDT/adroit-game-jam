@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://duius0xedc2xx"]
+[gd_scene format=3 uid="uid://ctldhgenf7814"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_b5iej"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_tnotf"]

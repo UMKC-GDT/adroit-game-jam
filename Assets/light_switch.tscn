@@ -20,4 +20,13 @@ texture = ExtResource("2_4hb2l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=497369924]
 shape = SubResource("RectangleShape2D_4hb2l")
 
+[node name="switchEmitter" type="FmodEventEmitter2D" parent="." unique_id=1485168856]
+event_name = "event:/SFX/Lever"
+event_guid = "{1d7386ba-6b46-4653-8891-3df28877c151}"
+attached = false
+volume = 0.1
+fmod_parameters/Blank/id = -7292059903593050108
+fmod_parameters/Blank = 0.0
+fmod_parameters/Blank/variant_type = 3
+
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]
