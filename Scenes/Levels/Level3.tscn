@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddnynyhvrarci"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_p6pjf"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m7vvj"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_ncjpd"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_ve7n4"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="9_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="9_t0ble"]
 [ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="11_3i7ro"]
-[ext_resource type="Script" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
+[ext_resource type="Script" uid="uid://bpuaymu4wlkvr" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
 [ext_resource type="Texture2D" uid="uid://cgujm83hvvr8j" path="res://Resources/flashlightimage.png" id="11_nvbyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5el5"]
@@ -77,6 +77,7 @@ nextScene = "Level4"
 
 [node name="Kill Zone" parent="Present" unique_id=872460906 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
+currentScene = "Level3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/Kill Zone" unique_id=562938181]
 position = Vector2(0, 64)
@@ -102,6 +103,7 @@ position = Vector2(-128, 64)
 
 [node name="Kill Zone" parent="Future" unique_id=1623014707 instance=ExtResource("5_d4xud")]
 position = Vector2(0, 136)
+currentScene = "Level3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Future/Kill Zone" unique_id=1996928107]
 position = Vector2(0, 64)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ce0etj5kg8oct"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_fkr78"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_fkr78"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_s7g4t"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_5yvxo"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_bks1i"]
@@ -43,6 +43,7 @@ position = Vector2(-112, 64)
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("5_bks1i")]
 position = Vector2(120, -96)
+nextScene = "Level10"
 
 [node name="LargeGround4" parent="Present" unique_id=1914359350 instance=ExtResource("3_5yvxo")]
 position = Vector2(112, -72)
@@ -150,6 +151,7 @@ starting_present = true
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_7qilm")]
 position = Vector2(0, 144)
+currentScene = "Level9"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=614205150]
 position = Vector2(20, 72)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1wv3821tlxfh"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_xgp81"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_xgp81"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_nv5kp"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_inj8u"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_iv3jq"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_bfawm"]
 [ext_resource type="Texture2D" uid="uid://o11ur55ka6m5" path="res://Assets/Cats/catGone.png" id="11_613b2"]
 [ext_resource type="Texture2D" uid="uid://d1duu24uidybs" path="res://Assets/Cats/catStandUp.png" id="12_fsn6e"]
-[ext_resource type="Script" path="res://Scenes/Levels/animated_sprite_2d.gd" id="12_l5kak"]
+[ext_resource type="Script" uid="uid://lufdqym8t3nv" path="res://Scenes/Levels/animated_sprite_2d.gd" id="12_l5kak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfawm"]
 size = Vector2(352, 42)
@@ -299,6 +299,7 @@ rotation = 3.1415927
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("4_inj8u")]
 position = Vector2(128, 40)
+nextScene = "Level5"
 
 [node name="Barrier" parent="Present" unique_id=1605235542 instance=ExtResource("8_uw8xp")]
 position = Vector2(-64, 48)
@@ -401,6 +402,7 @@ starting_present = true
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_xp8yv")]
 position = Vector2(0, 128)
+currentScene = "Level4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2107078974]
 position = Vector2(0, 64)

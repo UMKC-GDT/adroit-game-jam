@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://vgori6fbj5tx"]
+[gd_scene format=3 uid="uid://5n7jobjopywj"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_wy7ie"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_wy7ie"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_nkypv"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_5fb3h"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="5_5mxy5"]
@@ -140,6 +140,7 @@ rotation = 3.1415927
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_2vii5")]
 position = Vector2(160, -144)
+nextScene = "Level11"
 native_timeline = 1
 
 [node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("7_qq02n")]
@@ -168,6 +169,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("7_ywunv")]
 position = Vector2(0, 272)
+currentScene = "Level10"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2597769]
 position = Vector2(4, 64)
