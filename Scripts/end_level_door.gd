@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 
 func _on_interactable_component_interacted() -> void:
 	print("Test animation")
-	$AnimatedSprite2D.play("OpenDoor")
+	active_sprite.play("OpenDoor")
 	await get_tree().create_timer(.3).timeout
-	$AnimatedSprite2D.play("Opened")
+	active_sprite.play("Opened")
 	
