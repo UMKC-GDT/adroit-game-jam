@@ -10,8 +10,6 @@ var gm: game_manager
 
 # Called when the node enters the scene tree for the first time. Overlaps both of them on top of each other.
 func _ready() -> void:
-	gm = get_tree().root.get_node("GameManager")
-	gm.LevelTwoOpen()
 	FutureLevel.position.x = 0
 	PresentLevel.position.x = 0
 
