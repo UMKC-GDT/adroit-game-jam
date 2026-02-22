@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_nv5kp"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="4_inj8u"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_iv3jq"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/static_lamp.tscn" id="6_ca5bt"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2brj3"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="8_uw8xp"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="8_xp8yv"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_4upjg"]
+[ext_resource type="PackedScene" path="res://Assets/HazeGenerator.tscn" id="9_bfawm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfawm"]
 size = Vector2(352, 42)
@@ -70,12 +72,6 @@ native_timeline = 0
 position = Vector2(-64, -48)
 native_timeline = 0
 
-[node name="QuantumLight2" parent="Present" unique_id=560397445 instance=ExtResource("2_nv5kp")]
-position = Vector2(-128, -64)
-
-[node name="QuantumLight" parent="Present" unique_id=1584228047 instance=ExtResource("2_nv5kp")]
-position = Vector2(128, -64)
-
 [node name="LargeGround7" parent="Present" unique_id=1722239444 instance=ExtResource("4_iv3jq")]
 position = Vector2(-152, 0)
 rotation = 1.5707964
@@ -83,6 +79,14 @@ rotation = 1.5707964
 [node name="LargeGround8" parent="Present" unique_id=1372348248 instance=ExtResource("4_iv3jq")]
 position = Vector2(152, 0)
 rotation = -1.5707964
+
+[node name="StaticLamp" parent="Present" unique_id=177997193 instance=ExtResource("6_ca5bt")]
+position = Vector2(-128, 40)
+isPresent = true
+
+[node name="StaticLamp2" parent="Present" unique_id=615094775 instance=ExtResource("6_ca5bt")]
+position = Vector2(128, 40)
+isPresent = true
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -149,5 +153,7 @@ starting_present = true
 position = Vector2(0, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2107078974]
-position = Vector2(0, 11)
+position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_bfawm")
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_bfawm")]

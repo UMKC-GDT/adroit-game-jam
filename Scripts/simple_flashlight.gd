@@ -52,6 +52,7 @@ func swap_timeline() -> void:
 	timeline_type = Timeline.FUTURE if timeline_type == Timeline.PRESENT else Timeline.PRESENT
 	print(name + " swapping! Current: " + Timeline.keys()[timeline_type])
 	
+	print("Calling update light!")
 	update_light()
 
 func getRotation():

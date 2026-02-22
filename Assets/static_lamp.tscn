@@ -19,6 +19,6 @@ light_priority = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=642856132]
 texture_filter = 1
-position = Vector2(-1.1250002, -94.625)
+position = Vector2(0, -95)
 scale = Vector2(1.8500001, 1.75)
 texture = SubResource("AtlasTexture_mm6ix")
