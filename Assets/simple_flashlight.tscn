@@ -11,7 +11,7 @@ radius = 75.0
 script = ExtResource("2_bkrqq")
 flashlight_radius = 50
 starting_light = 0
-light_priority = 1
+light_priority = 50
 
 [node name="CharacterArm" type="Sprite2D" parent="." index="0" unique_id=966148955]
 texture_filter = 1

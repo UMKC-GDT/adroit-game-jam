@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ce0w8quk7idn7"]
+
+[ext_resource type="Script" uid="uid://fgggsu0t573j" path="res://Scripts/end_level_door.gd" id="1_6xm7h"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="2_7ohtc"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="3_7ohtc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ohtc"]
+size = Vector2(20, 47)
+
+[sub_resource type="Animation" id="Animation_7ohtc"]
+resource_name = "OpenDoor"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eb5rj"]
+_data = {
+&"OpenDoor": SubResource("Animation_7ohtc")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb5rj"]
+atlas = ExtResource("3_7ohtc")
+region = Rect2(161, 14, 25, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uwf0"]
+atlas = ExtResource("3_7ohtc")
+region = Rect2(96, 14, 25, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7q7u"]
+atlas = ExtResource("3_7ohtc")
+region = Rect2(128, 14, 25, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5ka7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb5rj")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb5rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uwf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7q7u")
+}],
+"loop": true,
+"name": &"OpenDoor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7q7u")
+}],
+"loop": true,
+"name": &"Opened",
+"speed": 5.0
+}]
+
+[node name="EndLevelDoor" type="Node2D" unique_id=758515234]
+script = ExtResource("1_6xm7h")
+
+[node name="InteractableComponent" parent="." unique_id=642375165 instance=ExtResource("2_7ohtc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1582361812]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7ohtc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1225613613]
+libraries/ = SubResource("AnimationLibrary_eb5rj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1622879436]
+sprite_frames = SubResource("SpriteFrames_u5ka7")
+animation = &"Closed"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interactable_component_interacted"]
