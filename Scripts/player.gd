@@ -63,10 +63,12 @@ func _ready() -> void:
 	else:
 		sprite = $SpriteNolight
 		flashlight.process_mode = Node.PROCESS_MODE_DISABLED
-		
-	var soundManager:sound_manager = get_tree().root.get_node("GameManager").get_node("SoundManager")
-	if (soundManager != null):
-		soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump)
+	
+	var gameMan = get_tree().root.get_node("GameManager")
+	if gameMan:
+		var soundManager:sound_manager = gameMan.get_node("SoundManager")
+		if (soundManager != null):
+			soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump)
 
 
 func _process(delta: float) -> void:

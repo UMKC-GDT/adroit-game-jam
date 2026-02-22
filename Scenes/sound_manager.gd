@@ -9,13 +9,11 @@ class_name sound_manager
 @export var fmodEmitter: FmodEventEmitter2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$musicEmitter.play()
-
 	pass
 
 
 func UpdateSettings(emitter: FmodEventEmitter2D):
-	emitter.set_parameter("Main Volume",main)
+	emitter.volume("Main Volume",main)
 	emitter.set_parameter("Sfx Volume",soundEffectsScale)
 	emitter.set_parameter("Music Volume",musicScale)
 	emitter.set_parameter("Ambience Volume",ambience)
