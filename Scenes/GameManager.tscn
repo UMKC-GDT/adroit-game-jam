@@ -45,6 +45,34 @@ fmod_parameters/TitleOutie/id = 1202469491667461110
 fmod_parameters/TitleOutie = 0.0
 fmod_parameters/TitleOutie/variant_type = 3
 
+[node name="levelEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=898177010]
+event_name = "event:/Music/Level Music"
+event_guid = "{4157dcec-534d-4c5e-a51d-c0cb7599903c}"
+fmod_parameters/OneorTwo/id = -3824386992338320501
+fmod_parameters/OneorTwo = 0.0
+fmod_parameters/OneorTwo/variant_type = 3
+fmod_parameters/Verse2/id = 6207816462586778099
+fmod_parameters/Verse2 = 0.0
+fmod_parameters/Verse2/variant_type = 3
+fmod_parameters/Intro/id = 242119683927815474
+fmod_parameters/Intro = 0.0
+fmod_parameters/Intro/variant_type = 3
+fmod_parameters/78Section/id = 5809940432362576416
+fmod_parameters/78Section = 0.0
+fmod_parameters/78Section/variant_type = 3
+fmod_parameters/Fin/id = -7163036070337130985
+fmod_parameters/Fin = 0.0
+fmod_parameters/Fin/variant_type = 3
+fmod_parameters/CutMost/id = -8747828631922096692
+fmod_parameters/CutMost = 1.0
+fmod_parameters/CutMost/variant_type = 3
+fmod_parameters/Outro/id = -2623451756194045046
+fmod_parameters/Outro = 0.0
+fmod_parameters/Outro/variant_type = 3
+fmod_parameters/Verse1/id = 4851196200768270940
+fmod_parameters/Verse1 = 0.0
+fmod_parameters/Verse1/variant_type = 3
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 600.0
 offset_top = 180.0

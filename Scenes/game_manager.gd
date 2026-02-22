@@ -19,6 +19,18 @@ func _ready() -> void:
 func TitleMusicOutie(outieparam: int = 1):
 	$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
 
+func LevelMusicBegin(begin: int = .5):
+	var tree = get_tree()
+	if tree:
+		await tree.create_timer(3.5).timeout
+		$Sprite2D/levelEmitter.play()
+		
+func LevelThreeSection(levelthree: int = 1):
+	$Sprite2d/levelEmitter.set_parameter("Verse1", levelthree)
+
+func LevelTwoOpen(twoopen: int = 0):
+	$Sprite2D/levelEmitter.set_parameter("CutMost", twoopen)
+
 var thing:bool = true
 func LoadNewScene(name:String):
 	if(switching):
