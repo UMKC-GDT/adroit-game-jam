@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dhutbgdbmmpm5"]
 
 [ext_resource type="Script" uid="uid://d15or1jgujwnr" path="res://Scripts/player.gd" id="1_v0iea"]
-[ext_resource type="Script" uid="uid://qcpdnebhau5y" path="res://Scripts/PlayerAnimationHandler.gd" id="1_vgqql"]
+[ext_resource type="Script" path="res://Scripts/PlayerAnimationHandler.gd" id="1_vgqql"]
 [ext_resource type="PackedScene" uid="uid://c11ixmfk04ij0" path="res://Scenes/player_interaction_system.tscn" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dw5kdxu064cfr" path="res://Resources/PlayerSprites/ReviseWalkRightNoFlashLight.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://dlfpevjrlvrky" path="res://Resources/PlayerSprites/StandingNoFlashlight.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://b6dka7tlbxr6v" path="res://Resources/PlayerSprites/ReviseWalkRight_NoArm.png" id="5_3smsa"]
 [ext_resource type="Texture2D" uid="uid://bsikculq4s2b4" path="res://Resources/PlayerSprites/Standing_NoArms.png" id="5_8erm5"]
-[ext_resource type="PackedScene" uid="uid://b0imij7ei5k1n" path="res://Assets/simple_flashlight.tscn" id="5_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="5_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("3_fkybt")
@@ -160,7 +160,6 @@ animation = &"move"
 frame_progress = 0.3431828
 
 [node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
-visible = false
 texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
@@ -168,6 +167,7 @@ sprite_frames = SubResource("SpriteFrames_igrcy")
 
 [node name="SimpleFlashlight" parent="SpriteLight" unique_id=371804446 instance=ExtResource("5_x3wgy")]
 position = Vector2(3.3333333, -6.666666)
+flashlight_radius = 75
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
 shape = SubResource("CapsuleShape2D_v0iea")

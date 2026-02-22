@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxooy8hk1hneb"]
 
 [ext_resource type="Script" uid="uid://cy4nhurccb7yq" path="res://Scripts/quantum_light.gd" id="1_2av21"]
-[ext_resource type="Texture2D" uid="uid://0yuwft0nloj3" path="res://Resources/Light.png" id="2_7obu0"]
+[ext_resource type="Texture2D" uid="uid://cuwcpedccsys5" path="res://Resources/WhiteLight.png" id="2_7obu0"]
 
 [node name="QuantumLight" type="Area2D" unique_id=371804446]
 collision_layer = 0
@@ -9,6 +9,7 @@ collision_mask = 2
 script = ExtResource("1_2av21")
 
 [node name="LightBeam" type="CollisionPolygon2D" parent="." unique_id=984337879]
+scale = Vector2(1.728125, 1.6)
 polygon = PackedVector2Array(0, 0, -200, 600, 200, 600)
 
 [node name="LightSprite" type="Sprite2D" parent="LightBeam" unique_id=1819605339]
