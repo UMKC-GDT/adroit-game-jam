@@ -11,7 +11,7 @@ script = ExtResource("1_gb8eh")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=505427733]
 texture_filter = 1
 position = Vector2(0, -21)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1840031543]
 

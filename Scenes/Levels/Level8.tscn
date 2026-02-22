@@ -73,7 +73,7 @@ position = Vector2(160, -104)
 rotation = -1.5707964
 
 [node name="LargeGround8" parent="Present" unique_id=2088330834 instance=ExtResource("3_s3opc")]
-position = Vector2(-96, 152)
+position = Vector2(-96, 130)
 
 [node name="LargeGround10" parent="Present" unique_id=854208218 instance=ExtResource("3_s3opc")]
 position = Vector2(-104, 72)
@@ -84,10 +84,10 @@ position = Vector2(-152, 112)
 rotation = 1.5707964
 
 [node name="LargeGround12" parent="Present" unique_id=486633788 instance=ExtResource("3_s3opc")]
-position = Vector2(32, 152)
+position = Vector2(32, 130)
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("7_ewa70")]
-position = Vector2(-104, 128)
+position = Vector2(-104, 105)
 nextScene = "Level9"
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]

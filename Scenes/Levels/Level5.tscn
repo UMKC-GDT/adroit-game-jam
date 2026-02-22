@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1m6uyrd674ff"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_4kscp"]
+[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_4kscp"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_xnl3v"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_ai8g5"]
 [ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="4_34e73"]
@@ -25,7 +25,7 @@ size = Vector2(352, 34)
 script = ExtResource("1_4kscp")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_xnl3v")]
-position = Vector2(-255.99997, 136)
+position = Vector2(-278.99997, -320)
 rotation = -2.4622765
 scale = Vector2(7.94227, 2.311422)
 
@@ -367,7 +367,6 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("8_d7gg6")]
-position = Vector2(0, 56)
 
 [editable path="Present/LargeGround2"]
 [editable path="Present/LargeGround2/Ground2"]
