@@ -134,7 +134,7 @@ animations = [{
 radius = 8.0
 height = 32.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1958493430 node_paths=PackedStringArray("animationHandler")]
+[node name="Player" type="CharacterBody2D" unique_id=1958493430 node_paths=PackedStringArray("animationHandler") groups=["Player"]]
 script = ExtResource("1_v0iea")
 speed = 200.0
 airSpeed = 500.0
