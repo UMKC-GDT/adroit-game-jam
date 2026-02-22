@@ -32,11 +32,13 @@ func _ready() -> void:
 		active_sprite.play("Closed")
 	
 	super()
+	update_state()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	movable = false
+	is_active = true
 
 
 
@@ -45,13 +47,14 @@ func _on_interactable_component_interacted() -> void:
 	active_sprite.play("OpenDoor")
 	await get_tree().create_timer(.3).timeout
 	active_sprite.play("Opened")
-	await get_tree().create_timer(.2).timeout
-	
-	var sceneManager:game_manager = get_tree().root.get_node("GameManager")
-	if (sceneManager != null):
-		sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
-	else:
-			get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
+	if get_tree():
+		await get_tree().create_timer(.2).timeout
+		if (get_tree()):
+			var sceneManager:game_manager = get_tree().root.get_node("GameManager")
+			if (sceneManager != null):
+				sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
+			else:
+					get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
 		
 	#next scene is the string name of  the scene
 	#get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
