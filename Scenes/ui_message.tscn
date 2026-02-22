@@ -3,17 +3,18 @@
 [ext_resource type="Script" uid="uid://xb015rkpo2n7" path="res://Scenes/ui_message.gd" id="1_gb8eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghrpf"]
-size = Vector2(16, 42)
+size = Vector2(23, 20)
 
 [node name="UI Message" type="Node2D" unique_id=1302920499]
 script = ExtResource("1_gb8eh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=505427733]
+position = Vector2(0, -21)
+scale = Vector2(0.5, 0.5)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1840031543]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=698046913]
-position = Vector2(-104, 41)
 shape = SubResource("RectangleShape2D_ghrpf")
 
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
