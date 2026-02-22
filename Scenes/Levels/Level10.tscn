@@ -67,7 +67,7 @@ gizmo_extents = 53.9
 position = Vector2(960, 0)
 
 [node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("7_qq02n")]
-position = Vector2(160, -88)
+position = Vector2(112, -90)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)
@@ -148,7 +148,7 @@ position = Vector2(144, -192)
 rotation = 3.1415927
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_2vii5")]
-position = Vector2(160, -120)
+position = Vector2(112, -119)
 nextScene = "Level11"
 movable = true
 
