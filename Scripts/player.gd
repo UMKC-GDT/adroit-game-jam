@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	animationHandler.animateSprite()
 
 
-	if(Input.is_action_pressed("jump")):
+	if(Input.is_action_just_pressed("jump")):
 		if(canJump):
 			jumpHeldLength += delta
 		

@@ -324,8 +324,7 @@ airSpeed = 500.0
 max_air_speed = 200.0
 turnaround_multiplier = 1.5
 jumpVelocity = 300.0
-wallJumpVelocity = 300.0
-wallJumpPushOff = 300.0
+wallJumpPushOff = 400.0
 animationHandler = NodePath("AnimationHandler")
 
 [node name="AnimationHandler" type="Node2D" parent="." unique_id=2033617458 node_paths=PackedStringArray("player", "flashlight")]
