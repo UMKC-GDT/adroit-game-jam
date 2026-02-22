@@ -7,16 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="5_tfrh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfrh3"]
-size = Vector2(16, 32)
+size = Vector2(16, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4b7ta"]
 atlas = ExtResource("4_kgsnd")
-region = Rect2(128, 64, 32, 8)
+region = Rect2(120, 64, 48, 8)
 margin = Rect2(0, 0, 0, 10.235)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmac4"]
 atlas = ExtResource("5_tfrh3")
-region = Rect2(128, 64, 32, 8)
+region = Rect2(120, 64, 48, 8)
 margin = Rect2(0, 0, 0, 10.05)
 
 [node name="SwitchDoor" unique_id=1605235542 instance=ExtResource("1_4x4rb")]
