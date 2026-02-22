@@ -384,18 +384,6 @@ volume = 0.8
 fmod_parameters/SurfaceType/id = -5318364536972337983
 fmod_parameters/SurfaceType = 0.0
 fmod_parameters/SurfaceType/variant_type = 3
-"fmod_parameters/Ambience Volume/id" = -6527218130153094337
-"fmod_parameters/Ambience Volume" = 1.0
-"fmod_parameters/Ambience Volume/variant_type" = 3
-"fmod_parameters/Main Volume/id" = -7299101120154163149
-"fmod_parameters/Main Volume" = 1.0
-"fmod_parameters/Main Volume/variant_type" = 3
-"fmod_parameters/SFX Volume/id" = 8528522156426082525
-"fmod_parameters/SFX Volume" = 1.0
-"fmod_parameters/SFX Volume/variant_type" = 3
-"fmod_parameters/Music Volume/id" = -5078636143659238729
-"fmod_parameters/Music Volume" = 1.0
-"fmod_parameters/Music Volume/variant_type" = 3
 
 [node name="EmmiterGroundJump" type="FmodEventEmitter2D" parent="PlayerSoundManager" unique_id=2065719122]
 event_name = "event:/SFX/Playerjump"

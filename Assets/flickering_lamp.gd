@@ -17,8 +17,8 @@ func _ready() -> void:
 var time = 0.0;
 func _process(delta: float) -> void:
 	time+=delta
-	if time>=0.1 and time <=0.2:
-		
+	if time>=0.1 and time <=0.21:
+		$LampEmitter.set_parameter("LampFlicker", 0)
 		if(lightOnPresent):
 			beam.timeline_type = beam.Timeline.PRESENT
 			beam.update_light()
@@ -28,9 +28,11 @@ func _process(delta: float) -> void:
 			beam.timeline_type = beam.Timeline.FUTURE
 			beam.update_light()
 			lightOnPresent=true
+		
 	
 	if time>=1.5:
 		time = 0.0
+		$LampEmitter.set_parameter("LampFlicker", 1)
 		if(lightOnPresent):
 			beam.timeline_type = beam.Timeline.PRESENT
 			beam.update_light()

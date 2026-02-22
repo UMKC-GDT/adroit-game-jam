@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
 
-[node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("ScreenFadeManager", "background")]
+[node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("ScreenFadeManager", "background") groups=["audio"]]
 script = ExtResource("1_m2tc1")
 ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
@@ -22,6 +22,21 @@ z_index = -1
 z_as_relative = false
 texture = ExtResource("3_mmuqr")
 
+[node name="FmodListener2D" type="FmodListener2D" parent="Sprite2D" unique_id=1584031778]
+
+[node name="titleEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=1237939638]
+event_name = "event:/Music/Title Music"
+event_guid = "{40012e37-e8ac-4a83-8bfa-d124a9365b3b}"
+volume = 3.9
+fmod_parameters/CutMost/id = -8747828631922096692
+fmod_parameters/CutMost = 0.0
+fmod_parameters/CutMost/variant_type = 3
+fmod_parameters/TitleOutie/id = 1202469491667461110
+fmod_parameters/TitleOutie = 0.0
+fmod_parameters/TitleOutie/variant_type = 3
+
+[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0
 offset_top = 140.0
@@ -33,13 +48,12 @@ handle_input_locally = false
 size = Vector2i(800, 800)
 render_target_update_mode = 4
 
-[node name="SoundManager" type="Node2D" parent="." unique_id=993398646 node_paths=PackedStringArray("fmodEmitter")]
+[node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
 script = ExtResource("2_bwyv8")
 musicScale = 1.0
 soundEffectsScale = 1.0
 ambience = 1.0
 main = 1.0
-fmodEmitter = NodePath("musicEmitter")
 
 [node name="musicEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
 event_name = "event:/Ambience/LampandFlicker"
@@ -49,12 +63,11 @@ fmod_parameters/LampFlicker/id = -6375880320482298193
 fmod_parameters/LampFlicker = 0.0
 fmod_parameters/LampFlicker/variant_type = 3
 
-[node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
-position = Vector2(701.00006, 139.00002)
-scale = Vector2(0.45770139, 0.74068046)
-
 [node name="Fade Wait" type="Timer" parent="." unique_id=986035313]
 wait_time = 1.2
 one_shot = true
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
+bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank"]
 
 [connection signal="timeout" from="Fade Wait" to="." method="_on_fade_wait_timeout"]

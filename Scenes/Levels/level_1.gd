@@ -15,6 +15,7 @@ func _on_light_switch_turned_off() -> void:
 	$"Level1 Past".visible = false
 	$"Level1 Future".process_mode = Node.PROCESS_MODE_INHERIT
 	$"Level1 Future".visible = true
+	#$EndLevelDoor.visible = true
 
 
 func _on_light_switch_turned_on() -> void:
@@ -22,3 +23,4 @@ func _on_light_switch_turned_on() -> void:
 	$"Level1 Future".visible = false
 	$"Level1 Past".process_mode = Node.PROCESS_MODE_INHERIT
 	$"Level1 Past".visible = true
+	#$EndLevelDoor.visible = false
