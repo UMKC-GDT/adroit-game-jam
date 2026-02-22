@@ -94,7 +94,7 @@ size = Vector2i(800, 800)
 render_target_update_mode = 4
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=449512843]
-position = Vector2(991, 571)
+position = Vector2(1000, 580)
 texture = ExtResource("5_f5c43")
 
 [node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
@@ -131,7 +131,7 @@ position = Vector2(743, 180.00002)
 scale = Vector2(0.45601746, 0.73540765)
 
 [node name="Sprite2D" parent="ScreenFadeManager" index="0" unique_id=724658572]
-position = Vector2(474.02295, 488.73346)
+position = Vector2(561.382, 542.5562)
 
 [connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]
 
