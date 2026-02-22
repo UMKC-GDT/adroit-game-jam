@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsngvm8824gt3"]
+[gd_scene format=3 uid="uid://l58arwg6p884"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_u4lgp"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_oioc0"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="9_b3h8f"]
 [ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="9_bwo3a"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="10_oa7qn"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="13_aibtj"]
+[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="13_aibtj"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="14_aibtj"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="15_lbk1i"]
 
@@ -190,6 +190,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("15_lbk1i")]
 position = Vector2(0, 248)
+currentScene = "Level18"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2117307424]
 position = Vector2(12, 7)
