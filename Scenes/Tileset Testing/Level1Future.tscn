@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dkiw6bgyljd6p" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/futurewalls and office stuff.png" id="3_gj4od"]
 [ext_resource type="Texture2D" uid="uid://d2rupj0poryrf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/wall and office stuff.png" id="4_fm7ne"]
 [ext_resource type="Texture2D" uid="uid://lgsb7efggws5" path="res://Scenes/Tileset Testing/Character Sprites/Standing.png" id="5_qh5j3"]
+[ext_resource type="Texture2D" uid="uid://d3jv26sx2bxeh" path="res://Resources/props copy.png" id="6_gj4od"]
+[ext_resource type="Texture2D" uid="uid://ocjsx2qwdvh" path="res://Resources/props copy 3.png" id="7_fm7ne"]
+[ext_resource type="Texture2D" uid="uid://dowjwbqpcjdsf" path="res://Resources/rubble.png" id="8_fm7ne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syqtw"]
 texture = ExtResource("1_syqtw")
@@ -135,7 +138,7 @@ tile_set = SubResource("TileSet_dj55c")
 [node name="Objects" type="TileMapLayer" parent="." unique_id=817545081]
 texture_filter = 1
 position = Vector2(0, 2)
-tile_map_data = PackedByteArray("AAAAAAEABAAEAAEAAAD//wEABAAFAAEAAAADAAEAAwAFAAEAAAADAAAAAwAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEABAAEAAEAAAD//wEABAAFAAEAAAADAAEAAwAFAAEAAAADAAAAAwAFAAAAAAD8/wEAAwAFAAEAAAD8/wAAAwAFAAAAAAA=")
 tile_set = SubResource("TileSet_dj55c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=746562299]
@@ -144,3 +147,18 @@ texture_filter = 1
 position = Vector2(-53, 42.750008)
 scale = Vector2(0.38333336, 0.38333327)
 texture = ExtResource("5_qh5j3")
+
+[node name="PropsCopy" type="Sprite2D" parent="." unique_id=749600744]
+position = Vector2(171.00002, 31)
+scale = Vector2(2.264706, 2.264706)
+texture = ExtResource("6_gj4od")
+
+[node name="PropsCopy3" type="Sprite2D" parent="." unique_id=1597189666]
+position = Vector2(153.25002, 41.75)
+scale = Vector2(1.7115388, 1.826923)
+texture = ExtResource("7_fm7ne")
+
+[node name="Rubble" type="Sprite2D" parent="." unique_id=1442791050]
+position = Vector2(-147, 28.5)
+scale = Vector2(2.6470587, 2.6071432)
+texture = ExtResource("8_fm7ne")

@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dkiw6bgyljd6p" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/futurewalls and office stuff.png" id="3_m8bpd"]
 [ext_resource type="Texture2D" uid="uid://d2rupj0poryrf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/wall and office stuff.png" id="4_in78p"]
 [ext_resource type="Texture2D" uid="uid://lgsb7efggws5" path="res://Scenes/Tileset Testing/Character Sprites/Standing.png" id="5_tk2m3"]
+[ext_resource type="Texture2D" uid="uid://c2x8g2jifhlct" path="res://Resources/props.png" id="6_akw03"]
+[ext_resource type="Texture2D" uid="uid://4tnmwv1430k0" path="res://Resources/props copy 2.png" id="7_hs27p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ane6l"]
 texture = ExtResource("1_ntlny")
@@ -144,3 +146,13 @@ texture_filter = 1
 position = Vector2(-53, 42.750008)
 scale = Vector2(0.38333336, 0.38333327)
 texture = ExtResource("5_tk2m3")
+
+[node name="Props" type="Sprite2D" parent="." unique_id=982196608]
+position = Vector2(171.00002, 31)
+scale = Vector2(2.264706, 2.264706)
+texture = ExtResource("6_akw03")
+
+[node name="PropsCopy2" type="Sprite2D" parent="." unique_id=1775276323]
+position = Vector2(153.25002, 41.75)
+scale = Vector2(1.7115388, 1.826923)
+texture = ExtResource("7_hs27p")

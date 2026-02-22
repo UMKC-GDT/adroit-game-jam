@@ -1,8 +1,8 @@
 extends Node2D
 var isOn: bool = true #Always starts on
 
-var onTexture = load("res://Resources/Onswitch.png")
-var offTexture = load("res://Resources/OffSwitch.png")
+var onTexture = load("res://Resources/OrangeLeverUp.png")
+var offTexture = load("res://Resources/BlueLeverDown.png")
 signal turnedOff()
 signal turnedOn() 
 # Called when the node enters the scene tree for the first time.
