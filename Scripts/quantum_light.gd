@@ -5,7 +5,10 @@ class_name QuantumLight
 
 enum Timeline { PRESENT, FUTURE }
 
-@export var timeline_type: Timeline = Timeline.PRESENT
+@export var timeline_type: Timeline = Timeline.PRESENT:
+	set(value):
+		_set_timeline_type(value)
+
 @onready var light_sprite: Sprite2D = $LightBeam/LightSprite
 
 var future_color = Color(0.0, 232.594, 235.517, 1.0)
@@ -17,6 +20,15 @@ var present_color = Color(1.0, 0.695, 0.434, 1.0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	pass 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _set_timeline_type(value):
+	timeline_type = value
+	
 	if timeline_type == Timeline.FUTURE:
 		#Future: 217,255,255
 		print("Setting color to blue!")
@@ -27,14 +39,10 @@ func _ready() -> void:
 		print("Setting color to orange!")
 		light_sprite.modulate = present_color
 	
-	pass 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-	
-	
+	# Just poke the objects and tell them to look at your new color
+	for body in get_overlapping_bodies():
+		if body is LightObject:
+			body.update_state()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is LightObject:

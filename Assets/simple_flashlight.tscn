@@ -10,6 +10,7 @@ radius = 75.0
 [node name="SimpleFlashlight" unique_id=371804446 instance=ExtResource("1_iv4ae")]
 script = ExtResource("2_bkrqq")
 flashlight_radius = 50
+starting_light = 0
 light_priority = 1
 
 [node name="CharacterArm" type="Sprite2D" parent="." index="0" unique_id=966148955]

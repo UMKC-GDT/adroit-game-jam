@@ -25,6 +25,10 @@ extends CharacterBody2D
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
 
+@export var starting_present: bool
+
+@onready var flashlight: SimpleFlashlight = $SpriteLight/SimpleFlashlight
+
 var spawnPosition: Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -47,6 +51,11 @@ var dead: bool = false
 
 func _ready() -> void:
 	spawnPosition = self.position
+	
+	print("PLAYER: " + str(starting_present))
+	
+	flashlight.set_starting_light(starting_present)
+	
 	if(hasLight):
 		pass
 	else:

@@ -4,11 +4,14 @@ class_name SimpleFlashlight
 ##Probably gonna be used more for debug than anything, but this turns a quantum light into a simple flashlight that follows the mouse.
 
 @export var flashlight_radius = 20
+@export var starting_light: Timeline = Timeline.PRESENT
 @onready var circle: CollisionShape2D = $Circle
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	circle.shape.radius = flashlight_radius
+	
+	timeline_type = starting_light
 	
 	if timeline_type == Timeline.FUTURE:
 		light_sprite.modulate = future_color
@@ -17,6 +20,24 @@ func _ready() -> void:
 		light_sprite.modulate = present_color
 	
 	pass # Replace with function body.
+
+func set_starting_light(present_light):
+	
+	print("FLASHLIGHT: " + str(present_light))
+	
+	if present_light:
+		starting_light = Timeline.PRESENT
+	else:
+		starting_light = Timeline.FUTURE
+	
+	timeline_type = starting_light
+	
+	if timeline_type == Timeline.FUTURE:
+		light_sprite.modulate = future_color
+		
+	else:
+		light_sprite.modulate = present_color
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
