@@ -32,7 +32,7 @@ extends CharacterBody2D
 var spawnPosition: Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var maxFallSpeed := 1200.0
+var maxFallSpeed := 600.0
 
 var inputDir := 0.0
 
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	animationHandler.animateSprite()
 
 
-	if(Input.is_action_pressed("jump")):
+	if(Input.is_action_just_pressed("jump")):
 		if(canJump):
 			jumpHeldLength += delta
 		

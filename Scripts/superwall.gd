@@ -7,6 +7,9 @@ class_name SuperWall
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	print(future_sprite)
+	print(present_sprite)
+	
 	if native_timeline == Timeline.FUTURE:
 		future_sprite.show()
 		present_sprite.hide()
