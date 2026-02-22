@@ -38,7 +38,7 @@ var canWallJump := true
 var jumpHeldLength := 0.0
 var canJump := true
 
-var hasLight = true
+var hasLight = false
 
 var sprite: AnimatedSprite2D
 var armSprite: Sprite2D
@@ -229,7 +229,12 @@ func wantsToGoLeft():
 
 func wantsToGo():
 	return inputDir != 0
-	
+
+
 func kill():
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+func giveFlashlight():
+	hasLight = true
+	animationHandler.giveFlashlight()
