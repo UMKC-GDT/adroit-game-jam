@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6f8kwyv5yr3r" path="res://Scenes/Tileset Testing/Level1Future.tscn" id="3_d80xo"]
 [ext_resource type="PackedScene" uid="uid://bcm4c8lv6y3rt" path="res://Scenes/Tileset Testing/Level1Present.tscn" id="4_gk1sg"]
 [ext_resource type="PackedScene" uid="uid://bssmop4uxylom" path="res://Assets/light_switch.tscn" id="5_st7rb"]
-[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="6_e57xo"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_e57xo"]
 [ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="7_3ipdw"]
 [ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="8_8h4de"]
 [ext_resource type="Texture2D" uid="uid://ctlwx6fmffdwx" path="res://Resources/DoorMsg.png" id="9_jcebb"]
@@ -32,6 +32,7 @@ position = Vector2(-49.6, -2.8)
 
 [node name="Level1 Past" parent="." unique_id=911594195 instance=ExtResource("4_gk1sg")]
 z_as_relative = false
+texture_filter = 1
 position = Vector2(-50, -3)
 
 [node name="LightSwitch" parent="." unique_id=1783035167 instance=ExtResource("5_st7rb")]
