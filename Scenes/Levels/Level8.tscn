@@ -5,11 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_6ti5a"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="3_s3opc"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="4_hk05f"]
+[ext_resource type="Texture2D" uid="uid://ct66nkgtnwmcv" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres2.png" id="5_5744u"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_nwfju"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_ewa70"]
+[ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="7_nwfju"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="8_nfqw5"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_fucmy"]
+[ext_resource type="Texture2D" uid="uid://l3dv58qp3g2l" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile2.png" id="10_ewa70"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_gnwex"]
+[ext_resource type="Texture2D" uid="uid://oqqotu674evl" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile.png" id="11_nfqw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
 size = Vector2(352, 42)
@@ -45,20 +49,31 @@ position = Vector2(128, -128)
 rotation = -3.1415927
 
 [node name="LargeGround3" parent="Present" unique_id=1395284164 instance=ExtResource("3_s3opc")]
-position = Vector2(64, 8)
+position = Vector2(64, 0)
 rotation = -1.5707964
 
+[node name="Sprite2D" parent="Present/LargeGround3/Ground4" parent_id_path=PackedInt32Array(1395284164, 1915624487) index="0" unique_id=357974407]
+texture = ExtResource("5_5744u")
+
 [node name="LargeGround4" parent="Present" unique_id=964959585 instance=ExtResource("3_s3opc")]
-position = Vector2(-32, -120)
+position = Vector2(-31, -128)
 rotation = 1.5707964
 
 [node name="LargeGround9" parent="Present" unique_id=1287767540 instance=ExtResource("3_s3opc")]
-position = Vector2(64, 136)
+position = Vector2(64, 128)
 rotation = -1.5707964
 
+[node name="Ground3" parent="Present/LargeGround9" index="2" unique_id=1652540597]
+visible = false
+light_mask = 0
+visibility_layer = 0
+
 [node name="LargeGround5" parent="Present" unique_id=2058555365 instance=ExtResource("3_s3opc")]
-position = Vector2(-32, 8)
+position = Vector2(-31, 0)
 rotation = 1.5707964
+
+[node name="Sprite2D" parent="Present/LargeGround5/Ground4" parent_id_path=PackedInt32Array(2058555365, 1915624487) index="0" unique_id=357974407]
+texture = ExtResource("5_5744u")
 
 [node name="Barrier" parent="Present" unique_id=1605235542 instance=ExtResource("4_hk05f")]
 position = Vector2(72, -80)
@@ -69,22 +84,40 @@ position = Vector2(72, -112)
 native_timeline = 0
 
 [node name="LargeGround7" parent="Present" unique_id=1471351308 instance=ExtResource("3_s3opc")]
-position = Vector2(160, -104)
+position = Vector2(160, -96)
 rotation = -1.5707964
 
+[node name="Sprite2D" parent="Present/LargeGround7/Ground3" parent_id_path=PackedInt32Array(1471351308, 1652540597) index="0" unique_id=357974407]
+texture = ExtResource("7_nwfju")
+
+[node name="Sprite2D" parent="Present/LargeGround7/Ground4" parent_id_path=PackedInt32Array(1471351308, 1915624487) index="0" unique_id=357974407]
+rotation = -1.5808433
+texture = ExtResource("7_nwfju")
+
 [node name="LargeGround8" parent="Present" unique_id=2088330834 instance=ExtResource("3_s3opc")]
-position = Vector2(-96, 130)
+position = Vector2(-96, 128)
 
 [node name="LargeGround10" parent="Present" unique_id=854208218 instance=ExtResource("3_s3opc")]
-position = Vector2(-104, 72)
+position = Vector2(-127, 64)
 rotation = -3.1415927
 
 [node name="LargeGround11" parent="Present" unique_id=37732316 instance=ExtResource("3_s3opc")]
-position = Vector2(-152, 112)
+position = Vector2(-160, 96)
 rotation = 1.5707964
 
+[node name="Sprite2D" parent="Present/LargeGround11/Ground3" parent_id_path=PackedInt32Array(37732316, 1652540597) index="0" unique_id=357974407]
+texture = ExtResource("7_nwfju")
+
+[node name="Sprite2D" parent="Present/LargeGround11/Ground4" parent_id_path=PackedInt32Array(37732316, 1915624487) index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("7_nwfju")
+
 [node name="LargeGround12" parent="Present" unique_id=486633788 instance=ExtResource("3_s3opc")]
-position = Vector2(32, 130)
+position = Vector2(32, 128)
+
+[node name="Sprite2D" parent="Present/LargeGround12/Ground4" parent_id_path=PackedInt32Array(486633788, 1915624487) index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("7_nwfju")
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("7_ewa70")]
 position = Vector2(-104, 105)
@@ -103,11 +136,11 @@ position = Vector2(64, 32)
 rotation = -1.5707964
 
 [node name="LargeGround5" parent="Future" unique_id=2105335763 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, 8)
+position = Vector2(-32, 24)
 rotation = -4.712389
 
 [node name="LargeGround6" parent="Future" unique_id=2136161704 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, 136)
+position = Vector2(-32, 152)
 rotation = -4.712389
 
 [node name="LargeGround7" parent="Future" unique_id=1868814649 instance=ExtResource("6_nwfju")]
@@ -115,7 +148,7 @@ position = Vector2(64, 152)
 rotation = -7.853982
 
 [node name="LargeGround10" parent="Future" unique_id=1758629109 instance=ExtResource("6_nwfju")]
-position = Vector2(-32, -120)
+position = Vector2(-32, -104)
 rotation = -4.712389
 
 [node name="LargeGround8" parent="Future" unique_id=1139759100 instance=ExtResource("6_nwfju")]
@@ -126,9 +159,20 @@ rotation = 3.1415925
 position = Vector2(128, -64)
 rotation = 6.2831855
 
+[node name="Sprite2D" parent="Future/LargeGround9/Ground6" parent_id_path=PackedInt32Array(1873990821, 1605235542) index="0" unique_id=357974407]
+rotation = -1.570684
+texture = ExtResource("10_ewa70")
+
 [node name="LargeGround11" parent="Future" unique_id=2137760440 instance=ExtResource("6_nwfju")]
 position = Vector2(160, -96)
 rotation = -1.5707964
+
+[node name="Sprite2D" parent="Future/LargeGround11/Ground6" parent_id_path=PackedInt32Array(2137760440, 1605235542) index="0" unique_id=357974407]
+texture = ExtResource("11_nfqw5")
+
+[node name="Sprite2D" parent="Future/LargeGround11/Ground9" parent_id_path=PackedInt32Array(2137760440, 1089114079) index="0" unique_id=357974407]
+rotation = -1.5707964
+texture = ExtResource("11_nfqw5")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("8_nfqw5")]
 position = Vector2(96, -96)
@@ -145,3 +189,22 @@ currentScene = "Level8"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=147583224]
 position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_bgnfb")
+
+[editable path="Present/LargeGround3"]
+[editable path="Present/LargeGround3/Ground4"]
+[editable path="Present/LargeGround9"]
+[editable path="Present/LargeGround5"]
+[editable path="Present/LargeGround5/Ground4"]
+[editable path="Present/LargeGround7"]
+[editable path="Present/LargeGround7/Ground3"]
+[editable path="Present/LargeGround7/Ground4"]
+[editable path="Present/LargeGround11"]
+[editable path="Present/LargeGround11/Ground3"]
+[editable path="Present/LargeGround11/Ground4"]
+[editable path="Present/LargeGround12"]
+[editable path="Present/LargeGround12/Ground4"]
+[editable path="Future/LargeGround9"]
+[editable path="Future/LargeGround9/Ground6"]
+[editable path="Future/LargeGround11"]
+[editable path="Future/LargeGround11/Ground6"]
+[editable path="Future/LargeGround11/Ground9"]
