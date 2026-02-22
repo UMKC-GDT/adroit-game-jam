@@ -44,6 +44,8 @@ radius = 24.0
 
 [node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
 collision_layer = 2
+gravity_scale = 0.0
+freeze = true
 script = ExtResource("2_h5f3n")
 movable = false
 is_tangible = false

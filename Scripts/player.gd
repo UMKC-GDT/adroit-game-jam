@@ -65,11 +65,11 @@ func _ready() -> void:
 	else:
 		flashlight.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	var gameMan = get_tree().root.get_node("GameManager")
-	if gameMan:
-		var soundManager:sound_manager = gameMan.get_node("SoundManager")
-		if (soundManager != null):
-			soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump, soundManager.SoundType.MUSIC)
+	#var gameMan = get_tree().root.get_node("GameManager")
+	#if gameMan:
+		#var soundManager:sound_manager = gameMan.get_node("SoundManager")
+		#if (soundManager != null):
+			#soundManager.UpdateSettings($PlayerSoundManager/EmmiterGroundJump, soundManager.SoundType.MUSIC)
 
 
 func _process(delta: float) -> void:
