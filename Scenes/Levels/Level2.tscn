@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://biswj4oejwtvf"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_4rk67"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="4_62f1r"]
 [ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/flickering_lamp.tscn" id="5_5iseo"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="5_f8qf7"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="6_lmdar"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="7_2jwna"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_xx40l"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1swa"]
+size = Vector2(352, 32)
+
 [node name="LevelTemplate2" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_70df5")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_4rk67")]
+position = Vector2(-288, -168)
+rotation = 2.218895
+scale = Vector2(2.1035037, -0.89491)
+timeline_type = 1
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -41,6 +53,33 @@ position = Vector2(-128, 64)
 
 [node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_2jwna")]
 position = Vector2(128, 64)
+
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("5_f8qf7")]
+position = Vector2(128, 40)
+native_timeline = 1
+
+[node name="LargeGround4" parent="Future" unique_id=850617314 instance=ExtResource("7_2jwna")]
+position = Vector2(152, 0)
+rotation = -1.5707964
+
+[node name="LargeGround5" parent="Future" unique_id=166067402 instance=ExtResource("7_2jwna")]
+position = Vector2(152, -128)
+rotation = -1.5707964
+
+[node name="LargeGround6" parent="Future" unique_id=1529256134 instance=ExtResource("7_2jwna")]
+position = Vector2(-152, 0)
+rotation = 1.5707964
+
+[node name="LargeGround7" parent="Future" unique_id=560187630 instance=ExtResource("7_2jwna")]
+position = Vector2(-152, -128)
+rotation = 1.5707964
+
+[node name="Kill Zone" parent="Future" unique_id=872460906 instance=ExtResource("6_lmdar")]
+position = Vector2(-8, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Future/Kill Zone" unique_id=752407594]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_d1swa")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_xx40l")]
 position = Vector2(-114, 0)

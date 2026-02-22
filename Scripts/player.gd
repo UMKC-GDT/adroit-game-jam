@@ -56,10 +56,13 @@ func _ready() -> void:
 	
 	flashlight.set_starting_light(starting_present)
 	
+	#NOTE: Both SpriteLight and SpriteNolight NEED to start off as invisible. This code below will decide which to activate.
+	
 	if(hasLight):
 		pass
 	else:
 		sprite = $SpriteNolight
+		flashlight.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _process(delta: float) -> void:
