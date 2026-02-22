@@ -65,8 +65,12 @@ position = Vector2(202, 2)
 shape = SubResource("RectangleShape2D_d80xo")
 
 [node name="UI Message" parent="." unique_id=1302920499 instance=ExtResource("7_3ipdw")]
-position = Vector2(10.4, 28.8)
+position = Vector2(10.799999, 10.799999)
+scale = Vector2(2.300068, 2.300068)
 image = ExtResource("8_8h4de")
+
+[node name="Area2D" parent="UI Message" index="1" unique_id=1840031543]
+position = Vector2(3.31703e-07, 8.34758)
 
 [node name="UI Message2" parent="." unique_id=1205838418 instance=ExtResource("7_3ipdw")]
 position = Vector2(-151.2, 26.800001)
@@ -80,3 +84,5 @@ native_timeline = 1
 
 [connection signal="turnedOff" from="LightSwitch" to="." method="_on_light_switch_turned_off"]
 [connection signal="turnedOn" from="LightSwitch" to="." method="_on_light_switch_turned_on"]
+
+[editable path="UI Message"]
