@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/static_lamp.tscn" id="7_qq02n"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="7_ywunv"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_k47cb"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="10_qq02n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uclgm"]
 size = Vector2(1144, 34)
@@ -147,6 +148,7 @@ position = Vector2(160, -104)
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_k47cb")]
 position = Vector2(-128, 96)
 jumpVelocity = 400.0
+starting_present = true
 
 [node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
 position = Vector2(-160, 0)
@@ -170,3 +172,5 @@ position = Vector2(0, 272)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2597769]
 position = Vector2(4, 64)
 shape = SubResource("RectangleShape2D_uclgm")
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_qq02n")]
