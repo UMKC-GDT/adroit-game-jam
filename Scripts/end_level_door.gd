@@ -39,6 +39,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	movable = false
 	is_active = true
+	print(movable)
 
 
 
