@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dq2csbgjk01l1"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_6ti5a"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_2kaov"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/large_present_ground.tscn" id="3_s3opc"]
+[ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/barrier.tscn" id="4_hk05f"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/large_future_ground.tscn" id="6_nwfju"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Scenes/end_level_door.tscn" id="7_ewa70"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="8_nfqw5"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/HazeGenerator.tscn" id="9_fucmy"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/kill_zone.tscn" id="10_gnwex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
+size = Vector2(352, 42)
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_6ti5a")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_2kaov")]
+position = Vector2(-536, 407.99997)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("3_s3opc")]
+position = Vector2(128, -64)
+
+[node name="LargeGround2" parent="Present" unique_id=138285898 instance=ExtResource("3_s3opc")]
+position = Vector2(128, -128)
+rotation = -3.1415927
+
+[node name="LargeGround3" parent="Present" unique_id=1395284164 instance=ExtResource("3_s3opc")]
+position = Vector2(64, 8)
+rotation = -1.5707964
+
+[node name="LargeGround4" parent="Present" unique_id=964959585 instance=ExtResource("3_s3opc")]
+position = Vector2(-32, -120)
+rotation = 1.5707964
+
+[node name="LargeGround9" parent="Present" unique_id=1287767540 instance=ExtResource("3_s3opc")]
+position = Vector2(64, 136)
+rotation = -1.5707964
+
+[node name="LargeGround5" parent="Present" unique_id=2058555365 instance=ExtResource("3_s3opc")]
+position = Vector2(-32, 8)
+rotation = 1.5707964
+
+[node name="Barrier" parent="Present" unique_id=1605235542 instance=ExtResource("4_hk05f")]
+position = Vector2(72, -80)
+native_timeline = 0
+
+[node name="Barrier2" parent="Present" unique_id=1332005405 instance=ExtResource("4_hk05f")]
+position = Vector2(72, -112)
+native_timeline = 0
+
+[node name="LargeGround7" parent="Present" unique_id=1471351308 instance=ExtResource("3_s3opc")]
+position = Vector2(160, -104)
+rotation = -1.5707964
+
+[node name="LargeGround8" parent="Present" unique_id=2088330834 instance=ExtResource("3_s3opc")]
+position = Vector2(-96, 152)
+
+[node name="LargeGround10" parent="Present" unique_id=854208218 instance=ExtResource("3_s3opc")]
+position = Vector2(-104, 72)
+rotation = -3.1415927
+
+[node name="LargeGround11" parent="Present" unique_id=37732316 instance=ExtResource("3_s3opc")]
+position = Vector2(-152, 112)
+rotation = 1.5707964
+
+[node name="LargeGround12" parent="Present" unique_id=486633788 instance=ExtResource("3_s3opc")]
+position = Vector2(32, 152)
+
+[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("7_ewa70")]
+position = Vector2(-104, 128)
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround4" parent="Future" unique_id=2040434927 instance=ExtResource("6_nwfju")]
+position = Vector2(64, 32)
+rotation = -1.5707964
+
+[node name="LargeGround5" parent="Future" unique_id=2105335763 instance=ExtResource("6_nwfju")]
+position = Vector2(-32, 8)
+rotation = -4.712389
+
+[node name="LargeGround6" parent="Future" unique_id=2136161704 instance=ExtResource("6_nwfju")]
+position = Vector2(-32, 136)
+rotation = -4.712389
+
+[node name="LargeGround7" parent="Future" unique_id=1868814649 instance=ExtResource("6_nwfju")]
+position = Vector2(64, 152)
+rotation = -7.853982
+
+[node name="LargeGround10" parent="Future" unique_id=1758629109 instance=ExtResource("6_nwfju")]
+position = Vector2(-32, -120)
+rotation = -4.712389
+
+[node name="LargeGround8" parent="Future" unique_id=1139759100 instance=ExtResource("6_nwfju")]
+position = Vector2(128, -128)
+rotation = 3.1415925
+
+[node name="LargeGround9" parent="Future" unique_id=1873990821 instance=ExtResource("6_nwfju")]
+position = Vector2(128, -64)
+rotation = 6.2831855
+
+[node name="LargeGround11" parent="Future" unique_id=2137760440 instance=ExtResource("6_nwfju")]
+position = Vector2(160, -96)
+rotation = -1.5707964
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("8_nfqw5")]
+position = Vector2(96, -96)
+jumpVelocity = 400.0
+wallJumpVelocity = 200.0
+starting_present = true
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_fucmy")]
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("10_gnwex")]
+position = Vector2(0, 184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=147583224]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_bgnfb")
