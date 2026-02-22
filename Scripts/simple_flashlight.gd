@@ -19,7 +19,7 @@ func _ready() -> void:
 	
 	if timeline_type == Timeline.FUTURE:
 		light_sprite.modulate = future_color
-		
+	
 	else:
 		light_sprite.modulate = present_color
 	lastMousePosition = get_global_mouse_position()
@@ -40,7 +40,6 @@ func set_starting_light(present_light):
 		
 	else:
 		light_sprite.modulate = present_color
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -60,6 +59,7 @@ func swap_timeline() -> void:
 	timeline_type = Timeline.FUTURE if timeline_type == Timeline.PRESENT else Timeline.PRESENT
 	print(name + " swapping! Current: " + Timeline.keys()[timeline_type])
 	
+	print("Calling update light!")
 	update_light()
 
 func getRotation():

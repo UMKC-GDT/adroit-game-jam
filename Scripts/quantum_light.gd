@@ -9,8 +9,8 @@ enum Timeline { PRESENT, FUTURE }
 
 @onready var light_sprite: Sprite2D = $LightBeam/LightSprite
 
-var future_color = Color(0.0, 232.594, 235.517, 1.0)
-var present_color = Color(1.0, 0.695, 0.434, 1.0)
+var future_color = Color(0.0, 232.594, 235.517, 0.3)
+var present_color = Color(1.0, 0.695, 0.434, 0.3)
 
 #Note: DO NOT confuse this with .priority. .priority is something with the Area2D, and as the one writing this comment, I don't know what that's for. But don't try to look for .priority when you mean to look for light_priority. Trust me.
 @export var light_priority: int = 0
@@ -34,6 +34,14 @@ func _process(delta: float) -> void:
 	pass
 
 func update_light():
+	
+	if timeline_type == Timeline.FUTURE:
+		#Future: 217,255,255
+		light_sprite.modulate = future_color
+		
+	else:
+		#Present: 
+		light_sprite.modulate = present_color
 	
 	# Just poke the objects and tell them to look at your new color
 	for body in get_overlapping_bodies():
