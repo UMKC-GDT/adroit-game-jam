@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dsmvw3il1585e" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
-[ext_resource type="Texture2D" uid="uid://fyol5yw5xrjy" path="res://dropShadow.png" id="3_mmuqr"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
 
 [node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("ScreenFadeManager", "background") groups=["audio"]]
@@ -76,11 +75,13 @@ fmod_parameters/Blank/id = -7292059903593050108
 fmod_parameters/Blank = 0.0
 fmod_parameters/Blank/variant_type = 3
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=946260940]
-z_index = -1
-z_as_relative = false
-position = Vector2(1000, 580)
-texture = ExtResource("3_mmuqr")
+[node name="pickupEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=1147868569]
+event_name = "event:/SFX/LightPickup"
+event_guid = "{b9ef4a07-68e5-4fcb-ac83-c5e771288cc6}"
+attached = false
+fmod_parameters/Blank/id = -7292059903593050108
+fmod_parameters/Blank = 0.0
+fmod_parameters/Blank/variant_type = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
 offset_left = 560.0
