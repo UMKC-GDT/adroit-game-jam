@@ -58,7 +58,6 @@ func _on_interactable_component_interacted() -> void:
 		var sceneManager:game_manager = tree.root.get_node("GameManager")
 		if (sceneManager != null):
 			gm = get_tree().root.get_node("GameManager")
-			gm.LevelThreeSection(1)
 			gm.DoorSound(1)
 			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:

@@ -404,6 +404,15 @@ fmod_parameters/SurfaceType/id = -5318364536972337983
 fmod_parameters/SurfaceType = 0.0
 fmod_parameters/SurfaceType/variant_type = 3
 
+[node name="EmitterWallJump" type="FmodEventEmitter2D" parent="PlayerSoundManager" unique_id=956545612]
+event_name = "event:/SFX/Walljump"
+event_guid = "{94c1b9c1-28fe-417a-9a4e-9ea0d6a4c954}"
+attached = false
+volume = 0.22
+fmod_parameters/SurfaceType/id = -5318364536972337983
+fmod_parameters/SurfaceType = 0.0
+fmod_parameters/SurfaceType/variant_type = 3
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1251253287]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=361401819]

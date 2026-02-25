@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d1m6uyrd674ff"]
 
-[ext_resource type="Script" path="res://Scenes/dimension_manager.gd" id="1_4kscp"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_4kscp"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_xnl3v"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_ai8g5"]
 [ext_resource type="Texture2D" uid="uid://cj0dysgnfdb5f" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTilePres.png" id="4_34e73"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="4_agfdu"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_ytef6"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_1us0t"]
-[ext_resource type="PackedScene" uid="uid://bmmcvtgya78a" path="res://Assets/present_ground.tscn" id="5_konwh"]
+[ext_resource type="PackedScene" path="res://Assets/present_ground.tscn" id="5_konwh"]
 [ext_resource type="Texture2D" uid="uid://yd71vxh0lah2" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/OutOfBoundsPres.png" id="6_ai8g5"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_7x805"]
 [ext_resource type="Texture2D" uid="uid://oqqotu674evl" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/cornerTile.png" id="7_bvsh1"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="9_68v1p"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_c4srv"]
 [ext_resource type="Texture2D" uid="uid://cufhqwl6jml0e" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/OutOfBoundsFuture.png" id="10_konwh"]
+[ext_resource type="Script" uid="uid://dtb1wtf16gv5a" path="res://Scenes/Levels/node2.gd" id="18_tjygj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us0t"]
 size = Vector2(352, 34)
@@ -367,6 +368,9 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("8_d7gg6")]
+
+[node name="Node" type="Node" parent="." unique_id=739867317]
+script = ExtResource("18_tjygj")
 
 [editable path="Present/LargeGround2"]
 [editable path="Present/LargeGround2/Ground2"]

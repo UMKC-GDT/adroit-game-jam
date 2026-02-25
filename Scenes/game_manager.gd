@@ -34,6 +34,15 @@ func LevelTwoOpen(twoopen: int = 0):
 func DoorSound(dooropen: int = .2):
 	$Sprite2D/doorEmitter.play()
 
+func Pickup(lightpickup: int = .2):
+	$Sprite2D/pickupEmitter.play()
+
+func Pickup2(lightpickup2: int = 0):
+	$Sprite2D/levelEmitter.set_parameter("78Section", lightpickup2)
+
+func Verse2(versetwo: int = 0):
+	$Sprite2D/levelEmitter.set_parameter("Verse2", versetwo)
+
 var thing:bool = true
 func LoadNewScene(name:String):
 	if(switching):

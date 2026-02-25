@@ -1,5 +1,6 @@
 extends Node2D
 var isOn: bool = true #Always starts on
+var gm: game_manager
 
 var onTexture = load("res://Resources/OrangeLeverUp.png")
 var offTexture = load("res://Resources/BlueLeverDown.png")
@@ -17,6 +18,8 @@ func _process(delta: float) -> void:
 
 func _on_interactable_component_interacted() -> void:
 	$switchEmitter.play()
+	gm = get_tree().root.get_node("GameManager")
+	gm.LevelTwoOpen(0)
 	isOn = !isOn
 	if isOn: #Just turned on by the function
 		$Sprite2D.texture = onTexture

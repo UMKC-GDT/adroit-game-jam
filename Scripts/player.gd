@@ -163,6 +163,7 @@ func doJump():
 		$PlayerSoundManager/EmmiterGroundJump.play()
 	elif(getDirectionForWallJump() != 0 and canWallJump): # Prioritize wall jump over double jump
 		doWallJump()
+		$PlayerSoundManager/EmitterWallJump.play()
 	else:
 		airJump()
 
