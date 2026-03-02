@@ -23,7 +23,7 @@ margin = Rect2(0, 0, 0, 10.05)
 gravity_scale = 0.0
 freeze = true
 script = ExtResource("2_q72uk")
-exist_chance = 0.5
+exist_chance = 0.4
 native_timeline = 1
 movable = false
 
