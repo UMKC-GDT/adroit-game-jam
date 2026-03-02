@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://bk4g5yek5k6yq"]
+[gd_scene format=4 uid="uid://bk4g5yek5k6yq"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_w6wjj"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_jypyp"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="3_uui2j"]
-[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_ebkeh"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_jypyp"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="5_15av0"]
-[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="6_1c0jw"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="7_63v6w"]
-[ext_resource type="PackedScene" uid="uid://bufa38bputnt" path="res://Assets/Level Elements/end_level_door.tscn" id="8_lv5b5"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="8_lv5b5"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="8_w6wjj"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_esd0r"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_u6544"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="11_c8lva"]
@@ -49,26 +49,8 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_ebkeh")]
-position = Vector2(-96, -16)
-
-[node name="LargeGround2" parent="Present" unique_id=1297434929 instance=ExtResource("4_ebkeh")]
-position = Vector2(32, -16)
-
-[node name="LargeGround3" parent="Present" unique_id=1803880467 instance=ExtResource("4_ebkeh")]
-position = Vector2(160, -16)
-
-[node name="LargeGround4" parent="Present" unique_id=1972082922 instance=ExtResource("4_ebkeh")]
-position = Vector2(0, -48)
-rotation = -1.5707964
-
-[node name="LargeGround5" parent="Present" unique_id=1180469095 instance=ExtResource("4_ebkeh")]
-position = Vector2(0, -176)
-rotation = -1.5707964
-
-[node name="LargeGround6" parent="Present" unique_id=565761835 instance=ExtResource("4_ebkeh")]
-position = Vector2(0, 80)
-rotation = -1.5707964
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_jypyp")]
+tile_map_data = PackedByteArray("AAD2////AAAAAAAAAQD4////AAAAAAAAAQD6////AAAAAAAAAQD8////AAAAAAAAAQD+////AAAAAAAAAQAEAP//AAAAAAAAAQAGAP//AAAAAAAAAQAIAP//AAAAAAAAAQAKAAAAAAAAAAAABGD0////AAAAAAAABAAKAP7/AAAAAAAAAWAKAPz/AAAAAAAAAWAKAPr/AAAAAAAAAWAKAPj/AAAAAAAAAWAKAPb/AAAAAAAAAWALAPT/AAAAAAAABDAJAPT/AAAAAAAAATAHAPT/AAAAAAAAATAFAPT/AAAAAAAAATADAPT/AAAAAAAAATABAPT/AAAAAAAAATD///T/AAAAAAAAATD9//T/AAAAAAAAATD7//T/AAAAAAAAATD5//T/AAAAAAAAATD3//T/AAAAAAAAATD1//P/AAAAAAAABFD1//X/AAAAAAAAAVD1//f/AAAAAAAAAVD1//n/AAAAAAAAAVD1//v/AAAAAAAAAVD1//3/AAAAAAAAAVD0/wEAAAAAAAAABgD2/wEAAAAAAAAABgD4/wEAAAAAAAAABgD6/wEAAAAAAAAABgD8/wEAAAAAAAAABgD+/wEAAAAAAAAABgAAAAEAAAAAAAAABgACAAEAAAAAAAAABgAEAAEAAAAAAAAABgAGAAEAAAAAAAAABgAIAAEAAAAAAAAABgAKAAEAAAAAAAAABgAKAAMAAAAAAAAABgAKAAUAAAAAAAAABgAIAAMAAAAAAAAABgAGAAMAAAAAAAAABgAIAAUAAAAAAAAABgAGAAUAAAAAAAAABgAGAAcAAAAAAAAABgAIAAcAAAAAAAAABgAKAAcAAAAAAAAABgAKAAkAAAAAAAAABgAIAAkAAAAAAAAABgAGAAkAAAAAAAAABgAEAAMAAAAAAAAABgAEAAUAAAAAAAAABgAEAAcAAAAAAAAABgAEAAkAAAAAAAAABgACAAMAAAAAAAAABgACAAUAAAAAAAAABgACAAcAAAAAAAAABgACAAkAAAAAAAAABgAAAAMAAAAAAAAABgAAAAUAAAAAAAAABgAAAAcAAAAAAAAABgAAAAkAAAAAAAAABgD+/wMAAAAAAAAABgD+/wUAAAAAAAAABgD+/wcAAAAAAAAABgD+/wkAAAAAAAAABgD8/wMAAAAAAAAABgD8/wUAAAAAAAAABgD8/wcAAAAAAAAABgD8/wkAAAAAAAAABgD6/wMAAAAAAAAABgD6/wUAAAAAAAAABgD6/wcAAAAAAAAABgD6/wkAAAAAAAAABgD4/wMAAAAAAAAABgD4/wUAAAAAAAAABgD4/wcAAAAAAAAABgD4/wkAAAAAAAAABgD2/wMAAAAAAAAABgD2/wUAAAAAAAAABgD2/wcAAAAAAAAABgD2/wkAAAAAAAAABgD0/wMAAAAAAAAABgD0/wUAAAAAAAAABgD0/wcAAAAAAAAABgD0/wkAAAAAAAAABgAAAPb/AAAAAAAAAWAAAPj/AAAAAAAAAWAAAPr/AAAAAAAAAWAAAPz/AAAAAAAAAWAAAP7/AAAAAAAAAWAAAAAAAAAAAAAABGACAP//AAAAAAAABAADAP3/AAAAAAAAAVADAPv/AAAAAAAAAVADAPn/AAAAAAAAAVADAPf/AAAAAAAAAVADAPX/AAAAAAAAAVA=")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -103,17 +85,8 @@ position = Vector2(-56, -40)
 target_door = NodePath("../SwitchDoor")
 native_timeline = 1
 
-[node name="LargeGround" parent="Future" unique_id=626191021 instance=ExtResource("6_1c0jw")]
-position = Vector2(-96, -16)
-
-[node name="LargeGround2" parent="Future" unique_id=60271343 instance=ExtResource("6_1c0jw")]
-position = Vector2(32, -16)
-
-[node name="LargeGround3" parent="Future" unique_id=2048117508 instance=ExtResource("6_1c0jw")]
-position = Vector2(160, -16)
-
 [node name="SwitchDoor" parent="Future" unique_id=1605235542 instance=ExtResource("7_63v6w")]
-position = Vector2(8, -40)
+position = Vector2(9, -40)
 native_timeline = 1
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_lv5b5")]
@@ -121,13 +94,8 @@ position = Vector2(144, -40)
 nextScene = "Level16"
 native_timeline = 1
 
-[node name="LargeGround4" parent="Future" unique_id=278530767 instance=ExtResource("6_1c0jw")]
-position = Vector2(-8, -128)
-rotation = -1.5707964
-
-[node name="LargeGround5" parent="Future" unique_id=2034888758 instance=ExtResource("6_1c0jw")]
-position = Vector2(-8, -256)
-rotation = -1.5707964
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_w6wjj")]
+tile_map_data = PackedByteArray("AAD2////AAAAAAAAAQD4////AAAAAAAAAQD6////AAAAAAAAAQD8////AAAAAAAAAQD+////AAAAAAAAAQAAAP//AAAAAAAAAQACAP//AAAAAAAAAQAEAP//AAAAAAAAAQAGAP//AAAAAAAAAQAIAP//AAAAAAAAAQAKAAAAAAAAAAAABGD0////AAAAAAAABAD1//3/AAAAAAAAAVD1//v/AAAAAAAAAVD1//n/AAAAAAAAAVD1//f/AAAAAAAAAVD1//X/AAAAAAAAAVAKAP7/AAAAAAAAAWAKAPz/AAAAAAAAAWAKAPr/AAAAAAAAAWAKAPj/AAAAAAAAAWAKAPb/AAAAAAAAAWALAPT/AAAAAAAABDD1//P/AAAAAAAABFD3//T/AAAAAAAAATD5//T/AAAAAAAAATD7//T/AAAAAAAAATD9//T/AAAAAAAAATD///T/AAAAAAAAATABAPT/AAAAAAAAATADAPT/AAAAAAAAATAFAPT/AAAAAAAAATAHAPT/AAAAAAAAATAJAPT/AAAAAAAAATAAAPb/AAAAAAAAAWAAAPj/AAAAAAAAAWAAAPr/AAAAAAAAAWD0/wEAAAAAAAAABgD2/wEAAAAAAAAABgD4/wEAAAAAAAAABgD6/wEAAAAAAAAABgD8/wEAAAAAAAAABgD+/wEAAAAAAAAABgAAAAEAAAAAAAAABgACAAEAAAAAAAAABgAEAAEAAAAAAAAABgAGAAEAAAAAAAAABgAIAAEAAAAAAAAABgAKAAEAAAAAAAAABgAKAAMAAAAAAAAABgAIAAMAAAAAAAAABgAGAAMAAAAAAAAABgAEAAMAAAAAAAAABgACAAMAAAAAAAAABgAAAAMAAAAAAAAABgD+/wMAAAAAAAAABgD8/wMAAAAAAAAABgD6/wMAAAAAAAAABgD4/wMAAAAAAAAABgD2/wMAAAAAAAAABgD0/wMAAAAAAAAABgD0/wUAAAAAAAAABgD2/wUAAAAAAAAABgD4/wUAAAAAAAAABgD6/wUAAAAAAAAABgD8/wUAAAAAAAAABgD+/wUAAAAAAAAABgAAAAUAAAAAAAAABgACAAUAAAAAAAAABgAEAAUAAAAAAAAABgAGAAUAAAAAAAAABgAIAAUAAAAAAAAABgAKAAUAAAAAAAAABgAKAAcAAAAAAAAABgAKAAkAAAAAAAAABgAIAAcAAAAAAAAABgAIAAkAAAAAAAAABgAGAAcAAAAAAAAABgAGAAkAAAAAAAAABgAEAAcAAAAAAAAABgAEAAkAAAAAAAAABgACAAcAAAAAAAAABgACAAkAAAAAAAAABgAAAAcAAAAAAAAABgAAAAkAAAAAAAAABgD+/wcAAAAAAAAABgD+/wkAAAAAAAAABgD8/wcAAAAAAAAABgD8/wkAAAAAAAAABgD6/wcAAAAAAAAABgD6/wkAAAAAAAAABgD4/wcAAAAAAAAABgD2/wcAAAAAAAAABgD0/wcAAAAAAAAABgD0/wkAAAAAAAAABgD2/wkAAAAAAAAABgD4/wkAAAAAAAAABgA=")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_esd0r")]
 position = Vector2(-128, -40)

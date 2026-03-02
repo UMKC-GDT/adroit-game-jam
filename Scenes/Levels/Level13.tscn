@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://bys3qimsqrqvn"]
+[gd_scene format=4 uid="uid://bys3qimsqrqvn"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_7whch"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_pw32c"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_1aop2"]
 [ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/flickering_lamp.tscn" id="3_eqo3r"]
-[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_324df"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_i4itb"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="6_q7e3a"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_0tbq4"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="7_p2sm2"]
-[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_uuvfb"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="7_tdku2"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="8_7al5c"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_oublu"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="10_66tb3"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_q7e3a"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="12_tdku2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tbq4"]
 size = Vector2(960, 32)
@@ -45,15 +45,6 @@ light_priority = 100
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_324df")]
-position = Vector2(-448, 8)
-
-[node name="LargeGround2" parent="Present" unique_id=1904534510 instance=ExtResource("4_324df")]
-position = Vector2(-448, -168)
-
-[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_324df")]
-position = Vector2(96, 96)
-
 [node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
 position = Vector2(-160, 0)
 gizmo_extents = 53.9
@@ -76,6 +67,9 @@ rotation = 3.1415925
 native_timeline = 0
 walljump = true
 
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("7_tdku2")]
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAAAAgAEAAYAAAAAAAAAAQAGAAYAAAAAAAAAAQAIAAYAAAAAAAAAAQAKAAcAAAAAAAAABGAKAAUAAAAAAAAAAWAKAAMAAAAAAAAAAWD8/wIAAAAAAAAAAVD8/wAAAAAAAAAAAVD8//7/AAAAAAAAAlD8/wQAAAAAAAAAA1AIAPf/AAAAAAAAAWAJAPX/AAAAAAAABDAHAPX/AAAAAAAAATAFAPX/AAAAAAAAATADAPX/AAAAAAAAATABAPX/AAAAAAAAATD///X/AAAAAAAAATD9//X/AAAAAAAAATD7//X/AAAAAAAAATD5//X/AAAAAAAAATD3//X/AAAAAAAAATAKAPb/AAAAAAAABgAKAPT/AAAAAAAABgAKAAgAAAAAAAAABgAIAAgAAAAAAAAABgAGAAgAAAAAAAAABgAEAAgAAAAAAAAABgAJAPn/AAAAAAAABTALAPn/AAAAAAAAATAMAP//AAAAAAAAAWAMAP3/AAAAAAAAAWAMAPv/AAAAAAAAAWANAPn/AAAAAAAABDAMAPb/AAAAAAAABgAMAPT/AAAAAAAABgAKAAEAAAAAAAAABWAMAAEAAAAAAAAABGAMAAIAAAAAAAAABgAMAAQAAAAAAAAABgAMAAYAAAAAAAAABgAMAAgAAAAAAAAABgA=")
+
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
@@ -83,16 +77,6 @@ position = Vector2(960, 0)
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
-
-[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_uuvfb")]
-position = Vector2(128, 0)
-
-[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_uuvfb")]
-position = Vector2(96, -112)
-rotation = -1.5707964
-
-[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_uuvfb")]
-position = Vector2(96, 96)
 
 [node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
 position = Vector2(-160, 0)
@@ -127,6 +111,9 @@ native_timeline = 1
 [node name="SwitchDoor" parent="Future" unique_id=1605235542 instance=ExtResource("10_66tb3")]
 position = Vector2(112, -24)
 native_timeline = 1
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("12_tdku2")]
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAAAAgAEAAYAAAAAAAAAAQAGAAYAAAAAAAAAAQAIAAYAAAAAAAAAAQAKAAcAAAAAAAAABGAKAAUAAAAAAAAAAWAKAAMAAAAAAAAAAWAKAAEAAAAAAAAAAWAKAP//AAAAAAAAAWAKAP3/AAAAAAAAAWAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWAGAPv/AAAAAAAAAWAGAPn/AAAAAAAAAWAGAPf/AAAAAAAAAWAIAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAEAAAAAAAAAAAAAgA=")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_oublu")]
 position = Vector2(104, 72)
