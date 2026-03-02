@@ -6,6 +6,7 @@ var gm: game_manager
 @export var canOpen: bool
 #next scene is the string name of  the scene
 @export var nextScene: String
+@export var gameManager: game_manager
 
 @onready var future_sprite: AnimatedSprite2D = $FutureSprite
 @onready var present_sprite: AnimatedSprite2D = $PresentSprite
@@ -57,8 +58,7 @@ func _on_interactable_component_interacted() -> void:
 		await tree.create_timer(.2).timeout
 		var sceneManager:game_manager = tree.root.get_node("GameManager")
 		if (sceneManager != null):
-			gm = get_tree().root.get_node("GameManager")
-			gm.DoorSound(1)
+			sceneManager.DoorSound(1)
 			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:
 				get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")

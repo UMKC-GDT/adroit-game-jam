@@ -102,19 +102,15 @@ gizmo_extents = 53.9
 
 [node name="RandomPlatform" parent="Future" unique_id=467564072 instance=ExtResource("4_ry8xl")]
 position = Vector2(-32, 96)
-exist_chance = 0.1
 
 [node name="RandomPlatform2" parent="Future" unique_id=676508909 instance=ExtResource("4_ry8xl")]
 position = Vector2(32, 56)
-exist_chance = 0.1
 
 [node name="RandomPlatform3" parent="Future" unique_id=1082185276 instance=ExtResource("4_ry8xl")]
 position = Vector2(-32, 16)
-exist_chance = 0.1
 
 [node name="RandomPlatform4" parent="Future" unique_id=1205397585 instance=ExtResource("4_ry8xl")]
 position = Vector2(32, -24)
-exist_chance = 0.1
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
 position = Vector2(144, -88)

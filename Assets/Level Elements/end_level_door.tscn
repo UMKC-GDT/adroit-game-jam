@@ -114,11 +114,12 @@ animations = [{
 size = Vector2(16, 48)
 
 [node name="EndLevelDoor" type="RigidBody2D" unique_id=1870179415]
-collision_layer = 3
+collision_layer = 2
 gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_eb5rj")
 movable = false
+is_tangible = false
 
 [node name="InteractableComponent" parent="." unique_id=642375165 instance=ExtResource("2_4uwf0")]
 

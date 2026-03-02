@@ -30,7 +30,7 @@ func update_state():
 				dominant_light = light
 		
 		# We exist ONLY if...we land a 50/50 shot.
-		if randf() > exist_chance:
+		if randf() <= exist_chance:
 			is_active = (dominant_light.timeline_type == native_timeline)
 	
 	# In case we WERE active and now we're not, save our momentum for when we can exist again.
