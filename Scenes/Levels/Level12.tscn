@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://ctldhgenf7814"]
+[gd_scene format=4 uid="uid://ctldhgenf7814"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_b5iej"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_tnotf"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_ebwqq"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="3_iwnsr"]
-[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_qo7tw"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="4_uuvqq"]
-[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_xjnwi"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="7_n1ahd"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_ljqb7"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_py4pg"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="9_s5jet"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_ljqb7"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="10_n1ahd"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="11_s5jet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljqb7"]
@@ -44,12 +44,6 @@ position = Vector2(-56, 8)
 light_priority = 100
 isPresent = true
 
-[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_qo7tw")]
-position = Vector2(-32, 64)
-
-[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_qo7tw")]
-position = Vector2(-128, 64)
-
 [node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
 position = Vector2(-160, 0)
 gizmo_extents = 53.9
@@ -70,6 +64,10 @@ gizmo_extents = 53.9
 position = Vector2(-56, 40)
 target_door = NodePath("../../Future/SwitchDoor")
 
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("7_n1ahd")]
+position = Vector2(304, 64)
+tile_map_data = PackedByteArray("AADj/wAAAAAAAAAAAQDl/wAAAAAAAAAAAQDn/wAAAAAAAAAAAQDh/wAAAAAAAAAABADp/wAAAAAAAAAAAQDr/wAAAAAAAAAAAQDt/wAAAAAAAAAAAQDv/wAAAAAAAAAAAQDx/wEAAAAAAAAABGDx////AAAAAAAAAWDx//3/AAAAAAAAAWDx//v/AAAAAAAAAWDx//n/AAAAAAAAAWDx//f/AAAAAAAAAWDw//X/AAAAAAAAATDu//X/AAAAAAAAATDs//X/AAAAAAAAATDq//X/AAAAAAAAATDo//X/AAAAAAAAATDm//X/AAAAAAAAATDk//X/AAAAAAAAATDi//b/AAAAAAAAAVDi//j/AAAAAAAAAVDi//r/AAAAAAAAAVDi//z/AAAAAAAAAVDi//7/AAAAAAAAAVDy//X/AAAAAAAABDDi//T/AAAAAAAABFDh//L/AAAAAAAABgDj//L/AAAAAAAABgDl//L/AAAAAAAABgDn//L/AAAAAAAABgDp//L/AAAAAAAABgDr//L/AAAAAAAABgDt//L/AAAAAAAABgDv//L/AAAAAAAABgDx//L/AAAAAAAABgDz//L/AAAAAAAABgD1//L/AAAAAAAABgDz//T/AAAAAAAABgD1//T/AAAAAAAABgDz//b/AAAAAAAABgD1//b/AAAAAAAABgDz//j/AAAAAAAABgD1//j/AAAAAAAABgDz//r/AAAAAAAABgD1//r/AAAAAAAABgDz//z/AAAAAAAABgD1//z/AAAAAAAABgDz//7/AAAAAAAABgD1//7/AAAAAAAABgDz/wAAAAAAAAAABgD1/wAAAAAAAAAABgDh/wIAAAAAAAAABgDh/wQAAAAAAAAABgDj/wQAAAAAAAAABgDj/wIAAAAAAAAABgDl/wIAAAAAAAAABgDl/wQAAAAAAAAABgDn/wQAAAAAAAAABgDn/wIAAAAAAAAABgDp/wIAAAAAAAAABgDp/wQAAAAAAAAABgDr/wQAAAAAAAAABgDr/wIAAAAAAAAABgDt/wIAAAAAAAAABgDt/wQAAAAAAAAABgDv/wQAAAAAAAAABgDv/wIAAAAAAAAABgDx/wIAAAAAAAAABgDx/wQAAAAAAAAABgDz/wQAAAAAAAAABgDz/wIAAAAAAAAABgD1/wIAAAAAAAAABgD1/wQAAAAAAAAABgA=")
+
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
@@ -77,19 +75,6 @@ position = Vector2(960, 0)
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
-
-[node name="LargeGround8" parent="Future" unique_id=1170032133 instance=ExtResource("7_xjnwi")]
-position = Vector2(128, -192)
-rotation = 3.1415925
-
-[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_xjnwi")]
-position = Vector2(0, 64)
-
-[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_xjnwi")]
-position = Vector2(-128, 64)
-
-[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_xjnwi")]
-position = Vector2(128, 64)
 
 [node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
 position = Vector2(-160, 0)
@@ -107,10 +92,6 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="LargeGround4" parent="Future" unique_id=1441059758 instance=ExtResource("7_xjnwi")]
-position = Vector2(64, -48)
-rotation = -1.5707964
-
 [node name="SwitchDoor" parent="Future" unique_id=678500271 instance=ExtResource("9_ljqb7")]
 position = Vector2(88, 40)
 native_timeline = 1
@@ -120,17 +101,8 @@ position = Vector2(144, 40)
 nextScene = "Level13"
 native_timeline = 1
 
-[node name="LargeGround5" parent="Future" unique_id=1625399519 instance=ExtResource("7_xjnwi")]
-position = Vector2(160, 0)
-rotation = -1.5707964
-
-[node name="LargeGround6" parent="Future" unique_id=1575929090 instance=ExtResource("7_xjnwi")]
-position = Vector2(64, -176)
-rotation = -1.5707964
-
-[node name="LargeGround7" parent="Future" unique_id=1450792159 instance=ExtResource("7_xjnwi")]
-position = Vector2(160, -128)
-rotation = -1.5707964
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("10_n1ahd")]
+tile_map_data = PackedByteArray("AAD2/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD+/wQAAAAAAAAAAQAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQD0/wQAAAAAAAAABAD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVD3//n/AAAAAAAAATD5//n/AAAAAAAAATD7//n/AAAAAAAAATD9//n/AAAAAAAAATD///n/AAAAAAAAATABAPn/AAAAAAAAATADAPn/AAAAAAAAATAFAPn/AAAAAAAABDD1//j/AAAAAAAABFAEAPv/AAAAAAAAAWAEAP3/AAAAAAAAAWAFAP//AAAAAAAABTAKAAUAAAAAAAAABGAKAAMAAAAAAAAAAWAKAAEAAAAAAAAAAWALAP//AAAAAAAABDAJAP//AAAAAAAAATAHAP//AAAAAAAAATAGAPz/AAAAAAAABgAIAPz/AAAAAAAABgAKAPz/AAAAAAAABgAGAPr/AAAAAAAABgAIAPr/AAAAAAAABgAKAPr/AAAAAAAABgAGAPj/AAAAAAAABgAIAPj/AAAAAAAABgAKAPj/AAAAAAAABgAKAPb/AAAAAAAABgAIAPb/AAAAAAAABgAGAPb/AAAAAAAABgAEAPb/AAAAAAAABgACAPb/AAAAAAAABgAAAPb/AAAAAAAABgD+//b/AAAAAAAABgD8//b/AAAAAAAABgD6//b/AAAAAAAABgD4//b/AAAAAAAABgD2//b/AAAAAAAABgD0//b/AAAAAAAABgD0/wYAAAAAAAAABgD2/wYAAAAAAAAABgD0/wgAAAAAAAAABgD2/wgAAAAAAAAABgD4/wgAAAAAAAAABgD4/wYAAAAAAAAABgD6/wYAAAAAAAAABgD6/wgAAAAAAAAABgD8/wgAAAAAAAAABgD8/wYAAAAAAAAABgD+/wYAAAAAAAAABgD+/wgAAAAAAAAABgAAAAgAAAAAAAAABgAAAAYAAAAAAAAABgACAAYAAAAAAAAABgACAAgAAAAAAAAABgAEAAgAAAAAAAAABgAEAAYAAAAAAAAABgAGAAYAAAAAAAAABgAIAAYAAAAAAAAABgAKAAYAAAAAAAAABgAGAAgAAAAAAAAABgAIAAgAAAAAAAAABgAKAAgAAAAAAAAABgA=")
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_py4pg")]
 position = Vector2(-128, 32)
