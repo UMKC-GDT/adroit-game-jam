@@ -20,7 +20,7 @@ func _ready() -> void:
 	super()
 
 # DoorSwitch will call this function when triggered
-func set_open(state: bool) -> void:
+func set_power(state: bool) -> void:
 	is_open = state
 	update_state() # Re-evaluate the door's physical state
 

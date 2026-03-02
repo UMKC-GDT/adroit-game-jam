@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://boyxghoqy3b5j"]
 
-[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_ck766"]
-[ext_resource type="Script" uid="uid://c8l7iylj3nwpl" path="res://Scripts/door_switch.gd" id="2_h5f3n"]
-[ext_resource type="Texture2D" uid="uid://byxlfyfhi703e" path="res://Resources/OrangeLeverUp.png" id="3_quy8i"]
-[ext_resource type="Texture2D" uid="uid://8f3mt0k0oyjp" path="res://Resources/OrangeLeverDown.png" id="4_amdyw"]
-[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="4_h5f3n"]
-[ext_resource type="Texture2D" uid="uid://boh8i5ivqcjb5" path="res://Resources/BlueLeverDown.png" id="5_axp74"]
-[ext_resource type="Texture2D" uid="uid://bakpejtjjm0l7" path="res://Resources/BlueLeverUp.png" id="6_davmj"]
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_r2qdf"]
+[ext_resource type="Script" uid="uid://c8l7iylj3nwpl" path="res://Scripts/switch.gd" id="2_yg0yb"]
+[ext_resource type="Texture2D" uid="uid://byxlfyfhi703e" path="res://Resources/OrangeLeverUp.png" id="3_gfdbg"]
+[ext_resource type="Texture2D" uid="uid://8f3mt0k0oyjp" path="res://Resources/OrangeLeverDown.png" id="4_rys2i"]
+[ext_resource type="Texture2D" uid="uid://bakpejtjjm0l7" path="res://Resources/BlueLeverUp.png" id="5_q5dca"]
+[ext_resource type="Texture2D" uid="uid://boh8i5ivqcjb5" path="res://Resources/BlueLeverDown.png" id="6_77evj"]
+[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="7_vs1yc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_amdyw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_quy8i")
+"texture": ExtResource("3_gfdbg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_amdyw")
+"texture": ExtResource("4_rys2i")
 }],
 "loop": true,
 "name": &"default",
@@ -26,10 +26,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_davmj")
+"texture": ExtResource("5_q5dca")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_axp74")
+"texture": ExtResource("6_77evj")
 }],
 "loop": true,
 "name": &"default",
@@ -42,11 +42,12 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ck766"]
 radius = 24.0
 
-[node name="Door Switch" unique_id=1605235542 instance=ExtResource("1_ck766")]
+[node name="Switch" unique_id=1605235542 instance=ExtResource("1_r2qdf")]
 collision_layer = 2
 gravity_scale = 0.0
 freeze = true
-script = ExtResource("2_h5f3n")
+script = ExtResource("2_yg0yb")
+persistent = false
 movable = false
 is_tangible = false
 
@@ -54,7 +55,7 @@ is_tangible = false
 visible = false
 position = Vector2(0, 5)
 scale = Vector2(0.342, 0.342)
-texture = ExtResource("3_quy8i")
+texture = ExtResource("3_gfdbg")
 
 [node name="PresentSprite" type="AnimatedSprite2D" parent="." index="1" unique_id=1092862995]
 position = Vector2(0, 5)
@@ -70,7 +71,7 @@ sprite_frames = SubResource("SpriteFrames_4xyoa")
 position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_c5drf")
 
-[node name="InteractableComponent" parent="." index="4" unique_id=642375165 instance=ExtResource("4_h5f3n")]
+[node name="InteractableComponent" parent="." index="4" unique_id=642375165 instance=ExtResource("7_vs1yc")]
 position = Vector2(-16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1870653077]

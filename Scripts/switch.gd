@@ -1,7 +1,7 @@
 extends LightObject
-class_name DoorSwitch
+class_name Switch
 
-@export var target_door: SwitchDoor
+@export var target: Node2D
 @export var persistent = false
 
 @onready var future_sprite: AnimatedSprite2D = $FutureSprite
@@ -41,7 +41,7 @@ func _on_interactable_component_interacted() -> void:
 	if is_active:
 		is_switch_on = !is_switch_on
 		print("I worked!")
-		update_door()
+		update_target()
 
 # 3. THE QUANTUM LOGIC
 func update_state() -> void:
@@ -50,12 +50,12 @@ func update_state() -> void:
 	
 	# The erasure: If it no longer exists, it physically resets to the OFF position
 	if not is_active:
-		is_switch_on = false
+		if not persistent:
+			is_switch_on = false
 	
 	# Every time the light hits it or leaves it, re-evaluate the door
-	update_door() 
+	update_target() 
 
-func update_door() -> void:
-	if target_door:
-		# The door ONLY opens if the switch is toggled ON and the switch is currently OBSERVED
-		target_door.set_open(is_switch_on and is_active)
+func update_target() -> void:
+	if target:
+		target.set_power(is_switch_on)

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_u5ka7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ohtc"]
-size = Vector2(30, 47)
+size = Vector2(31, 48)
 
 [sub_resource type="Animation" id="Animation_7ohtc"]
 resource_name = "OpenDoor"
@@ -124,7 +124,7 @@ is_tangible = false
 [node name="InteractableComponent" parent="." unique_id=642375165 instance=ExtResource("2_4uwf0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1582361812]
-position = Vector2(0, -0.5)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7ohtc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1225613613]

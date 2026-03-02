@@ -5,16 +5,20 @@ class_name SwitchLight
 @export var light_priority = 1
 
 @export var powered = false
-@export var starting_light = beam.Timeline.PRESENT
+@export var starting_light = QuantumLight.Timeline.PRESENT
 
 enum LightMode { PRESENT_OR_FUTURE, ON_OFF }
 @export var current_mode: LightMode = LightMode.PRESENT_OR_FUTURE
 
 func set_power(state: bool) -> void:
+	if powered == state: return
+		
 	powered = state
 	update_state()
 
 func update_state() -> void:
+	if not is_node_ready() or beam == null:
+		return
 	
 	# 2. super() just made it solid if it's in the right timeline. 
 	# Now, we override those collisions if the switch says the door is open.
@@ -36,6 +40,7 @@ func update_state() -> void:
 			beam.timeline_type = beam.Timeline.OFF
 			beam.update_light()
 		elif current_mode == LightMode.PRESENT_OR_FUTURE:
+			#THIS LINE
 			beam.timeline_type = starting_light
 			beam.update_light()
 

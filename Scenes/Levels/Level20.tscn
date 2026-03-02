@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c5osmywdnlcsn"]
+[gd_scene format=4 uid="uid://b7a20fe4vxesw"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_1dupi"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_0fhnx"]
@@ -124,7 +124,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("11_7pp8s")]
 position = Vector2(0, 232)
-currentScene = "Level21"
+currentScene = "Level20"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1238806544]
 position = Vector2(0, 48)

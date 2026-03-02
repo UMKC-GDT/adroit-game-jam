@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_jypyp"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="3_uui2j"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_jypyp"]
-[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/door_switch.tscn" id="5_15av0"]
+[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="5_15av0"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="7_63v6w"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="8_lv5b5"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="8_w6wjj"]

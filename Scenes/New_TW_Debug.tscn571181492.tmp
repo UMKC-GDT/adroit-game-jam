@@ -47,14 +47,6 @@ scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("10_6eafy")]
-position = Vector2(-120, 56)
-
-[node name="SwitchLamp" parent="Future" unique_id=1429879500 instance=ExtResource("10_rhqb2")]
-position = Vector2(96, 56)
-light_priority = 100
-starting_light = 1
-
 [node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_mfyqa")]
 position = Vector2(0, 64)
 
@@ -68,7 +60,7 @@ position = Vector2(128, 64)
 position = Vector2(-112, 32)
 
 [node name="Barrier" parent="Future" unique_id=2038542313 instance=ExtResource("8_liljx")]
-position = Vector2(-80, -48)
+position = Vector2(-112, -56)
 native_timeline = 0
 
 [node name="Switch" parent="Future" unique_id=1045395621 node_paths=PackedStringArray("target") instance=ExtResource("8_rhqb2")]
@@ -81,11 +73,17 @@ native_timeline = 1
 position = Vector2(-8, 40)
 native_timeline = 1
 
+[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("10_6eafy")]
+position = Vector2(-120, 56)
+
 [node name="Switch2" parent="Future" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("8_rhqb2")]
-position = Vector2(96, 48)
+position = Vector2(40, 48)
 target = NodePath("../SwitchLamp")
 persistent = true
-native_timeline = 1
+
+[node name="SwitchLamp" parent="Future" unique_id=1429879500 instance=ExtResource("10_rhqb2")]
+position = Vector2(120, 56)
+starting_light = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_4oo8x")]
 jumpVelocity = 400.0
