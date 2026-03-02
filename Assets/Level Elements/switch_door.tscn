@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6ur13x23xxo8"]
 
 [ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_4x4rb"]
-[ext_resource type="Script" uid="uid://bswfu6wxsniyk" path="res://switch_door.gd" id="2_de8x3"]
+[ext_resource type="Script" uid="uid://bswfu6wxsniyk" path="res://Scripts/switch_door.gd" id="2_de8x3"]
 [ext_resource type="Texture2D" uid="uid://be1fpp324uejk" path="res://Resources/country-house-door-pine-wood.jpg" id="3_kgsnd"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_kgsnd"]
 [ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="5_tfrh3"]

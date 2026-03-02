@@ -2,6 +2,7 @@ extends LightObject
 class_name DoorSwitch
 
 @export var target_door: SwitchDoor
+@export var persistent = false
 
 @onready var future_sprite: AnimatedSprite2D = $FutureSprite
 @onready var present_sprite: AnimatedSprite2D = $PresentSprite

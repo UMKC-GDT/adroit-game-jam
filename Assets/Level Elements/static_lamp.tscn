@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tx74hu560tcn"]
 
-[ext_resource type="Script" uid="uid://di1o6j3wsr1o1" path="res://Assets/StaticLight.gd" id="1_clpba"]
+[ext_resource type="Script" uid="uid://di1o6j3wsr1o1" path="res://Scripts/StaticLight.gd" id="1_clpba"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_4rbu6"]
 [ext_resource type="Texture2D" uid="uid://hw5v2u3fa54j" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/Lamps and obstructed walls.png" id="3_mhpvl"]
 
