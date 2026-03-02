@@ -37,6 +37,7 @@ shape = SubResource("RectangleShape2D_4y7j2")
 [node name="FutureSprite" type="Node2D" parent="." index="2" unique_id=1845181474]
 
 [node name="FutureWall" type="Sprite2D" parent="FutureSprite" index="0" unique_id=1384594312]
+visible = false
 texture_filter = 1
 position = Vector2(0, -48)
 rotation = -1.5707964
@@ -44,6 +45,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_o2210")
 
 [node name="FutureWall2" type="Sprite2D" parent="FutureSprite" index="1" unique_id=1948702182]
+visible = false
 texture_filter = 1
 position = Vector2(0, -16)
 rotation = -1.5707964
@@ -51,6 +53,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_o2210")
 
 [node name="FutureWall3" type="Sprite2D" parent="FutureSprite" index="2" unique_id=695008737]
+visible = false
 texture_filter = 1
 position = Vector2(0, 16)
 rotation = -1.5707964
@@ -58,6 +61,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_o2210")
 
 [node name="FutureWall4" type="Sprite2D" parent="FutureSprite" index="3" unique_id=1128288330]
+visible = false
 texture_filter = 1
 position = Vector2(0, 48)
 rotation = -1.5707964
@@ -67,6 +71,7 @@ texture = SubResource("AtlasTexture_o2210")
 [node name="PresentSprite" type="Node2D" parent="." index="3" unique_id=1199410334]
 
 [node name="Sprite2D5" type="Sprite2D" parent="PresentSprite" index="0" unique_id=1175559105]
+visible = false
 texture_filter = 1
 position = Vector2(0, -48)
 rotation = -1.5707964
@@ -74,6 +79,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_d0acr")
 
 [node name="Sprite2D4" type="Sprite2D" parent="PresentSprite" index="1" unique_id=170620860]
+visible = false
 texture_filter = 1
 position = Vector2(0, -16)
 rotation = -1.5707964
@@ -81,6 +87,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_d0acr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="PresentSprite" index="2" unique_id=1210744000]
+visible = false
 texture_filter = 1
 position = Vector2(0, 16)
 rotation = -1.5707964
@@ -88,6 +95,7 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_d0acr")
 
 [node name="Sprite2D2" type="Sprite2D" parent="PresentSprite" index="3" unique_id=206210381]
+visible = false
 texture_filter = 1
 position = Vector2(0, 48)
 rotation = -1.5707964

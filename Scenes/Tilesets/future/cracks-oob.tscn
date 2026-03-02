@@ -12,6 +12,7 @@ collision_layer = 3
 gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_ec4m5")
+native_timeline = 1
 movable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029249552]

@@ -19,7 +19,7 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_g3bxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1014475038]
-position = Vector2(4, 4)
 texture = ExtResource("2_85ixm")
+offset = Vector2(4, 4)
 region_enabled = true
 region_rect = Rect2(96, 64, 32, 32)
