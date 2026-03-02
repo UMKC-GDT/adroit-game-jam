@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://qt4udo3q2pye"]
+
+[ext_resource type="Script" uid="uid://dky8kg4fivwdk" path="res://Scripts/ground.gd" id="1_16g0k"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="2_itt5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3bxd"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcepu"]
+atlas = ExtResource("2_itt5m")
+region = Rect2(128, 64, 32, 32)
+
+[node name="Ground" type="RigidBody2D" unique_id=1605235542]
+position = Vector2(4, 4)
+collision_layer = 3
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_16g0k")
+movable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029249552]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_g3bxd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=357974407]
+texture_filter = 1
+position = Vector2(4, 4)
+texture = SubResource("AtlasTexture_lcepu")

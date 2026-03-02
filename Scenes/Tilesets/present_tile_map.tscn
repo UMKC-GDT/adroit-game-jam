@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bkvyfiev4jyvg"]
+
+[ext_resource type="PackedScene" uid="uid://qt4udo3q2pye" path="res://Scenes/Tilesets/present/flat-ground.tscn" id="1_bv6fo"]
+[ext_resource type="PackedScene" uid="uid://bsq23aav0w2s1" path="res://Scenes/Tilesets/present/flat-ground-endleft.tscn" id="2_s8bio"]
+[ext_resource type="PackedScene" uid="uid://bhu27nbq3mhmi" path="res://Scenes/Tilesets/present/flat-ground-endright.tscn" id="3_60cau"]
+[ext_resource type="PackedScene" uid="uid://byfa28c256h8s" path="res://Scenes/Tilesets/present/inner-corner.tscn" id="4_b02ic"]
+[ext_resource type="PackedScene" uid="uid://co58rgs7n4jw0" path="res://Scenes/Tilesets/present/outer-corner.tscn" id="5_c5pul"]
+[ext_resource type="PackedScene" uid="uid://bi5gwjarrcfug" path="res://Scenes/Tilesets/present/cracks-oob.tscn" id="6_tky81"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_s8bio"]
+scenes/1/scene = ExtResource("1_bv6fo")
+scenes/2/scene = ExtResource("2_s8bio")
+scenes/3/scene = ExtResource("3_60cau")
+scenes/4/scene = ExtResource("4_b02ic")
+scenes/5/scene = ExtResource("5_c5pul")
+scenes/6/scene = ExtResource("6_tky81")
+
+[sub_resource type="TileSet" id="TileSet_60cau"]
+sources/0 = SubResource("TileSetScenesCollectionSource_s8bio")
+
+[node name="PresentTileMap" type="TileMapLayer" unique_id=1094176510]
+tile_set = SubResource("TileSet_60cau")
