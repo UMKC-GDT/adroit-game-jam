@@ -10,7 +10,7 @@ func _on_start_pressed() -> void:
 	gm.TitleMusicOutie()
 	var sceneManager:game_manager = find_parent("GameManager")
 	if (sceneManager != null):
-		sceneManager.LoadNewScene("res://Scenes/Levels/Level1.tscn")
+		sceneManager.LoadNewScene("res://Scenes/Levels/Level1.tscn", true)
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
@@ -21,7 +21,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	gm.LoadNewScene("res://Scenes/Levels/credits_scene.tscn")
+	gm.LoadNewScene("res://Scenes/Levels/credits_scene.tscn", false)
 
 
 func _on_quit_pressed() -> void:
