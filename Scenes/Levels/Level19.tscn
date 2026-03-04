@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://do2fdjtpob00j"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_oc4w3"]
-[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_er58t"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_h8af7"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_ci13v"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="5_b6n1p"]
@@ -16,11 +15,6 @@ size = Vector2(1056, 42)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_oc4w3")
-
-[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_er58t")]
-position = Vector2(-616.0001, 392.00006)
-rotation = -0.76982385
-scale = Vector2(7.94227, 2.311422)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)

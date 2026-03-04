@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://l58arwg6p884"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_u4lgp"]
-[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_oioc0"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_lbk1i"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_bwo3a"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="6_aibtj"]
@@ -21,11 +20,6 @@ size = Vector2(872, 34)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_u4lgp")
-
-[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_oioc0")]
-position = Vector2(-616.0001, 392.00006)
-rotation = -0.76982385
-scale = Vector2(7.94227, 2.311422)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -76,9 +70,8 @@ rotation = 6.2831855
 native_timeline = 0
 walljump = true
 
-[node name="Door Switch" parent="Present" unique_id=985601875 node_paths=PackedStringArray("target_door") instance=ExtResource("6_aibtj")]
+[node name="Door Switch" parent="Present" unique_id=985601875 instance=ExtResource("6_aibtj")]
 position = Vector2(48, -80)
-target_door = NodePath("../SwitchDoor2")
 
 [node name="Wall3" parent="Present" unique_id=389045415 instance=ExtResource("4_bwo3a")]
 position = Vector2(160, -96)
@@ -131,9 +124,8 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="Door Switch" parent="Future" unique_id=1501715318 node_paths=PackedStringArray("target_door") instance=ExtResource("6_aibtj")]
+[node name="Door Switch" parent="Future" unique_id=1501715318 instance=ExtResource("6_aibtj")]
 position = Vector2(96, 120)
-target_door = NodePath("../../Present/SwitchDoor")
 native_timeline = 1
 
 [node name="RandomPlatform" parent="Future" unique_id=1558261178 instance=ExtResource("9_b3h8f")]
