@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dytttd53pdmth"]
 
 [ext_resource type="Texture2D" uid="uid://ce1nmotnkm2yv" path="res://Assets/Haze.png" id="1_wi7lc"]
-[ext_resource type="Material" uid="uid://du8h1smai4h1v" path="res://new_particle_process_material.tres" id="2_0buw8"]
+[ext_resource type="Material" uid="uid://ctdr781nofxdl" path="res://new_particle_process_material.tres" id="2_0buw8"]
 
 [node name="HazeGenerator" type="Node2D" unique_id=522450813]
 
@@ -9,6 +9,6 @@
 texture_filter = 1
 amount = 3000
 texture = ExtResource("1_wi7lc")
-preprocess = 2.0
+preprocess = 0.1
 speed_scale = 5.0
 process_material = ExtResource("2_0buw8")
