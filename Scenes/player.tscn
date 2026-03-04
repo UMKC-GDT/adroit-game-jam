@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dw5kdxu064cfr" path="res://Resources/PlayerSprites/WalkNoLight.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://ccufb28k08sr7" path="res://Resources/PlayerSprites/JumpWithNoLight.png" id="4_gymyn"]
 [ext_resource type="Texture2D" uid="uid://b6dka7tlbxr6v" path="res://Resources/PlayerSprites/WalkWithLight.png" id="5_3smsa"]
-[ext_resource type="PackedScene" uid="uid://bonminnmle3gg" path="res://Assets/simple_flashlight.tscn" id="5_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://c5ipxlslcipfh" path="res://Resources/PlayerSprites/WallJumpNoLight.png" id="6_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://bsikculq4s2b4" path="res://Resources/PlayerSprites/StandWithLight.png" id="7_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://dcblsqhhoo226" path="res://Resources/PlayerSprites/JumpWithLight.png" id="7_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://cr47am488w5jn" path="res://Resources/PlayerSprites/NoLightIdle.png" id="7_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://cld3errrsxe8k" path="res://Resources/PlayerSprites/WallJumpLight.png" id="10_pu2lt"]
+[ext_resource type="PackedScene" uid="uid://cljs8bxdeujhg" path="res://Scenes/player_light.tscn" id="11_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpa8y"]
 atlas = ExtResource("7_ukyrk")
@@ -334,7 +334,7 @@ interactionHandler = NodePath("PlayerInteractionSystem")
 [node name="AnimationHandler" type="Node2D" parent="." unique_id=2033617458 node_paths=PackedStringArray("player", "flashlight")]
 script = ExtResource("1_vgqql")
 player = NodePath("..")
-flashlight = NodePath("../SpriteLight/SimpleFlashlight")
+flashlight = NodePath("../SpriteLight/PlayerLight")
 
 [node name="SpriteNolight" type="AnimatedSprite2D" parent="." unique_id=43446781]
 visible = false
@@ -344,25 +344,12 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vgqql")
 
 [node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
-visible = false
 texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_igrcy")
 
-[node name="SimpleFlashlight" parent="SpriteLight" unique_id=371804446 instance=ExtResource("5_x3wgy")]
-position = Vector2(3.3333333, -6.666666)
-flashlight_radius = 75
-
-[node name="EmitterFlashlight" type="FmodEventEmitter2D" parent="SpriteLight/SimpleFlashlight" unique_id=1761323971]
-event_name = "event:/SFX/Flashlight1"
-event_guid = "{ccd810de-e42e-439c-9cc2-29e489e85663}"
-attached = false
-fmod_parameters/Blank/id = -7292059903593050108
-fmod_parameters/Blank = 0.0
-fmod_parameters/Blank/variant_type = 3
-position = Vector2(-3.3333333, 10)
-scale = Vector2(3.3333333, 3.3333333)
+[node name="PlayerLight" parent="SpriteLight" unique_id=1297080355 instance=ExtResource("11_pu2lt")]
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
 shape = SubResource("CapsuleShape2D_v0iea")

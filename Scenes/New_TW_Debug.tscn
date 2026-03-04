@@ -1,16 +1,15 @@
-[gd_scene format=3 uid="uid://broi4r01rxrc1"]
+[gd_scene format=3 uid="uid://c6w88b0eq4dxj"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_7auye"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_fb202"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_6htui"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_mfyqa"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_liljx"]
-[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="8_rhqb2"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_4oo8x"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_6htui"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_fb202"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="10_6eafy"]
-[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/switch_lamp.tscn" id="10_rhqb2"]
+[ext_resource type="PackedScene" path="res://Assets/Level Elements/switch_lamp.tscn" id="10_rhqb2"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7auye")
@@ -48,10 +47,10 @@ enabled = false
 zoom = Vector2(2.5, 2.5)
 
 [node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("10_6eafy")]
-position = Vector2(-120, 56)
+position = Vector2(-416, 80)
 
 [node name="SwitchLamp" parent="Future" unique_id=1429879500 instance=ExtResource("10_rhqb2")]
-position = Vector2(96, 56)
+position = Vector2(448, -32)
 light_priority = 100
 starting_light = 1
 
@@ -65,26 +64,14 @@ position = Vector2(-128, 64)
 position = Vector2(128, 64)
 
 [node name="Platform" parent="Future" unique_id=1888714142 instance=ExtResource("9_fb202")]
-position = Vector2(-112, 32)
+position = Vector2(-400, -104)
 
 [node name="Barrier" parent="Future" unique_id=2038542313 instance=ExtResource("8_liljx")]
-position = Vector2(-80, -48)
+position = Vector2(-408, -64)
 native_timeline = 0
 
-[node name="Switch" parent="Future" unique_id=1045395621 node_paths=PackedStringArray("target") instance=ExtResource("8_rhqb2")]
-position = Vector2(-56, 48)
-target = NodePath("../SwitchDoor")
-persistent = true
-native_timeline = 1
-
 [node name="SwitchDoor" parent="Future" unique_id=198043787 instance=ExtResource("9_6htui")]
-position = Vector2(-8, 40)
-native_timeline = 1
-
-[node name="Switch2" parent="Future" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("8_rhqb2")]
-position = Vector2(96, 48)
-target = NodePath("../SwitchLamp")
-persistent = true
+position = Vector2(-440, -64)
 native_timeline = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_4oo8x")]

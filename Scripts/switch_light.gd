@@ -5,7 +5,7 @@ class_name SwitchLight
 @export var light_priority = 1
 
 @export var powered = false
-@export var starting_light = QuantumLight.Timeline.PRESENT
+@export var starting_light = Global.Timeline.PRESENT
 
 enum LightMode { PRESENT_OR_FUTURE, ON_OFF }
 @export var current_mode: LightMode = LightMode.PRESENT_OR_FUTURE
@@ -29,11 +29,11 @@ func update_state() -> void:
 			beam.update_light()
 		
 		elif current_mode == LightMode.PRESENT_OR_FUTURE:
-			if starting_light == beam.Timeline.PRESENT:
-				beam.timeline_type = beam.Timeline.FUTURE
+			if starting_light == Global.Timeline.PRESENT:
+				beam.timeline_type = Global.Timeline.FUTURE
 				beam.update_light()
 			else:
-				beam.timeline_type = beam.Timeline.PRESENT
+				beam.timeline_type = Global.Timeline.PRESENT
 				beam.update_light()
 	else:
 		if current_mode == LightMode.ON_OFF:

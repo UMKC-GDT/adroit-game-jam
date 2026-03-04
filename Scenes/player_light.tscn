@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cljs8bxdeujhg"]
+
+[ext_resource type="Script" uid="uid://msdwhmbkowlv" path="res://Scripts/player_light.gd" id="1_1qjaf"]
+[ext_resource type="Texture2D" uid="uid://dfvpgrf2xe64x" path="res://Resources/PlayerSprites/FlashlightArm.png" id="2_50ugn"]
+[ext_resource type="Script" uid="uid://cy4nhurccb7yq" path="res://Scripts/quantum_light.gd" id="2_a0fy5"]
+[ext_resource type="Texture2D" uid="uid://cuwcpedccsys5" path="res://Resources/WhiteLight.png" id="3_a0fy5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ycfb3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7mn6k"]
+noise = SubResource("FastNoiseLite_ycfb3")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rr4mi"]
+polygon = PackedVector2Array(0, -68, 472, 1220, -472, 1220)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdvat"]
+radius = 75.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_viyy0"]
+polygon = PackedVector2Array(-2, -76, 53, -52, 71, -7, 57, 53, -1, 77, -54, 54, -75, 2, -55, -51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prfic"]
+size = Vector2(49, 236.5)
+
+[node name="PlayerLight" type="Node2D" unique_id=1297080355]
+script = ExtResource("1_1qjaf")
+
+[node name="LightArea" type="Area2D" parent="." unique_id=166659238]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_a0fy5")
+light_priority = 50
+
+[node name="CharacterArm" type="Sprite2D" parent="LightArea" unique_id=1658629106]
+texture_filter = 1
+position = Vector2(-2, 8)
+texture = ExtResource("2_50ugn")
+
+[node name="LightBeam" type="CollisionPolygon2D" parent="LightArea" unique_id=826246268]
+rotation = -1.5707964
+scale = Vector2(1.728125, 1.6)
+polygon = PackedVector2Array(0, 0, -273.1284, 804.99994, 273.1284, 804.99994)
+
+[node name="LightSprite" type="Sprite2D" parent="LightArea/LightBeam" unique_id=1085980032]
+position = Vector2(50.507755, 285)
+scale = Vector2(2.0437417, 1.9439236)
+texture = ExtResource("3_a0fy5")
+
+[node name="Haze Occluder" type="PointLight2D" parent="LightArea" unique_id=1348750289]
+editor_only = true
+texture = SubResource("NoiseTexture2D_7mn6k")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightArea/Haze Occluder" unique_id=1000914416]
+position = Vector2(70, 3)
+rotation = -1.5737504
+occluder = SubResource("OccluderPolygon2D_rr4mi")
+
+[node name="PlayerAura" type="Area2D" parent="." unique_id=510262714]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_a0fy5")
+light_priority = 50
+
+[node name="Circle" type="CollisionShape2D" parent="PlayerAura" unique_id=892073276]
+scale = Vector2(0.99999994, 1)
+shape = SubResource("CircleShape2D_cdvat")
+
+[node name="Haze Occluder" type="PointLight2D" parent="PlayerAura" unique_id=788420194]
+editor_only = true
+texture = SubResource("NoiseTexture2D_7mn6k")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="PlayerAura/Haze Occluder" unique_id=236898391]
+occluder = SubResource("OccluderPolygon2D_viyy0")
+
+[node name="floorLighter" type="Area2D" parent="." unique_id=27121907]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_a0fy5")
+light_priority = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floorLighter" unique_id=1386581083]
+position = Vector2(0, 171)
+shape = SubResource("RectangleShape2D_prfic")
+
+[node name="EmitterFlashlight" type="FmodEventEmitter2D" parent="." unique_id=1054369665]
+event_name = "event:/SFX/Flashlight1"
+event_guid = "{ccd810de-e42e-439c-9cc2-29e489e85663}"
+attached = false
+fmod_parameters/Blank/id = -7292059903593050108
+fmod_parameters/Blank = 0.0
+fmod_parameters/Blank/variant_type = 3
+position = Vector2(-3.3333333, 10)
+scale = Vector2(3.3333333, 3.3333333)

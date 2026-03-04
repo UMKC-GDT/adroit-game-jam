@@ -34,6 +34,7 @@ func _ready() -> void:
 func add_light(light: QuantumLight):
 	if not light in overlapping_lights:
 		overlapping_lights.append(light)
+	
 	update_state()
 
 ##Called when this object leaves a quantum light, so it can update its observation state.

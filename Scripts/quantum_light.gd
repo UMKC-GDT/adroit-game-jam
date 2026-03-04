@@ -3,9 +3,10 @@ class_name QuantumLight
 
 ##Class for the concept of quantum light itself, the core mechanic of the game. This light has a specified timeline that it's active on, and a priority for objects to decide who to follow.
 
-enum Timeline { PRESENT, FUTURE, OFF }
+# Moved to Global.gd to allow any script to access it without being a child :)
+#enum Timeline { PRESENT, FUTURE, OFF }
 
-@export var timeline_type: Timeline = Timeline.PRESENT
+@export var timeline_type: Global.Timeline = Global.Timeline.PRESENT
 
 @onready var light_sprite: Sprite2D = $LightBeam/LightSprite
 
@@ -22,32 +23,38 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if timeline_type == Timeline.OFF: # do nothin of its off
+	if timeline_type == Global.Timeline.OFF: # do nothin of its off
 		return
 		
-	if timeline_type == Timeline.FUTURE:
+	if timeline_type == Global.Timeline.FUTURE:
 		#Future: 217,255,255
-		light_sprite.modulate = future_color
+		if light_sprite:
+			light_sprite.modulate = future_color
 		
 	else:
-		#Present: 
-		light_sprite.modulate = present_color
+		#Present:
+		if light_sprite:
+			light_sprite.modulate = present_color
 	
 	pass
 
 func update_light():
-	if timeline_type == Timeline.FUTURE:
+	if timeline_type == Global.Timeline.FUTURE:
 		#Future: 217,255,255
-		light_sprite.modulate = future_color
+		if light_sprite: 
+			light_sprite.modulate = future_color
 		
-	elif timeline_type == Timeline.PRESENT:
+	elif timeline_type == Global.Timeline.PRESENT:
 		#Present: 
-		light_sprite.modulate = present_color
+		if light_sprite:
+			light_sprite.modulate = present_color
 	
 	# Just poke the objects and tell them to look at your new color
 	for body in get_overlapping_bodies():
 		if body is LightObject:
 			body.update_state()
+			if self.name == "LightArea":
+				pass
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is LightObject:
@@ -56,3 +63,12 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is LightObject:
 		body.remove_light(self)
+
+func update_sprite():
+	if !light_sprite:
+		return
+	if timeline_type == Global.Timeline.PRESENT:
+		light_sprite.modulate = present_color
+	elif timeline_type == Global.Timeline.FUTURE:
+		light_sprite.modulate = future_color
+	
