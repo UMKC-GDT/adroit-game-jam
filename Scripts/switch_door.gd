@@ -10,7 +10,7 @@ var is_open: bool = false
 
 func _ready() -> void:
 	
-	if native_timeline == Timeline.FUTURE:
+	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		present_sprite.hide()
 	else:
@@ -34,7 +34,7 @@ func update_state() -> void:
 		visible = false # Or swap this to an "open" sprite/animation
 		
 		# Strip away all the collisions that the parent class just turned on
-		var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4
+		var physics_layer = 3 if native_timeline == Global.Timeline.PRESENT else 4
 		
 		call_deferred("set_collision_layer_value", 1, false)
 		call_deferred("set_collision_mask_value", 1, false)

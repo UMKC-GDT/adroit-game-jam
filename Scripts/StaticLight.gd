@@ -12,10 +12,8 @@ func _ready() -> void:
 	beam.light_priority = light_priority
 	
 	if(isPresent):
-			beam.timeline_type = beam.Timeline.PRESENT
+			beam.timeline_type = Global.Timeline.PRESENT
 			beam.update_light() 
 	else:
-		beam.timeline_type = beam.Timeline.FUTURE
+		beam.timeline_type = Global.Timeline.FUTURE
 		beam.update_light()
-		
-			

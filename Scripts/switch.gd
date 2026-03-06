@@ -14,7 +14,7 @@ var is_switch_on: bool = false
 
 func _ready() -> void:
 	
-	if native_timeline == Timeline.FUTURE:
+	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		active_sprite = future_sprite
 		present_sprite.hide()

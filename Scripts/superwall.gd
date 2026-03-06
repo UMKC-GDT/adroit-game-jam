@@ -10,7 +10,7 @@ func _ready() -> void:
 	print(future_sprite)
 	print(present_sprite)
 	
-	if native_timeline == Timeline.FUTURE:
+	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		present_sprite.hide()
 	else:

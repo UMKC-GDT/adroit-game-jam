@@ -1,7 +1,7 @@
 extends Node2D
 class_name PlayerLight
 
-## Expaned version of simple light to allow more sources
+## Expanded version of simple flashlight to allow more sources
 
 @export var auraRadius = 20
 @export var lightPriority := 50

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_6htui"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_fb202"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="10_6eafy"]
-[ext_resource type="PackedScene" path="res://Assets/Level Elements/switch_lamp.tscn" id="10_rhqb2"]
+[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/switch_lamp.tscn" id="10_rhqb2"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7auye")
@@ -68,7 +68,7 @@ position = Vector2(-400, -104)
 
 [node name="Barrier" parent="Future" unique_id=2038542313 instance=ExtResource("8_liljx")]
 position = Vector2(-408, -64)
-native_timeline = 0
+native_timeline = null
 
 [node name="SwitchDoor" parent="Future" unique_id=198043787 instance=ExtResource("9_6htui")]
 position = Vector2(-440, -64)

@@ -5,8 +5,7 @@ class_name LightObject
 
 #P.S. if you are touching this, something must be dearly wrong. Boohoo.
 
-enum Timeline { PRESENT, FUTURE, OFF }
-@export var native_timeline: Timeline = Timeline.PRESENT
+@export var native_timeline: Global.Timeline = Global.Timeline.PRESENT
 @export var movable: bool = true
 @export var is_tangible: bool = true
 @export var walljump: bool = false
@@ -53,7 +52,7 @@ func update_state():
 		var dominant_light = overlapping_lights[0]
 		for light in overlapping_lights:
 			
-			if (not light.timeline_type == Timeline.OFF) and light.light_priority > dominant_light.light_priority:
+			if (not light.timeline_type == Global.Timeline.OFF) and light.light_priority > dominant_light.light_priority:
 				dominant_light = light
 		
 		is_active = (dominant_light.timeline_type == native_timeline)
@@ -75,7 +74,7 @@ func update_state():
 
 	if is_tangible:
 		# Here, we specify physics to be on two different layers so that a Present object and a Future object can exist in the same coordinates without seeing each other. 
-		var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4
+		var physics_layer = 3 if native_timeline == Global.Timeline.PRESENT else 4
 		
 		#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
 		call_deferred("set_collision_layer_value", 1, is_active) # World Layer
