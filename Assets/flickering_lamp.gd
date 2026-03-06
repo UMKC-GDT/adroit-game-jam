@@ -39,6 +39,6 @@ func _physics_process(delta: float) -> void:
 			lightOnPresent=false
 			
 		else:
-			beam.timeline_type = beam.Timeline.FUTURE
+			beam.timeline_type = Global.Timeline.FUTURE
 			beam.update_light()
 			lightOnPresent=true

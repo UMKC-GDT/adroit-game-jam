@@ -323,11 +323,11 @@ radius = 1.0
 [node name="Player" type="CharacterBody2D" unique_id=1958493430 node_paths=PackedStringArray("animationHandler", "interactionHandler") groups=["Player"]]
 script = ExtResource("1_v0iea")
 speed = 200.0
+jumpVelocity = 300.0
+wallJumpPushOff = 400.0
 airSpeed = 500.0
 max_air_speed = 200.0
 turnaround_multiplier = 1.5
-jumpVelocity = 300.0
-wallJumpPushOff = 400.0
 animationHandler = NodePath("AnimationHandler")
 interactionHandler = NodePath("PlayerInteractionSystem")
 
@@ -344,13 +344,13 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vgqql")
 
 [node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
-visible = false
 texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_igrcy")
 
 [node name="PlayerLight" parent="SpriteLight" unique_id=1297080355 instance=ExtResource("11_pu2lt")]
+position = Vector2(0, -10)
 auraRadius = 50
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]

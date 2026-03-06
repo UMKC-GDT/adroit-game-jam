@@ -7,7 +7,7 @@ class_name RandomPlatform
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if native_timeline == Timeline.FUTURE:
+	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		present_sprite.hide()
 	else:

@@ -8,7 +8,7 @@
 atlas = ExtResource("3_mhpvl")
 region = Rect2(19, 1, 15, 11)
 
-[node name="FlickeringLamp" type="Node2D" unique_id=177997193]
+[node name="staticLamp" type="Node2D" unique_id=177997193]
 script = ExtResource("1_clpba")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_4rbu6")]

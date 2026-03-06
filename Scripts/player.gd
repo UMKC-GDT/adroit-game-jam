@@ -1,27 +1,33 @@
 extends CharacterBody2D
 
+@export_category("Ground Control")
 @export var speed := 40.0
 @export var maxSpeed := 250.0
-
+@export var groundFriction := 1300.0
+@export_category("Jump")
+@export var jumpVelocity := 250.0
+@export var jumpConstantForce := 10.0
+@export var maxJumpHold := 0.35
+@export var doubleJumpVelocity := 400.0
+@export_category("Wall jump")
+@export var wallJumpVelocity := 400.0
+@export var wallJumpPushOff := 200.0
+@export var wallFallingGravity := 50.0
+@export_category("Air control")
 @export var airSpeed := 300.0
 @export var max_air_speed: float = 300.0
 @export var air_accel: float = 800.0
 @export var air_drag: float = 400.0
 @export var turnaround_multiplier: float = 2.5
-
-@export var groundFriction := 1300.0
 @export var airFriction := 50.0
-@export var jumpVelocity := 250.0
-@export var jumpConstantForce := 10.0
-@export var maxJumpHold := 0.35
-@export var doubleJumpVelocity := 400.0
-@export var wallJumpVelocity := 400.0
-@export var wallJumpPushOff := 200.0
-@export var wallFallingGravity := 50.0
+@export var maxFallSpeed := 1200.0
+@export_category("Sound")
 @export var footStepTimerReset = 0.428
 @export var footStepTimer = 0
+@export_category("Nodes")
 @export var animationHandler: Node2D
 @export var interactionHandler: Node2D
+@export var addtionalLightAreas: Array[StaticLight]
 
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
@@ -33,7 +39,6 @@ extends CharacterBody2D
 var spawnPosition: Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var maxFallSpeed := 1200.0
 
 var inputDir := 0.0
 
@@ -54,6 +59,8 @@ var dead: bool = false
 func _ready() -> void:
 	spawnPosition = self.position
 	
+	flashlight.AdditionLightAreas = self.addtionalLightAreas
+	flashlight.addAdditionLights()
 	flashlight.set_starting_light(starting_present)
 	
 	#NOTE: Both SpriteLight and SpriteNolight NEED to start off as invisible. This code below will decide which to activate.

@@ -6,7 +6,7 @@ class_name PlayerLight
 @export var auraRadius = 20
 @export var lightPriority := 50
 @export var starting_light: Global.Timeline = Global.Timeline.PRESENT
-@export var AdditionLightAreas: Array[QuantumLight]
+@export var AdditionLightAreas: Array[StaticLight]
 
 @onready var circle: CollisionShape2D = $PlayerAura/Circle
 @onready var flashlightArea: Area2D = $LightArea
@@ -25,9 +25,7 @@ var timeline_type = Global.Timeline.PRESENT
 
 func _ready() -> void:
 	# add any aditions sources to the array
-	for light in AdditionLightAreas:
-		lightingAreas.push_back(light)
-	AdditionLightAreas.clear()
+	addAdditionLights()
 	
 	circle.shape.radius = auraRadius
 	
@@ -111,3 +109,8 @@ func toggleLight(state: bool):
 	for light in lightingAreas:
 		light.timeline_type = timeline_type
 		light.update_light()
+
+func addAdditionLights():
+	for light in AdditionLightAreas:
+		lightingAreas.push_back(light.beam)
+	AdditionLightAreas.clear()
