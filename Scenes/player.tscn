@@ -344,6 +344,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vgqql")
 
 [node name="SpriteLight" type="AnimatedSprite2D" parent="." unique_id=1709156686]
+visible = false
 texture_filter = 1
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.3, 0.3)
