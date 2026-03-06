@@ -24,10 +24,10 @@ texture = ExtResource("3_bkrqq")
 [node name="LightBeam" parent="." index="1" unique_id=984337879]
 rotation = -1.5707964
 
-[node name="Circle" type="CollisionShape2D" parent="." index="2" unique_id=1709966422]
+[node name="Circle" type="CollisionShape2D" parent="LightBeam" index="1" unique_id=1709966422]
+rotation = 1.5707964
+scale = Vector2(0.62499994, 0.57866186)
 shape = SubResource("CircleShape2D_iv4ae")
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="3" unique_id=105133007]
 
 [node name="LightOccluder2D" parent="PointLight2D" parent_id_path=PackedInt32Array(193099976) index="0" unique_id=597497695]
 position = Vector2(70, 3)

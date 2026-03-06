@@ -21,12 +21,12 @@ func _physics_process(delta: float) -> void:
 	if time>=0.1 and time <=0.21:
 		$LampEmitter.set_parameter("LampFlicker", 0)
 		if(lightOnPresent):
-			beam.timeline_type = beam.Timeline.PRESENT
+			beam.timeline_type = Global.Timeline.PRESENT
 			beam.update_light()
 			lightOnPresent=false
 			
 		else:
-			beam.timeline_type = beam.Timeline.FUTURE
+			beam.timeline_type = Global.Timeline.FUTURE
 			beam.update_light()
 			lightOnPresent=true
 	
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		time = 0.0
 		$LampEmitter.set_parameter("LampFlicker", 1)
 		if(lightOnPresent):
-			beam.timeline_type = beam.Timeline.PRESENT
+			beam.timeline_type = Global.Timeline.PRESENT
 			beam.update_light()
 			lightOnPresent=false
 			

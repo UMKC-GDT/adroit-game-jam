@@ -4,7 +4,7 @@ extends Node
 
 
 @export var player: CharacterBody2D
-@export var flashlight: Node
+@export var flashlight: PlayerLight
 
 
 func _ready() -> void:
