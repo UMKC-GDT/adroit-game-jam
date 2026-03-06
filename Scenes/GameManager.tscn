@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
-[ext_resource type="PackedScene" uid="uid://dsmvw3il1585e" path="res://escape_to_main_menu.tscn" id="2_xqbpr"]
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
@@ -11,8 +10,6 @@
 script = ExtResource("1_m2tc1")
 ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
-
-[node name="EscapeToMainMenu" parent="." unique_id=1224230210 instance=ExtResource("2_xqbpr")]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank", "res://FmodBank/Desktop/AmbienceBank.bank", "res://FmodBank/Desktop/SFXBank.bank"]
@@ -131,5 +128,3 @@ position = Vector2(960, 540)
 visible = false
 position = Vector2(960, 540)
 scale = Vector2(0.45601746, 0.73540765)
-
-[connection signal="EscapeToMainMenu" from="EscapeToMainMenu" to="." method="_on_escape_to_main_menu"]

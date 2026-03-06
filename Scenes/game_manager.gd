@@ -83,5 +83,7 @@ func LoadNewScene(name:String):
 	switching = false
 	ScreenFadeManager.fadeIn()
 
-func _on_escape_to_main_menu() -> void:
-	get_tree().change_scene_to_file("res://Scenes/GameManager.tscn")
+#Detects if Escape is pressed, exits to main menu if true
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape"):
+		get_tree().change_scene_to_file("res://Scenes/GameManager.tscn")
