@@ -18,12 +18,10 @@ var present_color = Color(1.0, 0.695, 0.434, 0.3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	#WARNING: QuantumLight relies on signals to call particular functions down below when an object enters or exits its zones. If those signals aren't wired, then the light will detect objects entering it, sure, but it won't ever do what it's supposed to do. This was a lesson discovered in blood and a few hours of confused debugging, so to save future Us, on READY, any QuantumLight source will force-connect its own signals to the proper functions. 
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	
-	pass 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

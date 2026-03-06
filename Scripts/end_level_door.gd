@@ -16,7 +16,7 @@ var gm: game_manager
 func _ready() -> void:
 	
 	
-	if native_timeline == Timeline.FUTURE:
+	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		active_sprite = future_sprite
 		active_sprite.play("Closed")

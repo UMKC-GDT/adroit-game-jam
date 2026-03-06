@@ -350,6 +350,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_igrcy")
 
 [node name="PlayerLight" parent="SpriteLight" unique_id=1297080355 instance=ExtResource("11_pu2lt")]
+auraRadius = 50
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1541004306]
 shape = SubResource("CapsuleShape2D_v0iea")
