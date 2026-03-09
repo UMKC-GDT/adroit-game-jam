@@ -1,0 +1,176 @@
+[gd_scene format=4 uid="uid://dmjo1a1p3fcb1"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_hip4c"]
+[ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="2_jitbw"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="3_rhhx6"]
+[ext_resource type="Texture2D" uid="uid://dkiw6bgyljd6p" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/futurewalls and office stuff.png" id="4_76jh4"]
+[ext_resource type="Texture2D" uid="uid://d2rupj0poryrf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/wall and office stuff.png" id="5_k5bwb"]
+[ext_resource type="Texture2D" uid="uid://lgsb7efggws5" path="res://Scenes/Tileset Testing/Character Sprites/Standing.png" id="6_il6yp"]
+[ext_resource type="Texture2D" uid="uid://d3jv26sx2bxeh" path="res://Resources/props copy.png" id="7_bmbmw"]
+[ext_resource type="Texture2D" uid="uid://ocjsx2qwdvh" path="res://Resources/props copy 3.png" id="8_tj2bc"]
+[ext_resource type="Texture2D" uid="uid://dowjwbqpcjdsf" path="res://Resources/rubble.png" id="9_vao0o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwchn"]
+texture = ExtResource("2_jitbw")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsdl8"]
+texture = ExtResource("3_rhhx6")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1c5y7"]
+texture = ExtResource("4_76jh4")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbe5k"]
+texture = ExtResource("5_k5bwb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hwnff"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_uwchn")
+sources/3 = SubResource("TileSetAtlasSource_dsdl8")
+sources/4 = SubResource("TileSetAtlasSource_1c5y7")
+sources/5 = SubResource("TileSetAtlasSource_xbe5k")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxl8i"]
+texture = ExtResource("2_jitbw")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvral"]
+texture = ExtResource("3_rhhx6")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl0fe"]
+texture = ExtResource("4_76jh4")
+texture_region_size = Vector2i(32, 32)
+3:0/0 = 0
+4:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luu0l"]
+texture = ExtResource("5_k5bwb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j0vyg"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_yxl8i")
+sources/3 = SubResource("TileSetAtlasSource_uvral")
+sources/4 = SubResource("TileSetAtlasSource_kl0fe")
+sources/5 = SubResource("TileSetAtlasSource_luu0l")
+
+[node name="New Future BG" unique_id=1605235542 instance=ExtResource("1_hip4c")]
+native_timeline = 1
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+visible = false
+
+[node name="Background" type="TileMapLayer" parent="." index="2" unique_id=1883997612]
+texture_filter = 1
+position = Vector2(0, 3.8146973e-06)
+tile_map_data = PackedByteArray("AAD8//7/BAADAAAAAAD9//7/BAADAAAAAAD+//7/BAADAAAAAAD///7/BAADAAAAAAAAAP7/BAADAAAAAAABAP7/BAADAAAAAAACAP7/BAADAAAAAAADAP7/BAADAAAAAAD8////BAADAAAAAAD9////BAADAAAAAAD+////BAADAAAAAAD/////BAADAAAAAAAAAP//BAADAAAAAAABAP//BAADAAAAAAACAP//BAADAAAAAAADAP//BAADAAAAAAD8/wAABAADAAAAAAD9/wAABAADAAAAAAD+/wAABAADAAAAAAD//wAABAADAAAAAAAAAAAABAADAAAAAAABAAAABAADAAAAAAACAAAABAADAAAAAAADAAAABAADAAAAAAABAAEABAADAAIAAAACAAEABAAEAAIAAAADAAEABAADAAIAAAD7/wAABAADAAAAAAD7////BAADAAAAAAD7//7/BAADAAAAAAAEAP7/BAADAAAAAAAEAP//BAADAAAAAAAEAAAABAADAAAAAAAEAAEABAAEAAIAAAD7/wIABQAAAAAAAAD8/wIABQAAAAAAAAD9/wIABQAAAAAAAAD+/wIABQAAAAAAAAD//wIABQAAAAAAAAAAAAIABQAAAAAAAAABAAIABQAAAAAAAAACAAIABQAAAAAAAAADAAIABQAAAAAAAAAEAAIABQAAAAAAAAD7//3/BAADAAAAAAD8//3/BAADAAAAAAD9//3/BAADAAAAAAD+//3/BAADAAAAAAD///3/BAADAAAAAAAAAP3/BAADAAAAAAABAP3/BAADAAAAAAACAP3/BAADAAAAAAADAP3/BAADAAAAAAAEAP3/BAADAAAAAAD6//3/BAADAAAAAAD6//7/BAADAAAAAAD6////BAADAAAAAAD6/wAABAADAAAAAAD6/wIABQAAAAAAAAAFAP3/BAADAAAAAAAFAP7/BAADAAAAAAAFAP//BAADAAAAAAAFAAAABAADAAAAAAAFAAEABAADAAIAAAAFAAIABQAAAAAAAAD6/wEABAAEAAIAAAD7/wEABAADAAIAAAD8/wEABAAEAAIAAAD9/wEABAADAAIAAAD+/wEABAAEAAIAAAD//wEABAADAAIAAAAAAAEABAAEAAIAAAD6/wMABAADAAAAAAD7/wMABAADAAAAAAD8/wMABAADAAAAAAD9/wMABAADAAAAAAD+/wMABAADAAAAAAD//wMABAADAAAAAAAAAAMABAADAAAAAAABAAMABAADAAAAAAACAAMABAADAAAAAAADAAMABAADAAAAAAAEAAMABAADAAAAAAAFAAMABAADAAAAAAAFAAQABAADAAAAAAAEAAQABAADAAAAAAADAAQABAADAAAAAAACAAQABAADAAAAAAABAAQABAADAAAAAAAAAAQABAADAAAAAAD//wQABAADAAAAAAD+/wQABAADAAAAAAD9/wQABAADAAAAAAD8/wQABAADAAAAAAD7/wQABAADAAAAAAD6/wQABAADAAAAAAD6//z/BAADAAAAAAD7//z/BAADAAAAAAD8//z/BAADAAAAAAD9//z/BAADAAAAAAD+//z/BAADAAAAAAD///z/BAADAAAAAAAAAPz/BAADAAAAAAAFAPz/BAADAAAAAAAEAPz/BAADAAAAAAADAPz/BAADAAAAAAACAPz/BAADAAAAAAABAPz/BAADAAAAAAD6//v/BAADAAAAAAD7//v/BAADAAAAAAD8//v/BAADAAAAAAD9//v/BAADAAAAAAD+//v/BAADAAAAAAD///v/BAADAAAAAAAAAPv/BAADAAAAAAABAPv/BAADAAAAAAACAPv/BAADAAAAAAADAPv/BAADAAAAAAAEAPv/BAADAAAAAAAFAPv/BAADAAAAAAA=")
+tile_set = SubResource("TileSet_hwnff")
+
+[node name="Floor" type="TileMapLayer" parent="." index="3" unique_id=1676484220]
+texture_filter = 1
+position = Vector2(0, 3.8146973e-06)
+tile_map_data = PackedByteArray("AAD7/wIAAwAEAAIAAAD8/wIAAwAEAAIAAAD9/wIAAwAEAAIAAAD+/wIAAwAEAAIAAAD//wIAAwAEAAIAAAAAAAIAAwAEAAIAAAABAAIAAwAEAAIAAAACAAIAAwAEAAIAAAADAAIAAwAEAAIAAAAEAAIAAwAEAAIAAAD6/wIAAwAEAAIAAAAFAAIAAwAEAAIAAAA=")
+tile_set = SubResource("TileSet_j0vyg")
+
+[node name="Objects" type="TileMapLayer" parent="." index="4" unique_id=673768184]
+texture_filter = 1
+position = Vector2(0, 2.0000038)
+tile_map_data = PackedByteArray("AAAAAAEABAAEAAEAAAD//wEABAAFAAEAAAD8/wEAAwAFAAEAAAD8/wAAAwAFAAAAAAA=")
+tile_set = SubResource("TileSet_j0vyg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="5" unique_id=1270305399]
+visible = false
+texture_filter = 1
+position = Vector2(-53, 42.750008)
+scale = Vector2(0.38333336, 0.38333327)
+texture = ExtResource("6_il6yp")
+
+[node name="PropsCopy" type="Sprite2D" parent="." index="6" unique_id=1487030793]
+texture_filter = 1
+position = Vector2(171.00002, 31.000004)
+scale = Vector2(2.264706, 2.264706)
+texture = ExtResource("7_bmbmw")
+
+[node name="PropsCopy3" type="Sprite2D" parent="." index="7" unique_id=648003557]
+texture_filter = 1
+position = Vector2(153.25002, 41.750004)
+scale = Vector2(1.7115388, 1.826923)
+texture = ExtResource("8_tj2bc")
+
+[node name="Rubble" type="Sprite2D" parent="." index="8" unique_id=1584827835]
+texture_filter = 1
+position = Vector2(-147, 28.500004)
+scale = Vector2(2.6470587, 2.6071432)
+texture = ExtResource("9_vao0o")
