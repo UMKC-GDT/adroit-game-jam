@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d4efsdnk2onpy"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_7rlty"]
+[ext_resource type="PackedScene" uid="uid://bcm4c8lv6y3rt" path="res://Scenes/Tileset Testing/Level1Present.tscn" id="2_uiyft"]
+
+[node name="NewPresentBG" unique_id=1605235542 instance=ExtResource("1_7rlty")]
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+visible = false
+
+[node name="TileSetTesting" parent="." index="2" unique_id=911594195 instance=ExtResource("2_uiyft")]
