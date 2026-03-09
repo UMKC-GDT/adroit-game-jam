@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://diwdmvds8ui4r" path="res://Assets/Cats/catMeow.png" id="12_ngp1c"]
 [ext_resource type="Texture2D" uid="uid://bpmvc4g1fgyjf" path="res://Assets/Cats/catRun.png" id="13_tbiw2"]
 [ext_resource type="Script" uid="uid://b64tpqlcxvhft" path="res://Scenes/Levels/animated_sprite_2d3.gd" id="13_u5eb6"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="17_458el"]
 [ext_resource type="Script" uid="uid://c1mhrrcf5h8os" path="res://Scenes/Levels/node.gd" id="17_ya3ly"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngp1c"]
@@ -265,6 +266,10 @@ shape = SubResource("RectangleShape2D_tbiw2")
 
 [node name="Node" type="Node" parent="." unique_id=262872510]
 script = ExtResource("17_ya3ly")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("17_458el")]
+position = Vector2(-24, -752)
+timeline_type = 1
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
 
