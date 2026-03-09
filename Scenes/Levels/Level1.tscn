@@ -78,6 +78,7 @@ image = ExtResource("9_jcebb")
 [node name="EndLevelDoor" parent="." unique_id=1870179415 instance=ExtResource("6_e57xo")]
 position = Vector2(59.599983, 37.999992)
 scale = Vector2(0.99999976, 0.99999976)
+canOpen = true
 nextScene = "Level2"
 native_timeline = 1
 

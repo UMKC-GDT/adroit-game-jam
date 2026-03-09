@@ -5,9 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_mob6b"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_y3xae"]
 [ext_resource type="PackedScene" uid="uid://d4efsdnk2onpy" path="res://Assets/new_present_bg.tscn" id="5_o8mjm"]
+[ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="6_kj67q"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="6_o8mjm"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_y3xae"]
+[ext_resource type="Texture2D" uid="uid://ctlwx6fmffdwx" path="res://Resources/DoorMsg.png" id="7_x703b"]
 [ext_resource type="PackedScene" uid="uid://dmjo1a1p3fcb1" path="res://Assets/new_future_bg.tscn" id="8_tksbl"]
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="8_vihwb"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ckits"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
@@ -26,6 +29,7 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(-960, 0)
 
 [node name="NewPresentBG" parent="Present" unique_id=1001573822 instance=ExtResource("5_o8mjm")]
+position = Vector2(-16, 0)
 collision_layer = 2
 
 [node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
@@ -55,13 +59,30 @@ persistent = true
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_mob6b")]
 position = Vector2(0, 64)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAKAAAAAAAAAAAAAQD+/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD4/wAAAAAAAAAAAQD2/wAAAAAAAAAAAQD0/wAAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAKAAAAAAAAAAAAAQD+/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD4/wAAAAAAAAAAAQD2/wAAAAAAAAAAAQD0/wAAAAAAAAAAAQD0//z/AAAAAAAABgD0//7/AAAAAAAABgD0//r/AAAAAAAABgD0//j/AAAAAAAABgD0//b/AAAAAAAABgD0//T/AAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgAKAPb/AAAAAAAABgAKAPT/AAAAAAAABgA=")
+
+[node name="UI Message2" parent="Present" unique_id=1302920499 instance=ExtResource("6_kj67q")]
+position = Vector2(-104.000046, 24)
+image = ExtResource("7_x703b")
+
+[node name="UI Message" parent="Present" unique_id=246763358 instance=ExtResource("6_kj67q")]
+position = Vector2(-2.4795532e-05, 32)
+image = ExtResource("8_vihwb")
+
+[node name="Sprite2D" parent="Present/UI Message" index="0" unique_id=505427733]
+position = Vector2(56, -32)
+
+[node name="Area2D" parent="Present/UI Message" index="1" unique_id=1840031543]
+position = Vector2(3.31703e-07, 8.34758)
+
+[node name="CollisionShape2D" parent="Present/UI Message/Area2D" index="0" unique_id=698046913]
+position = Vector2(57.599976, -1.547596)
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
 [node name="New Future BG" parent="Future" unique_id=238953519 instance=ExtResource("8_tksbl")]
-position = Vector2(472, 0)
+position = Vector2(-16, 0)
 collision_layer = 2
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
@@ -86,12 +107,25 @@ position = Vector2(0, -160)
 gizmo_extents = 53.9
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_o8mjm")]
-tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQD+/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQD+/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD0/wIAAAAAAAAABgD0/wAAAAAAAAAABgD0//7/AAAAAAAABgD0//z/AAAAAAAABgD0//r/AAAAAAAABgAKAAIAAAAAAAAABgAKAAAAAAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgD0//j/AAAAAAAABgA=")
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_y3xae")]
-position = Vector2(112, 40)
+position = Vector2(96, 40)
 nextScene = "Level2"
 native_timeline = 1
+
+[node name="UI Message" parent="Future" unique_id=467744185 instance=ExtResource("6_kj67q")]
+position = Vector2(39.999977, 32)
+image = ExtResource("8_vihwb")
+
+[node name="Sprite2D" parent="Future/UI Message" index="0" unique_id=505427733]
+position = Vector2(56, -32)
+
+[node name="Area2D" parent="Future/UI Message" index="1" unique_id=1840031543]
+position = Vector2(3.31703e-07, 8.34758)
+
+[node name="CollisionShape2D" parent="Future/UI Message/Area2D" index="0" unique_id=698046913]
+position = Vector2(57.599976, -1.547596)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_ckits")]
 position = Vector2(0, 48)
@@ -113,3 +147,6 @@ gizmo_extents = 53.9
 [node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
 position = Vector2(0, -160)
 gizmo_extents = 53.9
+
+[editable path="Present/UI Message"]
+[editable path="Future/UI Message"]
