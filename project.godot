@@ -36,6 +36,18 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://BrandonTesting/": "yellow",
+"res://FmodBank/": "green",
+"res://Resources/": "teal",
+"res://Scenes/": "blue",
+"res://Scripts/": "purple",
+"res://addons/": "red"
+}
+
 [global_group]
 
 Player="The Player"
