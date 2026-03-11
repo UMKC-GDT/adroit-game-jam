@@ -10,9 +10,9 @@ func _on_start_pressed() -> void:
 	gm.TitleMusicOutie()
 	var sceneManager:game_manager = find_parent("GameManager")
 	if (sceneManager != null):
-		sceneManager.LoadNewScene("res://Scenes/Levels/Level1.tscn")
+		sceneManager.LoadNewScene("res://Scenes/Levels/Level1 (New).tscn")
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1 (New).tscn")
 
 
 

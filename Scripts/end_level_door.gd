@@ -38,7 +38,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	movable = false
-	is_active = true
+	#is_active = true
 
 var isSwitching = false
 
@@ -47,6 +47,7 @@ func _on_interactable_component_interacted() -> void:
 		pass
 	isSwitching = true
 	
+	print(is_active)
 	if !is_active: return
 	
 	print("Test animation")

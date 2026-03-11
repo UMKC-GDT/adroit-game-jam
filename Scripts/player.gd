@@ -104,7 +104,11 @@ func _physics_process(delta: float) -> void:
 	
 	if(Input.is_action_just_pressed("interact")):
 		if(interactionHandler.getInteractable()):
+			print("You've pressed interact and I have an interaction handler that's detected an object!")
 			interactionHandler.handleInteraction()
+		else:
+			print("You've pressed it, but interaction handler isn't detecting an object.")
+			print(interactionHandler.getInteractable())
 	elif(Input.is_action_just_pressed("lightPower")):
 		toggleFlashlight()
 	

@@ -15,12 +15,16 @@ var present_color = Color(1.0, 0.695, 0.434, 0.3)
 
 #Note: DO NOT confuse this with .priority. .priority is something with the Area2D, and as the one writing this comment, I don't know what that's for. But don't try to look for .priority when you mean to look for light_priority. Trust me.
 @export var light_priority: int = 0
+@export var light_visible: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#WARNING: QuantumLight relies on signals to call particular functions down below when an object enters or exits its zones. If those signals aren't wired, then the light will detect objects entering it, sure, but it won't ever do what it's supposed to do. This was a lesson discovered in blood and a few hours of confused debugging, so to save future Us, on READY, any QuantumLight source will force-connect its own signals to the proper functions. 
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	
+	if !light_visible:
+		light_sprite.visible = false
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

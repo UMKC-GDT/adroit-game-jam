@@ -53,6 +53,7 @@ position = Vector2(0, -160)
 gizmo_extents = 53.9
 
 [node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("4_y3xae")]
+z_as_relative = false
 position = Vector2(56, 40)
 target = NodePath("../../SwitchLamp")
 persistent = true
@@ -106,13 +107,13 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_o8mjm")]
-tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQD+/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD0/wIAAAAAAAAABgD0/wAAAAAAAAAABgD0//7/AAAAAAAABgD0//z/AAAAAAAABgD0//r/AAAAAAAABgAKAAIAAAAAAAAABgAKAAAAAAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgD0//j/AAAAAAAABgA=")
-
-[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_y3xae")]
+[node name="EndLevelDoor" parent="Future" unique_id=1726517033 instance=ExtResource("6_y3xae")]
 position = Vector2(96, 40)
 nextScene = "Level2"
 native_timeline = 1
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_o8mjm")]
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQD+/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD0/wIAAAAAAAAABgD0/wAAAAAAAAAABgD0//7/AAAAAAAABgD0//z/AAAAAAAABgD0//r/AAAAAAAABgAKAAIAAAAAAAAABgAKAAAAAAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgD0//j/AAAAAAAABgA=")
 
 [node name="UI Message" parent="Future" unique_id=467744185 instance=ExtResource("6_kj67q")]
 position = Vector2(39.999977, 32)
