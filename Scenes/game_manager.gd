@@ -27,28 +27,6 @@ func LevelMusicBegin():
 		soundManager.play(SoundManager.Emitters.LEVEL)
 
 
-#func TitleMusicOutie(outieparam: int = 1):
-	#$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
-#
-#func LevelThreeSection(levelthree: int = 0):
-	#$Sprite2D/levelEmitter.set_parameter("Verse1", levelthree)
-#
-#func LevelTwoOpen(twoopen: int = 0):
-	#$Sprite2D/levelEmitter.set_parameter("CutMost", twoopen)
-	#
-#func DoorSound(dooropen: int = .2):
-	#$Sprite2D/doorEmitter.play()
-#
-#func Pickup(lightpickup: int = .2):
-	#$Sprite2D/pickupEmitter.play()
-#
-#func Pickup2(lightpickup2: int = 0):
-	#$Sprite2D/levelEmitter.set_parameter("78Section", lightpickup2)
-#
-#func Verse2(versetwo: int = 0):
-	#$Sprite2D/levelEmitter.set_parameter("Verse2", versetwo)
-
-
 var thing:bool = true
 func LoadNewScene(name:String):
 	if(switching):
