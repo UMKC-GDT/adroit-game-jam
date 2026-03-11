@@ -9,12 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="7_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="8_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_c4srv"]
-[ext_resource type="Script" uid="uid://dtb1wtf16gv5a" path="res://Scenes/Levels/node2.gd" id="18_tjygj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us0t"]
 size = Vector2(352, 34)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="Level5" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_4kscp")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
@@ -103,6 +102,3 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("8_d7gg6")]
-
-[node name="Node" type="Node" parent="." unique_id=739867317]
-script = ExtResource("18_tjygj")

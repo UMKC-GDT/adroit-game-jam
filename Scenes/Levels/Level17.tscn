@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmpk6"]
 size = Vector2(864, 42)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="Level17" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_6tp5x")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
@@ -49,23 +49,23 @@ gizmo_extents = 53.9
 
 [node name="RandomPlatform" parent="Present" unique_id=1605235542 instance=ExtResource("4_ry8xl")]
 position = Vector2(-32, 96)
-exist_chance = 0.1
 native_timeline = 0
+exist_chance = 0.1
 
 [node name="RandomPlatform2" parent="Present" unique_id=1393713418 instance=ExtResource("4_ry8xl")]
 position = Vector2(32, 56)
-exist_chance = 0.1
 native_timeline = 0
+exist_chance = 0.1
 
 [node name="RandomPlatform3" parent="Present" unique_id=1482860414 instance=ExtResource("4_ry8xl")]
 position = Vector2(-32, 16)
-exist_chance = 0.1
 native_timeline = 0
+exist_chance = 0.1
 
 [node name="RandomPlatform4" parent="Present" unique_id=4169262 instance=ExtResource("4_ry8xl")]
 position = Vector2(32, -24)
-exist_chance = 0.1
 native_timeline = 0
+exist_chance = 0.1
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("6_q0mit")]
 tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAIAPz/AAAAAAAAAQD0/wgAAAAAAAAABAAKAP3/AAAAAAAABGD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWAKAPX/AAAAAAAAAWAGAPz/AAAAAAAAAQAEAPz/AAAAAAAAAgD4/wgAAAAAAAAAAQD6/wgAAAAAAAAAAwA=")

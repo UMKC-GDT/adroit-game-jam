@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="9_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="9_t0ble"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="9_xx1y0"]
-[ext_resource type="PackedScene" uid="uid://v5pbvt3417pb" path="res://Scenes/interactable_component.tscn" id="11_3i7ro"]
+[ext_resource type="PackedScene" path="res://Scenes/interactable_component.tscn" id="11_3i7ro"]
 [ext_resource type="Script" uid="uid://bpuaymu4wlkvr" path="res://Scenes/flashlight_on_ground.gd" id="11_6ggnd"]
 [ext_resource type="Texture2D" uid="uid://cgujm83hvvr8j" path="res://Resources/flashlightimage.png" id="11_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="22_xx1y0"]
@@ -30,7 +30,7 @@ region = Rect2(0, 164, 173, 136)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3i7ro"]
 size = Vector2(84.9085, 456.42136)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="Level3" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_p6pjf")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]

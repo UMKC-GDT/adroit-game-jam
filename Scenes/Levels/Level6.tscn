@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_dn4hu"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="11_c2vyk"]
 [ext_resource type="Texture2D" uid="uid://cen65wv6ira1q" path="res://Assets/Cats/catVent.png" id="11_vxd2s"]
-[ext_resource type="Script" uid="uid://trgt1mlouu2e" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
+[ext_resource type="Script" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvllu"]
 size = Vector2(552, 24)
@@ -160,7 +160,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee7ns"]
 size = Vector2(82, 64)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="Level6" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_egu6v")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]

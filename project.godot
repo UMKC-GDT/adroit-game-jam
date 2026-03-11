@@ -44,6 +44,7 @@ folder_colors={
 "res://FmodBank/": "green",
 "res://Resources/": "teal",
 "res://Scenes/": "blue",
+"res://Scenes/Levels/": "pink",
 "res://Scripts/": "purple",
 "res://addons/": "red"
 }

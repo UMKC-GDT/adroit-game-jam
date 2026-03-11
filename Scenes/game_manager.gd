@@ -1,47 +1,53 @@
 extends Node2D
 class_name  game_manager
 
+@export var background: Sprite2D
+@export var ScreenFadeManager: Node
+@export var soundManager: SoundManager
+
 var currentScene
 var currentSceneName
 var mainMenuScene = preload("res://Scenes/MainMenu.tscn")
-@export var ScreenFadeManager: Node
+
 var isMainMenu: bool = true
 var switching := false
 
-@export var background: Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#currentScene = mainMenuScene.instantiate()
 	#$SubViewportContainer.visible = false
 	LoadNewScene("res://Scenes/MainMenu.tscn")
-	$Sprite2D/titleEmitter.play()
+	soundManager.play(SoundManager.Emitters.TITLE)
 
-func TitleMusicOutie(outieparam: int = 1):
-	$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
-
-func LevelMusicBegin(begin: int = .5):
+func LevelMusicBegin():
 	var tree = get_tree()
 	if tree:
 		await tree.create_timer(3.5).timeout
-		$Sprite2D/levelEmitter.play()
-		
-func LevelThreeSection(levelthree: int = 0):
-	$Sprite2D/levelEmitter.set_parameter("Verse1", levelthree)
+		soundManager.play(SoundManager.Emitters.LEVEL)
 
-func LevelTwoOpen(twoopen: int = 0):
-	$Sprite2D/levelEmitter.set_parameter("CutMost", twoopen)
-	
-func DoorSound(dooropen: int = .2):
-	$Sprite2D/doorEmitter.play()
 
-func Pickup(lightpickup: int = .2):
-	$Sprite2D/pickupEmitter.play()
+#func TitleMusicOutie(outieparam: int = 1):
+	#$Sprite2D/titleEmitter.set_parameter("TitleOutie", outieparam)
+#
+#func LevelThreeSection(levelthree: int = 0):
+	#$Sprite2D/levelEmitter.set_parameter("Verse1", levelthree)
+#
+#func LevelTwoOpen(twoopen: int = 0):
+	#$Sprite2D/levelEmitter.set_parameter("CutMost", twoopen)
+	#
+#func DoorSound(dooropen: int = .2):
+	#$Sprite2D/doorEmitter.play()
+#
+#func Pickup(lightpickup: int = .2):
+	#$Sprite2D/pickupEmitter.play()
+#
+#func Pickup2(lightpickup2: int = 0):
+	#$Sprite2D/levelEmitter.set_parameter("78Section", lightpickup2)
+#
+#func Verse2(versetwo: int = 0):
+	#$Sprite2D/levelEmitter.set_parameter("Verse2", versetwo)
 
-func Pickup2(lightpickup2: int = 0):
-	$Sprite2D/levelEmitter.set_parameter("78Section", lightpickup2)
-
-func Verse2(versetwo: int = 0):
-	$Sprite2D/levelEmitter.set_parameter("Verse2", versetwo)
 
 var thing:bool = true
 func LoadNewScene(name:String):

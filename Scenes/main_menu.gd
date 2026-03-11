@@ -7,7 +7,7 @@ func _ready() -> void:
 	gm = get_tree().root.get_node("GameManager")
 
 func _on_start_pressed() -> void:
-	gm.TitleMusicOutie()
+	gm.soundManager.setParameter(SoundManager.Emitters.TITLE, "TitleOutie", 1)
 	var sceneManager:game_manager = find_parent("GameManager")
 	if (sceneManager != null):
 		sceneManager.LoadNewScene("res://Scenes/Levels/Level1 (New).tscn")

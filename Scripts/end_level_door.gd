@@ -57,10 +57,10 @@ func _on_interactable_component_interacted() -> void:
 	var tree = get_tree()
 	if tree != null:
 		await tree.create_timer(.2).timeout
-		var sceneManager:game_manager = tree.root.get_node("GameManager")
-		if (sceneManager != null):
-			sceneManager.DoorSound(1)
-			sceneManager.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
+		var gm: game_manager = tree.root.get_node("GameManager")
+		if (gm != null):
+			gm.soundManager.play(SoundManager.Emitters.DOOR)
+			gm.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:
 				get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
 		

@@ -6,13 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
 
-[node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("ScreenFadeManager", "background") groups=["audio"]]
+[node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("background", "ScreenFadeManager", "soundManager") groups=["audio"]]
 script = ExtResource("1_m2tc1")
-ScreenFadeManager = NodePath("ScreenFadeManager")
 background = NodePath("Sprite2D")
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1245654437]
-bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank", "res://FmodBank/Desktop/AmbienceBank.bank", "res://FmodBank/Desktop/SFXBank.bank"]
+ScreenFadeManager = NodePath("ScreenFadeManager")
+soundManager = NodePath("SoundManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104013960]
 z_index = -1
@@ -21,9 +19,42 @@ position = Vector2(960, 540)
 scale = Vector2(1.28, 1.28)
 texture = ExtResource("3_je8vj")
 
-[node name="FmodListener2D" type="FmodListener2D" parent="Sprite2D" unique_id=1584031778]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
+offset_left = 560.0
+offset_top = 140.0
+offset_right = 1360.0
+offset_bottom = 940.0
 
-[node name="titleEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=1237939638]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1403170885]
+handle_input_locally = false
+size = Vector2i(800, 800)
+render_target_update_mode = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=449512843]
+position = Vector2(960, 540)
+texture = ExtResource("5_f5c43")
+
+[node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
+script = ExtResource("2_bwyv8")
+musicScale = 1.0
+soundEffectsScale = 1.0
+ambience = 1.0
+main = 1.0
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="SoundManager" unique_id=1245654437]
+bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/MusicBank.bank", "res://FmodBank/Desktop/AmbienceBank.bank", "res://FmodBank/Desktop/SFXBank.bank"]
+
+[node name="musicEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
+event_name = "event:/Ambience/LampandFlicker"
+event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
+fmod_parameters/LampFlicker/id = -6375880320482298193
+fmod_parameters/LampFlicker = 0.0
+fmod_parameters/LampFlicker/variant_type = 3
+
+[node name="FmodListener2D" type="FmodListener2D" parent="SoundManager" unique_id=826166070]
+position = Vector2(960, 540)
+
+[node name="titleEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1524261521]
 event_name = "event:/Music/Title Music"
 event_guid = "{40012e37-e8ac-4a83-8bfa-d124a9365b3b}"
 volume = 3.9
@@ -33,8 +64,13 @@ fmod_parameters/CutMost/variant_type = 3
 fmod_parameters/TitleOutie/id = 1202469491667461110
 fmod_parameters/TitleOutie = 0.0
 fmod_parameters/TitleOutie/variant_type = 3
+position = Vector2(960, 540)
 
-[node name="levelEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=898177010]
+[node name="FmodListener2D2" type="FmodListener2D" parent="SoundManager" unique_id=1584031778]
+position = Vector2(960, 540)
+scale = Vector2(1.28, 1.28)
+
+[node name="levelEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=898177010]
 event_name = "event:/Music/Level Music"
 event_guid = "{4157dcec-534d-4c5e-a51d-c0cb7599903c}"
 volume = 0.14
@@ -62,8 +98,10 @@ fmod_parameters/Outro/variant_type = 3
 fmod_parameters/Verse1/id = 4851196200768270940
 fmod_parameters/Verse1 = 0.0
 fmod_parameters/Verse1/variant_type = 3
+position = Vector2(960, 540)
+scale = Vector2(1.28, 1.28)
 
-[node name="doorEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=747560978]
+[node name="doorEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=747560978]
 event_name = "event:/SFX/Door"
 event_guid = "{c0acfb68-cd34-4150-aafa-e1f765259c7a}"
 attached = false
@@ -71,58 +109,18 @@ volume = 0.21
 fmod_parameters/Blank/id = -7292059903593050108
 fmod_parameters/Blank = 0.0
 fmod_parameters/Blank/variant_type = 3
+position = Vector2(960, 540)
+scale = Vector2(1.28, 1.28)
 
-[node name="pickupEmitter" type="FmodEventEmitter2D" parent="Sprite2D" unique_id=1147868569]
+[node name="pickupEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1147868569]
 event_name = "event:/SFX/LightPickup"
 event_guid = "{b9ef4a07-68e5-4fcb-ac83-c5e771288cc6}"
 attached = false
 fmod_parameters/Blank/id = -7292059903593050108
 fmod_parameters/Blank = 0.0
 fmod_parameters/Blank/variant_type = 3
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=483035321]
-offset_left = 560.0
-offset_top = 140.0
-offset_right = 1360.0
-offset_bottom = 940.0
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1403170885]
-handle_input_locally = false
-size = Vector2i(800, 800)
-render_target_update_mode = 4
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=449512843]
 position = Vector2(960, 540)
-texture = ExtResource("5_f5c43")
-
-[node name="SoundManager" type="Node2D" parent="." unique_id=993398646]
-script = ExtResource("2_bwyv8")
-musicScale = 1.0
-soundEffectsScale = 1.0
-ambience = 1.0
-main = 1.0
-
-[node name="musicEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1377296476]
-event_name = "event:/Ambience/LampandFlicker"
-event_guid = "{140d7bac-6aa9-47e0-8e09-3975a7e86a80}"
-fmod_parameters/LampFlicker/id = -6375880320482298193
-fmod_parameters/LampFlicker = 0.0
-fmod_parameters/LampFlicker/variant_type = 3
-
-[node name="FmodListener2D" type="FmodListener2D" parent="SoundManager" unique_id=826166070]
-position = Vector2(960, 540)
-
-[node name="titleEmitter" type="FmodEventEmitter2D" parent="SoundManager" unique_id=1524261521]
-event_name = "event:/Music/Title Music"
-event_guid = "{40012e37-e8ac-4a83-8bfa-d124a9365b3b}"
-volume = 3.9
-fmod_parameters/CutMost/id = -8747828631922096692
-fmod_parameters/CutMost = 0.0
-fmod_parameters/CutMost/variant_type = 3
-fmod_parameters/TitleOutie/id = 1202469491667461110
-fmod_parameters/TitleOutie = 0.0
-fmod_parameters/TitleOutie/variant_type = 3
-position = Vector2(960, 540)
+scale = Vector2(1.28, 1.28)
 
 [node name="ScreenFadeManager" parent="." unique_id=268998262 instance=ExtResource("3_b7dir")]
 visible = false

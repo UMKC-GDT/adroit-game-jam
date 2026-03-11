@@ -10,8 +10,16 @@ var gm: game_manager
 
 # Called when the node enters the scene tree for the first time. Overlaps both of them on top of each other.
 func _ready() -> void:
+	gm = get_tree().root.get_node("GameManager")
 	FutureLevel.position.x = 0
 	PresentLevel.position.x = 0
+	
+	match name:
+		"Level2":
+			gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "Verse1", 1)
+		"Level5":
+			gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "Verse2", 1)
+			gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "78Section", 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bpmvc4g1fgyjf" path="res://Assets/Cats/catRun.png" id="13_tbiw2"]
 [ext_resource type="Script" uid="uid://b64tpqlcxvhft" path="res://Scenes/Levels/animated_sprite_2d3.gd" id="13_u5eb6"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="17_458el"]
-[ext_resource type="Script" uid="uid://c1mhrrcf5h8os" path="res://Scenes/Levels/node.gd" id="17_ya3ly"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngp1c"]
 atlas = ExtResource("3_ao4h1")
@@ -117,7 +116,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbiw2"]
 
-[node name="LevelTemplate2" type="Node2D" unique_id=1908434782]
+[node name="Level2" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_70df5")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=629366256]
@@ -263,9 +262,6 @@ script = ExtResource("13_u5eb6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=2096085320]
 position = Vector2(-28, -1.5)
 shape = SubResource("RectangleShape2D_tbiw2")
-
-[node name="Node" type="Node" parent="." unique_id=262872510]
-script = ExtResource("17_ya3ly")
 
 [node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("17_458el")]
 position = Vector2(-24, -752)

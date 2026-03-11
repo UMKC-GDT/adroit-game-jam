@@ -7,6 +7,7 @@ func _ready() -> void:
 	$"Level1 Future".process_mode = Node.PROCESS_MODE_DISABLED
 	gm = get_tree().root.get_node("GameManager")
 	gm.LevelMusicBegin()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

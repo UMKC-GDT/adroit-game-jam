@@ -6,6 +6,7 @@ func _on_interactable_component_interacted() -> void:
 	$"../Player".giveFlashlight()
 	self.visible = false
 	gm = get_tree().root.get_node("GameManager")
-	gm.Pickup2(1)
-	gm.Pickup()
-	gm.LevelThreeSection(0)
+	if gm:
+		gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "78Section", 0)
+		gm.soundManager.play(SoundManager.Emitters.PICKUP)
+		gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "Verse1", 0)

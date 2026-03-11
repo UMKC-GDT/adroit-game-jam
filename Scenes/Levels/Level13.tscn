@@ -17,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tbq4"]
 size = Vector2(960, 32)
 
-[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+[node name="Level13" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7whch")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
