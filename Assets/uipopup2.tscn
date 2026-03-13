@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cs2qq2w2y4kds"]
+
+[ext_resource type="Script" uid="uid://ddomg23hker6k" path="res://Scripts/uipopup_2.gd" id="1_it363"]
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="2_y4mxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5mp8"]
+size = Vector2(16, 16)
+
+[node name="UIPopup" type="RigidBody2D" unique_id=1605235542]
+collision_layer = 3
+freeze = true
+script = ExtResource("1_it363")
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=357974407]
+texture = ExtResource("2_y4mxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029249552]
+shape = SubResource("RectangleShape2D_l5mp8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=448284378]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

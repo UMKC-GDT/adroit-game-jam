@@ -64,11 +64,11 @@ func update_light():
 
 #WARNING: VERY ESSENTIAL FUNCTIONS! If these aren't wired in any particular QuantumLight, light no work. Check for the holy wifi symbol.
 func _on_body_entered(body: Node2D) -> void:
-	if body is LightObject:
+	if body is LightObject or body.has_method("add_light"):
 		body.add_light(self)
 
 func _on_body_exited(body: Node2D) -> void:
-	if body is LightObject:
+	if body is LightObject or body.has_method("add_light"):
 		body.remove_light(self)
 
 func update_sprite():

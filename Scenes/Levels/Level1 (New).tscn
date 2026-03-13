@@ -12,6 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://dmjo1a1p3fcb1" path="res://Assets/new_future_bg.tscn" id="8_tksbl"]
 [ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="8_vihwb"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_ckits"]
+[ext_resource type="PackedScene" uid="uid://cs2qq2w2y4kds" path="res://Assets/uipopup2.tscn" id="9_x703b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x703b"]
+size = Vector2(64, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vihwb"]
+size = Vector2(80, 18)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7ekle")
@@ -63,21 +70,28 @@ position = Vector2(0, 64)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAKAAAAAAAAAAAAAQD+/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD4/wAAAAAAAAAAAQD2/wAAAAAAAAAAAQD0/wAAAAAAAAAAAQD0//z/AAAAAAAABgD0//7/AAAAAAAABgD0//r/AAAAAAAABgD0//j/AAAAAAAABgD0//b/AAAAAAAABgD0//T/AAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgAKAPb/AAAAAAAABgAKAPT/AAAAAAAABgA=")
 
 [node name="UI Message2" parent="Present" unique_id=1302920499 instance=ExtResource("6_kj67q")]
+visible = false
 position = Vector2(-104.000046, 24)
 image = ExtResource("7_x703b")
 
-[node name="UI Message" parent="Present" unique_id=246763358 instance=ExtResource("6_kj67q")]
-position = Vector2(-2.4795532e-05, 32)
+[node name="SwitchTooltip" parent="Present" unique_id=1464371221 instance=ExtResource("9_x703b")]
+position = Vector2(56, 0)
 image = ExtResource("8_vihwb")
 
-[node name="Sprite2D" parent="Present/UI Message" index="0" unique_id=505427733]
-position = Vector2(56, -32)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/SwitchTooltip/Area2D" parent_id_path=PackedInt32Array(1464371221, 448284378) index="0" unique_id=1843398243]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_x703b")
+debug_color = Color(0.9307964, 3.1188727e-05, 0.6573525, 0.41960785)
 
-[node name="Area2D" parent="Present/UI Message" index="1" unique_id=1840031543]
-position = Vector2(3.31703e-07, 8.34758)
+[node name="UIPopup" parent="Present" unique_id=1793493875 instance=ExtResource("9_x703b")]
+position = Vector2(-104, 0)
+image = ExtResource("7_x703b")
+requires_input = false
+interact_action = ""
 
-[node name="CollisionShape2D" parent="Present/UI Message/Area2D" index="0" unique_id=698046913]
-position = Vector2(57.599976, -1.547596)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/UIPopup/Area2D" parent_id_path=PackedInt32Array(1793493875, 448284378) index="0" unique_id=1809604975]
+position = Vector2(-16, 31)
+shape = SubResource("RectangleShape2D_vihwb")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -115,18 +129,15 @@ native_timeline = 1
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_o8mjm")]
 tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAQACAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQD+/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD0/wIAAAAAAAAABgD0/wAAAAAAAAAABgD0//7/AAAAAAAABgD0//z/AAAAAAAABgD0//r/AAAAAAAABgAKAAIAAAAAAAAABgAKAAAAAAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgD0//j/AAAAAAAABgA=")
 
-[node name="UI Message" parent="Future" unique_id=467744185 instance=ExtResource("6_kj67q")]
-position = Vector2(39.999977, 32)
+[node name="DoorTooltip" parent="Future" unique_id=225740833 instance=ExtResource("9_x703b")]
+position = Vector2(96, 0)
 image = ExtResource("8_vihwb")
+native_timeline = 1
 
-[node name="Sprite2D" parent="Future/UI Message" index="0" unique_id=505427733]
-position = Vector2(56, -32)
-
-[node name="Area2D" parent="Future/UI Message" index="1" unique_id=1840031543]
-position = Vector2(3.31703e-07, 8.34758)
-
-[node name="CollisionShape2D" parent="Future/UI Message/Area2D" index="0" unique_id=698046913]
-position = Vector2(57.599976, -1.547596)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Future/DoorTooltip/Area2D" parent_id_path=PackedInt32Array(225740833, 448284378) index="0" unique_id=1444149792]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_x703b")
+debug_color = Color(0.9307964, 3.1188727e-05, 0.6573525, 0.41960785)
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_ckits")]
 position = Vector2(0, 48)
@@ -149,5 +160,6 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[editable path="Present/UI Message"]
-[editable path="Future/UI Message"]
+[editable path="Present/SwitchTooltip"]
+[editable path="Present/UIPopup"]
+[editable path="Future/DoorTooltip"]
