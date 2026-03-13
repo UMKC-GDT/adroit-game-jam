@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_si0dp"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="4_lvllu"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="5_i0oxw"]
-[ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/flickering_lamp.tscn" id="5_iqc0i"]
+[ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/Lamps/flickering_lamp.tscn" id="5_iqc0i"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="5_ksrqp"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_bkrib"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_fdpi5"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_dn4hu"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="11_c2vyk"]
 [ext_resource type="Texture2D" uid="uid://cen65wv6ira1q" path="res://Assets/Cats/catVent.png" id="11_vxd2s"]
-[ext_resource type="Script" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
+[ext_resource type="Script" uid="uid://trgt1mlouu2e" path="res://Scenes/Levels/animated_sprite_2d2.gd" id="12_x36ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvllu"]
 size = Vector2(552, 24)

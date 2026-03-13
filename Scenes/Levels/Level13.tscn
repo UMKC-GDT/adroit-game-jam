@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_7whch"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_1aop2"]
-[ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/flickering_lamp.tscn" id="3_eqo3r"]
+[ext_resource type="PackedScene" uid="uid://dmexsu4bbo765" path="res://Assets/Level Elements/Lamps/flickering_lamp_dom.tscn" id="3_66tb3"]
 [ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="4_i4itb"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="6_q7e3a"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_0tbq4"]
+[ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="7_1aop2"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="7_p2sm2"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="7_tdku2"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="8_7al5c"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_oublu"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="10_66tb3"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_q7e3a"]
@@ -31,9 +31,8 @@ texture = ExtResource("3_1aop2")
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)
 
-[node name="FlickeringLamp" parent="Present" unique_id=177997193 instance=ExtResource("3_eqo3r")]
+[node name="FlickeringLamp2" parent="Present" unique_id=177997193 instance=ExtResource("3_66tb3")]
 position = Vector2(-64, 24)
-light_priority = 100
 
 [node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
 enabled = false
@@ -93,9 +92,8 @@ position = Vector2(144, -24)
 nextScene = "Level14"
 native_timeline = 1
 
-[node name="FlickeringLamp" parent="Future" unique_id=1698270285 instance=ExtResource("8_7al5c")]
+[node name="staticLamp" parent="Future" unique_id=601519667 instance=ExtResource("7_1aop2")]
 position = Vector2(80, 136)
-light_priority = 100
 
 [node name="Door Switch" parent="Future" unique_id=1852039823 instance=ExtResource("7_p2sm2")]
 position = Vector2(80, 80)

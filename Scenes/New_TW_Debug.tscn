@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_4oo8x"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_6htui"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_fb202"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="10_6eafy"]
-[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/switch_lamp.tscn" id="10_rhqb2"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/Lamps/static_lamp.tscn" id="10_6eafy"]
+[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/Lamps/switch_lamp.tscn" id="10_rhqb2"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7auye")

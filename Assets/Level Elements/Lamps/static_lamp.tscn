@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://tx74hu560tcn"]
+
+[ext_resource type="Script" uid="uid://di1o6j3wsr1o1" path="res://Scripts/StaticLight.gd" id="1_clpba"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_4rbu6"]
+[ext_resource type="Texture2D" uid="uid://fl1bnf8tqcwa" path="res://Resources/Lamp2.png" id="3_id6ed"]
+
+[node name="staticLamp" type="Node2D" unique_id=177997193]
+script = ExtResource("1_clpba")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_4rbu6")]
+position = Vector2(3.8146973e-06, -100.99999)
+rotation = 3.1415925
+scale = Vector2(0.4316818, -0.502226)
+light_priority = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642856132]
+texture_filter = 1
+position = Vector2(0, -95)
+scale = Vector2(1.8500001, 1.75)
+texture = ExtResource("3_id6ed")

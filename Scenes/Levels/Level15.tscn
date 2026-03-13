@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bk4g5yek5k6yq"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_w6wjj"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="3_uui2j"]
+[ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="3_0t128"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_jypyp"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="5_15av0"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="7_63v6w"]
@@ -49,9 +49,8 @@ tile_map_data = PackedByteArray("AAD2////AAAAAAAAAQD4////AAAAAAAAAQD6////AAAAAAA
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("3_uui2j")]
+[node name="staticLamp" parent="Future" unique_id=177997193 instance=ExtResource("3_0t128")]
 position = Vector2(144, -64)
-light_priority = 100
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)

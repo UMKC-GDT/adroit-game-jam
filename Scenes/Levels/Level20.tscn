@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_1dupi"]
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_cwxdv"]
+[ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="4_5ifsr"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_g4s0j"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="5_8s7yx"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="7_nvt2r"]
 [ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="8_r6g6w"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="9_nc45w"]
@@ -56,9 +56,8 @@ tile_map_data = PackedByteArray("AAD2/wkAAAAAAAAAAQD4/wkAAAAAAAAAAQD6/wkAAAAAAAA
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("5_8s7yx")]
+[node name="staticLamp" parent="Future" unique_id=177997193 instance=ExtResource("4_5ifsr")]
 position = Vector2(144, 104)
-light_priority = 100
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
 scale = Vector2(1.0012594, 0.7510287)

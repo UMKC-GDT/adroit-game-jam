@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://diyolgkm3d6wl"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_70df5"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_4rk67"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_62f1r"]
+[ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_f8qf7"]
+[ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/Lamps/flickering_lamp.tscn" id="5_5iseo"]

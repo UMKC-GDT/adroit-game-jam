@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://2uetjiu4qqk4"]
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_7ekle"]
-[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/switch_lamp.tscn" id="2_ketah"]
+[ext_resource type="PackedScene" uid="uid://d3y81cmb14wfl" path="res://Assets/Level Elements/Lamps/switch_lamp_dom.tscn" id="2_x703b"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_mob6b"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_y3xae"]
 [ext_resource type="PackedScene" uid="uid://d4efsdnk2onpy" path="res://Assets/new_present_bg.tscn" id="5_o8mjm"]
@@ -23,11 +23,10 @@ size = Vector2(80, 18)
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7ekle")
 
-[node name="SwitchLamp" parent="." unique_id=177997193 instance=ExtResource("2_ketah")]
+[node name="SwitchLamp2" parent="." unique_id=1700111866 instance=ExtResource("2_x703b")]
 position = Vector2(-336, -176)
 rotation = -0.7550982
 scale = Vector2(4.321954, 1.483528)
-light_priority = 100
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -62,7 +61,7 @@ gizmo_extents = 53.9
 [node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("4_y3xae")]
 z_as_relative = false
 position = Vector2(56, 40)
-target = NodePath("../../SwitchLamp")
+target = NodePath("")
 persistent = true
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_mob6b")]

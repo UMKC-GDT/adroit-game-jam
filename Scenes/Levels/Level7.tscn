@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_udhth"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_1a1an"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_rxtma"]
-[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/static_lamp.tscn" id="9_tcs12"]
+[ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/Lamps/static_lamp.tscn" id="9_tcs12"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="11_rxtma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgnfb"]
