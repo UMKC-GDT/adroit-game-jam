@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bf6im800627gy"]
+
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="2_23bca"]
+
+[sub_resource type="GDScript" id="GDScript_g1gl0"]
+script/source = "extends Area2D
+class_name UIPopup
+
+@export var native_timeline: Global.Timeline = Global.Timeline.PRESENT
+
+#This array stores the lights currently observing this object, to allow us to check who has the most priority and who's say goes.
+var overlapping_lights: Array[QuantumLight] = []
+
+#Do you exist? Did you exist?
+var is_active: bool
+var was_active: bool = true # Tracks the previous state
+
+#EVERYTHING ELSE, up there, was copied from the LightObject functionality. Here's what's unique to this being a tooltip.
+
+@export var image: Texture2D
+@onready var collision_shape = $CollisionShape2D
+@onready var sprite: Sprite2D = $Sprite2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	sprite.texture = image
+	sprite.scale = Vector2(2,0.0)
+	
+	update_state()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print(is_active)
+	pass
+
+func _on_body_entered(body: Node2D) -> void:
+	#The main popup logic. IF the thing that's entered us is the player, and our is_active is true, then we show as a UI element!
+	if not body.is_in_group(\"Player\"): return
+	if not is_active: return
+	
+	print(\"I'm active and someone's entered me!\")
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite, \"scale\", Vector2(2,2), .2) # Replace with function body.
+	tween.tween_property(sprite, \"modulate:a\", 1.0, 1) # Replace with function body
+	tween.tween_property(sprite, \"modulate:a\", 0.0, 1.5) # Replace with function body.
+
+
+##Called when this object enters a quantum light so it can update its observation state. 
+func add_light(light: QuantumLight):
+	if not light in overlapping_lights:
+		overlapping_lights.append(light)
+	
+	print(\"I'm being observed!\")
+	
+	update_state()
+
+##Called when this object leaves a quantum light, so it can update its observation state.
+func remove_light(light: QuantumLight):
+	overlapping_lights.erase(light)
+	update_state()
+
+##The big honcho. Called when this object enters the scene and when we observe or unobserve it. Based on the priority of the overlapping lights when its called, decides whether this object is active or not and handles programmatic physics and appearance.
+func update_state():
+	
+	#If no one's looking at us, we don't exist. Otherwise, check for the most dominant light that's looking at us, and follow what it says.
+	if overlapping_lights.is_empty():
+		is_active = false
+	else:
+		
+		var dominant_light = overlapping_lights[0]
+		for light in overlapping_lights:
+			
+			if (not light.timeline_type == Global.Timeline.OFF) and light.light_priority > dominant_light.light_priority:
+				dominant_light = light
+		
+		is_active = (dominant_light.timeline_type == native_timeline)
+	
+
+	# Update the tracker for the next time this runs
+	was_active = is_active
+"
+
+[node name="UIPopup" type="Area2D" unique_id=1801866526]
+collision_layer = 3
+script = SubResource("GDScript_g1gl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=569276732]
+texture = ExtResource("2_23bca")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -92,6 +92,7 @@ interact_action = ""
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/UIPopup/Area2D" parent_id_path=PackedInt32Array(1793493875, 448284378) index="0" unique_id=1809604975]
 position = Vector2(-16, 31)
 shape = SubResource("RectangleShape2D_vihwb")
+debug_color = Color(0.9325177, 2.4931729e-05, 0.6504518, 0.41960785)
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
