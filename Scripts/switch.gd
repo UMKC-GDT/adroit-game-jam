@@ -1,6 +1,7 @@
 extends LightObject
 class_name Switch
 
+var gm: game_manager
 @export var target: Node2D
 @export var persistent = false
 
@@ -14,6 +15,7 @@ var is_switch_on: bool = false
 
 func _ready() -> void:
 	
+	gm = get_tree().root.get_node("GameManager")
 	if native_timeline == Global.Timeline.FUTURE:
 		future_sprite.show()
 		active_sprite = future_sprite
@@ -41,6 +43,8 @@ func _on_interactable_component_interacted() -> void:
 	if is_active:
 		is_switch_on = !is_switch_on
 		print("I worked!")
+		gm.soundManager.play(SoundManager.Emitters.SWITCH)
+		gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "CutMost", 0)
 		update_target()
 
 # 3. THE QUANTUM LOGIC

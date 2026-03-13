@@ -10,7 +10,12 @@ func _on_start_pressed() -> void:
 	gm.soundManager.setParameter(SoundManager.Emitters.TITLE, "TitleOutie", 1)
 	var sceneManager:game_manager = find_parent("GameManager")
 	if (sceneManager != null):
+		var tree = get_tree()
+		if tree:
+			await tree.create_timer(3.5).timeout
+			gm.soundManager.play(SoundManager.Emitters.LEVEL)
 		sceneManager.LoadNewScene("res://Scenes/Levels/Level1 (New).tscn")
+		
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Levels/Level1 (New).tscn")
 
