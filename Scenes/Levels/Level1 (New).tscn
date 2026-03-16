@@ -27,6 +27,7 @@ script = ExtResource("1_7ekle")
 position = Vector2(-336, -176)
 rotation = -0.7550982
 scale = Vector2(4.321954, 1.483528)
+powered = false
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -61,7 +62,7 @@ gizmo_extents = 53.9
 [node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("4_y3xae")]
 z_as_relative = false
 position = Vector2(56, 40)
-target = NodePath("")
+target = NodePath("../../SwitchLamp2")
 persistent = true
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_mob6b")]

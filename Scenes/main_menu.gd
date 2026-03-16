@@ -12,7 +12,7 @@ func _on_start_pressed() -> void:
 	if (sceneManager != null):
 		var tree = get_tree()
 		if tree:
-			await tree.create_timer(3.5).timeout
+			#await tree.create_timer(3.5).timeout
 			gm.soundManager.play(SoundManager.Emitters.LEVEL)
 		sceneManager.LoadNewScene("res://Scenes/Levels/Level1 (New).tscn")
 		

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_ebwqq"]
 [ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="3_s5jet"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_uuvqq"]
+[ext_resource type="PackedScene" uid="uid://cs2qq2w2y4kds" path="res://Assets/uipopup2.tscn" id="6_n1ahd"]
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="7_lhiu5"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="7_n1ahd"]
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_ljqb7"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_py4pg"]
@@ -11,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_ljqb7"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="10_n1ahd"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="11_s5jet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0doq"]
+size = Vector2(64, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljqb7"]
 size = Vector2(1040, 42)
@@ -60,6 +65,14 @@ target = NodePath("../../Future/SwitchDoor")
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("7_n1ahd")]
 position = Vector2(304, 64)
 tile_map_data = PackedByteArray("AADj/wAAAAAAAAAAAQDl/wAAAAAAAAAAAQDn/wAAAAAAAAAAAQDh/wAAAAAAAAAABADp/wAAAAAAAAAAAQDr/wAAAAAAAAAAAQDt/wAAAAAAAAAAAQDv/wAAAAAAAAAAAQDx/wEAAAAAAAAABGDx////AAAAAAAAAWDx//3/AAAAAAAAAWDx//v/AAAAAAAAAWDx//n/AAAAAAAAAWDx//f/AAAAAAAAAWDw//X/AAAAAAAAATDu//X/AAAAAAAAATDs//X/AAAAAAAAATDq//X/AAAAAAAAATDo//X/AAAAAAAAATDm//X/AAAAAAAAATDk//X/AAAAAAAAATDi//b/AAAAAAAAAVDi//j/AAAAAAAAAVDi//r/AAAAAAAAAVDi//z/AAAAAAAAAVDi//7/AAAAAAAAAVDy//X/AAAAAAAABDDi//T/AAAAAAAABFDh//L/AAAAAAAABgDj//L/AAAAAAAABgDl//L/AAAAAAAABgDn//L/AAAAAAAABgDp//L/AAAAAAAABgDr//L/AAAAAAAABgDt//L/AAAAAAAABgDv//L/AAAAAAAABgDx//L/AAAAAAAABgDz//L/AAAAAAAABgD1//L/AAAAAAAABgDz//T/AAAAAAAABgD1//T/AAAAAAAABgDz//b/AAAAAAAABgD1//b/AAAAAAAABgDz//j/AAAAAAAABgD1//j/AAAAAAAABgDz//r/AAAAAAAABgD1//r/AAAAAAAABgDz//z/AAAAAAAABgD1//z/AAAAAAAABgDz//7/AAAAAAAABgD1//7/AAAAAAAABgDz/wAAAAAAAAAABgD1/wAAAAAAAAAABgDh/wIAAAAAAAAABgDh/wQAAAAAAAAABgDj/wQAAAAAAAAABgDj/wIAAAAAAAAABgDl/wIAAAAAAAAABgDl/wQAAAAAAAAABgDn/wQAAAAAAAAABgDn/wIAAAAAAAAABgDp/wIAAAAAAAAABgDp/wQAAAAAAAAABgDr/wQAAAAAAAAABgDr/wIAAAAAAAAABgDt/wIAAAAAAAAABgDt/wQAAAAAAAAABgDv/wQAAAAAAAAABgDv/wIAAAAAAAAABgDx/wIAAAAAAAAABgDx/wQAAAAAAAAABgDz/wQAAAAAAAAABgDz/wIAAAAAAAAABgD1/wIAAAAAAAAABgD1/wQAAAAAAAAABgA=")
+
+[node name="UIPopup" parent="Present" unique_id=467185598 instance=ExtResource("6_n1ahd")]
+position = Vector2(-56, 0)
+image = ExtResource("7_lhiu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Present/UIPopup/Area2D" parent_id_path=PackedInt32Array(467185598, 448284378) index="0" unique_id=1199569992]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_g0doq")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -126,3 +139,5 @@ position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_ljqb7")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("11_s5jet")]
+
+[editable path="Present/UIPopup"]

@@ -2,7 +2,9 @@ extends LightObject
 class_name UIPopup22
 
 @export var image: Texture2D
-@export var requires_input: bool = true
+@export var requires_trigger: bool = false
+@export var trigger_action: String
+@export var waitfor_input: bool = true
 @export var interact_action: String = "interact" # Set this to "ui_accept" or your custom "E" action
 @export var bob_height: float = 5.0
 @export var bob_speed: float = 4.0
@@ -10,6 +12,7 @@ class_name UIPopup22
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var start_y: float = sprite.position.y
 
+var has_triggered: bool = false
 var player_inside: bool = false
 var tween: Tween
 
@@ -23,6 +26,10 @@ func _ready() -> void:
 	update_state()
 
 func _process(delta: float) -> void:
+	
+	if self.native_timeline == Global.Timeline.OFF:
+		is_active = true
+	
 	# Only bother doing the math if the popup is actually visible
 	if sprite.modulate.a > 0:
 		# Time.get_ticks_msec() keeps the wave looping endlessly
@@ -31,7 +38,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and is_active:
 		player_inside = true
-		show_popup()
+		if not requires_trigger:
+			show_popup()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -41,7 +49,14 @@ func _on_body_exited(body: Node2D) -> void:
 		hide_popup()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not requires_input: return
+	if not waitfor_input: return
+	if not player_inside: return
+	
+	if requires_trigger and not has_triggered:
+		if event.is_action_pressed(trigger_action):
+			has_triggered = true
+			show_popup()
+		return
 	
 	# If player is here and hits the button, kill the popup
 	if player_inside and event.is_action_pressed(interact_action):
@@ -86,6 +101,11 @@ func update_state():
 				dominant_light = light
 		
 		is_active = (dominant_light.timeline_type == native_timeline)
+	
+	if native_timeline == Global.Timeline.OFF:
+		is_active = true
+		print("I'm set to off, so I'm no longer time sensitive!")
+	
 	
 	visible = is_active
 	

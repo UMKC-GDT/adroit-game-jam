@@ -50,7 +50,7 @@ func update_state():
 
 	if is_tangible:
 		# Here, we specify physics to be on two different layers so that a Present object and a Future object can exist in the same coordinates without seeing each other. 
-		var physics_layer = 3 if native_timeline == Timeline.PRESENT else 4
+		var physics_layer = 3 if native_timeline == Global.Timeline.PRESENT else 4
 		
 		#Set our world layer and mask, so it only collides if it's meant to exist at the moment.
 		call_deferred("set_collision_layer_value", 1, is_active) # World Layer

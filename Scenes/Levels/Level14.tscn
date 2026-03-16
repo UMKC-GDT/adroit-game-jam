@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_dseu3"]
 [ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="2_5dl6q"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_3373x"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="5_3373x"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_52mrl"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="6_x5xhc"]
@@ -17,6 +18,11 @@ size = Vector2(1040, 84.5)
 
 [node name="Level14" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_dseu3")
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=1404345826]
+position = Vector2(-7, 0)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("2_3373x")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -48,8 +54,9 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="Door Switch" parent="Present" unique_id=1605235542 instance=ExtResource("5_3373x")]
+[node name="Door Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("5_3373x")]
 position = Vector2(104, -80)
+target = NodePath("../SwitchDoor")
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_52mrl")]
 position = Vector2(144, 106)

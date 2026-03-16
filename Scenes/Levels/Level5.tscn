@@ -5,13 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="4_agfdu"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_1us0t"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="5_34e73"]
+[ext_resource type="PackedScene" uid="uid://cs2qq2w2y4kds" path="res://Assets/uipopup2.tscn" id="6_bvsh1"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="6_hy6wf"]
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="7_6t0vn"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="7_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="8_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_c4srv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us0t"]
 size = Vector2(352, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyf00"]
+size = Vector2(64, 20)
 
 [node name="Level5" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_4kscp")
@@ -102,3 +107,13 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_1us0t")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("8_d7gg6")]
+
+[node name="UIPopup" parent="." unique_id=1605235542 instance=ExtResource("6_bvsh1")]
+position = Vector2(104, -8)
+image = ExtResource("7_6t0vn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UIPopup/Area2D" parent_id_path=PackedInt32Array(1605235542, 448284378) index="0" unique_id=1056006148]
+position = Vector2(24, 48)
+shape = SubResource("RectangleShape2D_eyf00")
+
+[editable path="UIPopup"]

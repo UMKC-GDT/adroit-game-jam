@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_inj8u"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/Lamps/static_lamp.tscn" id="6_ca5bt"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="7_fsn6e"]
+[ext_resource type="PackedScene" uid="uid://cs2qq2w2y4kds" path="res://Assets/uipopup2.tscn" id="7_l5kak"]
+[ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="8_1u1uf"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_uw8xp"]
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="8_xp8yv"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_4upjg"]
@@ -12,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="10_bose6"]
 [ext_resource type="Texture2D" uid="uid://o11ur55ka6m5" path="res://Assets/Cats/catGone.png" id="11_613b2"]
 [ext_resource type="Texture2D" uid="uid://d1duu24uidybs" path="res://Assets/Cats/catStandUp.png" id="12_fsn6e"]
-[ext_resource type="Script" uid="uid://lufdqym8t3nv" path="res://Scenes/Levels/animated_sprite_2d.gd" id="12_l5kak"]
+[ext_resource type="Script" path="res://Scenes/Levels/animated_sprite_2d.gd" id="12_l5kak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfawm"]
 size = Vector2(352, 42)
@@ -258,6 +260,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsn6e"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qdnk"]
+size = Vector2(64, 20)
+
 [node name="Level4" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_xgp81")
 
@@ -410,8 +415,17 @@ shape = SubResource("RectangleShape2D_fsn6e")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_bfawm")]
 
+[node name="UIPopup" parent="." unique_id=1605235542 instance=ExtResource("7_l5kak")]
+position = Vector2(112, -8)
+image = ExtResource("8_1u1uf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UIPopup/Area2D" parent_id_path=PackedInt32Array(1605235542, 448284378) index="0" unique_id=1429827128]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_8qdnk")
+
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
 
 [editable path="Present/StaticLamp"]
 [editable path="Present/StaticLamp2"]
+[editable path="UIPopup"]

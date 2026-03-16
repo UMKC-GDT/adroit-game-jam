@@ -54,8 +54,9 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="Door Switch" parent="Present" unique_id=1605235542 instance=ExtResource("4_25b2x")]
+[node name="Door Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target") instance=ExtResource("4_25b2x")]
 position = Vector2(-64, -72)
+target = NodePath("../SwitchDoor")
 
 [node name="SwitchDoor" parent="Present" unique_id=1734561288 instance=ExtResource("7_yyawk")]
 position = Vector2(72, 120)

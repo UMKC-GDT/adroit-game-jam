@@ -70,8 +70,9 @@ rotation = 6.2831855
 native_timeline = 0
 walljump = true
 
-[node name="Door Switch" parent="Present" unique_id=985601875 instance=ExtResource("6_aibtj")]
+[node name="Door Switch" parent="Present" unique_id=985601875 node_paths=PackedStringArray("target") instance=ExtResource("6_aibtj")]
 position = Vector2(48, -80)
+target = NodePath("../SwitchDoor2")
 
 [node name="Wall3" parent="Present" unique_id=389045415 instance=ExtResource("4_bwo3a")]
 position = Vector2(160, -96)
@@ -123,13 +124,14 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="Door Switch" parent="Future" unique_id=1501715318 instance=ExtResource("6_aibtj")]
+[node name="Door Switch" parent="Future" unique_id=1501715318 node_paths=PackedStringArray("target") instance=ExtResource("6_aibtj")]
 position = Vector2(96, 120)
+target = NodePath("../../Present/SwitchDoor")
 native_timeline = 1
 
 [node name="RandomPlatform" parent="Future" unique_id=1558261178 instance=ExtResource("9_b3h8f")]
 position = Vector2(0, 128)
-exist_chance = 0.1
+exist_chance = 0.2
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("13_lbk1i")]
 tile_map_data = PackedByteArray("AAD2/wkAAAAAAAAAAQD4/wkAAAAAAAAAAQD6/wkAAAAAAAAAAwD0/wkAAAAAAAAABAD1/wcAAAAAAAAAAVD1/wUAAAAAAAAAAVD1/wMAAAAAAAAAAVD1/wEAAAAAAAAAAVD1////AAAAAAAAAVD1//3/AAAAAAAAAVD1//v/AAAAAAAAAVD1//n/AAAAAAAAAVD1//f/AAAAAAAAAVD1//X/AAAAAAAAAVADAAkAAAAAAAAAAgAFAAkAAAAAAAAAAQAHAAkAAAAAAAAAAQAJAPb/AAAAAAAAB2AJAPj/AAAAAAAAB2AJAPr/AAAAAAAAB2AJAPz/AAAAAAAAB2AJAP7/AAAAAAAAB2AJAAAAAAAAAAAAB2AJAAIAAAAAAAAAB2AJAAQAAAAAAAAAB2AJAAYAAAAAAAAAB2AJAAgAAAAAAAAAB2AJAAoAAAAAAAAABGA=")
