@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkk0sx0w5q3s2"]
 
-[ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_c8n8s"]
+[ext_resource type="Script" uid="uid://dl2rnevi75rf" path="res://Scripts/credits_scene.gd" id="1_c8n8s"]
 [ext_resource type="Texture2D" uid="uid://dnrhfkmb6v10v" path="res://Resources/MainMenu_Background.png" id="2_5a4fm"]
 
 [node name="CreditsScene" type="Node2D" unique_id=378000155]
@@ -12,12 +12,12 @@ scale = Vector2(4.312923, 4.5)
 texture = ExtResource("2_5a4fm")
 
 [node name="Label" type="Label" parent="." unique_id=1121219130]
-offset_left = 546.0
-offset_top = 750.0
-offset_right = 1797.0
-offset_bottom = 3022.0
+offset_left = 683.0
+offset_top = 802.0
+offset_right = 1934.0
+offset_bottom = 3074.0
 scale = Vector2(1.269736, 1.7982317)
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 50
 text = "
 
 Cameron Cianciolo
@@ -38,10 +38,11 @@ Trevor Norton
 
 Maya-Rose Yancey
 
-Special Thanks to: 
+Special Thanks to:
+Sailor Usher 
 Sarah Beth Schulz 
 and
 The UMKC School of Science 
-and Engineering"
+and Engineering Dean"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

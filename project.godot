@@ -15,10 +15,10 @@ General/banks_path="res://FmodBank/Desktop"
 [application]
 
 config/name="Adroit Game Jam"
+config/tags=PackedStringArray("umkc")
 run/main_scene="uid://dgox0p43wenhf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
-config/tags=PackedStringArray("umkc")
 
 [autoload]
 
