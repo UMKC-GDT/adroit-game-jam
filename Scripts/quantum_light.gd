@@ -43,18 +43,11 @@ func _process(delta: float) -> void:
 			light_sprite.modulate = present_color
 	
 	pass
-	
+
+## Updates lights to tell them to show any new objects
+## [br]Should be called after [member timeline_type] is changed or
+## [member flip_timeline()] is called.
 func update_light():
-	if timeline_type == Global.Timeline.FUTURE:
-		#Future: 217,255,255
-		if light_sprite: 
-			light_sprite.modulate = future_color
-		
-	elif timeline_type == Global.Timeline.PRESENT:
-		#Present: 
-		if light_sprite:
-			light_sprite.modulate = present_color
-	
 	# Just poke the objects and tell them to look at your new color
 	for body in get_overlapping_bodies():
 		if body is LightObject:
@@ -70,7 +63,11 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is LightObject or body.has_method("add_light"):
 		body.remove_light(self)
+###
 
+## Updates a lights sprite to it's current [member timeline_type]
+## [br]Should be called after [member timeline_type] is changed or
+## [member flip_timeline()] is called.
 func update_sprite():
 	if !light_sprite:
 		return
@@ -78,4 +75,11 @@ func update_sprite():
 		light_sprite.modulate = present_color
 	elif timeline_type == Global.Timeline.FUTURE:
 		light_sprite.modulate = future_color
-	
+
+
+## Flips the lights timeline to the opposite timeline
+func flip_timeline():
+	if timeline_type == Global.Timeline.PRESENT:
+		timeline_type = Global.Timeline.FUTURE
+	elif timeline_type == Global.Timeline.FUTURE:
+		timeline_type = Global.Timeline.PRESENT

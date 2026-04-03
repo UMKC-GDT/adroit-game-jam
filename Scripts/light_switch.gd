@@ -18,8 +18,9 @@ func _process(delta: float) -> void:
 
 func _on_interactable_component_interacted() -> void:
 	$switchEmitter.play()
-	gm = get_tree().root.get_node("GameManager")
-	gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "CutMost", 0)
+	if gm:
+		gm = get_tree().root.get_node("GameManager")
+		gm.soundManager.setParameter(SoundManager.Emitters.LEVEL, "CutMost", 0)
 	isOn = !isOn
 	if isOn: #Just turned on by the function
 		$Sprite2D.texture = onTexture

@@ -25,17 +25,16 @@ var timeline_type = Global.Timeline.PRESENT
 
 func _ready() -> void:
 	# add any aditions sources to the array
-	addAdditionLights()
-	
 	circle.shape.radius = auraRadius
 	
+	# Update main flashlight parts
 	timeline_type = starting_light
 	for light in lightingAreas:
 		light.timeline_type = timeline_type
 		light.update_sprite()
 		light.update_light()
 		light.light_priority = lightPriority
-	
+
 	lastMousePosition = get_global_mouse_position()
 
 
@@ -70,6 +69,7 @@ func _unhandled_input(event): # Listen for a standard Left Mouse Click
 		swap_timeline()
 
 
+## Switches the player's flashlight to the opposite timeline
 func swap_timeline() -> void:
 	if timeline_type == Global.Timeline.OFF: # do nothin of its off
 		return
@@ -87,18 +87,28 @@ func set_starting_light(isPresent: bool):
 		updateTimeline(Global.Timeline.FUTURE)
 
 
+## Changes the player's light to a new timeline type.
 func updateTimeline(type: Global.Timeline):
 	timeline_type = type
+	# Updates local light areas
 	for light in lightingAreas:
 		#if print("Updating this light to..." + str(Global.Timeline.keys()[timeline_type]))
-		light.timeline_type = timeline_type
+		light.timeline_type = self.timeline_type
 		light.update_sprite()
 		light.update_light()
+	
+	# Updates addition light areas
+	for light in AdditionLightAreas:
+		light.beam.flip_timeline()
+		light.beam.update_sprite()
+		light.beam.update_light()
 
 
+## Gets current rotation of the flashlight.
 func getRotation():
 	return abs(fmod(flashlightArea.rotation_degrees, 360))/2
 
+## Toggles the player's light on or off.
 func toggleLight(state: bool):
 	for light in lightingAreas:
 		light.visible = state
@@ -109,8 +119,3 @@ func toggleLight(state: bool):
 	for light in lightingAreas:
 		light.timeline_type = timeline_type
 		light.update_light()
-
-func addAdditionLights():
-	for light in AdditionLightAreas:
-		lightingAreas.push_back(light.beam)
-	AdditionLightAreas.clear()

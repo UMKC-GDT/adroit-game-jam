@@ -6,7 +6,11 @@ var gm: game_manager
 func _ready() -> void:
 	$"Level1 Future".process_mode = Node.PROCESS_MODE_DISABLED
 	gm = get_tree().root.get_node("GameManager")
-	gm.LevelMusicBegin()
+	if gm:
+		print_rich("[color=green]", self, " got game manager [/color]")
+		gm.LevelMusicBegin()
+	else:
+		print_rich("[color=red]", self, " could not get game manager[/color]")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

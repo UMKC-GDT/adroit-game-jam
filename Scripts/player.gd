@@ -60,7 +60,6 @@ func _ready() -> void:
 	spawnPosition = self.position
 	
 	flashlight.AdditionLightAreas = self.addtionalLightAreas
-	flashlight.addAdditionLights()
 	flashlight.set_starting_light(starting_present)
 	
 	#NOTE: Both SpriteLight and SpriteNolight NEED to start off as invisible. This code below will decide which to activate.

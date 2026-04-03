@@ -17,8 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0doq"]
 size = Vector2(64, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljqb7"]
-size = Vector2(1040, 42)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n1ahd"]
 
 [node name="Level12" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_b5iej")
@@ -136,7 +135,7 @@ currentScene = "Level12"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2032458158]
 position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_ljqb7")
+shape = SubResource("WorldBoundaryShape2D_n1ahd")
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("11_s5jet")]
 
