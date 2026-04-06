@@ -3,6 +3,8 @@ class_name Switch
 
 var gm: game_manager
 @export var target: Node2D
+@export var target2: Node2D
+@export var target3: Node2D
 @export var persistent = false
 
 @onready var future_sprite: AnimatedSprite2D = $FutureSprite
@@ -68,3 +70,7 @@ func update_state() -> void:
 func update_target() -> void:
 	if target:
 		target.set_power(is_switch_on)
+	if target2:
+		target2.set_power(is_switch_on)
+	if target3:
+		target3.set_power(is_switch_on)
