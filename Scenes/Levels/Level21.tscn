@@ -1,0 +1,108 @@
+[gd_scene format=4 uid="uid://xahdjm1qqase"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_4xpdk"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="2_t6tid"]
+[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="3_s4jev"]
+[ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="4_t86km"]
+[ext_resource type="PackedScene" uid="uid://ce0w8quk7idn7" path="res://Scenes/end_level_door_present.tscn" id="5_fjs1q"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="6_1dupi"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="7_0fhnx"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="8_cwxdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibewp"]
+size = Vector2(1040, 84.5)
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_4xpdk")
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("2_t6tid")]
+tile_map_data = PackedByteArray("AAD2/wkAAAAAAAAABAD4/wkAAAAAAAAAAQD8/wkAAAAAAAAAAQD+/wkAAAAAAAAAAQAAAAkAAAAAAAAAAQACAAkAAAAAAAAAAQAEAAkAAAAAAAAAAQAIAAgAAAAAAAAAB2AIAAYAAAAAAAAAB2AIAAQAAAAAAAAAB2AIAAIAAAAAAAAAB2AIAAAAAAAAAAAAB2AIAP7/AAAAAAAAB2AIAPz/AAAAAAAAB2AIAPr/AAAAAAAAB2AIAPj/AAAAAAAAAWAHAPb/AAAAAAAAATAFAPb/AAAAAAAAATADAPb/AAAAAAAAATABAPb/AAAAAAAAATD///b/AAAAAAAAATD9//b/AAAAAAAAATD7//b/AAAAAAAAATD5//b/AAAAAAAAATADAAMAAAAAAAAAB1ADAAEAAAAAAAAAB1ADAP//AAAAAAAAB1ACAP3/AAAAAAAABQAAAP3/AAAAAAAAAQD+//3/AAAAAAAAAgD6//3/AAAAAAAAAQD3/wcAAAAAAAAAAVD3/wUAAAAAAAAAAVD3/wMAAAAAAAAAAVD3/wEAAAAAAAAAAVD3////AAAAAAAAAVD3//3/AAAAAAAAAVD3//v/AAAAAAAAAVD3//n/AAAAAAAAAVD3//f/AAAAAAAAAVD3//X/AAAAAAAABFAJAPb/AAAAAAAABDD8//3/AAAAAAAAAQD6//7/AAAAAAAABWD6/wgAAAAAAAAAAWD6/wYAAAAAAAAAAWD6/wQAAAAAAAAAAWD6/wIAAAAAAAAAAWD6/wAAAAAAAAAAAWD6/woAAAAAAAAABGAGAAkAAAAAAAAAAQAIAAoAAAAAAAAABGA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=325314900]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1307711909]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=1358341704]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=407484022]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target", "target2", "target3") instance=ExtResource("3_s4jev")]
+position = Vector2(-12, 110)
+target = NodePath("../SwitchDoor")
+target2 = NodePath("../SwitchDoor2")
+target3 = NodePath("../SwitchDoor3")
+
+[node name="SwitchDoor" parent="Present" unique_id=723656345 instance=ExtResource("4_t86km")]
+position = Vector2(48, 120)
+
+[node name="SwitchDoor2" parent="Present" unique_id=1761241851 instance=ExtResource("4_t86km")]
+position = Vector2(56, -104)
+rotation = 3.1415927
+
+[node name="SwitchDoor3" parent="Present" unique_id=1708568945 instance=ExtResource("4_t86km")]
+position = Vector2(-106, -39)
+rotation = 1.5707964
+
+[node name="EndLevelDoor" parent="Present" unique_id=758515234 instance=ExtResource("5_fjs1q")]
+position = Vector2(-112, 120)
+canOpen = true
+nextScene = "Level22"
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_1dupi")]
+tile_map_data = PackedByteArray("AAD+/wkAAAAAAAAAAQD8/wkAAAAAAAAAAQAAAAkAAAAAAAAAAQACAAkAAAAAAAAAAQD7/wcAAAAAAAAAAVD7/wUAAAAAAAAAAVD7/wMAAAAAAAAAAVD7/wEAAAAAAAAAAVD7////AAAAAAAAAVD4//3/AAAAAAAAAQD6//3/AAAAAAAABQACAAgAAAAAAAAAAWACAAYAAAAAAAAAAWACAAQAAAAAAAAAAWACAAIAAAAAAAAAAWACAAAAAAAAAAAAAWACAP7/AAAAAAAABWACAAoAAAAAAAAABGD6/wkAAAAAAAAABAAEAP3/AAAAAAAAAQAGAP3/AAAAAAAAAQAIAPz/AAAAAAAAAWAIAPr/AAAAAAAAAWAIAPj/AAAAAAAAAWAHAPb/AAAAAAAAATAFAPb/AAAAAAAAATADAPb/AAAAAAAAATABAPb/AAAAAAAAATD///b/AAAAAAAAATD9//b/AAAAAAAAATD7//b/AAAAAAAAATD5//b/AAAAAAAAATD3//f/AAAAAAAAAVD3//n/AAAAAAAAAVD3//v/AAAAAAAAAVAIAAAAAAAAAAAAAWAIAAIAAAAAAAAAAWAIAAQAAAAAAAAAAWAIAAYAAAAAAAAAAWAIAAgAAAAAAAAAAWAIAAoAAAAAAAAAAWAIAP7/AAAAAAAABGD2//3/AAAAAAAABAD3//X/AAAAAAAABFAJAPb/AAAAAAAABDD2////AAAAAAAABgD4////AAAAAAAABgD2/wEAAAAAAAAABgD4/wEAAAAAAAAABgD2/wMAAAAAAAAABgD4/wMAAAAAAAAABgD4/wUAAAAAAAAABgD2/wUAAAAAAAAABgD2/wcAAAAAAAAABgD4/wcAAAAAAAAABgD4/wkAAAAAAAAABgD2/wkAAAAAAAAABgA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=1449684678]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=1763613893]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=1655607535]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=576633850]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("7_0fhnx")]
+jumpVelocity = 400.0
+wallJumpPushOff = 450.0
+airSpeed = 200.0
+air_accel = 1000.0
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_cwxdv")]
+position = Vector2(0, 288)
+currentScene = "Level21"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1029761057]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_ibewp")
