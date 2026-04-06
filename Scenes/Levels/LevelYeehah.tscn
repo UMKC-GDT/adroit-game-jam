@@ -1,0 +1,235 @@
+[gd_scene format=4 uid="uid://ey13vmuten7"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_0hvb3"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_m0et5"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_uke62"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="5_gnd00"]
+[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="5_hr3sh"]
+[ext_resource type="Texture2D" uid="uid://diwdmvds8ui4r" path="res://Assets/Cats/catMeow.png" id="6_4khbb"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="6_hr3sh"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_kw168"]
+[ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="7_18oyu"]
+[ext_resource type="PackedScene" uid="uid://cryjgjrsytf3k" path="res://Assets/Level Elements/Lamps/flickering_lamp.tscn" id="7_m0et5"]
+[ext_resource type="Texture2D" uid="uid://bpmvc4g1fgyjf" path="res://Assets/Cats/catRun.png" id="7_u44n5"]
+[ext_resource type="Script" uid="uid://b64tpqlcxvhft" path="res://Scenes/Levels/animated_sprite_2d3.gd" id="8_5vdmy"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="9_hr3sh"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_4khbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5eb6"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbiw2"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab8bd"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ayf"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya3ly"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_458el"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1eh"]
+atlas = ExtResource("6_4khbb")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2o4"]
+atlas = ExtResource("7_u44n5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsd5h"]
+atlas = ExtResource("7_u44n5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbesk"]
+atlas = ExtResource("7_u44n5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyiht"]
+atlas = ExtResource("7_u44n5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hriua"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_u5eb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbiw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab8bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ayf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya3ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_458el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1eh")
+}],
+"loop": false,
+"name": &"catMeow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsd5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbesk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyiht")
+}],
+"loop": true,
+"name": &"catRun",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh8g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw168"]
+size = Vector2(480, 165)
+
+[node name="LevelTemplate" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_0hvb3")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_m0et5")]
+position = Vector2(-688, 600.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="FlickeringLamp" parent="Present" unique_id=177997193 instance=ExtResource("7_m0et5")]
+position = Vector2(104, 0)
+
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_uke62")]
+tile_map_data = PackedByteArray("AAD3/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQD9/wYAAAAAAAAAAQD//wYAAAAAAAAAAQABAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAcAAAAAAAAABGAHAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQD7/wcAAAAAAAAAAQD7/wUAAAAAAAAAAQD7/wQAAAAAAAAAAQD7/wMAAAAAAAAAAQD7/wIAAAAAAAAAAQD7/wEAAAAAAAAAAQD7/wAAAAAAAAAAAQD7////AAAAAAAAAQD7//7/AAAAAAAAAQD7//3/AAAAAAAAAQD7//v/AAAAAAAAAQA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=325314900]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1307711909]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=1358341704]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=407484022]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="RandomPlatform" parent="Present" unique_id=1605235542 instance=ExtResource("5_hr3sh")]
+position = Vector2(-24, -80)
+native_timeline = 0
+
+[node name="RandomPlatform2" parent="Present" unique_id=289705006 instance=ExtResource("5_hr3sh")]
+position = Vector2(40, 40)
+native_timeline = 0
+
+[node name="RandomPlatform3" parent="Present" unique_id=907317204 instance=ExtResource("5_hr3sh")]
+position = Vector2(96, 8)
+native_timeline = 0
+
+[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_kw168")]
+position = Vector2(136, -32)
+
+[node name="Platform" parent="Present" unique_id=2066484144 instance=ExtResource("7_18oyu")]
+position = Vector2(136, -8)
+native_timeline = 0
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("5_gnd00")]
+tile_map_data = PackedByteArray("AAD//wYAAAAAAAAAAQD9/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQABAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQD3/wYAAAAAAAAAAQAHAAYAAAAAAAAAAQAFAAUAAAAAAAAAAQAFAAMAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAP//AAAAAAAAAQD8/wYAAAAAAAAAAQD7/wUAAAAAAAAAAQD7/wQAAAAAAAAAAQD7/wMAAAAAAAAAAQD7/wIAAAAAAAAAAQD7/wEAAAAAAAAAAQD7/wAAAAAAAAAAAQD7////AAAAAAAAAQD7//7/AAAAAAAAAQD7//3/AAAAAAAAAQD7//z/AAAAAAAAAQAFAP3/AAAAAAAAAQAFAPv/AAAAAAAAAQA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=1449684678]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=1763613893]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=1655607535]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=576633850]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="EndLevelDoor" parent="Future" unique_id=1566161046 instance=ExtResource("6_kw168")]
+position = Vector2(136, -32)
+native_timeline = 1
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("6_hr3sh")]
+position = Vector2(-136, 0)
+jumpVelocity = 400.0
+wallJumpPushOff = 450.0
+airSpeed = 200.0
+air_accel = 1000.0
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_4khbb")]
+position = Vector2(-8, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1280134585]
+texture_filter = 1
+position = Vector2(-72, -80)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hriua")
+animation = &"catRun"
+script = ExtResource("8_5vdmy")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=292799874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=335106939]
+position = Vector2(20, 0)
+shape = SubResource("RectangleShape2D_wh8g1")
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("9_hr3sh")]
+position = Vector2(-32, 256)
+currentScene = "LevelYeehah"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1348793460]
+position = Vector2(16, 88)
+shape = SubResource("RectangleShape2D_kw168")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
