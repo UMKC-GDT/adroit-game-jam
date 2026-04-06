@@ -31,6 +31,22 @@ position = Vector2(-128, 48)
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_0w1n7")]
 tile_map_data = PackedByteArray("AAD3/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQD9/wYAAAAAAAAAAQD//wYAAAAAAAAAAQABAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQAHAAYAAAAAAAAAAQA=")
 
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=325314900]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1307711909]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=1358341704]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=407484022]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
@@ -49,6 +65,22 @@ native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("5_e4jpv")]
 tile_map_data = PackedByteArray("AAD//wYAAAAAAAAAAQD9/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQABAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQD3/wYAAAAAAAAAAQAHAAYAAAAAAAAAAQA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=1449684678]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=1763613893]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=1655607535]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=576633850]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_nvejs")]
 jumpVelocity = 400.0
