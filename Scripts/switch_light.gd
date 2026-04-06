@@ -37,7 +37,7 @@ func update_state() -> void:
 				beam.update_light()
 	else:
 		if current_mode == LightMode.ON_OFF:
-			beam.timeline_type = beam.Timeline.OFF
+			beam.timeline_type = Global.Timeline.OFF
 			beam.update_light()
 		elif current_mode == LightMode.PRESENT_OR_FUTURE:
 			#THIS LINE

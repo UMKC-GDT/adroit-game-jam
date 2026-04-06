@@ -270,7 +270,6 @@ script = ExtResource("1_xgp81")
 zoom = Vector2(2.5, 2.5)
 
 [node name="Graybackground1" type="Sprite2D" parent="." unique_id=635763081]
-position = Vector2(-27, 86)
 scale = Vector2(0.41748047, 0.41748047)
 texture = ExtResource("3_bose6")
 

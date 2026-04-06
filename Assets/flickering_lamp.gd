@@ -3,6 +3,7 @@ class_name FlickeringLight
 
 @onready var beam: QuantumLight = $QuantumLight
 @export var light_priority = 1
+@export var active_sec = 1.5
 
 var lightOnPresent  = false
 # Called when the node enters the scene tree for the first time.
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			beam.update_light()
 			lightOnPresent=true
 	
-	if time>=1.5:
+	if time>=active_sec:
 		time = 0.0
 		$LampEmitter.set_parameter("LampFlicker", 1)
 		if(lightOnPresent):
