@@ -12,7 +12,7 @@ func _ready() -> void:
 		present_sprite.hide()
 	else:
 		future_sprite.hide()
-	aadd  wd 	present_sprite.show()
+		present_sprite.show()
 	
 	super()
 

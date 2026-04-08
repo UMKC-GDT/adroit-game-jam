@@ -133,7 +133,7 @@ func doGroundMovement(delta: float):
 	else:
 		playFootStepSound(delta)
 		# add to speed
-		self.velocity.x = speed * inputDir
+		self.velocity.x = move_toward(self.velocity.x, maxSpeed * inputDir, 800 * delta) 
 		# limit speed
 		self.velocity.x = limitSpeed(self.velocity.x, maxSpeed)
 

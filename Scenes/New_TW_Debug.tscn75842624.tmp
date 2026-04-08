@@ -75,6 +75,5 @@ position = Vector2(-440, -64)
 native_timeline = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_4oo8x")]
-speed = 10.0
 jumpVelocity = 400.0
 wallJumpVelocity = 200.0

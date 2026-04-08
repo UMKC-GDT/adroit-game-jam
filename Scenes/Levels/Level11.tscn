@@ -35,6 +35,7 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="FlickeringLamp2" parent="Present" unique_id=177997193 instance=ExtResource("3_dufsw")]
 position = Vector2(127, -26)
+active_sec = 2.0
 
 [node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
 position = Vector2(-160, 0)
