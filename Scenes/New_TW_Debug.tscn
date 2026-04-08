@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_fb202"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/Lamps/static_lamp.tscn" id="10_6eafy"]
 [ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/Lamps/switch_lamp.tscn" id="10_rhqb2"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="11_rhqb2"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_7auye")
@@ -74,7 +75,20 @@ native_timeline = 0
 position = Vector2(-440, -64)
 native_timeline = 1
 
+[node name="InvisPlatform" parent="Future" unique_id=1605235542 instance=ExtResource("9_fb202")]
+position = Vector2(0, 24)
+native_timeline = 2
+
+[node name="InvisPlatform2" parent="Future" unique_id=467613090 instance=ExtResource("9_fb202")]
+position = Vector2(48, -24)
+native_timeline = 2
+
+[node name="InvisPlatform3" parent="Future" unique_id=1078990055 instance=ExtResource("9_fb202")]
+position = Vector2(0, -72)
+native_timeline = 2
+
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_4oo8x")]
-speed = 10.0
 jumpVelocity = 400.0
 wallJumpVelocity = 200.0
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("11_rhqb2")]

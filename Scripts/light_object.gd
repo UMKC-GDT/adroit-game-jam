@@ -46,13 +46,15 @@ func update_state():
 	
 	#If no one's looking at us, we don't exist. Otherwise, check for the most dominant light that's looking at us, and follow what it says.
 	if overlapping_lights.is_empty():
-		is_active = false
-	else:
 		
+		if native_timeline == Global.Timeline.OFF:
+			is_active = true
+		else:
+			is_active = false
+	else:
 		var dominant_light = overlapping_lights[0]
 		for light in overlapping_lights:
-			
-			if (not light.timeline_type == Global.Timeline.OFF) and light.light_priority > dominant_light.light_priority:
+			if light.light_priority > dominant_light.light_priority:
 				dominant_light = light
 		
 		is_active = (dominant_light.timeline_type == native_timeline)
