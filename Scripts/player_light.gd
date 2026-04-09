@@ -111,6 +111,8 @@ func getRotation():
 ## Toggles the player's light on or off.
 func toggleLight(state: bool):
 	for light in lightingAreas:
+		if light.name == "PlayerAura":
+			continue
 		light.visible = state
 	var tempState = timeline_type
 	timeline_type = lastUsedLight
@@ -119,3 +121,4 @@ func toggleLight(state: bool):
 	for light in lightingAreas:
 		light.timeline_type = timeline_type
 		light.update_light()
+		light.update_sprite()
