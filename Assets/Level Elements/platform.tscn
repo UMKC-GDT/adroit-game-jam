@@ -25,7 +25,7 @@ margin = Rect2(0, 0, 0, 10.05)
 noise = SubResource("FastNoiseLite_ycfb3")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c2p0v"]
-polygon = PackedVector2Array(-4.7459307, -86.01439, -4.84046, -54.01453, 3.1595054, -53.9909, 3.254035, -85.99076)
+polygon = PackedVector2Array(-84.82879, -170.918, -85.83709, 170.41385, 84.82883, 170.918, 85.83714, -170.41385)
 
 [node name="Platform" unique_id=1605235542 instance=ExtResource("1_lkbto")]
 gravity_scale = 0.0
@@ -57,11 +57,12 @@ scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_7ahui")
 
 [node name="Haze Occluder" type="PointLight2D" parent="." index="4" unique_id=798936476]
+position = Vector2(0, 4.000001)
+scale = Vector2(0.09375, 0.046875)
 editor_only = true
 texture = SubResource("NoiseTexture2D_x4ljk")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Haze Occluder" index="0" unique_id=1661569045]
-position = Vector2(70, 3)
 rotation = -1.5737504
 occluder = SubResource("OccluderPolygon2D_c2p0v")
 

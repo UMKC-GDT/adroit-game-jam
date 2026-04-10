@@ -10,10 +10,14 @@ class_name SwitchLight
 enum LightMode { PRESENT_OR_FUTURE, ON_OFF }
 @export var current_mode: LightMode = LightMode.PRESENT_OR_FUTURE
 
+@export var invert_power: bool = false
+
 func set_power(state: bool) -> void:
-	if powered == state: return
-		
-	powered = state
+	var new_power = not state if invert_power else state
+	if powered == new_power: return
+	
+	powered = new_power
+
 	update_state()
 
 func update_state() -> void:
@@ -40,7 +44,6 @@ func update_state() -> void:
 			beam.timeline_type = Global.Timeline.OFF
 			beam.update_light()
 		elif current_mode == LightMode.PRESENT_OR_FUTURE:
-			#THIS LINE
 			beam.timeline_type = starting_light
 			beam.update_light()
 

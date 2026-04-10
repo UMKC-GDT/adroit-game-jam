@@ -6,6 +6,8 @@ class_name SwitchDoor
 @onready var future_sprite: Sprite2D = $FutureSprite
 @onready var present_sprite: Sprite2D = $PresentSprite
 
+@export var invert_power: bool = false
+
 var is_open: bool = false
 
 func _ready() -> void:
@@ -21,7 +23,7 @@ func _ready() -> void:
 
 # DoorSwitch will call this function when triggered
 func set_power(state: bool) -> void:
-	is_open = state
+	is_open = not state if invert_power else state
 	update_state() # Re-evaluate the door's physical state
 
 func update_state() -> void:
