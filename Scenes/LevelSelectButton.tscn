@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://basr5t45pocfq"]
+
+[ext_resource type="Script" uid="uid://d30a3xh6uxxr" path="res://Scenes/LevelSelectButton.gd" id="1_cqlqa"]
+[ext_resource type="Texture2D" uid="uid://xslxxq8a05bm" path="res://Resources/levelselect images/Level1Image.png" id="2_1nylv"]
+
+[node name="Control" type="Control" unique_id=702321648]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 192.0
+script = ExtResource("1_cqlqa")
+level = 2
+nextScene = "Level1"
+
+[node name="Image" type="Sprite2D" parent="." unique_id=391085924]
+position = Vector2(96, 96)
+scale = Vector2(0.23645322, 0.23674476)
+texture = ExtResource("2_1nylv")
+
+[node name="Button" type="TextureButton" parent="." unique_id=723344907]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 192.0
+
+[node name="Locked overlay" type="ColorRect" parent="." unique_id=495650479]
+visible = false
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Label" type="Label" parent="." unique_id=2567060]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 192.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 150
+text = "#"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
