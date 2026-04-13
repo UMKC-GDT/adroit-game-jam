@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_fb202"]
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_6eafy"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_6htui"]
+[ext_resource type="PackedScene" uid="uid://ceac8yj6341yk" path="res://Assets/Level Elements/prism.tscn" id="4_7bj82"]
+[ext_resource type="PackedScene" uid="uid://cenrq2uf73o55" path="res://Assets/Level Elements/timer_platform.tscn" id="7_7bj82"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_mfyqa"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_liljx"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_4oo8x"]
@@ -40,8 +42,8 @@ position = Vector2(128, 64)
 [node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_6htui")]
 position = Vector2(-128, 64)
 
-[node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target", "target2") instance=ExtResource("4_6eafy")]
-position = Vector2(0, 40)
+[node name="Prism" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target", "target2") instance=ExtResource("4_7bj82")]
+position = Vector2(0, -128)
 target = NodePath("../../Future/SwitchLamp2")
 target2 = NodePath("../../Future/SwitchLamp3")
 
@@ -57,6 +59,20 @@ invert_power = true
 position = Vector2(144, 40)
 target = NodePath("../SwitchDoor")
 target2 = NodePath("../SwitchDoor2")
+
+[node name="Timer Platform" parent="Present" unique_id=486689533 instance=ExtResource("7_7bj82")]
+active_time = 3.0
+invert_decay = true
+native_timeline = 0
+
+[node name="Timer Platform2" parent="Present" unique_id=463928638 instance=ExtResource("7_7bj82")]
+position = Vector2(0, -40)
+active_time = 3.0
+native_timeline = 0
+
+[node name="Platform" parent="Present" unique_id=1507295473 instance=ExtResource("9_fb202")]
+position = Vector2(96, -48)
+native_timeline = 0
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -74,6 +90,11 @@ position = Vector2(64, 64)
 light_priority = 100
 starting_light = 1
 invert_power = true
+
+[node name="SwitchLamp3" parent="Future" unique_id=445584364 instance=ExtResource("10_rhqb2")]
+position = Vector2(152, 64)
+light_priority = 100
+starting_light = 1
 
 [node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_mfyqa")]
 position = Vector2(0, 64)
@@ -107,11 +128,6 @@ native_timeline = 2
 [node name="InvisPlatform2" parent="Future" unique_id=467613090 instance=ExtResource("9_fb202")]
 position = Vector2(-128, -128)
 native_timeline = 2
-
-[node name="SwitchLamp3" parent="Future" unique_id=445584364 instance=ExtResource("10_rhqb2")]
-position = Vector2(152, 64)
-light_priority = 100
-starting_light = 1
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_4oo8x")]
 jumpVelocity = 400.0

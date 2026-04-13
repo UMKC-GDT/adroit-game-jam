@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ceac8yj6341yk"]
+
+[ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_kmlgc"]
+[ext_resource type="Script" uid="uid://dawfr5fpw12ee" path="res://Scripts/prism.gd" id="2_kmlgc"]
+[ext_resource type="Texture2D" uid="uid://byxlfyfhi703e" path="res://Resources/OrangeLeverUp.png" id="3_alqbe"]
+[ext_resource type="Texture2D" uid="uid://8f3mt0k0oyjp" path="res://Resources/OrangeLeverDown.png" id="4_fjgie"]
+[ext_resource type="Texture2D" uid="uid://cyyk3qly2mfnc" path="res://Resources/The_Dark_Side_of_the_Moon_cover.svg.png" id="4_kxmvo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amdyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kxmvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_alqbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjgie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5drf"]
+size = Vector2(16, 16)
+
+[node name="Prism" unique_id=1605235542 instance=ExtResource("1_kmlgc")]
+collision_layer = 2
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("2_kmlgc")
+persistent = false
+movable = false
+is_tangible = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=357974407]
+visible = false
+position = Vector2(0, 5)
+scale = Vector2(0.342, 0.342)
+texture = ExtResource("3_alqbe")
+
+[node name="PresentSprite" type="AnimatedSprite2D" parent="." index="1" unique_id=1092862995]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.024999999, 0.024999999)
+sprite_frames = SubResource("SpriteFrames_amdyw")
+frame_progress = 0.6472551
+
+[node name="FutureSprite" type="AnimatedSprite2D" parent="." index="2" unique_id=694772379]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.024999999, 0.024999999)
+sprite_frames = SubResource("SpriteFrames_amdyw")
+frame_progress = 0.6472551
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=1029249552]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_c5drf")
