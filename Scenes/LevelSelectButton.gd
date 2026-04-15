@@ -1,12 +1,23 @@
 extends Control
 
-@export var level = 1
-@export var nextScene: String
-@export var gameManager: game_manager
+@export var level: int
+
+@onready var image: Sprite2D = $Image 
+@export var level_image: Texture2D
+var nextScene: String
+var gameManager: game_manager
+
 
 func _ready() -> void:
+	nextScene = "Level" + str(level)
+	print(nextScene)
 	$Label.text = str(level)
-	$Image.texture = load("res://Resources/levelselect images/"+nextScene+"Image.png")
+	image.texture = level_image
+
+
+		
+	
+	
 
 func _on_button_pressed() -> void:
 	var tree = get_tree()

@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bpmvc4g1fgyjf" path="res://Assets/Cats/catRun.png" id="13_tbiw2"]
 [ext_resource type="Script" uid="uid://b64tpqlcxvhft" path="res://Scenes/Levels/animated_sprite_2d3.gd" id="13_u5eb6"]
 [ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="17_458el"]
+[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="20_rl2o4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngp1c"]
 atlas = ExtResource("3_ao4h1")
@@ -288,6 +289,10 @@ native_timeline = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UIPopup/Area2D" parent_id_path=PackedInt32Array(1605235542, 448284378) index="0" unique_id=1387658208]
 position = Vector2(8, 48)
 shape = SubResource("RectangleShape2D_ok1eh")
+
+[node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("20_rl2o4")]
+position = Vector2(-2, 3)
+scale = Vector2(0.245, 0.245)
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
 

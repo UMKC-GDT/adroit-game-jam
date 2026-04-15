@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b5tsxt43nsksu" path="res://Resources/Buttons/NormalExitButton.png" id="12_6byu3"]
 [ext_resource type="Texture2D" uid="uid://baj235w78dvla" path="res://Resources/Buttons/PressedExitButton.png" id="13_leunp"]
 [ext_resource type="Texture2D" uid="uid://byb7m70owwcj7" path="res://Resources/Buttons/HoveredExitButton.png" id="14_h1v62"]
+[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="16_2x1g0"]
 
 [node name="MainMenu" type="Node2D" unique_id=1147203224 groups=["audio"]]
 script = ExtResource("1_tt5f1")
@@ -79,6 +80,9 @@ scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("12_6byu3")
 texture_pressed = ExtResource("13_leunp")
 texture_hover = ExtResource("14_h1v62")
+
+[node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("16_2x1g0")]
+position = Vector2(24, 48)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]

@@ -10,7 +10,6 @@ offset_right = 192.0
 offset_bottom = 192.0
 script = ExtResource("1_cqlqa")
 level = 2
-nextScene = "Level1"
 
 [node name="Image" type="Sprite2D" parent="." unique_id=391085924]
 position = Vector2(96, 96)
