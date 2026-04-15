@@ -1,64 +1,87 @@
-[gd_scene format=3 uid="uid://r7gtxqmropy"]
+[gd_scene format=4 uid="uid://r7gtxqmropy"]
 
-[ext_resource type="Script" uid="uid://v5w5k2ror06v" path="res://Scenes/Levels/level_1.gd" id="1_nytic"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_moksf"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_bfoxu"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="2_e57xo"]
-[ext_resource type="PackedScene" uid="uid://b6f8kwyv5yr3r" path="res://Scenes/Tileset Testing/Level1Future.tscn" id="3_d80xo"]
-[ext_resource type="PackedScene" uid="uid://bcm4c8lv6y3rt" path="res://Scenes/Tileset Testing/Level1Present.tscn" id="4_gk1sg"]
-[ext_resource type="PackedScene" uid="uid://bssmop4uxylom" path="res://Assets/light_switch.tscn" id="5_st7rb"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_e57xo"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_6w8h5"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="4_4c48j"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="5_f7vls"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="7_a0guu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nytic"]
-size = Vector2(400, 20)
+[node name="LevelNik" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_moksf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e57xo"]
-size = Vector2(20, 200)
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_bfoxu")]
+position = Vector2(-157.00003, 355.00003)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d80xo"]
-size = Vector2(20, 200)
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=581652180]
+position = Vector2(18, 78)
+texture = ExtResource("3_6w8h5")
 
-[node name="Level1" type="Node2D" unique_id=942461784]
-script = ExtResource("1_nytic")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1806424157]
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
 
-[node name="Level1 Future" parent="." unique_id=1480936376 instance=ExtResource("3_d80xo")]
-visible = false
-position = Vector2(1, -3)
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
 
-[node name="EndLevelDoor" parent="Level1 Future" unique_id=1870179415 instance=ExtResource("6_e57xo")]
-position = Vector2(109, 41)
-nextScene = "Level2"
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
 
-[node name="Level1 Past" parent="." unique_id=911594195 instance=ExtResource("4_gk1sg")]
-position = Vector2(1, -3)
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("4_4c48j")]
+tile_map_data = PackedByteArray("AAD3/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQAHAAYAAAAAAAAAAQD2/wQAAAAAAAAAAVD2/wIAAAAAAAAAAVD2/wAAAAAAAAAAAVD2//7/AAAAAAAAAVD2//z/AAAAAAAAAVD2//r/AAAAAAAAAVD2//j/AAAAAAAAAVD2//b/AAAAAAAAAVD1/wYAAAAAAAAABAAAAAYAAAAAAAAABAD+/wcAAAAAAAAABGACAAYAAAAAAAAAAQD8/wYAAAAAAAAAAQD+/wUAAAAAAAAAAWD+/wMAAAAAAAAAAWD+/wEAAAAAAAAAAWD+////AAAAAAAAAWD+//3/AAAAAAAAAWABAAQAAAAAAAAAAVABAAIAAAAAAAAAAVABAAAAAAAAAAAAAVABAP7/AAAAAAAAAVABAPz/AAAAAAAAAVAAAPr/AAAAAAAABQD+//v/AAAAAAAABWAJAAcAAAAAAAAABGAJAAUAAAAAAAAAAWAJAAMAAAAAAAAAAWAJAAEAAAAAAAAAAWAJAP//AAAAAAAAAWAJAP3/AAAAAAAAAWAJAPv/AAAAAAAAAWAJAPn/AAAAAAAAAWAJAPf/AAAAAAAAAWAJAPX/AAAAAAAAAWD2//T/AAAAAAAAAVA=")
 
-[node name="LightSwitch" parent="." unique_id=1783035167 instance=ExtResource("5_st7rb")]
-position = Vector2(50, 33)
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=325314900]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1307711909]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=1358341704]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=407484022]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("5_f7vls")]
+tile_map_data = PackedByteArray("AAD9/wYAAAAAAAAAAQD7/wYAAAAAAAAAAQD5/wYAAAAAAAAAAQABAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAFAAYAAAAAAAAAAQD3/wYAAAAAAAAAAQAHAAYAAAAAAAAAAQAJAAYAAAAAAAAABQD1/wcAAAAAAAAABWD+/wUAAAAAAAAAAWD+/wMAAAAAAAAAAWD+/wEAAAAAAAAAAWD+////AAAAAAAAAWD+//3/AAAAAAAAAWABAAQAAAAAAAAAAVABAAIAAAAAAAAAAVABAAAAAAAAAAAAAVABAP7/AAAAAAAAAVABAPz/AAAAAAAAAVAAAPr/AAAAAAAABQD+//v/AAAAAAAABWAAAAYAAAAAAAAABAD+/wcAAAAAAAAABGD1/wYAAAAAAAAABAAJAAcAAAAAAAAABGD2/wQAAAAAAAAAAVD2/wIAAAAAAAAAAVD2/wAAAAAAAAAAAVD2//7/AAAAAAAAAVD2//z/AAAAAAAAAVD2//r/AAAAAAAAAVD2//j/AAAAAAAAAVD2//b/AAAAAAAAAVD2//T/AAAAAAAAAVAJAAUAAAAAAAAAAWAJAAMAAAAAAAAAAWAJAAEAAAAAAAAAAWAJAP//AAAAAAAAAWAJAP3/AAAAAAAAAWAJAPv/AAAAAAAAAWAJAPn/AAAAAAAAAWAJAPf/AAAAAAAAAWAJAPX/AAAAAAAAAWA=")
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=1449684678]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=1763613893]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=1655607535]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=576633850]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("2_e57xo")]
-position = Vector2(-57, 30)
-hasLight = false
+position = Vector2(-146, 0)
+jumpVelocity = 400.0
+wallJumpPushOff = 450.0
+airSpeed = 200.0
+air_accel = 1000.0
 
-[node name="Geometry" type="Node2D" parent="." unique_id=1458708187]
-
-[node name="Floor" type="StaticBody2D" parent="Geometry" unique_id=1921668800]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Floor" unique_id=2048717894]
-position = Vector2(6, 73)
-shape = SubResource("RectangleShape2D_nytic")
-
-[node name="West Wall" type="StaticBody2D" parent="Geometry" unique_id=1587437018]
-position = Vector2(-200, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/West Wall" unique_id=1225777371]
-shape = SubResource("RectangleShape2D_e57xo")
-
-[node name="East Wall" type="StaticBody2D" parent="Geometry" unique_id=1472136367]
-position = Vector2(202, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/East Wall" unique_id=1972503764]
-shape = SubResource("RectangleShape2D_d80xo")
-
-[connection signal="turnedOff" from="LightSwitch" to="." method="_on_light_switch_turned_off"]
-[connection signal="turnedOn" from="LightSwitch" to="." method="_on_light_switch_turned_on"]
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("7_a0guu")]
+position = Vector2(-2, 1)
