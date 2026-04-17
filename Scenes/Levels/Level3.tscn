@@ -185,6 +185,7 @@ shape = SubResource("RectangleShape2D_r3ubd")
 debug_color = Color(0.8789683, 0.00038350583, 0.8274336, 0.41960785)
 
 [node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("17_r3ubd")]
+visible = false
 position = Vector2(1, 0)
 scale = Vector2(0.245, 0.245)
 

@@ -47,6 +47,8 @@ func _on_interactable_component_interacted() -> void:
 		pass
 	isSwitching = true
 	
+	Global.levelProgressCount +=1
+		
 	print(is_active)
 	if !is_active: return
 	

@@ -84,6 +84,7 @@ nextScene = "Level2"
 native_timeline = 1
 
 [node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("10_f3nwb")]
+visible = false
 position = Vector2(-50, -0.4000002)
 scale = Vector2(0.245, 0.245)
 

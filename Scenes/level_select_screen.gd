@@ -1,7 +1,6 @@
 extends Node2D
 
 var isVisible = false
-@export var unlockedLevels: int
 
 func _ready() -> void:
 	visible = false
