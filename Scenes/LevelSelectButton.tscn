@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d30a3xh6uxxr" path="res://Scenes/LevelSelectButton.gd" id="1_cqlqa"]
 [ext_resource type="Texture2D" uid="uid://xslxxq8a05bm" path="res://Resources/levelselect images/Level1Image.png" id="2_1nylv"]
+[ext_resource type="Texture2D" uid="uid://btm6ugvr72pyb" path="res://Resources/levelselect images/pixil-frame-0 (2).png" id="3_1nylv"]
 
 [node name="Control" type="Control" unique_id=702321648]
 layout_mode = 3
@@ -20,6 +21,7 @@ texture = ExtResource("2_1nylv")
 layout_mode = 0
 offset_right = 192.0
 offset_bottom = 192.0
+texture_hover = ExtResource("3_1nylv")
 
 [node name="Locked overlay" type="ColorRect" parent="." unique_id=495650479]
 visible = false

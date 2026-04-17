@@ -13,6 +13,8 @@ func _ready() -> void:
 	print(nextScene)
 	$Label.text = str(level)
 	image.texture = level_image
+	if(Global.levelProgressCount < level-1):
+		$"Locked overlay".visible = true
 
 
 		

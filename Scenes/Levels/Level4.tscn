@@ -424,6 +424,7 @@ position = Vector2(0, 48)
 shape = SubResource("RectangleShape2D_8qdnk")
 
 [node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("16_8qdnk")]
+visible = false
 position = Vector2(1, 0)
 scale = Vector2(0.245, 0.245)
 
