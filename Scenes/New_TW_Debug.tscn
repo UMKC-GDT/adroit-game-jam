@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_6eafy"]
 [ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_6htui"]
 [ext_resource type="PackedScene" uid="uid://ceac8yj6341yk" path="res://Assets/Level Elements/prism.tscn" id="4_7bj82"]
+[ext_resource type="PackedScene" uid="uid://dtx04enwl5pdh" path="res://Assets/Level Elements/Lamps/control_lamp.tscn" id="4_mfyqa"]
 [ext_resource type="PackedScene" uid="uid://cenrq2uf73o55" path="res://Assets/Level Elements/timer_platform.tscn" id="7_7bj82"]
 [ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_mfyqa"]
 [ext_resource type="PackedScene" uid="uid://cggdyu4qbyvao" path="res://Assets/Level Elements/barrier.tscn" id="8_liljx"]
@@ -12,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ur13x23xxo8" path="res://Assets/Level Elements/switch_door.tscn" id="9_6htui"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_fb202"]
 [ext_resource type="PackedScene" uid="uid://tx74hu560tcn" path="res://Assets/Level Elements/Lamps/static_lamp.tscn" id="10_6eafy"]
-[ext_resource type="PackedScene" uid="uid://bmbhruxtcmdnk" path="res://Assets/Level Elements/Lamps/switch_lamp.tscn" id="10_rhqb2"]
+[ext_resource type="PackedScene" uid="uid://d3y81cmb14wfl" path="res://Assets/Level Elements/Lamps/switch_lamp_dom.tscn" id="11_mfyqa"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="11_rhqb2"]
 
 [node name="LevelTemplate" type="Node2D" unique_id=1908434782]
@@ -42,10 +43,14 @@ position = Vector2(128, 64)
 [node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_6htui")]
 position = Vector2(-128, 64)
 
+[node name="ControlLamp" parent="Present" unique_id=177997193 instance=ExtResource("4_mfyqa")]
+position = Vector2(-128, 32)
+current_mode = 1
+
 [node name="Prism" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target", "target2") instance=ExtResource("4_7bj82")]
 position = Vector2(0, -128)
 target = NodePath("../../Future/SwitchLamp2")
-target2 = NodePath("../../Future/SwitchLamp3")
+target2 = NodePath("../../Future/SwitchLamp")
 
 [node name="SwitchDoor" parent="Present" unique_id=449825530 instance=ExtResource("9_6htui")]
 position = Vector2(-64, 40)
@@ -82,19 +87,18 @@ scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="FlickeringLamp" parent="Future" unique_id=177997193 instance=ExtResource("10_6eafy")]
+[node name="FlickeringLamp" parent="Future" unique_id=120523338 instance=ExtResource("10_6eafy")]
 position = Vector2(-416, 80)
 
-[node name="SwitchLamp2" parent="Future" unique_id=1282912358 instance=ExtResource("10_rhqb2")]
+[node name="SwitchLamp" parent="Future" unique_id=2103493423 instance=ExtResource("11_mfyqa")]
 position = Vector2(64, 64)
-light_priority = 100
 starting_light = 1
+current_mode = 1
 invert_power = true
 
-[node name="SwitchLamp3" parent="Future" unique_id=445584364 instance=ExtResource("10_rhqb2")]
+[node name="SwitchLamp2" parent="Future" unique_id=1926428724 instance=ExtResource("11_mfyqa")]
 position = Vector2(152, 64)
-light_priority = 100
-starting_light = 1
+current_mode = 1
 
 [node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_mfyqa")]
 position = Vector2(0, 64)

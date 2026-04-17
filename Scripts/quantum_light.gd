@@ -29,17 +29,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if timeline_type == Global.Timeline.OFF: # do nothin of its off
-		return
 		
 	if timeline_type == Global.Timeline.FUTURE:
 		#Future: 217,255,255
 		if light_sprite:
+			visible = true
+			light_sprite.show()
 			light_sprite.modulate = future_color
-		
+	elif timeline_type == Global.Timeline.OFF:
+		if light_sprite:
+			light_sprite.hide()
+			visible = false
 	else:
 		#Present:
 		if light_sprite:
+			visible = true
+			light_sprite.show()
 			light_sprite.modulate = present_color
 	
 	pass

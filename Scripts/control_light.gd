@@ -16,7 +16,9 @@ func _ready() -> void:
 	update_state()
 
 func _physics_process(delta: float) -> void:
-	if(Input.is_action_just_pressed("lightPower")):
+	print(powered)
+	
+	if(Input.is_action_just_pressed("lightToggle")):
 		switch_light()
 
 func switch_light() -> void:
@@ -24,6 +26,7 @@ func switch_light() -> void:
 	update_state()
 
 func update_state() -> void:
+	print("Running my update state!")
 	if not is_node_ready() or beam == null:
 		return
 	

@@ -29,6 +29,7 @@ func update_state() -> void:
 	if powered:
 		
 		if current_mode == LightMode.ON_OFF:
+			print("Turning back on!")
 			beam.timeline_type = starting_light
 			beam.update_light()
 		
@@ -42,6 +43,7 @@ func update_state() -> void:
 	else:
 		if current_mode == LightMode.ON_OFF:
 			beam.timeline_type = Global.Timeline.OFF
+			print("Setting my color to OFF!")
 			beam.update_light()
 		elif current_mode == LightMode.PRESENT_OR_FUTURE:
 			beam.timeline_type = starting_light

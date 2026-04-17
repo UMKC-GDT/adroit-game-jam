@@ -54,10 +54,12 @@ func update_state():
 	else:
 		var dominant_light = overlapping_lights[0]
 		for light in overlapping_lights:
-			if light.light_priority > dominant_light.light_priority:
+			if dominant_light.timeline_type == Global.Timeline.OFF:
 				dominant_light = light
-		
-		is_active = (dominant_light.timeline_type == native_timeline)
+			elif (not light.timeline_type == Global.Timeline.OFF) and light.light_priority > dominant_light.light_priority:
+				dominant_light = light
+			
+		is_active = ((dominant_light.timeline_type == native_timeline) and (dominant_light.timeline_type != Global.Timeline.OFF)) 
 	
 	# In case we WERE active and now we're not, save our momentum for when we can exist again.
 	if was_active and not is_active:
