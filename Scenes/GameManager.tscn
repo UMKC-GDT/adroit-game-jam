@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d26v2scsi4q1s" path="res://Scenes/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://ifta5snu8wvq" path="res://Scenes/sound_manager.gd" id="2_bwyv8"]
+[ext_resource type="PackedScene" uid="uid://dx7lclq47g1op" path="res://Scenes/scoring_system.tscn" id="2_xqbpr"]
 [ext_resource type="PackedScene" uid="uid://cv288wh81sn21" path="res://Assets/screen_fade_manager.tscn" id="3_b7dir"]
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
@@ -11,6 +12,8 @@ script = ExtResource("1_m2tc1")
 background = NodePath("Sprite2D")
 ScreenFadeManager = NodePath("ScreenFadeManager")
 soundManager = NodePath("SoundManager")
+
+[node name="ScoringSystem" parent="." unique_id=1933733735 instance=ExtResource("2_xqbpr")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2104013960]
 z_index = -1
