@@ -5,33 +5,30 @@ class_name RandomPlatform
 
 ##This will be a platform that will randomly decide whether or not it's active, every time it's viewed.
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if native_timeline == Global.Timeline.FUTURE:
-		future_sprite.show()
-		present_sprite.hide()
-	else:
-		future_sprite.hide()
-		present_sprite.show()
-	
-	super()
-
 func update_state():
 	
 	#If no one's looking at us, we don't exist. Otherwise, check for the most dominant light that's looking at us, and follow what it says.
 	if overlapping_lights.is_empty():
-		is_active = false
-	else:
 		
+		if native_timeline == Global.Timeline.OFF:
+			is_active = true
+		else:
+			is_active = false
+	else:
 		var dominant_light = overlapping_lights[0]
 		for light in overlapping_lights:
-			
-			if light.light_priority > dominant_light.light_priority:
+			if dominant_light.timeline_type == Global.Timeline.OFF:
+				dominant_light = light
+			elif (not light.timeline_type == Global.Timeline.OFF) and light.light_priority > dominant_light.light_priority:
 				dominant_light = light
 		
-		# We exist ONLY if...we land a 50/50 shot.
-		if randf() <= exist_chance:
-			is_active = (dominant_light.timeline_type == native_timeline)
+		# We exist ONLY if...we land a random shot.
+		if ((dominant_light.timeline_type == native_timeline) and (dominant_light.timeline_type != Global.Timeline.OFF)):
+			if not is_active:
+				if randf() <= exist_chance:
+					is_active = true
+		else:
+			is_active = false
 	
 	# In case we WERE active and now we're not, save our momentum for when we can exist again.
 	if was_active and not is_active:
