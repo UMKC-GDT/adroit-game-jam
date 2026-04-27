@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="4_q70wq"]
 [ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="5_satsh"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_bqnsl"]
-[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_g6xr1"]
 [ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="7_satsh"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="9_63rht"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_416si"]
@@ -80,12 +79,6 @@ scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
 
-[node name="LargeGround2" parent="Future" unique_id=743319825 instance=ExtResource("7_g6xr1")]
-position = Vector2(-128, 64)
-
-[node name="LargeGround3" parent="Future" unique_id=2105887737 instance=ExtResource("7_g6xr1")]
-position = Vector2(160, 64)
-
 [node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
 position = Vector2(-160, 0)
 gizmo_extents = 53.9
@@ -108,6 +101,7 @@ exist_chance = 0.3
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_bqnsl")]
 position = Vector2(128, 40)
+nextScene = "Level18N"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("9_63rht")]
@@ -143,6 +137,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("13_nw023")]
 position = Vector2(0, 288)
+currentScene = "Level 17N"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1685245676]
 position = Vector2(0, 35)

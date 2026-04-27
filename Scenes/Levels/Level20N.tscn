@@ -1,0 +1,141 @@
+[gd_scene format=4 uid="uid://cr2ed6tvjfcl3"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_xsoro"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_1t5di"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_tyafk"]
+[ext_resource type="PackedScene" uid="uid://boyxghoqy3b5j" path="res://Assets/Level Elements/switch.tscn" id="4_hxrxn"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="5_hxrxn"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="5_m2d2i"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_uef8k"]
+[ext_resource type="PackedScene" uid="uid://d3y81cmb14wfl" path="res://Assets/Level Elements/Lamps/switch_lamp_dom.tscn" id="6_uef8k"]
+[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="7_m2d2i"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="9_1t5di"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="9_7eci7"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="12_7eci7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7eci7"]
+size = Vector2(768, 34)
+
+[node name="Level20N" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_xsoro")
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=1101585270]
+position = Vector2(-3, -3)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("2_1t5di")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_tyafk")]
+position = Vector2(-616.0001, 392.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1875645703]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=231010411]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=696573508]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Switch" parent="Present" unique_id=1605235542 node_paths=PackedStringArray("target", "target2") instance=ExtResource("4_hxrxn")]
+position = Vector2(-32, -56)
+target = NodePath("../../Future/SwitchLamp")
+target2 = NodePath("../../Future/SwitchLamp2")
+
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("5_m2d2i")]
+tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAQD8//7/AAAAAAAAAQD6//7/AAAAAAAAAQD4//7/AAAAAAAAAQD2//7/AAAAAAAAAQD6/wQAAAAAAAAAAQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0//7/AAAAAAAAAQD0/wQAAAAAAAAABAD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAABAD2//z/AAAAAAAAAVD2//r/AAAAAAAAAVD2//j/AAAAAAAAAVD2//b/AAAAAAAAAVD2//T/AAAAAAAABFD4//X/AAAAAAAAATD6//X/AAAAAAAAATD8//X/AAAAAAAAATD+//X/AAAAAAAAATD///X/AAAAAAAAATABAPX/AAAAAAAAATADAPX/AAAAAAAAATAFAPX/AAAAAAAAATAHAPX/AAAAAAAAATAJAPX/AAAAAAAAATALAPX/AAAAAAAAATA=")
+
+[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("5_uef8k")]
+position = Vector2(-128, 40)
+nextScene = "Level21N"
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=567642971]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=392682067]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=1637643970]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="SwitchLamp" parent="Future" unique_id=177997193 instance=ExtResource("6_uef8k")]
+position = Vector2(-16, 104)
+starting_light = 1
+current_mode = 1
+
+[node name="RandomPlatform" parent="Future" unique_id=985747870 instance=ExtResource("7_m2d2i")]
+position = Vector2(-16, 96)
+
+[node name="SwitchLamp2" parent="Future" unique_id=230170001 instance=ExtResource("6_uef8k")]
+position = Vector2(64, 56)
+starting_light = 1
+current_mode = 1
+
+[node name="RandomPlatform2" parent="Future" unique_id=1425220769 instance=ExtResource("7_m2d2i")]
+position = Vector2(64, 48)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("9_7eci7")]
+tile_map_data = PackedByteArray("AAD8//7/AAAAAAAAAQD6//7/AAAAAAAAAQD4//7/AAAAAAAAAQD2//7/AAAAAAAAAQAAAP//AAAAAAAABGAAAP3/AAAAAAAAAWAAAPv/AAAAAAAAAWAAAPn/AAAAAAAAAWAAAPf/AAAAAAAAAWAAAPX/AAAAAAAAAWD+//7/AAAAAAAAAQD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVD1//j/AAAAAAAAAVD1//b/AAAAAAAAAVD1//T/AAAAAAAAAVD0//7/AAAAAAAABAA=")
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("5_hxrxn")]
+position = Vector2(-128, -64)
+jumpVelocity = 400.0
+
+[node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="." unique_id=192288777]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="." unique_id=1331686996]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("9_1t5di")]
+position = Vector2(0, 288)
+currentScene = "Level20N"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1257392933]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7eci7")
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("12_7eci7")]
