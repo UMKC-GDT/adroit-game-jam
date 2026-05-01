@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj0l2epxgq2om"]
 
 [ext_resource type="PackedScene" uid="uid://qolitkpmdbfv" path="res://Assets/LightObject.tscn" id="1_q72uk"]
-[ext_resource type="Script" uid="uid://b6iukh8tebw4b" path="res://Assets/random_platform.gd" id="2_q72uk"]
+[ext_resource type="Script" uid="uid://b6iukh8tebw4b" path="res://Scripts/random_platform.gd" id="2_q72uk"]
 [ext_resource type="Texture2D" uid="uid://be5v4jeyf6ac" path="res://Resources/Brick.jpg" id="3_k4s4b"]
 [ext_resource type="Texture2D" uid="uid://c7i3mnmpkr4yf" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/future tile and floor.png" id="4_ssrb0"]
 [ext_resource type="Texture2D" uid="uid://b5dnlyeyls1hd" path="res://Scenes/Tileset Testing/drive-download-20260221T182007Z-1-001/door&floor.png" id="5_p8by6"]
@@ -18,6 +18,34 @@ margin = Rect2(0, 0, 0, 10.235)
 atlas = ExtResource("5_p8by6")
 region = Rect2(128, 64, 32, 8)
 margin = Rect2(0, 0, 0, 10.05)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ycfb3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_seyh8"]
+noise = SubResource("FastNoiseLite_ycfb3")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x28h7"]
+polygon = PackedVector2Array(-84.82879, -170.918, -85.83709, 170.41385, 84.82883, 170.918, 85.83714, -170.41385)
+
+[sub_resource type="Gradient" id="Gradient_seyh8"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x28h7"]
+gradient = SubResource("Gradient_seyh8")
+width = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_seyh8"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(16.1, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = -30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 7.04, 0)
 
 [node name="RandomPlatform" unique_id=1605235542 instance=ExtResource("1_q72uk")]
 gravity_scale = 0.0
@@ -48,3 +76,24 @@ texture_filter = 1
 position = Vector2(0, 8)
 scale = Vector2(0.99999994, 1)
 texture = SubResource("AtlasTexture_7ahui")
+
+[node name="Haze Occluder" type="PointLight2D" parent="." index="4" unique_id=1441515196]
+position = Vector2(0, 4.000001)
+scale = Vector2(0.09375, 0.046875)
+editor_only = true
+texture = SubResource("NoiseTexture2D_seyh8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Haze Occluder" index="0" unique_id=46692127]
+rotation = -1.5737504
+occluder = SubResource("OccluderPolygon2D_x28h7")
+
+[node name="InvertSprite" type="Sprite2D" parent="." index="5" unique_id=867410813]
+texture_filter = 1
+position = Vector2(0, 8)
+scale = Vector2(0.99999994, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="6" unique_id=331175267]
+amount = 30
+texture = SubResource("GradientTexture1D_x28h7")
+randomness = 0.37
+process_material = SubResource("ParticleProcessMaterial_seyh8")

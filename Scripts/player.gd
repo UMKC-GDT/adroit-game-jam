@@ -29,6 +29,7 @@ extends CharacterBody2D
 @export var interactionHandler: Node2D
 @export var addtionalLightAreas: Array[StaticLight]
 
+
 @onready var rightWallCast: RayCast2D = $RightWallCast #IMPORTANT: Both check on Layer 12
 @onready var leftWallCast: RayCast2D = $LeftWallCast
 

@@ -47,28 +47,43 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="RandomPlatform" parent="Present" unique_id=1605235542 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 96)
-native_timeline = 0
-exist_chance = 0.1
-
-[node name="RandomPlatform2" parent="Present" unique_id=1393713418 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, 56)
-native_timeline = 0
-exist_chance = 0.1
-
 [node name="RandomPlatform3" parent="Present" unique_id=1482860414 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 16)
+position = Vector2(-64, 0)
+exist_chance = 0.3
 native_timeline = 0
-exist_chance = 0.1
 
-[node name="RandomPlatform4" parent="Present" unique_id=4169262 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, -24)
+[node name="RandomPlatform7" parent="Present" unique_id=638443330 instance=ExtResource("4_ry8xl")]
+position = Vector2(-32, 0)
+exist_chance = 0.3
 native_timeline = 0
-exist_chance = 0.1
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("6_q0mit")]
-tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAIAPz/AAAAAAAAAQD0/wgAAAAAAAAABAAKAP3/AAAAAAAABGD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWAKAPX/AAAAAAAAAWAGAPz/AAAAAAAAAQAEAPz/AAAAAAAAAgD4/wgAAAAAAAAAAQD6/wgAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAIAPz/AAAAAAAAAQD0/wgAAAAAAAAABAAKAP3/AAAAAAAABGD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWAKAPX/AAAAAAAAAWAGAPz/AAAAAAAAAQD4/wgAAAAAAAAAAQA=")
+
+[node name="RandomPlatform5" parent="Present" unique_id=1860093997 instance=ExtResource("4_ry8xl")]
+position = Vector2(-32, 96)
+exist_chance = 0.3
+native_timeline = 0
+
+[node name="RandomPlatform2" parent="Present" unique_id=1961002618 instance=ExtResource("4_ry8xl")]
+position = Vector2(32, 48)
+exist_chance = 0.3
+native_timeline = 0
+
+[node name="RandomPlatform4" parent="Present" unique_id=1999964952 instance=ExtResource("4_ry8xl")]
+position = Vector2(32, -48)
+exist_chance = 0.3
+native_timeline = 0
+
+[node name="RandomPlatform8" parent="Present" unique_id=1571864714 instance=ExtResource("4_ry8xl")]
+position = Vector2(64, -48)
+exist_chance = 0.3
+native_timeline = 0
+
+[node name="RandomPlatform6" parent="Present" unique_id=1343702438 instance=ExtResource("4_ry8xl")]
+position = Vector2(64, 48)
+exist_chance = 0.3
+native_timeline = 0
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -94,25 +109,41 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="RandomPlatform" parent="Future" unique_id=467564072 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 96)
-
-[node name="RandomPlatform2" parent="Future" unique_id=676508909 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, 56)
-
-[node name="RandomPlatform3" parent="Future" unique_id=1082185276 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 16)
-
-[node name="RandomPlatform4" parent="Future" unique_id=1205397585 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, -24)
-
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
 position = Vector2(144, -88)
-nextScene = "Level18"
+nextScene = "Level23N"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_q0mit")]
-tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAFAPz/AAAAAAAAAgAHAPz/AAAAAAAAAQD0/wgAAAAAAAAABAALAP3/AAAAAAAABGAJAPz/AAAAAAAAAQD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVALAPv/AAAAAAAAAWALAPn/AAAAAAAAAWALAPf/AAAAAAAAAWALAPX/AAAAAAAAAWD4/wgAAAAAAAAAAQD6/wgAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAHAPz/AAAAAAAAAQD0/wgAAAAAAAAABAALAP3/AAAAAAAABGAJAPz/AAAAAAAAAQD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVALAPv/AAAAAAAAAWALAPn/AAAAAAAAAWALAPf/AAAAAAAAAWALAPX/AAAAAAAAAWD4/wgAAAAAAAAAAQA=")
+
+[node name="RandomPlatform3" parent="Future" unique_id=1605235542 instance=ExtResource("4_ry8xl")]
+position = Vector2(-64, 0)
+exist_chance = 0.3
+
+[node name="RandomPlatform7" parent="Future" unique_id=1662392706 instance=ExtResource("4_ry8xl")]
+position = Vector2(-32, 0)
+exist_chance = 0.3
+
+[node name="RandomPlatform5" parent="Future" unique_id=1418273584 instance=ExtResource("4_ry8xl")]
+position = Vector2(-32, 96)
+exist_chance = 0.3
+
+[node name="RandomPlatform2" parent="Future" unique_id=2022566558 instance=ExtResource("4_ry8xl")]
+position = Vector2(32, 48)
+exist_chance = 0.3
+
+[node name="RandomPlatform4" parent="Future" unique_id=795034089 instance=ExtResource("4_ry8xl")]
+position = Vector2(32, -48)
+exist_chance = 0.3
+
+[node name="RandomPlatform8" parent="Future" unique_id=642157385 instance=ExtResource("4_ry8xl")]
+position = Vector2(64, -48)
+exist_chance = 0.3
+
+[node name="RandomPlatform6" parent="Future" unique_id=1606993685 instance=ExtResource("4_ry8xl")]
+position = Vector2(64, 48)
+exist_chance = 0.3
 
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_myr8f")]
 position = Vector2(-96, 40)
@@ -136,7 +167,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_tixvj")]
 position = Vector2(0, 264)
-currentScene = "Level17"
+currentScene = "Level22N"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1481030062]
 position = Vector2(0, 11)

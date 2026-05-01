@@ -8,6 +8,25 @@
 atlas = ExtResource("3_p2cfj")
 region = Rect2(19, 1, 15, 11)
 
+[sub_resource type="Gradient" id="Gradient_lhxgf"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4k5ka"]
+gradient = SubResource("Gradient_lhxgf")
+width = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p2cfj"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 10, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+
 [node name="ControlLampDom" type="Node2D" unique_id=177997193]
 script = ExtResource("1_lhxgf")
 light_priority = 100
@@ -24,3 +43,10 @@ texture_filter = 1
 position = Vector2(0, -95)
 scale = Vector2(1.8500001, 1.75)
 texture = SubResource("AtlasTexture_mm6ix")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=268050483]
+position = Vector2(0, -88)
+amount = 30
+texture = SubResource("GradientTexture1D_4k5ka")
+randomness = 0.37
+process_material = SubResource("ParticleProcessMaterial_p2cfj")

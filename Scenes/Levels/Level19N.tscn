@@ -1,0 +1,125 @@
+[gd_scene format=4 uid="uid://c88rk4css8fr5"]
+
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_wy7ie"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="2_nkypv"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_p7qxh"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="4_dqlc3"]
+[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="4_i6x5o"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="6_dqlc3"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="7_plv8q"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="8_dqlc3"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_k47cb"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_6ybpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqlc3"]
+size = Vector2(848, 42)
+
+[node name="Level19" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_wy7ie")
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=957255894]
+position = Vector2(-3, -3)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("2_p7qxh")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("2_nkypv")]
+position = Vector2(-616.0001, 392.00006)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Present" type="Node2D" parent="." unique_id=310712685]
+position = Vector2(-960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Present" unique_id=1875645703]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Present" unique_id=231010411]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Present" unique_id=696573508]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("8_dqlc3")]
+tile_map_data = PackedByteArray("AAD6/wMAAAAAAAAAAQD4/wMAAAAAAAAAAQD2/wMAAAAAAAAAAQAIAPz/AAAAAAAAAQAKAPz/AAAAAAAAAQAMAPz/AAAAAAAAAQAHAP//AAAAAAAABTAGAP3/AAAAAAAABWAJAP//AAAAAAAAATALAP//AAAAAAAAATANAP//AAAAAAAAATD8/wMAAAAAAAAABQD9/wUAAAAAAAAAAVD9/wcAAAAAAAAAAVD9/wkAAAAAAAAAAVD2/wUAAAAAAAAABgD4/wUAAAAAAAAABgD6/wUAAAAAAAAABgD2/wcAAAAAAAAABgD4/wcAAAAAAAAABgD6/wcAAAAAAAAABgD2/wkAAAAAAAAABgD4/wkAAAAAAAAABgD6/wkAAAAAAAAABgAKAP3/AAAAAAAABGAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWALAPX/AAAAAAAABDAJAPX/AAAAAAAAATAHAPX/AAAAAAAAATAFAPX/AAAAAAAAATADAPX/AAAAAAAABTD1/wEAAAAAAAAAAVD1////AAAAAAAAAVD1//3/AAAAAAAAAVD1//v/AAAAAAAAAVD0/wMAAAAAAAAABAA=")
+
+[node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("4_dqlc3")]
+position = Vector2(136, -88)
+nextScene = "Level20N"
+
+[node name="Future" type="Node2D" parent="." unique_id=2100330699]
+position = Vector2(960, 0)
+
+[node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
+scale = Vector2(1.0012594, 0.7510287)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="Future" unique_id=567642971]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="Future" unique_id=392682067]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="Future" unique_id=1637643970]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="RandomPlatform2" parent="Future" unique_id=2028578219 instance=ExtResource("4_i6x5o")]
+position = Vector2(48, -24)
+
+[node name="RandomPlatform" parent="Future" unique_id=1605235542 instance=ExtResource("4_i6x5o")]
+position = Vector2(-16, 16)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("6_dqlc3")]
+tile_map_data = PackedByteArray("AAD4/wMAAAAAAAAAAQD2/wMAAAAAAAAAAQD0/wMAAAAAAAAABAD0/wUAAAAAAAAABgD2/wUAAAAAAAAABgD4/wUAAAAAAAAABgD0/wcAAAAAAAAABgD2/wcAAAAAAAAABgD4/wcAAAAAAAAABgD0/wkAAAAAAAAABgD2/wkAAAAAAAAABgD4/wkAAAAAAAAABgD8/wMAAAAAAAAABQD9/wUAAAAAAAAAAVD9/wcAAAAAAAAAAVD9/wkAAAAAAAAAAVD6/wkAAAAAAAAABgD6/wcAAAAAAAAABgD6/wUAAAAAAAAABgD6/wMAAAAAAAAAAQD1/wEAAAAAAAAAAVD1////AAAAAAAAAVD1//3/AAAAAAAAAVD1//v/AAAAAAAAAVD1//n/AAAAAAAAAVA=")
+
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_k47cb")]
+position = Vector2(-128, 24)
+jumpVelocity = 400.0
+starting_present = true
+
+[node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
+position = Vector2(-160, 0)
+gizmo_extents = 53.9
+
+[node name="RightBorder" type="Marker2D" parent="." unique_id=192288777]
+position = Vector2(160, 0)
+gizmo_extents = 53.9
+
+[node name="BottomBorder" type="Marker2D" parent="." unique_id=1331686996]
+position = Vector2(0, 160)
+gizmo_extents = 53.9
+
+[node name="TopBorder" type="Marker2D" parent="." unique_id=1427189775]
+position = Vector2(0, -160)
+gizmo_extents = 53.9
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("7_plv8q")]
+position = Vector2(0, 280)
+currentScene = "Level19N"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1323761464]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_dqlc3")
+
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_6ybpp")]
