@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl2rnevi75rf" path="res://Scripts/credits_scene.gd" id="1_c8n8s"]
 [ext_resource type="Texture2D" uid="uid://dnrhfkmb6v10v" path="res://Resources/MainMenu_Background.png" id="2_5a4fm"]
+[ext_resource type="FontFile" uid="uid://bgal0wt55pvm0" path="res://Assets/Fonts/Kenney Future Square.ttf" id="3_rquqo"]
 
 [node name="CreditsScene" type="Node2D" unique_id=378000155]
 script = ExtResource("1_c8n8s")
@@ -17,6 +18,7 @@ offset_top = 802.0
 offset_right = 1934.0
 offset_bottom = 3074.0
 scale = Vector2(1.269736, 1.7982317)
+theme_override_fonts/font = ExtResource("3_rquqo")
 theme_override_font_sizes/font_size = 50
 text = "
 

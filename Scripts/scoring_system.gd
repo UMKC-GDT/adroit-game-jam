@@ -26,5 +26,5 @@ func cat_collected():
 # Designed to be called by the game manager whenever a new level is loaded.
 func changeLevel(newLevel: int):
 	$LevelLabel.text = ("Level " + str(newLevel))
-	$TimeLabel.text = 0
+	$TimeLabel.text = -0.75
 	$StarTimeLabel.text = "%0.2f" % STAR_TIME_LIST[newLevel - 1]
