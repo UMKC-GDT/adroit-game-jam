@@ -86,7 +86,7 @@ walljump = true
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_bymwt")]
 position = Vector2(144, -88)
-nextScene = "Level20"
+nextScene = "Level19N"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_8r7p3")]
