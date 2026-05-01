@@ -15,7 +15,9 @@ var switching := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.levelProgressCount = 0
+	if(Global.levelProgressCount == null):
+		Global.levelProgressCount = 0
+		print("testing reset: ",Global.levelProgressCount)
 	#currentScene = mainMenuScene.instantiate()
 	#$SubViewportContainer.visible = false
 	LoadNewScene("res://Scenes/MainMenu.tscn")

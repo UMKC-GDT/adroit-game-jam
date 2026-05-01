@@ -9,6 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://s1rxearaj83m" path="res://Resources/levelselect images/Level4Image.png" id="7_hwox2"]
 [ext_resource type="Texture2D" uid="uid://k8duxs0d6wvo" path="res://Resources/levelselect images/Level5Image.png" id="8_v1fni"]
 [ext_resource type="Texture2D" uid="uid://bvi4kvyh0ds28" path="res://Resources/levelselect images/Level6Image.png" id="9_3j1tq"]
+[ext_resource type="Texture2D" uid="uid://bia6mxhb675l3" path="res://Resources/levelselect images/Level7Image.png" id="10_3r618"]
+[ext_resource type="Texture2D" uid="uid://c86fqr6uy6oga" path="res://Resources/levelselect images/Level8Image.png" id="11_xrl0l"]
+[ext_resource type="Texture2D" uid="uid://cc14xjbfa7vxi" path="res://Resources/levelselect images/Level9Image.png" id="12_uo8dr"]
+[ext_resource type="Texture2D" uid="uid://dig6toa7c8bru" path="res://Resources/levelselect images/Level10Image.png" id="13_3svkl"]
+[ext_resource type="Texture2D" uid="uid://c05qft7pxf680" path="res://Resources/levelselect images/Level11Image.png" id="14_ckrr1"]
+[ext_resource type="Texture2D" uid="uid://bo2t74q6m03h0" path="res://Resources/levelselect images/Level12Image.png" id="15_s0f7j"]
+[ext_resource type="Texture2D" uid="uid://dkl3fqlr3ktc5" path="res://Resources/levelselect images/Level13Image.png" id="16_bnaqy"]
+[ext_resource type="Texture2D" uid="uid://b37beciucqrtc" path="res://Resources/levelselect images/Level14Image.png" id="17_vly10"]
+[ext_resource type="Texture2D" uid="uid://tx8np3b250qk" path="res://Resources/levelselect images/Level15Image.png" id="18_ihao3"]
+[ext_resource type="Texture2D" uid="uid://bgghghfkj2mnc" path="res://Resources/levelselect images/Level16Image.png" id="19_wst3m"]
+[ext_resource type="Texture2D" uid="uid://c1h0mnpa53u4c" path="res://Resources/levelselect images/Level17Image.png" id="20_40gey"]
+[ext_resource type="Texture2D" uid="uid://82unt5bvoby" path="res://Resources/levelselect images/Level18Image.png" id="21_x1efo"]
+[ext_resource type="Texture2D" uid="uid://mqp8ob0b4417" path="res://Resources/levelselect images/Level19Image.png" id="22_66kto"]
+[ext_resource type="Texture2D" uid="uid://bj7iw367rtwuj" path="res://Resources/levelselect images/Level20Image.png" id="23_jmm1l"]
+[ext_resource type="Texture2D" uid="uid://bkb5gwxh64rsn" path="res://Resources/levelselect images/Level21Image.png" id="24_wjyp4"]
+[ext_resource type="Texture2D" uid="uid://brmowfv0x4xtr" path="res://Resources/levelselect images/Level22Image.png" id="25_ei86v"]
 
 [node name="LevelSelectScreen" type="Node2D" unique_id=1201548234]
 script = ExtResource("1_ponqj")
@@ -28,49 +44,158 @@ text = "Level Select"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133376005]
 
-[node name="Level 1" parent="." unique_id=702321648 instance=ExtResource("1_ui58y")]
-offset_left = -390.0
-offset_top = -261.0
-offset_right = -198.0
-offset_bottom = -69.0
+[node name="exit" type="Button" parent="." unique_id=1426242563]
+offset_left = -722.0
+offset_top = -473.0
+offset_right = -624.0
+offset_bottom = -374.0
+theme_override_font_sizes/font_size = 70
+text = "X"
+
+[node name="next" type="Button" parent="." unique_id=84590297]
+offset_left = 543.0
+offset_top = 243.0
+offset_right = 712.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 37
+text = "Next >"
+
+[node name="back" type="Button" parent="." unique_id=215920456]
+offset_left = -666.0
+offset_top = 249.0
+offset_right = -497.0
+offset_bottom = 330.0
+theme_override_font_sizes/font_size = 37
+text = "< Back"
+
+[node name="GridContainer1-12" type="GridContainer" parent="." unique_id=1935427444]
+offset_left = -475.0
+offset_top = -307.0
+offset_right = 502.0
+offset_bottom = 361.0
+theme_override_constants/h_separation = 260
+theme_override_constants/v_separation = 224
+columns = 4
+
+[node name="Level 1" parent="GridContainer1-12" unique_id=702321648 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level = 1
 level_image = ExtResource("4_ogcde")
 
-[node name="Level 2" parent="." unique_id=753742700 instance=ExtResource("1_ui58y")]
-offset_left = -97.0
-offset_top = -265.0
-offset_right = 95.0
-offset_bottom = -73.0
+[node name="Level 2" parent="GridContainer1-12" unique_id=753742700 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level_image = ExtResource("5_had1o")
 
-[node name="Level 3" parent="." unique_id=918775436 instance=ExtResource("1_ui58y")]
-offset_left = 217.0
-offset_top = -269.0
-offset_right = 409.0
-offset_bottom = -77.0
+[node name="Level 3" parent="GridContainer1-12" unique_id=918775436 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level = 3
 level_image = ExtResource("6_qtify")
 
-[node name="Level 4" parent="." unique_id=37537425 instance=ExtResource("1_ui58y")]
-offset_left = -393.0
-offset_top = -13.0
-offset_right = -201.0
-offset_bottom = 179.0
+[node name="Level 4" parent="GridContainer1-12" unique_id=37537425 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level = 4
 level_image = ExtResource("7_hwox2")
 
-[node name="Level 5" parent="." unique_id=182105217 instance=ExtResource("1_ui58y")]
-offset_left = -101.0
-offset_top = -17.0
-offset_right = 91.0
-offset_bottom = 175.0
+[node name="Level 5" parent="GridContainer1-12" unique_id=182105217 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level = 5
 level_image = ExtResource("8_v1fni")
 
-[node name="Level 6" parent="." unique_id=1624539161 instance=ExtResource("1_ui58y")]
-offset_left = 219.0
-offset_top = -16.0
-offset_right = 411.0
-offset_bottom = 176.0
+[node name="Level 6" parent="GridContainer1-12" unique_id=1624539161 instance=ExtResource("1_ui58y")]
+layout_mode = 2
 level = 6
 level_image = ExtResource("9_3j1tq")
+
+[node name="Level 7" parent="GridContainer1-12" unique_id=716732115 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 7
+level_image = ExtResource("10_3r618")
+
+[node name="Level 8" parent="GridContainer1-12" unique_id=1616031359 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 8
+level_image = ExtResource("11_xrl0l")
+
+[node name="Level 9" parent="GridContainer1-12" unique_id=1795508571 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 9
+level_image = ExtResource("12_uo8dr")
+
+[node name="Level 10" parent="GridContainer1-12" unique_id=1943978376 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 10
+level_image = ExtResource("13_3svkl")
+
+[node name="Level 11" parent="GridContainer1-12" unique_id=435257137 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 11
+level_image = ExtResource("14_ckrr1")
+
+[node name="Level 12" parent="GridContainer1-12" unique_id=1285816220 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 12
+level_image = ExtResource("15_s0f7j")
+
+[node name="GridContainer13-24" type="GridContainer" parent="." unique_id=1917566441]
+visible = false
+offset_left = -475.0
+offset_top = -307.0
+offset_right = 502.0
+offset_bottom = 361.0
+theme_override_constants/h_separation = 260
+theme_override_constants/v_separation = 224
+columns = 4
+
+[node name="Level 13" parent="GridContainer13-24" unique_id=1437741645 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 13
+level_image = ExtResource("16_bnaqy")
+
+[node name="Level 14" parent="GridContainer13-24" unique_id=911976749 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 14
+level_image = ExtResource("17_vly10")
+
+[node name="Level 15" parent="GridContainer13-24" unique_id=453425995 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 15
+level_image = ExtResource("18_ihao3")
+
+[node name="Level 16" parent="GridContainer13-24" unique_id=1118208892 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 16
+level_image = ExtResource("19_wst3m")
+
+[node name="Level 17" parent="GridContainer13-24" unique_id=180636361 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 17
+level_image = ExtResource("20_40gey")
+
+[node name="Level 18" parent="GridContainer13-24" unique_id=2034460245 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 18
+level_image = ExtResource("21_x1efo")
+
+[node name="Level 19" parent="GridContainer13-24" unique_id=980891569 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 19
+level_image = ExtResource("22_66kto")
+
+[node name="Level 20" parent="GridContainer13-24" unique_id=1424201420 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 20
+level_image = ExtResource("23_jmm1l")
+
+[node name="Level 21" parent="GridContainer13-24" unique_id=1782443767 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 21
+level_image = ExtResource("24_wjyp4")
+
+[node name="Level 22" parent="GridContainer13-24" unique_id=1000988038 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 22
+level_image = ExtResource("25_ei86v")
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

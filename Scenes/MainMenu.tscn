@@ -87,5 +87,6 @@ position = Vector2(24, 48)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Options" to="LevelSelectScreen" method="_on_options_pressed"]
 [connection signal="pressed" from="Button Manager/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]

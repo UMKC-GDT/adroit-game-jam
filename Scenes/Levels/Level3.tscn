@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cgujm83hvvr8j" path="res://Resources/flashlightimage.png" id="11_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://cs2qq2w2y4kds" path="res://Assets/uipopup2.tscn" id="14_s3p7u"]
 [ext_resource type="Texture2D" uid="uid://obqa6b5o81k6" path="res://Resources/PressE.png" id="15_7ithr"]
-[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="17_r3ubd"]
 [ext_resource type="Texture2D" uid="uid://co10nr5aknqya" path="res://Resources/LeftClick.png" id="23_4cqrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5el5"]
@@ -183,11 +182,6 @@ native_timeline = 2
 position = Vector2(0, 48)
 shape = SubResource("RectangleShape2D_r3ubd")
 debug_color = Color(0.8789683, 0.00038350583, 0.8274336, 0.41960785)
-
-[node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("17_r3ubd")]
-visible = false
-position = Vector2(1, 0)
-scale = Vector2(0.245, 0.245)
 
 [connection signal="interacted" from="Flashlight on ground/InteractableComponent" to="Flashlight on ground" method="_on_interactable_component_interacted"]
 
