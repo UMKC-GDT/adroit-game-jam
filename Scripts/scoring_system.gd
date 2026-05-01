@@ -5,8 +5,8 @@ extends Control
 #Cat Counter
 var collectedCats: int = 0
 # Star Time: Finish the level before this many seconds have passed to recieve a star.
-var starTime: float
-var starTimeList: Array[float] = [0, 0, 0, 0, 0, 5.65]
+var elapsedTime: float = 0
+const STAR_TIME_LIST: Array[float] = [0, 0, 0, 0, 0, 5.65, 6, 7, 6, 7, 5, 7, 2, 1, 2, 74435345223]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +15,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	elapsedTime += delta
+	$TimeLabel.text = "%0.2f" % elapsedTime
 
 # Designed to be called by the cats whenever they are discovered.
 func cat_collected():
@@ -25,4 +26,5 @@ func cat_collected():
 # Designed to be called by the game manager whenever a new level is loaded.
 func changeLevel(newLevel: int):
 	$LevelLabel.text = ("Level " + str(newLevel))
-	starTime = starTimeList[newLevel - 1]
+	$TimeLabel.text = 0
+	$StarTimeLabel.text = "%0.2f" % STAR_TIME_LIST[newLevel - 1]
