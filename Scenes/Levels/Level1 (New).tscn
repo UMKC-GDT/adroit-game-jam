@@ -70,7 +70,6 @@ position = Vector2(0, 64)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAKAAAAAAAAAAAAAQD+/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD4/wAAAAAAAAAAAQD2/wAAAAAAAAAAAQD0/wAAAAAAAAAAAQD0//z/AAAAAAAABgD0//7/AAAAAAAABgD0//r/AAAAAAAABgD0//j/AAAAAAAABgD0//b/AAAAAAAABgD0//T/AAAAAAAABgAKAP7/AAAAAAAABgAKAPz/AAAAAAAABgAKAPr/AAAAAAAABgAKAPj/AAAAAAAABgAKAPb/AAAAAAAABgAKAPT/AAAAAAAABgA=")
 
 [node name="UI Message2" parent="Present" unique_id=1302920499 instance=ExtResource("6_kj67q")]
-visible = false
 position = Vector2(-104.000046, 24)
 image = ExtResource("7_x703b")
 
@@ -86,7 +85,6 @@ debug_color = Color(0.9307964, 3.1188727e-05, 0.6573525, 0.41960785)
 [node name="UIPopup" parent="Present" unique_id=1793493875 instance=ExtResource("9_x703b")]
 position = Vector2(-104, 0)
 image = ExtResource("7_x703b")
-requires_input = false
 interact_action = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present/UIPopup/Area2D" parent_id_path=PackedInt32Array(1793493875, 448284378) index="0" unique_id=1809604975]
