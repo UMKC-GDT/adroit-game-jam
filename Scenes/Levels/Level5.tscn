@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="7_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="8_d7gg6"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_c4srv"]
-[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="12_6t0vn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us0t"]
 size = Vector2(352, 34)
@@ -116,10 +115,5 @@ image = ExtResource("7_6t0vn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UIPopup/Area2D" parent_id_path=PackedInt32Array(1605235542, 448284378) index="0" unique_id=1056006148]
 position = Vector2(24, 48)
 shape = SubResource("RectangleShape2D_eyf00")
-
-[node name="LevelSelectScreen" parent="." unique_id=1201548234 instance=ExtResource("12_6t0vn")]
-visible = false
-position = Vector2(1, 0)
-scale = Vector2(0.245, 0.245)
 
 [editable path="UIPopup"]

@@ -14,10 +14,10 @@ func _on_start_pressed() -> void:
 		if tree:
 			#await tree.create_timer(3.5).timeout
 			gm.soundManager.play(SoundManager.Emitters.LEVEL)
-		sceneManager.LoadNewScene("res://Scenes/Levels/Level1 (New).tscn")
+		sceneManager.LoadNewScene("res://Scenes/Levels/Level1.tscn")
 		
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Levels/Level1 (New).tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 
 
