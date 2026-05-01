@@ -96,6 +96,7 @@ tile_map_data = PackedByteArray("AAD4/wMAAAAAAAAAAQD2/wMAAAAAAAAAAQD0/wMAAAAAAAA
 [node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_k47cb")]
 position = Vector2(-128, 24)
 jumpVelocity = 400.0
+starting_present = true
 
 [node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
 position = Vector2(-160, 0)
