@@ -47,16 +47,19 @@ func LoadNewScene(name:String):
 		currentSceneName = name
 
 		if name == "res://Scenes/MainMenu.tscn":
+			isMainMenu = true
 			$SubViewportContainer.visible = false
 			ScreenFadeManager.visible = false
 			background.hide()
 			self.add_child(currentScene)
 		elif name == "res://Scenes/Levels/credits_scene.tscn":
+			isMainMenu = true
 			$SubViewportContainer.visible = false
 			ScreenFadeManager.visible = false
 			background.hide()
 			self.add_child(currentScene)
 		else:
+			isMainMenu = false
 			$SubViewportContainer.visible = true
 			ScreenFadeManager.visible = true
 			background.show()
@@ -67,8 +70,3 @@ func LoadNewScene(name:String):
 	#$SubViewportContainer/SubViewport.add_child(currentScene)
 	switching = false
 	ScreenFadeManager.fadeIn()
-
-#Detects if Escape is pressed, exits to main menu if true
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape"):
-		get_tree().change_scene_to_file("res://Scenes/GameManager.tscn")
