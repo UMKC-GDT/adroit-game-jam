@@ -111,7 +111,7 @@ gizmo_extents = 53.9
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
 position = Vector2(144, -88)
-nextScene = "Level18"
+nextScene = "Level23N"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_q0mit")]
