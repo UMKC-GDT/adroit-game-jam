@@ -16,11 +16,6 @@ func _ready() -> void:
 	if(Global.levelProgressCount < level-1):
 		$"Locked overlay".visible = true
 
-
-		
-	
-	
-
 func _on_button_pressed() -> void:
 	var tree = get_tree()
 	if tree != null:
@@ -29,4 +24,4 @@ func _on_button_pressed() -> void:
 		if (gm != null):
 			gm.LoadNewScene("res://Scenes/Levels/"+nextScene+".tscn")
 		else:
-				get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/"+nextScene+".tscn")

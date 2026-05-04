@@ -44,8 +44,3 @@ func _on_options_pressed() -> void:
 	settings.show_menu()
 	visible = false
 	settings_shown = true
-
-
-func _on_levels_pressed() -> void:
-	visible = false
-	levels.show_menu()

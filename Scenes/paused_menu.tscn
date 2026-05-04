@@ -51,12 +51,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 62
 text = "MAIN MENU"
 
-[node name="Levels" type="Button" parent="VBoxContainer" unique_id=957248218]
-layout_mode = 2
-theme_override_font_sizes/font_size = 62
-text = "LEVEL SELECT
-"
-
 [node name="Options" type="Button" parent="VBoxContainer" unique_id=170707300]
 layout_mode = 2
 theme_override_font_sizes/font_size = 62
@@ -84,6 +78,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -33,3 +33,7 @@ func _on_credits_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_level_select_pressed() -> void:
+	$LevelSelectScreen.visible = true
+	#TODO: we need a special sprite for this button. As it stands now, it is the second options button

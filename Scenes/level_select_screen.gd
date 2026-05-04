@@ -16,9 +16,8 @@ func hide_menu():
 	isVisible = false
 
 
-#if you roess options it turns on level select
+#if you press options it turns on level select
 func _on_options_pressed() -> void:
-	pass
 	show_menu()
 
 #if you press x it turn off level select

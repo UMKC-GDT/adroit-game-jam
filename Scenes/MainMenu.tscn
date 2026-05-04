@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b5tsxt43nsksu" path="res://Resources/Buttons/NormalExitButton.png" id="12_6byu3"]
 [ext_resource type="Texture2D" uid="uid://baj235w78dvla" path="res://Resources/Buttons/PressedExitButton.png" id="13_leunp"]
 [ext_resource type="Texture2D" uid="uid://byb7m70owwcj7" path="res://Resources/Buttons/HoveredExitButton.png" id="14_h1v62"]
+[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="16_2x1g0"]
 
 [node name="MainMenu" type="Node2D" unique_id=1147203224 groups=["audio"]]
 script = ExtResource("1_tt5f1")
@@ -39,9 +40,9 @@ scale = Vector2(1.1656549, 1.2162162)
 [node name="Start" type="TextureButton" parent="Button Manager" unique_id=1922518639]
 layout_mode = 0
 offset_left = 300.00003
-offset_top = 1.0
+offset_top = -7.222223
 offset_right = 418.00003
-offset_bottom = 32.0
+offset_bottom = 23.777777
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("3_8e205")
 texture_pressed = ExtResource("4_7467j")
@@ -49,10 +50,21 @@ texture_hover = ExtResource("5_2x1g0")
 
 [node name="Options" type="TextureButton" parent="Button Manager" unique_id=2127205150]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 96.0
-offset_right = 418.0
-offset_bottom = 127.99999
+offset_left = 299.99997
+offset_top = 82.02217
+offset_right = 417.99997
+offset_bottom = 114.02216
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("6_riqfo")
+texture_pressed = ExtResource("7_yxkem")
+texture_hover = ExtResource("8_7v4os")
+
+[node name="Level Select" type="TextureButton" parent="Button Manager" unique_id=596887271]
+layout_mode = 0
+offset_left = 300.26038
+offset_top = 170.20004
+offset_right = 418.26038
+offset_bottom = 202.20004
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("6_riqfo")
 texture_pressed = ExtResource("7_yxkem")
@@ -60,10 +72,10 @@ texture_hover = ExtResource("8_7v4os")
 
 [node name="Credits" type="TextureButton" parent="Button Manager" unique_id=992833330]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 193.00002
-offset_right = 418.0
-offset_bottom = 229.00002
+offset_left = 299.99997
+offset_top = 258.77786
+offset_right = 417.99997
+offset_bottom = 294.77786
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("9_pjscj")
 texture_pressed = ExtResource("10_m7n2d")
@@ -72,15 +84,23 @@ texture_hover = ExtResource("11_65hh5")
 [node name="Quit" type="TextureButton" parent="Button Manager" unique_id=1262931245]
 layout_mode = 0
 offset_left = 300.0
-offset_top = 293.0
+offset_top = 348.08893
 offset_right = 418.0
-offset_bottom = 326.0
+offset_bottom = 381.08893
 scale = Vector2(3.5, 3.5)
 texture_normal = ExtResource("12_6byu3")
 texture_pressed = ExtResource("13_leunp")
 texture_hover = ExtResource("14_h1v62")
 
+[node name="LevelSelectScreen" parent="." unique_id=467249612 instance=ExtResource("16_2x1g0")]
+visible = false
+offset_left = -22.0
+offset_top = 65.0
+offset_right = -22.0
+offset_bottom = 65.0
+
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Level Select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="Button Manager/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
