@@ -1,10 +1,12 @@
 extends Node2D
 
 var gm: game_manager
+var settings_menu: Settings
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	gm = get_tree().root.get_node("GameManager")
+	gm = get_tree().get_first_node_in_group("Game Manager")
+	settings_menu = get_tree().get_first_node_in_group("Settings")
 
 func _on_start_pressed() -> void:
 	gm.soundManager.setParameter(SoundManager.Emitters.TITLE, "TitleOutie", 1)
@@ -22,7 +24,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	settings_menu.show_menu()
 
 
 func _on_credits_pressed() -> void:

@@ -26,7 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://bkb5gwxh64rsn" path="res://Resources/levelselect images/Level21Image.png" id="24_wjyp4"]
 [ext_resource type="Texture2D" uid="uid://brmowfv0x4xtr" path="res://Resources/levelselect images/Level22Image.png" id="25_ei86v"]
 
-[node name="LevelSelectScreen" type="Node2D" unique_id=1201548234]
+[node name="LevelSelectScreen" type="Control" unique_id=467249612]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ponqj")
 
 [node name="GameBackgroundBorderFrame" type="Sprite2D" parent="." unique_id=1482631521]
@@ -35,6 +37,7 @@ scale = Vector2(0.5765625, 0.52372587)
 texture = ExtResource("2_ponqj")
 
 [node name="Label" type="Label" parent="." unique_id=1367300711]
+layout_mode = 0
 offset_left = -280.0
 offset_top = -472.0
 offset_right = 284.0
@@ -42,9 +45,8 @@ offset_bottom = -335.0
 theme_override_font_sizes/font_size = 100
 text = "Level Select"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2133376005]
-
 [node name="exit" type="Button" parent="." unique_id=1426242563]
+layout_mode = 0
 offset_left = -722.0
 offset_top = -473.0
 offset_right = -624.0
@@ -53,6 +55,7 @@ theme_override_font_sizes/font_size = 70
 text = "X"
 
 [node name="next" type="Button" parent="." unique_id=84590297]
+layout_mode = 0
 offset_left = 543.0
 offset_top = 243.0
 offset_right = 712.0
@@ -61,6 +64,7 @@ theme_override_font_sizes/font_size = 37
 text = "Next >"
 
 [node name="back" type="Button" parent="." unique_id=215920456]
+layout_mode = 0
 offset_left = -666.0
 offset_top = 249.0
 offset_right = -497.0
@@ -69,6 +73,7 @@ theme_override_font_sizes/font_size = 37
 text = "< Back"
 
 [node name="GridContainer1-12" type="GridContainer" parent="." unique_id=1935427444]
+layout_mode = 0
 offset_left = -475.0
 offset_top = -307.0
 offset_right = 502.0
@@ -138,6 +143,7 @@ level_image = ExtResource("15_s0f7j")
 
 [node name="GridContainer13-24" type="GridContainer" parent="." unique_id=1917566441]
 visible = false
+layout_mode = 0
 offset_left = -475.0
 offset_top = -307.0
 offset_right = 502.0

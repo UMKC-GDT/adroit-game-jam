@@ -55,6 +55,7 @@ folder_colors={
 Player="The Player"
 audio="all audio"
 "Game Manager"=""
+Settings="The Settings Menu"
 
 [input]
 

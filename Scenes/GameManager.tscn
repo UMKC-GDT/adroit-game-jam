@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="3_je8vj"]
 [ext_resource type="Texture2D" uid="uid://bp70e765v17rs" path="res://Resources/BorderFrameGame.png" id="5_f5c43"]
 [ext_resource type="PackedScene" uid="uid://c6go08kxnpdvr" path="res://Scenes/paused_menu.tscn" id="7_je8vj"]
+[ext_resource type="PackedScene" uid="uid://dtohc6anmmadm" path="res://Scenes/Levels/settings.tscn" id="8_f5c43"]
+[ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="9_8mb02"]
 
 [node name="GameManager" type="Node2D" unique_id=618373773 node_paths=PackedStringArray("background", "ScreenFadeManager", "soundManager") groups=["Game Manager", "audio"]]
 script = ExtResource("1_m2tc1")
@@ -140,7 +142,19 @@ position = Vector2(960, 540)
 scale = Vector2(0.45601746, 0.73540765)
 
 [node name="UI Elements" type="CanvasLayer" parent="." unique_id=318440165]
+process_mode = 3
 
 [node name="PausedMenu" parent="UI Elements" unique_id=1832722858 instance=ExtResource("7_je8vj")]
 process_mode = 3
 visible = false
+
+[node name="Settings" parent="UI Elements" unique_id=779242430 groups=["Settings"] instance=ExtResource("8_f5c43")]
+visible = false
+
+[node name="LevelSelectScreen" parent="UI Elements" unique_id=1201548234 groups=["Level Select"] instance=ExtResource("9_8mb02")]
+process_mode = 3
+visible = false
+offset_left = 953.0
+offset_top = 536.0
+offset_right = 953.0
+offset_bottom = 536.0

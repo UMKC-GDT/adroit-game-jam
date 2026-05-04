@@ -1,22 +1,30 @@
-extends Node2D
+class_name level_select extends Control
 
+var gm: game_manager
 
 var isVisible = false
 
 func _ready() -> void:
 	visible = false
-	
+
+func show_menu():
+	visible = true
+	isVisible = true
+
+func hide_menu():
+	visible = false
+	isVisible = false
 
 
 #if you roess options it turns on level select
 func _on_options_pressed() -> void:
-	visible = true
-	isVisible = true
+	pass
+	show_menu()
 
 #if you press x it turn off level select
 func _on_exit_pressed() -> void:
-	visible = false
-	isVisible = false
+	hide_menu()
+	Input.action_press("escape")
 
 
 func _on_next_pressed() -> void:

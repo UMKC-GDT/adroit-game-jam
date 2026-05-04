@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dtohc6anmmadm"]
+
+[ext_resource type="Script" uid="uid://bra368fid6l4l" path="res://Scripts/settings.gd" id="1_8u6te"]
+
+[node name="Settings" type="Control" unique_id=779242430]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8u6te")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=686312557]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -738.875
+offset_top = -392.25
+offset_right = 738.875
+offset_bottom = 392.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=473870549]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Volume" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1334089621]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Volume" unique_id=961761007]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Volume"
+
+[node name="volume slider" type="HSlider" parent="PanelContainer/VBoxContainer/Volume" unique_id=1286588464]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Resolution" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1816351288]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Resolution" unique_id=911621544]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Resolution"
+
+[node name="resolutions" type="MenuButton" parent="PanelContainer/VBoxContainer/Resolution" unique_id=1616220506]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+toggle_mode = false
+text = "1920x1080"
+flat = false
+item_count = 8
+popup/item_0/text = "854x480"
+popup/item_0/id = 0
+popup/item_1/text = "1024x768"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1400x1050"
+popup/item_3/id = 3
+popup/item_4/text = "1600x900"
+popup/item_4/id = 4
+popup/item_5/text = "1920x1080"
+popup/item_5/id = 5
+popup/item_6/text = "2560x1440"
+popup/item_6/id = 6
+popup/item_7/text = "3840x2160"
+popup/item_7/id = 7
+
+[node name="Window Type" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=218117483]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Window Type" unique_id=120653701]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Window Type"
+
+[node name="types" type="MenuButton" parent="PanelContainer/VBoxContainer/Window Type" unique_id=2081023182]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+toggle_mode = false
+text = "Windowed"
+flat = false
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 1
+popup/item_1/text = "Full Screen"
+popup/item_1/id = 0
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
+
+[node name="Title" type="Label" parent="PanelContainer" unique_id=1173318557]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 128
+
+[node name="Button" type="Button" parent="." unique_id=131705540]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -242.0
+offset_right = 55.0
+offset_bottom = -173.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="drag_ended" from="PanelContainer/VBoxContainer/Volume/volume slider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/Volume/volume slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
