@@ -25,15 +25,28 @@ func _on_start_pressed() -> void:
 
 func _on_options_pressed() -> void:
 	settings_menu.show_menu()
+	disable_buttons()
 
 
 func _on_credits_pressed() -> void:
 	gm.LoadNewScene("res://Scenes/Levels/credits_scene.tscn")
+	disable_buttons()
 
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_level_select_pressed() -> void:
-	$LevelSelectScreen.visible = true
+	$LevelSelectScreen.show_menu()
+	disable_buttons()
 	#TODO: we need a special sprite for this button. As it stands now, it is the second options button
+
+func disable_buttons():
+	for item in $"Button Manager".get_children():
+		if item is TextureButton:
+			item.disabled = true
+
+func enable_buttons():
+	for item in $"Button Manager".get_children():
+		if item is TextureButton:
+			item.disabled = false

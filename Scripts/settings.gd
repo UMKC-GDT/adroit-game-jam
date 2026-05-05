@@ -19,6 +19,7 @@ func hide_menu():
 	visible = false
 	if gm.isMainMenu:
 		get_tree().paused = false
+		get_tree().call_group("Main Menu", "enable_buttons")
 	else:
 		Input.action_press("escape")
 

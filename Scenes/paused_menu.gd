@@ -2,7 +2,7 @@ class_name PauseMenu extends Control
 
 var settings: Settings
 var gm: game_manager
-var levels: level_select
+var levels: LevelSelect
 
 
 var settings_shown: bool = false
@@ -11,6 +11,7 @@ func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("Game Manager")
 	settings = get_tree().get_first_node_in_group("Settings")
 	levels = get_tree().get_first_node_in_group("Level Select")
+	levels.gm = gm
 	settings.pause_menu = self
 	settings.gm = gm
 

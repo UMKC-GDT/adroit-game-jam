@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://brmowfv0x4xtr" path="res://Resources/levelselect images/Level22Image.png" id="25_ei86v"]
 
 [node name="LevelSelectScreen" type="Control" unique_id=467249612]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ponqj")

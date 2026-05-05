@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://byb7m70owwcj7" path="res://Resources/Buttons/HoveredExitButton.png" id="14_h1v62"]
 [ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="16_2x1g0"]
 
-[node name="MainMenu" type="Node2D" unique_id=1147203224 groups=["audio"]]
+[node name="MainMenu" type="Node2D" unique_id=1147203224 groups=["Main Menu", "audio"]]
 script = ExtResource("1_tt5f1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1214627852]

@@ -1,4 +1,4 @@
-class_name level_select extends Control
+class_name LevelSelect extends Control
 
 var gm: game_manager
 
@@ -14,6 +14,7 @@ func show_menu():
 func hide_menu():
 	visible = false
 	isVisible = false
+	get_tree().call_group("Main Menu", "enable_buttons")
 
 
 #if you press options it turns on level select
