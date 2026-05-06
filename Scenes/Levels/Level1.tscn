@@ -134,6 +134,9 @@ position = Vector2(96, 0)
 image = ExtResource("8_8h4de")
 native_timeline = 1
 
+[node name="CollisionShape2D" parent="Future/DoorTooltip" index="1" unique_id=1029249552]
+disabled = false
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Future/DoorTooltip/Area2D" parent_id_path=PackedInt32Array(225740833, 448284378) index="0" unique_id=1444149792]
 position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_x703b")
