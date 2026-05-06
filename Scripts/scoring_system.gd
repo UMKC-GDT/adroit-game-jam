@@ -38,7 +38,7 @@ func changeLevel(newLevel: String):
 	print(newLevel)
 	$LevelLabel.text = ("Level " + str(levelNum))
 	elapsedTime = 0
-	$StarTimeLabel.text = "%0.2f" % STAR_TIME_LIST[levelNum]
+	$StarTimeLabel.text = "Par: " + "%0.2f" % STAR_TIME_LIST[levelNum]
 	if (levelNum != 1): #Maybe we can adjust when the timer and/or star timer show up later. For now its just level 1
 		$StarTimeLabel.visible = true
 	else:
