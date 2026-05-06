@@ -86,7 +86,7 @@ walljump = true
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("8_bymwt")]
 position = Vector2(144, -88)
-nextScene = "Level19N"
+nextScene = "Level19"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_8r7p3")]
@@ -115,7 +115,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("5_b6n1p")]
 position = Vector2(0, 280)
-currentScene = "Level18N"
+currentScene = "Level18"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1375536332]
 position = Vector2(0, 11)

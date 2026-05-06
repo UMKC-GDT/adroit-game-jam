@@ -1,23 +1,23 @@
 [gd_scene format=4 uid="uid://b7a20fe4vxesw"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_7pn5i"]
-[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_dusu6"]
-[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="3_4bord"]
-[ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="4_mvk2m"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_j5cob"]
-[ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="6_i4soh"]
-[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="7_704sy"]
-[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="8_e6eok"]
-[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_158h4"]
-[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_svu1u"]
-[ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="11_b253t"]
-[ext_resource type="Texture2D" uid="uid://by1qkg1r00woh" path="res://Resources/PressQ.png" id="12_47eft"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_gajx6"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_tciax"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="3_lbnab"]
+[ext_resource type="PackedScene" uid="uid://crbpf0bpn1oov" path="res://Assets/Level Elements/Lamps/static_lamp_dom.tscn" id="4_qvwsr"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="5_i8s2d"]
+[ext_resource type="PackedScene" uid="uid://c6nsrlfh6ap5e" path="res://Assets/Level Elements/future_ground.tscn" id="6_tjurl"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="7_g4fdf"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="8_ul2x2"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_yg2bk"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="10_hece1"]
+[ext_resource type="PackedScene" uid="uid://bljtcxfevllkl" path="res://Scenes/ui_message.tscn" id="11_t8poy"]
+[ext_resource type="Texture2D" uid="uid://by1qkg1r00woh" path="res://Resources/PressQ.png" id="12_566kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnu1o"]
 size = Vector2(800, 32)
 
 [node name="Level20" type="Node2D" unique_id=1908434782]
-script = ExtResource("1_7pn5i")
+script = ExtResource("1_gajx6")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
@@ -25,7 +25,7 @@ zoom = Vector2(2.5, 2.5)
 [node name="Graybackground1" type="Sprite2D" parent="." unique_id=581026523]
 position = Vector2(-4, 0)
 scale = Vector2(0.41748047, 0.41748047)
-texture = ExtResource("2_dusu6")
+texture = ExtResource("2_tciax")
 
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)
@@ -50,13 +50,13 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("3_4bord")]
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("3_lbnab")]
 tile_map_data = PackedByteArray("AAD2/wkAAAAAAAAAAQD4/wkAAAAAAAAAAQD6/wkAAAAAAAAAAQD8/wkAAAAAAAAAAQD+/wkAAAAAAAAAAQAAAAkAAAAAAAAAAQACAAkAAAAAAAAAAQAEAAkAAAAAAAAAAQAGAAkAAAAAAAAAAQAIAAkAAAAAAAAAAQD2//r/AAAAAAAAAQD4//r/AAAAAAAAAQD6//r/AAAAAAAAAQD8//r/AAAAAAAAAQD+//r/AAAAAAAAAQAAAPr/AAAAAAAAAQACAPr/AAAAAAAAAQAEAPr/AAAAAAAAAQAGAPr/AAAAAAAAAQAIAPr/AAAAAAAAAQAKAAgAAAAAAAAAAWAKAAYAAAAAAAAAAWAKAAQAAAAAAAAAAWAKAAIAAAAAAAAAAWAKAAAAAAAAAAAAAWAKAP7/AAAAAAAAAWAKAPz/AAAAAAAAAWAKAPr/AAAAAAAAAWAKAPj/AAAAAAAAAWALAPb/AAAAAAAABDD1//X/AAAAAAAABFAJAPb/AAAAAAAAATAHAPb/AAAAAAAAATAFAPb/AAAAAAAAATADAPb/AAAAAAAAATABAPb/AAAAAAAAATD///b/AAAAAAAAATD9//b/AAAAAAAAATD7//b/AAAAAAAAATD5//b/AAAAAAAAATD3//b/AAAAAAAAATD1//f/AAAAAAAAAVD1//n/AAAAAAAAAVD1//v/AAAAAAAAAVD1//3/AAAAAAAAAVD1////AAAAAAAAAVD1/wEAAAAAAAAAAVD1/wMAAAAAAAAAAVD1/wUAAAAAAAAAAVD1/wcAAAAAAAAAAVD0/wkAAAAAAAAABAAKAAoAAAAAAAAABGA=")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
 
-[node name="staticLamp" parent="Future" unique_id=177997193 instance=ExtResource("4_mvk2m")]
+[node name="staticLamp" parent="Future" unique_id=177997193 instance=ExtResource("4_qvwsr")]
 position = Vector2(144, 104)
 
 [node name="GuideCamera" type="Camera2D" parent="Future" unique_id=279518316]
@@ -80,19 +80,19 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("5_j5cob")]
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("5_i8s2d")]
 position = Vector2(144, 120)
 nextScene = "credits_scene"
 native_timeline = 1
 
-[node name="Ground" parent="Future" unique_id=1605235542 instance=ExtResource("6_i4soh")]
+[node name="Ground" parent="Future" unique_id=1605235542 instance=ExtResource("6_tjurl")]
 position = Vector2(144, 0)
 rotation = -3.1415927
 
-[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("7_704sy")]
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("7_g4fdf")]
 tile_map_data = PackedByteArray("AAD2//r/AAAAAAAAAQD4//r/AAAAAAAAAQD6//r/AAAAAAAAAQD8//r/AAAAAAAAAQD+//r/AAAAAAAAAQAAAPr/AAAAAAAAAQACAPr/AAAAAAAAAQAEAPr/AAAAAAAAAQAGAPr/AAAAAAAAAQAIAPr/AAAAAAAAAQD2/wkAAAAAAAAAAQD4/wkAAAAAAAAAAQD6/wkAAAAAAAAAAQD8/wkAAAAAAAAAAQD+/wkAAAAAAAAAAQAAAAkAAAAAAAAAAQACAAkAAAAAAAAAAQAEAAkAAAAAAAAAAQAGAAkAAAAAAAAAAQAIAAkAAAAAAAAAAQAKAAgAAAAAAAAAAWAKAAYAAAAAAAAAAWAKAAQAAAAAAAAAAWAKAAIAAAAAAAAAAWAKAAAAAAAAAAAAAWAKAP7/AAAAAAAAAWAKAPz/AAAAAAAAAWAKAPr/AAAAAAAAAWAKAPj/AAAAAAAAAWAJAPb/AAAAAAAAATAHAPb/AAAAAAAAATAFAPb/AAAAAAAAATADAPb/AAAAAAAAATABAPb/AAAAAAAAATD///b/AAAAAAAAATD9//b/AAAAAAAAATD7//b/AAAAAAAAATD5//b/AAAAAAAAATD3//b/AAAAAAAAATD1//f/AAAAAAAAAVD1//n/AAAAAAAAAVD1//v/AAAAAAAAAVD1//3/AAAAAAAAAVD1////AAAAAAAAAVD1/wEAAAAAAAAAAVD1/wMAAAAAAAAAAVD1/wUAAAAAAAAAAVD1/wcAAAAAAAAAAVD0/wkAAAAAAAAABAAKAAoAAAAAAAAABGALAPb/AAAAAAAABDD1//X/AAAAAAAABFAJAP//AAAAAAAAAzA=")
 
-[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("8_e6eok")]
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("8_ul2x2")]
 position = Vector2(-112, -104)
 jumpVelocity = 400.0
 starting_present = true
@@ -113,16 +113,16 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_158h4")]
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_yg2bk")]
 
-[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("10_svu1u")]
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("10_hece1")]
 position = Vector2(0, 232)
-currentScene = "Level38N"
+currentScene = "Level38"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1238806544]
 position = Vector2(0, 48)
 shape = SubResource("RectangleShape2D_xnu1o")
 
-[node name="UI Message" parent="." unique_id=1302920499 instance=ExtResource("11_b253t")]
+[node name="UI Message" parent="." unique_id=1302920499 instance=ExtResource("11_t8poy")]
 position = Vector2(4, -99)
-image = ExtResource("12_47eft")
+image = ExtResource("12_566kv")
