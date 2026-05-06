@@ -24,7 +24,7 @@ func cat_collected():
 	$CatLabel.text = ("Cats Found: " + str(collectedCats))
 	
 # Designed to be called by the game manager whenever a new level is loaded.
-func changeLevel(newLevel: String): #TODO: does not work with non traditionally named levels
+func changeLevel(newLevel: String):
 	var levelNum: int
 	if (newLevel[-7].is_valid_int() && newLevel[-6].is_valid_int()):
 		var tempString: String = newLevel[-7]
