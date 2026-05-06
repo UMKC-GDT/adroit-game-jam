@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://0k3wbhtohah5" path="res://Resources/Buttons/PressedOptionsButton.png" id="7_yxkem"]
 [ext_resource type="Texture2D" uid="uid://cvuxomfde3k1i" path="res://Resources/Buttons/HoveredOptionsButton.png" id="8_7v4os"]
 [ext_resource type="Texture2D" uid="uid://bj2u288ssu22x" path="res://Resources/Buttons/NormalCreditsButton.png" id="9_pjscj"]
+[ext_resource type="Texture2D" uid="uid://ddp88ixt4nyn3" path="res://Resources/Buttons/Levels_Button_Normal.png" id="10_7v4os"]
 [ext_resource type="Texture2D" uid="uid://okg2itaf84k6" path="res://Resources/Buttons/PressedCreditsButton.png" id="10_m7n2d"]
 [ext_resource type="Texture2D" uid="uid://dygrwyctg7aod" path="res://Resources/Buttons/HoveredCreditsButton.png" id="11_65hh5"]
+[ext_resource type="Texture2D" uid="uid://qn0wybaw24qv" path="res://Resources/Buttons/Levels_Button_Pressed.png" id="11_pjscj"]
 [ext_resource type="Texture2D" uid="uid://b5tsxt43nsksu" path="res://Resources/Buttons/NormalExitButton.png" id="12_6byu3"]
+[ext_resource type="Texture2D" uid="uid://r2j2asq0h7ji" path="res://Resources/Buttons/Levels_Button_Hover.png" id="12_m7n2d"]
 [ext_resource type="Texture2D" uid="uid://baj235w78dvla" path="res://Resources/Buttons/PressedExitButton.png" id="13_leunp"]
 [ext_resource type="Texture2D" uid="uid://byb7m70owwcj7" path="res://Resources/Buttons/HoveredExitButton.png" id="14_h1v62"]
 [ext_resource type="PackedScene" uid="uid://gp8umyidmdx7" path="res://Scenes/LevelSelectScreen.tscn" id="16_2x1g0"]
@@ -66,9 +69,9 @@ offset_top = 170.20004
 offset_right = 418.26038
 offset_bottom = 202.20004
 scale = Vector2(3.5, 3.5)
-texture_normal = ExtResource("6_riqfo")
-texture_pressed = ExtResource("7_yxkem")
-texture_hover = ExtResource("8_7v4os")
+texture_normal = ExtResource("10_7v4os")
+texture_pressed = ExtResource("11_pjscj")
+texture_hover = ExtResource("12_m7n2d")
 
 [node name="Credits" type="TextureButton" parent="Button Manager" unique_id=992833330]
 layout_mode = 0
