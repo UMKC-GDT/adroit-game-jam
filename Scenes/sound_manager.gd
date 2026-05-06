@@ -14,7 +14,7 @@ enum Emitters{
 	MUSIC,
 	DOOR,
 	SWITCH,
-	
+	SETTINGS,
 }
 
 @export var musicScale: float= 0
@@ -28,6 +28,8 @@ enum Emitters{
 @onready var doorEmitter: FmodEventEmitter2D = $doorEmitter
 @onready var pickupEmitter: FmodEventEmitter2D = $pickupEmitter
 @onready var switchEmitter: FmodEventEmitter2D = $switchEmitter
+@onready var settingsEmitter: FmodEventEmitter2D = $settingsEmitter
+
 
 
 @export var fmodEmitter: FmodEventEmitter2D
@@ -57,6 +59,8 @@ func setParameter(emitter: Emitters, param: String, value: int):
 			doorEmitter.set_parameter(param, value)
 		Emitters.SWITCH:
 			switchEmitter.set_parameter(param, value)
+		Emitters.SETTINGS:
+			settingsEmitter.set_parameter(param, value)
 
 func play(emitter: Emitters):
 	match emitter:
@@ -72,3 +76,5 @@ func play(emitter: Emitters):
 			doorEmitter.play()
 		Emitters.SWITCH:
 			switchEmitter.play()
+		Emitters.SETTINGS:
+			settingsEmitter.play()
