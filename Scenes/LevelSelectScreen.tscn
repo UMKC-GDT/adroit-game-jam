@@ -25,6 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://bj7iw367rtwuj" path="res://Resources/levelselect images/Level20Image.png" id="23_jmm1l"]
 [ext_resource type="Texture2D" uid="uid://bkb5gwxh64rsn" path="res://Resources/levelselect images/Level21Image.png" id="24_wjyp4"]
 [ext_resource type="Texture2D" uid="uid://brmowfv0x4xtr" path="res://Resources/levelselect images/Level22Image.png" id="25_ei86v"]
+[ext_resource type="Texture2D" uid="uid://c2bd4aiab6s5d" path="res://Resources/levelselect images/level23Image.png" id="26_40gey"]
+[ext_resource type="Texture2D" uid="uid://c3752lwl0hxro" path="res://Resources/levelselect images/level24Image.png" id="27_x1efo"]
+[ext_resource type="Texture2D" uid="uid://vvbwf0b8hjx1" path="res://Resources/levelselect images/level25Image.png" id="28_66kto"]
+[ext_resource type="Texture2D" uid="uid://c7kpfs0ylvxjx" path="res://Resources/levelselect images/Level38Image.png" id="29_jmm1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vly10"]
 load_path = "res://.godot/imported/Benefits-of-Stainless-Steel-scaled.jpeg-0ba94f42aa8da9b29889d02d55c89666.ctex"
@@ -215,12 +219,12 @@ level_image = ExtResource("25_ei86v")
 [node name="Level 23" parent="GridContainer13-24" unique_id=722338994 instance=ExtResource("1_ui58y")]
 layout_mode = 2
 level = 23
-level_image = ExtResource("25_ei86v")
+level_image = ExtResource("26_40gey")
 
 [node name="Level 24" parent="GridContainer13-24" unique_id=1893477299 instance=ExtResource("1_ui58y")]
 layout_mode = 2
 level = 24
-level_image = ExtResource("25_ei86v")
+level_image = ExtResource("27_x1efo")
 
 [node name="GridContainer25-36" type="GridContainer" parent="." unique_id=1676663921]
 visible = false
@@ -236,12 +240,12 @@ columns = 4
 [node name="Level 25" parent="GridContainer25-36" unique_id=1827367724 instance=ExtResource("1_ui58y")]
 layout_mode = 2
 level = 25
-level_image = ExtResource("25_ei86v")
+level_image = ExtResource("28_66kto")
 
 [node name="Level 38" parent="GridContainer25-36" unique_id=370585479 instance=ExtResource("1_ui58y")]
 layout_mode = 2
 level = 38
-level_image = ExtResource("25_ei86v")
+level_image = ExtResource("29_jmm1l")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
