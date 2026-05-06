@@ -6,7 +6,7 @@ extends Control
 var collectedCats: int = 0
 # Star Time: Finish the level before this many seconds have passed to recieve a star.
 var elapsedTime: float = 0
-const STAR_TIME_LIST: Array[float] = [0, 3, 4, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+const STAR_TIME_LIST: Array[float] = [0, 3, 4, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10000.998642, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
