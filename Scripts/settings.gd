@@ -10,6 +10,8 @@ var pause_menu: PauseMenu
 func _ready() -> void:
 	resolution_options.get_popup().id_pressed.connect(_on_resolution_selected)
 	window_options.get_popup().id_pressed.connect(_on_window_mode_selected)
+	var bus = FmodServer.get_bus("bus:/")
+	$"PanelContainer/VBoxContainer/Volume/volume slider".value = bus.get_volume()
 
 func show_menu():
 	visible = true
