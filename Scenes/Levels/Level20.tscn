@@ -73,7 +73,7 @@ invert_power = false
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_s4jev")]
 position = Vector2(-112, 120)
-nextScene = "Level37N"
+nextScene = "Level21"
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -113,7 +113,7 @@ air_accel = 1000.0
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_cwxdv")]
 position = Vector2(0, 288)
-currentScene = "Level20N"
+currentScene = "Level20"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1029761057]
 position = Vector2(0, 8)

@@ -111,7 +111,7 @@ gizmo_extents = 53.9
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
 position = Vector2(144, -88)
-nextScene = "Level23N"
+nextScene = "Level24"
 native_timeline = 1
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_q0mit")]
@@ -167,7 +167,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_tixvj")]
 position = Vector2(0, 264)
-currentScene = "Level23N"
+currentScene = "Level23"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1481030062]
 position = Vector2(0, 11)

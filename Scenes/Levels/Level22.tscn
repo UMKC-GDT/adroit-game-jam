@@ -116,7 +116,7 @@ tile_map_data = PackedByteArray("AAD6/wQAAAAAAAAABQD4/wQAAAAAAAAAAQD2/wQAAAAAAAA
 
 [node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("11_23e1y")]
 position = Vector2(-128, -72)
-nextScene = "Level22N"
+nextScene = "Level23"
 native_timeline = 1
 
 [node name="Wall2" parent="Future" unique_id=402987970 instance=ExtResource("8_rnaqf")]
@@ -147,7 +147,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("14_1selb")]
 position = Vector2(8, 248)
-currentScene = "Level22N"
+currentScene = "Level22"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1375349852]
 position = Vector2(-8, 7)

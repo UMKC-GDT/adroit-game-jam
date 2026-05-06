@@ -94,7 +94,7 @@ invert_power = false
 
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("13_aibtj")]
 position = Vector2(-128, -40)
-nextScene = "Level2XN"
+nextScene = "Level38"
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("11_x1o6s")]
 tile_map_data = PackedByteArray("AAD2/wkAAAAAAAAAAQD4/wkAAAAAAAAAAQD6/wkAAAAAAAAAAwD0/wkAAAAAAAAABAD1/wcAAAAAAAAAAVD1/wUAAAAAAAAAAVD1/wMAAAAAAAAAAVD1/wEAAAAAAAAAAVD1//3/AAAAAAAAAVD2////AAAAAAAAAQD4////AAAAAAAAAQD6////AAAAAAAAAQD0////AAAAAAAAAQD8////AAAAAAAAAwD1//v/AAAAAAAAAVD1//n/AAAAAAAAAVD1//f/AAAAAAAAAVD1//X/AAAAAAAAAVD7//n/AAAAAAAAAVD7//f/AAAAAAAAAVD7//X/AAAAAAAAAVADAAQAAAAAAAAAB1ADAAIAAAAAAAAAB1ADAAAAAAAAAAAAB1ADAP7/AAAAAAAAB1ACAPz/AAAAAAAABQAAAPz/AAAAAAAAAgAJAPf/AAAAAAAAB2AJAPn/AAAAAAAAB2AJAPv/AAAAAAAAB2AJAP3/AAAAAAAAB2AJAP//AAAAAAAAB2AJAAEAAAAAAAAAB2AJAAMAAAAAAAAAB2AJAAUAAAAAAAAAB2A=")
@@ -163,7 +163,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("15_lbk1i")]
 position = Vector2(0, 248)
-currentScene = "Level25N"
+currentScene = "Level25"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2117307424]
 position = Vector2(12, 7)
