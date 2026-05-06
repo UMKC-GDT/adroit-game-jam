@@ -12,7 +12,6 @@ var mainMenuScene = preload("res://Scenes/MainMenu.tscn")
 var isMainMenu: bool = true
 var switching := false
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.levelProgressCount == null):
@@ -30,7 +29,7 @@ func LevelMusicBegin():
 		soundManager.play(SoundManager.Emitters.LEVEL)
 
 
-var thing:bool = true
+var thing: bool = true
 func LoadNewScene(name:String):
 	if(switching):
 		return
@@ -66,6 +65,7 @@ func LoadNewScene(name:String):
 			ScreenFadeManager.visible = true
 			background.show()
 			$SubViewportContainer/SubViewport.add_child(currentScene)
+			$ScoringSystem.changeLevel(name)
 		
 	#$SubViewportContainer/SubViewport.remove_child(currentScene)
 

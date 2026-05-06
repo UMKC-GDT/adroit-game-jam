@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_paody")
 
 [node name="CatLabel" type="Label" parent="." unique_id=956435304]
+visible = false
 layout_mode = 0
 offset_left = 70.0
 offset_top = 58.0
@@ -24,30 +25,30 @@ text = "Cats: 0"
 
 [node name="LevelLabel" type="Label" parent="." unique_id=827029785]
 layout_mode = 0
-offset_left = 1741.0
-offset_top = 101.0
-offset_right = 1848.0
-offset_bottom = 146.0
+offset_left = 1737.0
+offset_top = 66.0
+offset_right = 1866.0
+offset_bottom = 111.0
 theme_override_fonts/font = ExtResource("2_si8jc")
 theme_override_font_sizes/font_size = 32
 text = "Level 0"
 
 [node name="TimeLabel" type="Label" parent="." unique_id=812215551]
 layout_mode = 0
-offset_left = 1740.0
-offset_top = 141.0
-offset_right = 1847.0
-offset_bottom = 186.0
+offset_left = 1736.0
+offset_top = 106.0
+offset_right = 1843.0
+offset_bottom = 151.0
 theme_override_fonts/font = ExtResource("2_si8jc")
 theme_override_font_sizes/font_size = 20
 text = "TIME STOP"
 
 [node name="StarTimeLabel" type="Label" parent="." unique_id=1547492632]
 layout_mode = 0
-offset_left = 1740.0
-offset_top = 167.0
-offset_right = 1847.0
-offset_bottom = 212.0
+offset_left = 1736.0
+offset_top = 132.0
+offset_right = 1843.0
+offset_bottom = 177.0
 theme_override_fonts/font = ExtResource("2_si8jc")
 theme_override_font_sizes/font_size = 20
 text = "TIME GOAL"
