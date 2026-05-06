@@ -10,6 +10,7 @@ size = Vector2(16, 16)
 collision_layer = 3
 freeze = true
 script = ExtResource("1_it363")
+native_timeline = 2
 movable = false
 is_tangible = false
 

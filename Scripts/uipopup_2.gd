@@ -43,8 +43,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("You left!")
-		
+		has_triggered = false
 		player_inside = false
 		hide_popup()
 
@@ -71,8 +70,8 @@ func show_popup() -> void:
 func hide_popup() -> void:
 	if tween: tween.kill()
 	tween = create_tween().set_parallel(true)
-	tween.tween_property(sprite, "scale", Vector2(0,0), 0.2)
-	tween.tween_property(sprite, "modulate:a", 0.0, 0.2)
+	tween.tween_property(sprite, "scale", Vector2(1,0), 0.2)
+	tween.tween_property(sprite, "modulate:a", 1.0, 0.2)
 
 ##Called when this object enters a quantum light so it can update its observation state. 
 func add_light(light: QuantumLight):
@@ -91,6 +90,7 @@ func update_state():
 	
 	#If no one's looking at us, we don't exist. Otherwise, check for the most dominant light that's looking at us, and follow what it says.
 	if overlapping_lights.is_empty():
+		print("no one's looking at me")
 		is_active = false
 	else:
 		
@@ -105,6 +105,8 @@ func update_state():
 	if native_timeline == Global.Timeline.OFF:
 		is_active = true
 		print("I'm set to off, so I'm no longer time sensitive!")
+	else:
+		print("MY TIMELINE IS NOT SET TO OFF!")
 	
 	
 	visible = is_active

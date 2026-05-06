@@ -1,28 +1,38 @@
-[gd_scene format=4 uid="uid://vdc8mk2aixew"]
+[gd_scene format=4 uid="uid://bonm4ttl20fiq"]
 
-[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_6tp5x"]
-[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_tmpk6"]
-[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="4_ry8xl"]
-[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_7kx3m"]
-[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="6_q0mit"]
-[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="8_q0mit"]
-[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="8_tixvj"]
-[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_myr8f"]
-[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="9_tixvj"]
+[ext_resource type="Script" uid="uid://bq4rly84p8g68" path="res://Scenes/dimension_manager.gd" id="1_j30ol"]
+[ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="2_y5p18"]
+[ext_resource type="PackedScene" uid="uid://dxooy8hk1hneb" path="res://Assets/QuantumLight.tscn" id="3_d4sh2"]
+[ext_resource type="PackedScene" uid="uid://ddf6vf6fjy2qx" path="res://Assets/Level Elements/large_present_ground.tscn" id="4_l2vl8"]
+[ext_resource type="PackedScene" uid="uid://bj0l2epxgq2om" path="res://Assets/Level Elements/random_platform.tscn" id="5_7car6"]
+[ext_resource type="PackedScene" uid="uid://bkvyfiev4jyvg" path="res://Scenes/Tilesets/present_tile_map.tscn" id="6_kuh0q"]
+[ext_resource type="PackedScene" uid="uid://dgbu4ajf3tcin" path="res://Assets/Level Elements/large_future_ground.tscn" id="7_84uo8"]
+[ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="8_rnaqf"]
+[ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="9_uc71j"]
+[ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="10_7ltb6"]
+[ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="11_23e1y"]
+[ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="12_wjoq0"]
+[ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="13_20r8k"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="14_1selb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmpk6"]
-size = Vector2(864, 42)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6abuq"]
+size = Vector2(512, 34)
 
-[node name="Level17" type="Node2D" unique_id=1908434782]
-script = ExtResource("1_6tp5x")
+[node name="Level21N" type="Node2D" unique_id=1908434782]
+script = ExtResource("1_j30ol")
+
+[node name="Graybackground1" type="Sprite2D" parent="." unique_id=631139216]
+position = Vector2(-3, -3)
+scale = Vector2(0.41748047, 0.41748047)
+texture = ExtResource("2_y5p18")
+
+[node name="QuantumLight" parent="." unique_id=371804446 instance=ExtResource("3_d4sh2")]
+position = Vector2(-560, 376)
+rotation = -0.76982385
+scale = Vector2(7.94227, 2.311422)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=742043142]
 zoom = Vector2(2.5, 2.5)
-
-[node name="Graybackground1" type="Sprite2D" parent="." unique_id=1933255652]
-position = Vector2(-3, -3)
-scale = Vector2(0.41748047, 0.41748047)
-texture = ExtResource("3_tmpk6")
 
 [node name="Present" type="Node2D" parent="." unique_id=310712685]
 position = Vector2(-960, 0)
@@ -30,6 +40,12 @@ position = Vector2(-960, 0)
 [node name="GuideCamera" type="Camera2D" parent="Present" unique_id=1665506065]
 enabled = false
 zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround" parent="Present" unique_id=1914359350 instance=ExtResource("4_l2vl8")]
+position = Vector2(-128, 96)
+
+[node name="LargeGround3" parent="Present" unique_id=174117843 instance=ExtResource("4_l2vl8")]
+position = Vector2(-128, 64)
 
 [node name="LeftBorder" type="Marker2D" parent="Present" unique_id=628565295]
 position = Vector2(-160, 0)
@@ -47,43 +63,16 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="RandomPlatform3" parent="Present" unique_id=1482860414 instance=ExtResource("4_ry8xl")]
-position = Vector2(-64, 0)
-exist_chance = 0.3
+[node name="RandomPlatform" parent="Present" unique_id=1605235542 instance=ExtResource("5_7car6")]
+position = Vector2(16, 64)
 native_timeline = 0
 
-[node name="RandomPlatform7" parent="Present" unique_id=638443330 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 0)
-exist_chance = 0.3
+[node name="RandomPlatform2" parent="Present" unique_id=330628542 instance=ExtResource("5_7car6")]
+position = Vector2(48, 64)
 native_timeline = 0
 
-[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("6_q0mit")]
-tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAIAPz/AAAAAAAAAQD0/wgAAAAAAAAABAAKAP3/AAAAAAAABGD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVAKAPv/AAAAAAAAAWAKAPn/AAAAAAAAAWAKAPf/AAAAAAAAAWAKAPX/AAAAAAAAAWAGAPz/AAAAAAAAAQD4/wgAAAAAAAAAAQA=")
-
-[node name="RandomPlatform5" parent="Present" unique_id=1860093997 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 96)
-exist_chance = 0.3
-native_timeline = 0
-
-[node name="RandomPlatform2" parent="Present" unique_id=1961002618 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, 48)
-exist_chance = 0.3
-native_timeline = 0
-
-[node name="RandomPlatform4" parent="Present" unique_id=1999964952 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, -48)
-exist_chance = 0.3
-native_timeline = 0
-
-[node name="RandomPlatform8" parent="Present" unique_id=1571864714 instance=ExtResource("4_ry8xl")]
-position = Vector2(64, -48)
-exist_chance = 0.3
-native_timeline = 0
-
-[node name="RandomPlatform6" parent="Present" unique_id=1343702438 instance=ExtResource("4_ry8xl")]
-position = Vector2(64, 48)
-exist_chance = 0.3
-native_timeline = 0
+[node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("6_kuh0q")]
+tile_map_data = PackedByteArray("AAD6/wQAAAAAAAAABQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD7/wYAAAAAAAAAAVD7/wgAAAAAAAAAAVD0/wYAAAAAAAAABgD2/wYAAAAAAAAABgD4/wYAAAAAAAAABgD0/wgAAAAAAAAABgD2/wgAAAAAAAAABgD4/wgAAAAAAAAABgD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVD1//j/AAAAAAAAAVD1//b/AAAAAAAAAVA=")
 
 [node name="Future" type="Node2D" parent="." unique_id=2100330699]
 position = Vector2(960, 0)
@@ -92,6 +81,9 @@ position = Vector2(960, 0)
 scale = Vector2(1.0012594, 0.7510287)
 enabled = false
 zoom = Vector2(2.5, 2.5)
+
+[node name="LargeGround" parent="Future" unique_id=762156276 instance=ExtResource("7_84uo8")]
+position = Vector2(-96, -48)
 
 [node name="LeftBorder" type="Marker2D" parent="Future" unique_id=905282963]
 position = Vector2(-160, 0)
@@ -109,45 +101,31 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("6_7kx3m")]
-position = Vector2(144, -88)
-nextScene = "Level23N"
+[node name="Wall" parent="Future" unique_id=863767970 instance=ExtResource("8_rnaqf")]
+position = Vector2(144, 0)
+collision_layer = 2051
+
+[node name="Platform" parent="Future" unique_id=1481268191 instance=ExtResource("9_uc71j")]
+position = Vector2(-16, -48)
+
+[node name="Platform2" parent="Future" unique_id=1893793467 instance=ExtResource("9_uc71j")]
+position = Vector2(16, -48)
+
+[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("10_7ltb6")]
+tile_map_data = PackedByteArray("AAD6/wQAAAAAAAAABQD4/wQAAAAAAAAAAQD2/wQAAAAAAAAAAQD0/wQAAAAAAAAAAQD7/wYAAAAAAAAAAVD7/wgAAAAAAAAAAVD0/wYAAAAAAAAABgD2/wYAAAAAAAAABgD4/wYAAAAAAAAABgD0/wgAAAAAAAAABgD2/wgAAAAAAAAABgD4/wgAAAAAAAAABgD8//3/AAAAAAAAAQD6//3/AAAAAAAAAQD4//3/AAAAAAAAAQD2//3/AAAAAAAAAgAIAP3/AAAAAAAAB2AIAP//AAAAAAAAB2AIAAEAAAAAAAAAB2AIAAMAAAAAAAAAB2D1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVD1//r/AAAAAAAAAVD1//j/AAAAAAAAAVD1//b/AAAAAAAAAVA=")
+
+[node name="EndLevelDoor" parent="Future" unique_id=1870179415 instance=ExtResource("11_23e1y")]
+position = Vector2(-128, -72)
+nextScene = "Level22N"
 native_timeline = 1
 
-[node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("8_q0mit")]
-tile_map_data = PackedByteArray("AAD2/wgAAAAAAAAAAQAHAPz/AAAAAAAAAQD0/wgAAAAAAAAABAALAP3/AAAAAAAABGAJAPz/AAAAAAAAAQD1/wYAAAAAAAAAAVD1/wQAAAAAAAAAAVD1/wIAAAAAAAAAAVD1/wAAAAAAAAAAAVD1//7/AAAAAAAAAVD1//z/AAAAAAAAAVALAPv/AAAAAAAAAWALAPn/AAAAAAAAAWALAPf/AAAAAAAAAWALAPX/AAAAAAAAAWD4/wgAAAAAAAAAAQA=")
+[node name="Wall2" parent="Future" unique_id=402987970 instance=ExtResource("8_rnaqf")]
+position = Vector2(-176, 0)
 
-[node name="RandomPlatform3" parent="Future" unique_id=1605235542 instance=ExtResource("4_ry8xl")]
-position = Vector2(-64, 0)
-exist_chance = 0.3
-
-[node name="RandomPlatform7" parent="Future" unique_id=1662392706 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 0)
-exist_chance = 0.3
-
-[node name="RandomPlatform5" parent="Future" unique_id=1418273584 instance=ExtResource("4_ry8xl")]
-position = Vector2(-32, 96)
-exist_chance = 0.3
-
-[node name="RandomPlatform2" parent="Future" unique_id=2022566558 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, 48)
-exist_chance = 0.3
-
-[node name="RandomPlatform4" parent="Future" unique_id=795034089 instance=ExtResource("4_ry8xl")]
-position = Vector2(32, -48)
-exist_chance = 0.3
-
-[node name="RandomPlatform8" parent="Future" unique_id=642157385 instance=ExtResource("4_ry8xl")]
-position = Vector2(64, -48)
-exist_chance = 0.3
-
-[node name="RandomPlatform6" parent="Future" unique_id=1606993685 instance=ExtResource("4_ry8xl")]
-position = Vector2(64, 48)
-exist_chance = 0.3
-
-[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("9_myr8f")]
-position = Vector2(-96, 40)
+[node name="Player" parent="." unique_id=1958493430 instance=ExtResource("12_wjoq0")]
+position = Vector2(-128, 48)
 jumpVelocity = 400.0
+starting_present = true
 
 [node name="LeftBorder" type="Marker2D" parent="." unique_id=15299510]
 position = Vector2(-160, 0)
@@ -165,12 +143,12 @@ gizmo_extents = 53.9
 position = Vector2(0, -160)
 gizmo_extents = 53.9
 
-[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_tixvj")]
-position = Vector2(0, 264)
-currentScene = "Level22N"
+[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("13_20r8k")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1481030062]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_tmpk6")
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("14_1selb")]
+position = Vector2(8, 248)
+currentScene = "Level21N"
 
-[node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("9_tixvj")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1375349852]
+position = Vector2(-8, 7)
+shape = SubResource("RectangleShape2D_6abuq")
