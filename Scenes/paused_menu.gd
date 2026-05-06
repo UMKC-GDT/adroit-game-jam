@@ -16,16 +16,16 @@ func _ready() -> void:
 	settings.gm = gm
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("escape") and !gm.isMainMenu:
+	if Input.is_action_just_pressed("escape"):
 		if settings_shown:
 			settings.hide_menu()
 			visible = true
 		elif levels.isVisible:
 			levels.hide_menu()
 			visible = true
-		else:
+		elif !gm.isMainMenu:
 			visible = !visible
-			get_tree().paused = !get_tree().paused
+			get_tree().paused = visible
 
 
 func _on_quit_pressed() -> void:
@@ -33,7 +33,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_resume_pressed() -> void:
-	Input.action_press("escape")
+	visible = false
+	get_tree().paused = visible
 
 
 func _on_main_menu_pressed() -> void:
