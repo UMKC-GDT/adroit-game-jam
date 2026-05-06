@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_d7wgo"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="10_x68lo"]
 [ext_resource type="PackedScene" uid="uid://dn2ngu8x3jugk" path="res://Scenes/Tilesets/future_tile_map.tscn" id="11_rvhie"]
+[ext_resource type="PackedScene" uid="uid://b1vse78uilttt" path="res://Assets/Level Elements/kill_zone.tscn" id="15_lbk1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7tsa"]
+size = Vector2(800, 26)
 
 [node name="Level23N" type="Node2D" unique_id=1908434782]
 script = ExtResource("1_xf6tx")
@@ -203,3 +207,11 @@ position = Vector2(0, -160)
 gizmo_extents = 53.9
 
 [node name="HazeGenerator" parent="." unique_id=522450813 instance=ExtResource("10_x68lo")]
+
+[node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("15_lbk1i")]
+position = Vector2(0, 256)
+currentScene = "Level24N"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=928791052]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_n7tsa")

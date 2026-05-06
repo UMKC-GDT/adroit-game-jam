@@ -113,7 +113,7 @@ air_accel = 1000.0
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("8_cwxdv")]
 position = Vector2(0, 288)
-currentScene = "Level21"
+currentScene = "Level20N"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1029761057]
 position = Vector2(0, 8)

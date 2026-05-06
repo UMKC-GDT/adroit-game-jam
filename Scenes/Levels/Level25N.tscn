@@ -163,7 +163,7 @@ gizmo_extents = 53.9
 
 [node name="Kill Zone" parent="." unique_id=872460906 instance=ExtResource("15_lbk1i")]
 position = Vector2(0, 248)
-currentScene = "Level18"
+currentScene = "Level25N"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2117307424]
 position = Vector2(12, 7)

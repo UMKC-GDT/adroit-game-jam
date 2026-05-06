@@ -2,6 +2,7 @@ extends BasicPlatform
 class_name RandomPlatform
 
 @export var exist_chance = 0.5
+var has_rolled: bool = false
 
 ##This will be a platform that will randomly decide whether or not it's active, every time it's viewed.
 
@@ -9,7 +10,7 @@ func update_state():
 	
 	#If no one's looking at us, we don't exist. Otherwise, check for the most dominant light that's looking at us, and follow what it says.
 	if overlapping_lights.is_empty():
-		
+		has_rolled = false
 		if native_timeline == Global.Timeline.OFF:
 			is_active = true
 		else:
@@ -24,11 +25,12 @@ func update_state():
 		
 		# We exist ONLY if...we land a random shot.
 		if ((dominant_light.timeline_type == native_timeline) and (dominant_light.timeline_type != Global.Timeline.OFF)):
-			if not is_active:
-				if randf() <= exist_chance:
-					is_active = true
+			if not has_rolled: # <-- CHECK THIS instead of is_active
+				has_rolled = true
+				is_active = (randf() <= exist_chance)
 		else:
 			is_active = false
+			has_rolled = false
 	
 	# In case we WERE active and now we're not, save our momentum for when we can exist again.
 	if was_active and not is_active:
