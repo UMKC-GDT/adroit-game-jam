@@ -35,14 +35,15 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ponqj")
 
-[node name="GameBackgroundBorderFrame" type="Sprite2D" parent="." unique_id=1482631521]
+[node name="steel image" type="Sprite2D" parent="." unique_id=1482631521]
+visible = false
 position = Vector2(-2.0000305, -43.000015)
 scale = Vector2(0.5765625, 0.52372587)
 texture = SubResource("CompressedTexture2D_vly10")
 
 [node name="GameBackgroundBorderFrame2" type="Sprite2D" parent="." unique_id=1904019194]
 position = Vector2(0, -44.5)
-scale = Vector2(1.0458825, 1.0458823)
+scale = Vector2(1.28, 1.28)
 texture = ExtResource("2_bnaqy")
 
 [node name="Label" type="Label" parent="." unique_id=1367300711]
@@ -56,10 +57,10 @@ text = "Level Select"
 
 [node name="exit" type="Button" parent="." unique_id=1426242563]
 layout_mode = 0
-offset_left = -722.0
-offset_top = -473.0
-offset_right = -624.0
-offset_bottom = -374.0
+offset_left = -950.0
+offset_top = -539.0
+offset_right = -852.0
+offset_bottom = -435.0
 theme_override_font_sizes/font_size = 70
 text = "X"
 
@@ -209,6 +210,37 @@ level_image = ExtResource("24_wjyp4")
 [node name="Level 22" parent="GridContainer13-24" unique_id=1000988038 instance=ExtResource("1_ui58y")]
 layout_mode = 2
 level = 22
+level_image = ExtResource("25_ei86v")
+
+[node name="Level 23" parent="GridContainer13-24" unique_id=722338994 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 23
+level_image = ExtResource("25_ei86v")
+
+[node name="Level 24" parent="GridContainer13-24" unique_id=1893477299 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 24
+level_image = ExtResource("25_ei86v")
+
+[node name="GridContainer25-36" type="GridContainer" parent="." unique_id=1676663921]
+visible = false
+layout_mode = 0
+offset_left = -475.0
+offset_top = -307.0
+offset_right = 502.0
+offset_bottom = 361.0
+theme_override_constants/h_separation = 260
+theme_override_constants/v_separation = 224
+columns = 4
+
+[node name="Level 25" parent="GridContainer25-36" unique_id=1827367724 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 25
+level_image = ExtResource("25_ei86v")
+
+[node name="Level 38" parent="GridContainer25-36" unique_id=370585479 instance=ExtResource("1_ui58y")]
+layout_mode = 2
+level = 38
 level_image = ExtResource("25_ei86v")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

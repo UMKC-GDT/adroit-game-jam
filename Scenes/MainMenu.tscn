@@ -93,11 +93,11 @@ texture_pressed = ExtResource("13_leunp")
 texture_hover = ExtResource("14_h1v62")
 
 [node name="LevelSelectScreen" parent="." unique_id=467249612 instance=ExtResource("16_2x1g0")]
-visible = false
-offset_left = -22.0
-offset_top = 65.0
-offset_right = -22.0
-offset_bottom = 65.0
+offset_left = -14.0
+offset_top = 47.0
+offset_right = -14.0
+offset_bottom = 47.0
+scale = Vector2(0.95999616, 1)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]

@@ -2,6 +2,11 @@ class_name LevelSelect extends Control
 
 var gm: game_manager
 
+@onready var page1 = $"GridContainer1-12"
+@onready var page2 = $"GridContainer13-24"
+@onready var page3 = $"GridContainer25-36" 
+
+
 var isVisible = false
 
 func _ready() -> void:
@@ -27,15 +32,35 @@ func _on_exit_pressed() -> void:
 	Input.action_press("escape")
 
 
-func _on_next_pressed() -> void:
-	$"GridContainer1-12".visible = false
-	$"GridContainer13-24".visible = true
-	$back.visible = true
-	$next.visible = false 
 
+var page = 1
+
+func _on_next_pressed() -> void:
+	if(page == 1):
+		page1.visible = false
+		page2.visible = true
+		$back.visible = true
+		$next.visible = true 
+		page += 1
+	elif(page == 2):
+		page2.visible = false
+		page3.visible = true
+		$back.visible = true
+		$next.visible = false 
+		page += 1
+	
 
 func _on_back_pressed() -> void:
-	$"GridContainer1-12".visible = true
-	$"GridContainer13-24".visible = false
-	$back.visible = false
-	$next.visible = true 
+	if(page == 2):
+		page1.visible = true
+		page2.visible = false
+		$back.visible = false
+		$next.visible = true 
+		page -= 1
+	elif(page == 3):
+		page2.visible = true
+		page3.visible = false
+		$back.visible = true
+		$next.visible = true 
+		page -= 1
+		

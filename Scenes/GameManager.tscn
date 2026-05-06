@@ -166,8 +166,7 @@ visible = false
 visible = false
 
 [node name="LevelSelectScreen" parent="UI Elements" unique_id=1201548234 groups=["Level Select"] instance=ExtResource("9_8mb02")]
-visible = false
-offset_left = 953.0
-offset_top = 536.0
-offset_right = 953.0
-offset_bottom = 536.0
+offset_left = 965.0
+offset_top = 586.0
+offset_right = 965.0
+offset_bottom = 586.0
