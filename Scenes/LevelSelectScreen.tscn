@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cy8ggg5ctk365" path="res://Scenes/level_select_screen.gd" id="1_ponqj"]
 [ext_resource type="PackedScene" uid="uid://basr5t45pocfq" path="res://Scenes/LevelSelectButton.tscn" id="1_ui58y"]
-[ext_resource type="Texture2D" uid="uid://cyvg4tkosel2s" path="res://Resources/Benefits-of-Stainless-Steel-scaled.jpeg" id="2_ponqj"]
+[ext_resource type="Texture2D" uid="uid://bb46gqh1h7hju" path="res://Resources/GameBackgroundBorderFrame.png" id="2_bnaqy"]
 [ext_resource type="Texture2D" uid="uid://xslxxq8a05bm" path="res://Resources/levelselect images/Level1Image.png" id="4_ogcde"]
 [ext_resource type="Texture2D" uid="uid://dc4rtjteuvdp8" path="res://Resources/levelselect images/Level2Image.png" id="5_had1o"]
 [ext_resource type="Texture2D" uid="uid://gxmyyv8tvv7r" path="res://Resources/levelselect images/Level3Image.png" id="6_qtify"]
@@ -26,7 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://bkb5gwxh64rsn" path="res://Resources/levelselect images/Level21Image.png" id="24_wjyp4"]
 [ext_resource type="Texture2D" uid="uid://brmowfv0x4xtr" path="res://Resources/levelselect images/Level22Image.png" id="25_ei86v"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vly10"]
+load_path = "res://.godot/imported/Benefits-of-Stainless-Steel-scaled.jpeg-0ba94f42aa8da9b29889d02d55c89666.ctex"
+
 [node name="LevelSelectScreen" type="Control" unique_id=467249612]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ponqj")
@@ -34,7 +38,12 @@ script = ExtResource("1_ponqj")
 [node name="GameBackgroundBorderFrame" type="Sprite2D" parent="." unique_id=1482631521]
 position = Vector2(-2.0000305, -43.000015)
 scale = Vector2(0.5765625, 0.52372587)
-texture = ExtResource("2_ponqj")
+texture = SubResource("CompressedTexture2D_vly10")
+
+[node name="GameBackgroundBorderFrame2" type="Sprite2D" parent="." unique_id=1904019194]
+position = Vector2(0, -44.5)
+scale = Vector2(1.0458825, 1.0458823)
+texture = ExtResource("2_bnaqy")
 
 [node name="Label" type="Label" parent="." unique_id=1367300711]
 layout_mode = 0

@@ -2,7 +2,7 @@ class_name PauseMenu extends Control
 
 var settings: Settings
 var gm: game_manager
-var levels: level_select
+var levels: LevelSelect
 
 
 var settings_shown: bool = false
@@ -11,20 +11,21 @@ func _ready() -> void:
 	gm = get_tree().get_first_node_in_group("Game Manager")
 	settings = get_tree().get_first_node_in_group("Settings")
 	levels = get_tree().get_first_node_in_group("Level Select")
+	levels.gm = gm
 	settings.pause_menu = self
 	settings.gm = gm
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("escape") and !gm.isMainMenu:
+	if Input.is_action_just_pressed("escape"):
 		if settings_shown:
 			settings.hide_menu()
 			visible = true
 		elif levels.isVisible:
 			levels.hide_menu()
 			visible = true
-		else:
+		elif !gm.isMainMenu:
 			visible = !visible
-			get_tree().paused = !get_tree().paused
+			get_tree().paused = visible
 
 
 func _on_quit_pressed() -> void:
@@ -32,7 +33,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_resume_pressed() -> void:
-	Input.action_press("escape")
+	visible = false
+	get_tree().paused = visible
 
 
 func _on_main_menu_pressed() -> void:

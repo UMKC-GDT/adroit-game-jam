@@ -19,12 +19,18 @@ func hide_menu():
 	visible = false
 	if gm.isMainMenu:
 		get_tree().paused = false
+		get_tree().call_group("Main Menu", "enable_buttons")
 	else:
 		Input.action_press("escape")
+		pause_menu.settings_shown = false
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	var bus = FmodServer.get_bus("bus:/")
 	bus.set_volume(value)
+
+func _on_volume_slider_drag_ended(value_changed: bool) -> void:
+	gm.soundManager.play(SoundManager.Emitters.SETTINGS)
+
 
 func _on_resolution_selected(id):
 	get_viewport().get_window().unresizable = false

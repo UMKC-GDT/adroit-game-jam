@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://eawah3wabwu8" path="res://Resources/graybackground1.png" id="3_do8jb"]
 [ext_resource type="PackedScene" uid="uid://dmexsu4bbo765" path="res://Assets/Level Elements/Lamps/flickering_lamp_dom.tscn" id="3_dufsw"]
 [ext_resource type="PackedScene" uid="uid://cnr2kv6lno8h3" path="res://Assets/Level Elements/platform.tscn" id="4_waca8"]
-[ext_resource type="PackedScene" uid="uid://dbwhhi5i4cyu2" path="res://Assets/Level Elements/wall.tscn" id="5_3fpx2"]
 [ext_resource type="PackedScene" uid="uid://wailwi4lr8mj" path="res://Assets/Level Elements/end_level_door.tscn" id="6_xbey8"]
 [ext_resource type="PackedScene" uid="uid://dytttd53pdmth" path="res://Assets/Level Elements/HazeGenerator.tscn" id="8_vuhmb"]
 [ext_resource type="PackedScene" uid="uid://dhutbgdbmmpm5" path="res://Scenes/player.tscn" id="9_cs1q7"]
@@ -61,33 +60,9 @@ native_timeline = 0
 position = Vector2(16, 0)
 native_timeline = 0
 
-[node name="Wall" parent="Present" unique_id=1934655587 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, 64)
-rotation = -3.1415927
-native_timeline = 0
-walljump = true
-
-[node name="Wall2" parent="Present" unique_id=1687701173 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, -64)
-rotation = -3.1415927
-native_timeline = 0
-walljump = true
-
 [node name="EndLevelDoor" parent="Present" unique_id=1870179415 instance=ExtResource("6_xbey8")]
 position = Vector2(136, -24)
 nextScene = "Level12"
-
-[node name="Wall3" parent="Present" unique_id=1135570437 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, 192)
-rotation = -3.1415927
-native_timeline = 0
-walljump = true
-
-[node name="Wall4" parent="Present" unique_id=1909664338 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, -192)
-rotation = -3.1415927
-native_timeline = 0
-walljump = true
 
 [node name="PresentTileMap" parent="Present" unique_id=1094176510 instance=ExtResource("9_o6xtu")]
 position = Vector2(2000, 96)
@@ -116,26 +91,6 @@ gizmo_extents = 53.9
 [node name="TopBorder" type="Marker2D" parent="Future" unique_id=1637643970]
 position = Vector2(0, -160)
 gizmo_extents = 53.9
-
-[node name="Wall" parent="Future" unique_id=1805069091 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, 64)
-rotation = -3.1415927
-walljump = true
-
-[node name="Wall2" parent="Future" unique_id=1387675566 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, -64)
-rotation = -3.1415927
-walljump = true
-
-[node name="Wall3" parent="Future" unique_id=1636002586 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, 192)
-rotation = -3.1415927
-walljump = true
-
-[node name="Wall4" parent="Future" unique_id=1385876552 instance=ExtResource("5_3fpx2")]
-position = Vector2(-112, -192)
-rotation = -3.1415927
-walljump = true
 
 [node name="FutureTileMap" parent="Future" unique_id=1429209569 instance=ExtResource("10_o6xtu")]
 tile_map_data = PackedByteArray("AAD+/wYAAAAAAAAAAQAAAAYAAAAAAAAAAQD8/wkAAAAAAAAAAWD8/wsAAAAAAAAAAWADAAgAAAAAAAAAAVADAAoAAAAAAAAAAVACAAYAAAAAAAAABQD8/wcAAAAAAAAABWD5/woAAAAAAAAAB1D5/wgAAAAAAAAAB1D5/wYAAAAAAAAAB1D5/wQAAAAAAAAAB1D5/wIAAAAAAAAAB1D5/wAAAAAAAAAAB1D5//7/AAAAAAAAB1D5//z/AAAAAAAAB1D5//r/AAAAAAAAB1D5//j/AAAAAAAAB1D5//b/AAAAAAAABFD2/woAAAAAAAAABgD2/wgAAAAAAAAABgD2/wYAAAAAAAAABgD2/wQAAAAAAAAABgD2/wIAAAAAAAAABgD2/wAAAAAAAAAABgD2//7/AAAAAAAABgD2//z/AAAAAAAABgD2//r/AAAAAAAABgD2//j/AAAAAAAABgD2//b/AAAAAAAABgD7//f/AAAAAAAAATD9//f/AAAAAAAAATD///f/AAAAAAAAATABAPf/AAAAAAAAATADAPf/AAAAAAAAATAFAPf/AAAAAAAAATAHAPf/AAAAAAAAATAKAPn/AAAAAAAAAWAJAPf/AAAAAAAAATALAPf/AAAAAAAABDAKAPv/AAAAAAAAAWAKAP3/AAAAAAAAAWAKAP//AAAAAAAAAWAKAAEAAAAAAAAAAWAKAAMAAAAAAAAAAWAKAAUAAAAAAAAAAWAKAAcAAAAAAAAAAWAKAAkAAAAAAAAAAWAKAAsAAAAAAAAAAWD+/wgAAAAAAAAABgAAAAgAAAAAAAAABgD+/woAAAAAAAAABgAAAAoAAAAAAAAABgA=")
